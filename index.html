@@ -258,8 +258,35 @@
     </div>
   </div>
 
+  
+  <!-- Biblioteca Lucide -->
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+  <!-- JavaScript principal -->
   <script src="js/main.js"></script>
+
+  <!-- Inicialización de iconos -->
+  <script>
+    (function () {
+      function renderLucideIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+          window.lucide.createIcons({
+            attrs: {
+              "stroke-width": 1.8
+            }
+          });
+        } else {
+          console.error("Lucide no pudo cargarse.");
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", renderLucideIcons, { once: true });
+      } else {
+        renderLucideIcons();
+      }
+    })();
+  </script>
 </body>
 
 </html>
