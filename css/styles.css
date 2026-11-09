@@ -725,34 +725,22 @@ main, section, header, footer {
 
   /* Mostrar el nav derecho como contenedor transparente
      cuando el menú está cerrado */
-  .nav.nav-side-right:not(.open) {
-    display: contents;
+  /* El selector móvil independiente se muestra junto al logo.
+     Los enlaces del segundo grupo permanecen dentro del panel. */
+  .nav-drawer:not(.open) .nav.nav-side-right {
+    display: flex;
   }
 
-  /* Ocultar los enlaces y botón de contacto mientras
-     el menú está cerrado */
-  .nav.nav-side-right:not(.open) > a {
+  .nav-drawer:not(.open) .nav.nav-side-right > a {
     display: none;
   }
 
-  /* Mantener visible el selector de idiomas */
-  .nav.nav-side-right:not(.open) .lang-switch {
-    display: flex;
-    position: absolute;
-    right: 4.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    z-index: 110;
+  .nav-drawer:not(.open) .nav.nav-side-right > .lang-switch {
+    display: none;
   }
 
-  /* Cuando se abre el menú, recuperar su disposición normal */
-  .nav.nav-side-right.open {
+  .header-inner > .mobile-lang-switch {
     display: flex;
-    position: relative;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
   }
 
 }
@@ -899,17 +887,24 @@ main, section, header, footer {
     min-height: 42px;
   }
 
-  /* Idioma visible junto al logo cuando el panel está cerrado */
-  .nav-drawer:not(.open) .lang-switch {
-    position: fixed;
-    top: 14px;
+  /* Selector independiente: queda junto al logo sin desplazarse
+     con el panel lateral */
+  .header-inner > .mobile-lang-switch {
+    display: flex;
+    position: absolute;
+    top: 50%;
     right: 4.25rem;
+    transform: translateY(-50%);
     z-index: 303;
     margin: 0;
-    transform: none;
   }
 
-  .nav-drawer:not(.open) .lang-switch .lang-menu {
+  .header-inner > .mobile-lang-switch .lang-menu {
+    top: calc(100% + 8px);
+    right: 0;
+  }
+
+  .nav-drawer .nav-side-right > .lang-switch {
     display: none;
   }
 
@@ -971,7 +966,7 @@ main, section, header, footer {
     height: 38px;
   }
 
-  .nav-drawer:not(.open) .lang-switch {
+  .header-inner > .mobile-lang-switch {
     right: 3.8rem;
   }
 }
