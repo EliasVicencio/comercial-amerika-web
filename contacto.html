@@ -20,17 +20,15 @@
 
   <header class="header">
     <div class="container header-inner">
-      <!-- Logo protagonista al centro; los menús se reparten a los lados -->
-      <nav class="nav nav-side-left" aria-label="Menú principal izquierda">
-          <a href="index.html" data-i18n="nav.home">Inicio</a>
-          <a href="marcas.html" data-i18n="nav.brands">Nuestras marcas</a>
-        </nav>
-
       <a href="index.html" class="logo">
         <img src="img/logo.png" alt="Logo de Comercial Amerika SpA" onerror="this.style.display='none'">
       </a>
-
-      <nav class="nav nav-side-right" aria-label="Menú principal derecha">
+      <div class="nav-drawer" id="mobileNavigation" aria-hidden="true" inert>
+        <nav class="nav nav-side-left" aria-label="Menú principal izquierda">
+          <a href="index.html" data-i18n="nav.home">Inicio</a>
+          <a href="marcas.html" data-i18n="nav.brands">Nuestras marcas</a>
+        </nav>
+        <nav class="nav nav-side-right" aria-label="Menú principal derecha">
           <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
           <a href="route-market.html" data-i18n="nav.route">Route to market</a>
 
@@ -57,9 +55,9 @@
         <!-- Botón destacado del menú (ver 3.2 del documento) -->
         <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
       </nav>
-
-      <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú"
-        aria-expanded="false">☰</button>
+      </div>
+      <button type="button" class="menu-backdrop" aria-label="Cerrar menú" tabindex="-1"></button>
+      <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú" aria-expanded="false" aria-controls="mobileNavigation">☰</button>
     </div>
   </header>
 
