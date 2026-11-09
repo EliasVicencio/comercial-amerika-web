@@ -74,7 +74,7 @@
     </section>
 
     <!-- ========== A QUÉ NOS DEDICAMOS (STEPPER INTERACTIVO) ========== -->
-    <section class="section" style="background: var(--color-cream-dark);">
+    <section class="section" style="padding-top: 0;">
       <div class="container">
         <h2 data-i18n="about.dedicated.title">A qué nos dedicamos</h2>
         <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 0.4rem;">
@@ -91,34 +91,34 @@
             <div class="ns-steps">
               <button type="button" class="ns-step is-active" data-step="1">
                 <div class="ns-circle">01</div>
-                <span class="ns-label">Importación</span>
+                <span class="ns-label" data-i18n="ns.l1">Importación</span>
               </button>
               <button type="button" class="ns-step" data-step="2">
                 <div class="ns-circle">02</div>
-                <span class="ns-label">Cumplimiento</span>
+                <span class="ns-label" data-i18n="ns.l2">Cumplimiento</span>
               </button>
               <button type="button" class="ns-step" data-step="3">
                 <div class="ns-circle">03</div>
-                <span class="ns-label">Estrategia</span>
+                <span class="ns-label" data-i18n="ns.l3">Estrategia</span>
               </button>
               <button type="button" class="ns-step" data-step="4">
                 <div class="ns-circle">04</div>
-                <span class="ns-label">Distribución</span>
+                <span class="ns-label" data-i18n="ns.l4">Distribución</span>
               </button>
               <button type="button" class="ns-step" data-step="5">
                 <div class="ns-circle">05</div>
-                <span class="ns-label">Punto de Venta</span>
+                <span class="ns-label" data-i18n="ns.l5">Punto de Venta</span>
               </button>
             </div>
           </div>
 
           <!-- Píldoras (móvil y tablet) -->
           <div class="ns-pills">
-            <button type="button" class="ns-pill is-active" data-step="1">1. Importación</button>
-            <button type="button" class="ns-pill" data-step="2">2. Cumplimiento</button>
-            <button type="button" class="ns-pill" data-step="3">3. Estrategia</button>
-            <button type="button" class="ns-pill" data-step="4">4. Distribución</button>
-            <button type="button" class="ns-pill" data-step="5">5. Punto de Venta</button>
+            <button type="button" class="ns-pill is-active" data-step="1" data-i18n="ns.l1">1. Importación</button>
+            <button type="button" class="ns-pill" data-step="2" data-i18n="ns.l2">2. Cumplimiento</button>
+            <button type="button" class="ns-pill" data-step="3" data-i18n="ns.l3">3. Estrategia</button>
+            <button type="button" class="ns-pill" data-step="4" data-i18n="ns.l4">4. Distribución</button>
+            <button type="button" class="ns-pill" data-step="5" data-i18n="ns.l5">5. Punto de Venta</button>
           </div>
 
           <!-- Tarjeta de contenido -->
@@ -150,8 +150,8 @@
                 </div>
 
                 <div class="nav-dots">
-                  <button type="button" id="nsPrev" disabled>Anterior</button>
-                  <button type="button" id="nsNext">Siguiente etapa →</button>
+                  <button type="button" id="nsPrev" disabled data-i18n="ns.prev">Anterior</button>
+                  <button type="button" id="nsNext" class="ns-btn-next" data-i18n="ns.next">Siguiente etapa →</button>
                 </div>
               </div>
             </div>
@@ -183,14 +183,18 @@
       </div>
     </section>
 
-    <!-- ========== CIFRAS Y RESULTADOS ========== -->
-    <div class="stats-band">
-      <div class="container stats-band-grid">
-        <div><strong>+28%</strong><span data-i18n="about.r1.lbl">crecimiento en líneas core vs. año anterior</span></div>
-        <div><strong>12</strong><span data-i18n="about.r2.lbl">SKU incorporados en grandes cadenas</span></div>
-        <div><strong>7</strong><span data-i18n="about.r3.lbl">SKU nuevos desarrollados</span></div>
+    <!-- ========== CIFRAS Y RESULTADOS (tarjeta redondeada, no full-bleed) ========== -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="stats-band">
+          <div class="stats-band-grid">
+            <div><strong>+28%</strong><span data-i18n="about.r1.lbl">crecimiento en líneas core vs. año anterior</span></div>
+            <div><strong>12</strong><span data-i18n="about.r2.lbl">SKU incorporados en grandes cadenas</span></div>
+            <div><strong>7</strong><span data-i18n="about.r3.lbl">SKU nuevos desarrollados</span></div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- ========== ALIADOS Y EQUIPO ========== -->
     <section class="section">
@@ -342,123 +346,7 @@
 
   <script src="js/main.js"></script>
 
-  <!-- ========== LÓGICA DEL COMPONENTE DINÁMICO ========== -->
-  <script>
-    (function () {
-      // Íconos SVG de cada etapa (sin librerías externas, trazo al estilo Lucide)
-      var ICONS = {
-        ship:
-          '<path d="M2 21a8.5 8.5 0 0 0 4.5-.5"/><path d="M21.5 20.5a8.5 8.5 0 0 1-4.5-.5"/><path d="M12 2v8"/><path d="M6 12a6 6 0 0 0 12 0"/><path d="M4 19c1.5 1 3 .5 4.5 0s3-1 4.5-1 3 .5 4.5 1 3 1 4.5 0"/>',
-        filecheck:
-          '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M9 15l2 2 4-4"/>',
-        trending:
-          '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
-        truck:
-          '<path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="19.5" r="2"/><circle cx="18.5" cy="19.5" r="2"/>',
-        bag:
-          '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>'
-      };
 
-      // Datos de las 5 etapas (mismos textos de la versión anterior)
-      var dataSteps = {
-        1: {
-          title: "Importación",
-          desc: "Trabajamos directo con fabricantes internacionales, como Comary (Brasil, desde 1952) y Vieira (Portugal), y gestionamos comercio exterior y aduanas.",
-          icon: "ship",
-          tagTitle: "Comercio Exterior",
-          tagDesc: "Trato directo con orígenes en Brasil y Portugal."
-        },
-        2: {
-          title: "Registros y cumplimiento",
-          desc: "Tramitamos registros ante SAG, SEREMI de Salud, Aduanas y la autoridad municipal. Adecuamos etiquetado y sellos desde el origen.",
-          icon: "filecheck",
-          tagTitle: "Regulación Local",
-          tagDesc: "Cumplimiento normativo y rotulado desde origen."
-        },
-        3: {
-          title: "Estrategia comercial",
-          desc: "Definimos posicionamiento, precios por canal, surtido y planes promocionales de cada marca.",
-          icon: "trending",
-          tagTitle: "Estrategia B2B",
-          tagDesc: "Precios por canal y arquitectura de marca."
-        },
-        4: {
-          title: "Distribución",
-          desc: "Llegamos a supermercados, conveniencia, canal tradicional, mayoristas, HORECA y tiendas especializadas, desde nuestra bodega en Colina.",
-          icon: "truck",
-          tagTitle: "Logística Central",
-          tagDesc: "Despacho directo desde bodega en Colina."
-        },
-        5: {
-          title: "Ejecución en el punto de venta",
-          desc: "Lanzamientos, degustaciones, activaciones y trade marketing para que el producto rote.",
-          icon: "bag",
-          tagTitle: "Trade Marketing",
-          tagDesc: "Rotación activa del producto en góndola."
-        }
-      };
-
-      var PCT = { 1: "20%", 2: "40%", 3: "60%", 4: "80%", 5: "100%" };
-
-      var stepBtns = document.querySelectorAll(".ns-step");
-      var pills = document.querySelectorAll(".ns-pill");
-      var progress = document.getElementById("nsProgress");
-      var watermark = document.getElementById("nsWatermark");
-      var badge = document.getElementById("nsBadge");
-      var titleEl = document.getElementById("nsTitle");
-      var descEl = document.getElementById("nsDesc");
-      var iconEl = document.getElementById("nsIcon");
-      var tagTitle = document.getElementById("nsTagTitle");
-      var tagDesc = document.getElementById("nsTagDesc");
-      var prevBtn = document.getElementById("nsPrev");
-      var nextBtn = document.getElementById("nsNext");
-
-      function updateUI(step) {
-        var current = parseInt(step, 10);
-        var data = dataSteps[current];
-
-        // 1) Progreso de la línea verde
-        progress.style.width = PCT[current];
-
-        // 2) Timeline desktop: activo / pasadas / futuras
-        stepBtns.forEach(function (b) {
-          var s = parseInt(b.getAttribute("data-step"), 10);
-          b.classList.toggle("is-active", s === current);
-          b.classList.toggle("is-past", s < current);
-        });
-
-        // 3) Píldoras móviles
-        pills.forEach(function (p) {
-          p.classList.toggle("is-active", parseInt(p.getAttribute("data-step"), 10) === current);
-        });
-
-        // 4) Contenido de la tarjeta
-        watermark.textContent = current < 10 ? "0" + current : current;
-        badge.textContent = "ETAPA 0" + current + " DE 05";
-        titleEl.textContent = data.title;
-        descEl.textContent = data.desc;
-        tagTitle.textContent = data.tagTitle;
-        tagDesc.textContent = data.tagDesc;
-        iconEl.innerHTML =
-          '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' + ICONS[data.icon] + "</svg>";
-
-        // 5) Botones
-        prevBtn.disabled = current === 1;
-        nextBtn.textContent = current === 5 ? "Volver al inicio" : "Siguiente etapa →";
-      }
-
-      stepBtns.forEach(function (b) { b.addEventListener("click", function () { updateUI(b.getAttribute("data-step")); }); });
-      pills.forEach(function (p) { p.addEventListener("click", function () { updateUI(p.getAttribute("data-step")); }); });
-      prevBtn.addEventListener("click", function () {
-        var c = parseInt(watermark.textContent, 10);
-        if (c > 1) updateUI(c - 1);
-      });
-      nextBtn.addEventListener("click", function () {
-        var c = parseInt(watermark.textContent, 10);
-        updateUI(c < 5 ? c + 1 : 1);
-      });
-    })();
-  </script>
 </body>
 
 </html>

@@ -167,11 +167,14 @@
 }
 
 /* ---------- CIFRAS DE ESCALA (como ICB) ----------
-   Bandera azul marino con números grandes en verde. */
+   Bandera azul marino con números grandes en verde.
+   Va DENTRO del contenedor como tarjeta redondeada
+   (mismo patrón que el stepper y las cajas misión/visión). */
 .stats-band {
   background: var(--color-navy);
   color: var(--color-white);
-  padding: 2.5rem 0;
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
 }
 .stats-band-grid {
   display: grid;

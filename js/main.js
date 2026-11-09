@@ -368,10 +368,44 @@
       'contact.form.comms': 'Autorizo el envío de comunicaciones comerciales, ofertas y novedades de Comercial Amerika SpA por medios electrónicos (Email/WhatsApp). Opcional.',
       'cookies.text': 'Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.',
       'cookies.accept': 'Aceptar',
+      // ---------- Nosotros: stepper (textos ES) ----------
+      'ns.l1': '1. Importación',
+      'ns.l2': '2. Cumplimiento',
+      'ns.l3': '3. Estrategia',
+      'ns.l4': '4. Distribución',
+      'ns.l5': '5. Punto de Venta',
+      'ns.b1': 'ETAPA 01 DE 05',
+      'ns.b2': 'ETAPA 02 DE 05',
+      'ns.b3': 'ETAPA 03 DE 05',
+      'ns.b4': 'ETAPA 04 DE 05',
+      'ns.b5': 'ETAPA 05 DE 05',
+      'ns.t1': 'Importación',
+      'ns.t2': 'Registros y cumplimiento',
+      'ns.t3': 'Estrategia comercial',
+      'ns.t4': 'Distribución',
+      'ns.t5': 'Ejecución en el punto de venta',
+      'ns.d1': 'Trabajamos directo con fabricantes internacionales, como Comary (Brasil, desde 1952) y Vieira (Portugal), y gestionamos comercio exterior y aduanas.',
+      'ns.d2': 'Tramitamos registros ante SAG, SEREMI de Salud, Aduanas y la autoridad municipal. Adecuamos etiquetado y sellos desde el origen.',
+      'ns.d3': 'Definimos posicionamiento, precios por canal, surtido y planes promocionales de cada marca.',
+      'ns.d4': 'Llegamos a supermercados, conveniencia, canal tradicional, mayoristas, HORECA y tiendas especializadas, desde nuestra bodega en Colina.',
+      'ns.d5': 'Lanzamientos, degustaciones, activaciones y trade marketing para que el producto rote.',
+      'ns.tt1': 'Comercio Exterior',
+      'ns.tt2': 'Regulación Local',
+      'ns.tt3': 'Estrategia B2B',
+      'ns.tt4': 'Logística Central',
+      'ns.tt5': 'Trade Marketing',
+      'ns.td1': 'Trato directo con orígenes en Brasil y Portugal.',
+      'ns.td2': 'Cumplimiento normativo y rotulado desde origen.',
+      'ns.td3': 'Precios por canal y arquitectura de marca.',
+      'ns.td4': 'Despacho directo desde bodega en Colina.',
+      'ns.td5': 'Rotación activa del producto en góndola.',
+      'ns.prev': 'Anterior',
+      'ns.next': 'Siguiente etapa →',
+      'ns.first': 'Volver al inicio',
       'cookies.reject': 'Rechazar'
     },
 
-    en: {
+  en: {
       // ---------- Navigation / common ----------
       'nav.home': 'Home',
       'nav.brands': 'Our brands',
@@ -723,6 +757,41 @@
       'cookies.text': 'We use measurement cookies (Google Analytics) to understand how the site is used and improve it. You can accept or reject; details in the <a href="privacidad.html">privacy policy</a>.',
       'cookies.accept': 'Accept',
       'cookies.reject': 'Reject',
+
+      // ---------- Nosotros: stepper ----------
+      'ns.l1': '1. Import',
+      'ns.l2': '2. Compliance',
+      'ns.l3': '3. Strategy',
+      'ns.l4': '4. Distribution',
+      'ns.l5': '5. Point of Sale',
+      'ns.b1': 'STAGE 01 OF 05',
+      'ns.b2': 'STAGE 02 OF 05',
+      'ns.b3': 'STAGE 03 OF 05',
+      'ns.b4': 'STAGE 04 OF 05',
+      'ns.b5': 'STAGE 05 OF 05',
+      'ns.t1': 'Import',
+      'ns.t2': 'Registrations and compliance',
+      'ns.t3': 'Commercial strategy',
+      'ns.t4': 'Distribution',
+      'ns.t5': 'Point-of-sale execution',
+      'ns.d1': 'We work directly with international manufacturers, such as Comary (Brazil, since 1952) and Vieira (Portugal), and manage foreign trade and customs.',
+      'ns.d2': 'We process registrations with SAG, the Health Authority (SEREMI), Customs and the municipal authority. We adapt labeling and seals at the origin.',
+      'ns.d3': 'We define each brand\'s positioning, per-channel pricing, assortment and promotional plans.',
+      'ns.d4': 'We reach supermarkets, convenience stores, traditional trade, wholesalers, HORECA and specialty stores, from our warehouse in Colina.',
+      'ns.d5': 'Launches, tastings, activations and trade marketing so the product keeps moving.',
+      'ns.tt1': 'Foreign Trade',
+      'ns.tt2': 'Local Regulation',
+      'ns.tt3': 'B2B Strategy',
+      'ns.tt4': 'Central Logistics',
+      'ns.tt5': 'Trade Marketing',
+      'ns.td1': 'Direct contact with origins in Brazil and Portugal.',
+      'ns.td2': 'Regulatory compliance and labeling from the origin.',
+      'ns.td3': 'Per-channel pricing and brand architecture.',
+      'ns.td4': 'Direct dispatch from our Colina warehouse.',
+      'ns.td5': 'Active product rotation on the shelf.',
+      'ns.prev': 'Previous',
+      'ns.next': 'Next stage →',
+      'ns.first': 'Back to start',
     }
   };
 
@@ -1216,9 +1285,87 @@
     setInterval(mostrarSiguiente, 4000);
   }
 
-  /* ------------------------------------------
-     CONTROL DE EDAD 18+
-     ------------------------------------------ */
+  /* NOSOTROS: stepper "A qué nos dedicamos" (distribución tipo referencia,
+     con los textos reales del documento comercial). 5 etapas navegables. */
+  const NS_ICONS = {
+    1: '<svg viewBox="0 0 24 24"><path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4"/></svg>',
+    2: '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4"/></svg>',
+    3: '<svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>',
+    4: '<svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>',
+    5: '<svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>'
+  };
+
+  function initNsStepper() {
+    const card = document.getElementById('nsCard');
+    if (!card) return; // solo existe en nosotros.html
+
+    const botones = document.querySelectorAll('.ns-step, .ns-pill');
+    const prev = document.getElementById('nsPrev');
+    const next = document.getElementById('nsNext');
+    const progreso = document.getElementById('nsProgress');
+    let etapa = parseInt(document.querySelector('.ns-step.is-active').getAttribute('data-step'), 10) || 1;
+
+    function textos(num) {
+      return {
+        badge: window.AmerikaI18n.getTranslation('ns.b' + num),
+        title: window.AmerikaI18n.getTranslation('ns.t' + num),
+        desc: window.AmerikaI18n.getTranslation('ns.d' + num),
+        tagTitle: window.AmerikaI18n.getTranslation('ns.tt' + num),
+        tagDesc: window.AmerikaI18n.getTranslation('ns.td' + num)
+      };
+    }
+
+    function pintarEstado() {
+      // etiquetas: activa / ya recorrida / pendiente
+      document.querySelectorAll('.ns-step').forEach(function (btn) {
+        const num = parseInt(btn.getAttribute('data-step'), 10);
+        btn.classList.toggle('is-active', num === etapa);
+        btn.classList.toggle('is-done', num < etapa);
+      });
+      document.querySelectorAll('.ns-pill').forEach(function (pill) {
+        pill.classList.toggle('is-active', parseInt(pill.getAttribute('data-step'), 10) === etapa);
+      });
+
+      // línea de progreso: 20% por etapa
+      progreso.style.width = (etapa * 20) + '%';
+
+      // tarjeta con textos del idioma actual
+      const t = textos(etapa);
+      card.querySelector('.ns-watermark').textContent = etapa < 10 ? '0' + etapa : etapa;
+      document.getElementById('nsBadge').textContent = t.badge;
+      document.getElementById('nsTitle').textContent = t.title;
+      document.getElementById('nsDesc').textContent = t.desc;
+      document.getElementById('nsTagTitle').textContent = t.tagTitle;
+      document.getElementById('nsTagDesc').textContent = t.tagDesc;
+      document.getElementById('nsIcon').innerHTML = NS_ICONS[etapa] || NS_ICONS[1];
+
+      prev.disabled = etapa === 1;
+      next.textContent = etapa === 5
+        ? window.AmerikaI18n.getTranslation('ns.first')
+        : window.AmerikaI18n.getTranslation('ns.next');
+    }
+
+    botones.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        etapa = parseInt(btn.getAttribute('data-step'), 10);
+        pintarEstado();
+      });
+    });
+    prev.addEventListener('click', function () {
+      if (etapa > 1) { etapa--; pintarEstado(); }
+    });
+    next.addEventListener('click', function () {
+      etapa = etapa < 5 ? etapa + 1 : 1;
+      pintarEstado();
+    });
+
+    // al cambiar el idioma, la tarjeta se redibuja con el texto nuevo
+    document.addEventListener('amerika:languagechange', pintarEstado);
+    pintarEstado();
+  }
+
+  /* CONTROL DE EDAD 18+ */
+  /* ------------------------------------------ */
   const AGE_KEY = 'amerika-mayor-de-18';
 
   function initAgeGate() {
@@ -1284,6 +1431,7 @@
     initCookieBanner();
     initScrollReveal();
     initAgeGate();
+  initNsStepper();
     setLanguage(readStoredLanguage());
     initFormAlert();
     reportMissingKeys();
