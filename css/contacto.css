@@ -276,6 +276,96 @@
   border: 1px solid var(--color-text-muted);
 }
 
+/* SELECTOR DE IDIOMAS */
+.lang-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: .5rem;
+}
+
+/* Botón que muestra el idioma actual */
+.lang-switch summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+  list-style: none;
+  transition: background .2s ease;
+}
+
+.lang-switch summary::-webkit-details-marker {
+  display: none;
+}
+
+.lang-switch summary:hover {
+  background: rgba(15, 23, 42, .06);
+}
+
+/* Banderas */
+.lang-switch img {
+  width: 25px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* Mostrar solamente la bandera activa */
+.lang-switch .lang-current {
+  display: none;
+}
+
+html[data-lang="es"] .lang-switch .lang-es {
+  display: block;
+}
+
+html[data-lang="en"] .lang-switch .lang-en {
+  display: block;
+}
+
+/* Desplegable */
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 165px;
+  padding: 7px;
+  background: #fff;
+  border: 1px solid #e8e5df;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, .12);
+  z-index: 200;
+}
+
+/* Opciones */
+.lang-menu .lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  font-family: inherit;
+  font-size: .9rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lang-menu .lang-btn:hover {
+  background: #f5f3ef;
+}
+
+.lang-menu .lang-btn.active {
+  color: #10182d;
+  font-weight: 700;
+  background: #f5f3ef;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .contact-grid {

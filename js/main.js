@@ -1033,6 +1033,13 @@
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         setLanguage(btn.dataset.lang);
+
+        // Cerrar el desplegable después de seleccionar
+        const dropdown = btn.closest('.lang-switch');
+
+        if (dropdown && dropdown.tagName === 'DETAILS') {
+          dropdown.open = false;
+        }
       });
     });
   }

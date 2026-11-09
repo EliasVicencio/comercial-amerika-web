@@ -38,11 +38,27 @@
         <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
         <a href="route-market.html" data-i18n="nav.route">Route to market</a>
 
-        <div class="lang-switch">
-          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-          <span>|</span>
-          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+
+        <details class="lang-switch">
+          <summary aria-label="Seleccionar idioma">
+            <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+            <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+            <i data-lucide="chevron-down"></i>
+          </summary>
+
+          <div class="lang-menu">
+            <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+              <img src="img/flags/es.svg" alt="">
+              Español
+            </button>
+
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+              <img src="img/flags/gb.svg" alt="">
+              English
+            </button>
+          </div>
+        </details>
+
 
         <!-- Botón destacado del menú (ver 3.2 del documento) -->
         <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
@@ -105,7 +121,7 @@
     </div>
   </div>
 
-    <!-- ========== 1. HERO (estilo vitrina) ==========
+  <!-- ========== 1. HERO (estilo vitrina) ==========
      Reemplaza TODA la <section class="hero"> ... </section> actual de index.html por este bloque. -->
   <section class="hero-showcase">
     <div class="container">
@@ -258,7 +274,7 @@
     </div>
   </div>
 
-  
+
   <!-- Biblioteca Lucide -->
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
