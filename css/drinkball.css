@@ -345,3 +345,14 @@
   .cards-grid { grid-template-columns: 1fr; }
   .cta-banner-inner { flex-direction: column; text-align: center; }
 }
+
+/* ---------- LOGO DE MARCA EN EL HERO ----------
+   DrinkBall usa su logo rojo característico;
+   se recorta en píldora redondeada sobre el titular. */
+.brand-logo-hero {
+  display: block;
+  width: 240px;
+  max-width: 60%;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}

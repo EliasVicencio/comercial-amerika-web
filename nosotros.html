@@ -210,11 +210,11 @@
     </div>
 
     <!-- ========== MODAL DEL EQUIPO (misma funcionalidad de siempre) ========== -->
-    <div id="teamModal" class="custom-modal">
+    <div id="teamModal" class="custom-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="teamModalTitle">
       <div class="custom-modal-content">
         <span class="custom-modal-close" id="btnCloseTeam" role="button" tabindex="0" data-i18n-aria-label="common.close"
           aria-label="Cerrar">&times;</span>
-        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--color-navy);" data-i18n="about.team.modal.title">
+        <h2 id="teamModalTitle" style="text-align: center; margin-bottom: 2rem; color: var(--color-navy);" data-i18n="about.team.modal.title">
           Equipo directivo</h2>
 
         <div class="organigrama-container">
