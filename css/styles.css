@@ -709,6 +709,12 @@ main, section, header, footer {
 }
 
 
+/* El selector independiente existe solo para móvil; en escritorio
+   debe permanecer oculto para no convertirse en una fila del grid. */
+.header-inner > .mobile-lang-switch {
+  display: none;
+}
+
 /* ============================================
    HEADER MÓVIL: SELECTOR DE IDIOMA JUNTO AL LOGO
    ============================================ */
