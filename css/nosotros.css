@@ -163,7 +163,7 @@
 
 .mv-box h3 {
   margin-bottom: 0.75rem;
-  color: var(--color-orange);
+  color: var(--color-navy);
 }
 
 /* ---------- CIFRAS DE ESCALA (como ICB) ----------
@@ -403,10 +403,20 @@
    (--color-green, --color-navy, --color-cream).
    ============================================ */
 
+/* ---------- Página centrada en un contenedor (como la referencia) ----------
+   Modern layout: el main completa el rol de "container" que antes
+   cumplían las secciones, para alinear todas las tarjetas al mismo ancho. */
+main {
+  max-width: 1140px;           /* mismo ancho que .container global */
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4.5rem;
+  width: 100%;
+}
+
 /* ---------- Intro de página ---------- */
 .ns-intro {
   max-width: 720px;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .ns-intro h1 {
@@ -421,6 +431,70 @@
 
 .ns-intro p + p {
   margin-top: 1rem;
+}
+
+/* ---------- Título "A qué nos dedicamos" + subtítulo ---------- */
+.ns-heading h2 {
+  margin-bottom: 0.25rem;
+}
+
+.ns-heading p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tarjetas blancas a todo el ancho (Aliados, Equipo) */
+.ns-wide {
+  width: 100%;
+}
+
+.ns-wide h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Insignias de aliados: pastilla suave con nombre a la izquierda
+   y país/antigüedad a la derecha (sin logos, esa zona queda limpia). */
+.ally-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .ally-rows { grid-template-columns: 1fr; }
+}
+
+.ally-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--color-cream);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.ally-row strong {
+  font-size: 0.9rem;
+  color: var(--color-navy);
+}
+
+.ally-row span {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* Espaciado entre bloques sueltos (cifras, aliados, equipo) */
+.stats-band {
+  margin-top: 2.5rem;
+}
+
+.ns-wide + .ns-wide,
+.stats-band + .ns-wide {
+  margin-top: 1.5rem;
 }
 
 /* ---------- Etiquetas pequeñas (Propósito / Aspiración) ---------- */

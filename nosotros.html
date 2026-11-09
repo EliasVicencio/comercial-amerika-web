@@ -54,192 +54,160 @@
 
   <main>
 
-    <!-- ========== INTRO: HISTORIA Y PROPÓSITO ========== -->
-    <section class="section" style="padding-bottom: 2rem;">
-      <div class="container">
-        <div class="ns-intro">
-          <span class="section-label" data-i18n="about.label">Quiénes somos</span>
-          <h1 data-i18n="about.h1">Somos el puente entre marcas con potencial y los consumidores de la Región Andina</h1>
-          <p><strong>Comercial Amerika SpA</strong> es una empresa chilena que importa, comercializa y distribuye
-            alimentos y bebidas. Llevamos marcas con potencial de crecimiento a los consumidores de Chile y la Región
-            Andina.</p>
-          <p data-i18n="about.history.p2">
-            Nacimos de más de 30 años de experiencia liderando equipos y proyectos comerciales en multinacionales
-            de consumo masivo, en Chile y en el extranjero. Esa trayectoria nos permite conocer a fondo cómo funcionan
-            las cadenas de supermercados, las tiendas de conveniencia y el canal tradicional, y qué necesita una marca
-            para entrar, posicionarse y crecer en cada uno.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- ========== INTRO: HISTORIA Y PROPÓSITO (una columna angosta, como la referencia) ========== -->
+    <div class="ns-intro">
+      <span class="section-label" data-i18n="about.label">Quiénes somos</span>
+      <h1 data-i18n="about.h1">Somos el puente entre marcas con potencial y los consumidores de la Región Andina</h1>
+      <p data-i18n="about.history.p2">
+        Nacimos de más de 30 años de experiencia liderando equipos y proyectos comerciales en multinacionales
+        de consumo masivo. Conocemos a fondo cómo funcionan las cadenas de supermercados, las tiendas de
+        conveniencia y el canal tradicional en Chile.
+      </p>
+    </div>
 
     <!-- ========== A QUÉ NOS DEDICAMOS (STEPPER INTERACTIVO) ========== -->
-    <section class="section" style="padding-top: 0;">
-      <div class="container">
-        <h2 data-i18n="about.dedicated.title">A qué nos dedicamos</h2>
-        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 0.4rem;">
-          Haz clic en cada etapa para conocer cómo gestionamos la cadena comercial:
-        </p>
+    <div class="ns-heading">
+      <h2 data-i18n="about.dedicated.title">A qué nos dedicamos</h2>
+      <p data-i18n="about.dedicated.sub">Haz clic en cada etapa para conocer cómo gestionamos la cadena comercial:</p>
+    </div>
 
-        <div class="ns-stepper">
+    <div class="ns-stepper">
 
-          <!-- Pasos interactivos (desktop) -->
-          <div class="ns-steps-wrap">
-            <div class="ns-steps-rail"></div>
-            <div class="ns-progress" id="nsProgress"></div>
+      <!-- Pasos interactivos (desktop) -->
+      <div class="ns-steps-wrap">
+        <div class="ns-steps-rail"></div>
+        <div class="ns-progress" id="nsProgress"></div>
 
-            <div class="ns-steps">
-              <button type="button" class="ns-step is-active" data-step="1">
-                <div class="ns-circle">01</div>
-                <span class="ns-label" data-i18n="ns.l1">Importación</span>
-              </button>
-              <button type="button" class="ns-step" data-step="2">
-                <div class="ns-circle">02</div>
-                <span class="ns-label" data-i18n="ns.l2">Cumplimiento</span>
-              </button>
-              <button type="button" class="ns-step" data-step="3">
-                <div class="ns-circle">03</div>
-                <span class="ns-label" data-i18n="ns.l3">Estrategia</span>
-              </button>
-              <button type="button" class="ns-step" data-step="4">
-                <div class="ns-circle">04</div>
-                <span class="ns-label" data-i18n="ns.l4">Distribución</span>
-              </button>
-              <button type="button" class="ns-step" data-step="5">
-                <div class="ns-circle">05</div>
-                <span class="ns-label" data-i18n="ns.l5">Punto de Venta</span>
-              </button>
-            </div>
+        <div class="ns-steps">
+          <button type="button" class="ns-step is-active" data-step="1">
+            <div class="ns-circle">01</div>
+            <span class="ns-label" data-i18n="ns.l1">1. Importación</span>
+          </button>
+          <button type="button" class="ns-step" data-step="2">
+            <div class="ns-circle">02</div>
+            <span class="ns-label" data-i18n="ns.l2">2. Cumplimiento</span>
+          </button>
+          <button type="button" class="ns-step" data-step="3">
+            <div class="ns-circle">03</div>
+            <span class="ns-label" data-i18n="ns.l3">3. Estrategia</span>
+          </button>
+          <button type="button" class="ns-step" data-step="4">
+            <div class="ns-circle">04</div>
+            <span class="ns-label" data-i18n="ns.l4">4. Distribución</span>
+          </button>
+          <button type="button" class="ns-step" data-step="5">
+            <div class="ns-circle">05</div>
+            <span class="ns-label" data-i18n="ns.l5">5. Punto de Venta</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Píldoras (móvil y tablet) -->
+      <div class="ns-pills">
+        <button type="button" class="ns-pill is-active" data-step="1" data-i18n="ns.l1">1. Importación</button>
+        <button type="button" class="ns-pill" data-step="2" data-i18n="ns.l2">2. Cumplimiento</button>
+        <button type="button" class="ns-pill" data-step="3" data-i18n="ns.l3">3. Estrategia</button>
+        <button type="button" class="ns-pill" data-step="4" data-i18n="ns.l4">4. Distribución</button>
+        <button type="button" class="ns-pill" data-step="5" data-i18n="ns.l5">5. Punto de Venta</button>
+      </div>
+
+      <!-- Tarjeta de contenido -->
+      <div class="ns-card" id="nsCard">
+        <span class="ns-watermark" id="nsWatermark">01</span>
+
+        <div class="ns-card-grid">
+          <div>
+            <span class="ns-badge" id="nsBadge">ETAPA 01 DE 05</span>
+            <h3 id="nsTitle">Importación</h3>
+            <p id="nsDesc">
+              Trabajamos directo con fabricantes internacionales, como Comary (Brasil, desde 1952) y
+              Vieira (Portugal), y gestionamos comercio exterior y aduanas.
+            </p>
           </div>
 
-          <!-- Píldoras (móvil y tablet) -->
-          <div class="ns-pills">
-            <button type="button" class="ns-pill is-active" data-step="1" data-i18n="ns.l1">1. Importación</button>
-            <button type="button" class="ns-pill" data-step="2" data-i18n="ns.l2">2. Cumplimiento</button>
-            <button type="button" class="ns-pill" data-step="3" data-i18n="ns.l3">3. Estrategia</button>
-            <button type="button" class="ns-pill" data-step="4" data-i18n="ns.l4">4. Distribución</button>
-            <button type="button" class="ns-pill" data-step="5" data-i18n="ns.l5">5. Punto de Venta</button>
-          </div>
-
-          <!-- Tarjeta de contenido -->
-          <div class="ns-card" id="nsCard">
-            <span class="ns-watermark" id="nsWatermark">01</span>
-
-            <div class="ns-card-grid">
+          <div class="ns-tag">
+            <div class="ns-tag-head">
+              <div class="ns-icon" id="nsIcon">
+                <!-- ícono de la etapa 1 (el JS lo cambia) -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4" />
+                </svg>
+              </div>
               <div>
-                <span class="ns-badge" id="nsBadge">ETAPA 01 DE 05</span>
-                <h3 id="nsTitle">Importación</h3>
-                <p id="nsDesc">
-                  Trabajamos directo con fabricantes internacionales, como Comary (Brasil, desde 1952) y
-                  Vieira (Portugal), y gestionamos comercio exterior y aduanas.
-                </p>
+                <h4 class="ns-tag-title" id="nsTagTitle">Enfoque Operativo</h4>
+                <p class="ns-tag-desc" id="nsTagDesc">Trato directo con origen &amp; aduanas</p>
               </div>
+            </div>
 
-              <div class="ns-tag">
-                <div class="ns-tag-head">
-                  <div class="ns-icon" id="nsIcon">
-                    <!-- ícono de la etapa 1 (el JS lo cambia) -->
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="ns-tag-title" id="nsTagTitle">Enfoque Operativo</h4>
-                    <p class="ns-tag-desc" id="nsTagDesc">Trato directo con origen &amp; aduanas</p>
-                  </div>
-                </div>
-
-                <div class="nav-dots">
-                  <button type="button" id="nsPrev" disabled data-i18n="ns.prev">Anterior</button>
-                  <button type="button" id="nsNext" class="ns-btn-next" data-i18n="ns.next">Siguiente etapa →</button>
-                </div>
-              </div>
+            <div class="nav-dots">
+              <button type="button" id="nsPrev" disabled data-i18n="ns.prev">Anterior</button>
+              <button type="button" id="nsNext" class="ns-btn-next" data-i18n="ns.next">Siguiente etapa →</button>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Misión / Visión: se corrigió el orden (la misión es lo que hacen hoy,
-             la visión es a dónde aspiran). Ver nota del documento 4.3. -->
-        <div class="mv-grid">
-          <div class="mv-box">
-            <span class="ns-eyebrow green" data-i18n="about.mission.eyebrow">Propósito</span>
-            <h3 data-i18n="about.mission">Misión</h3>
-            <p style="color: var(--color-text-muted);" data-i18n="about.mission.text">
-              Brindamos soluciones comerciales de alto valor, por medio de un servicio excepcional y una gestión
-              eficiente de ventas, conectando productos de calidad con las necesidades de nuestros clientes y
-              consumidores, para garantizar su satisfacción.
-            </p>
-          </div>
-          <div class="mv-box">
-            <span class="ns-eyebrow blue" data-i18n="about.vision.eyebrow">Aspiración</span>
-            <h3 data-i18n="about.vision">Visión</h3>
-            <p style="color: var(--color-text-muted);" data-i18n="about.vision.text">
-              Ser referente en excelencia comercial, tanto en el mercado nacional como internacional, reconocidos por
-              nuestra capacidad en el desarrollo y posicionamiento de marcas, la innovación en ventas y la
-              fidelización de nuestros clientes y consumidores.
-            </p>
-          </div>
+    <!-- ========== MISIÓN Y VISIÓN ========== -->
+    <div class="mv-grid">
+      <div class="mv-box">
+        <span class="ns-eyebrow green" data-i18n="about.mission.eyebrow">Propósito</span>
+        <h3 data-i18n="about.mission">Misión</h3>
+        <p style="color: var(--color-text-muted);" data-i18n="about.mission.text">
+          Brindamos soluciones comerciales de alto valor, por medio de un servicio excepcional y una gestión
+          eficiente de ventas, conectando productos de calidad con las necesidades de nuestros clientes y
+          consumidores, para garantizar su satisfacción.
+        </p>
+      </div>
+      <div class="mv-box">
+        <span class="ns-eyebrow blue" data-i18n="about.vision.eyebrow">Aspiración</span>
+        <h3 data-i18n="about.vision">Visión</h3>
+        <p style="color: var(--color-text-muted);" data-i18n="about.vision.text">
+          Ser referente en excelencia comercial, tanto en el mercado nacional como internacional, reconocidos por
+          nuestra capacidad en el desarrollo y posicionamiento de marcas, la innovación en ventas y la
+          fidelización de nuestros clientes y consumidores.
+        </p>
+      </div>
+    </div>
+
+    <!-- ========== CIFRAS Y RESULTADOS (tarjeta navy redondeada) ========== -->
+    <div class="stats-band">
+      <div class="stats-band-grid">
+        <div><strong>+28%</strong><span data-i18n="about.r1.lbl">crecimiento en líneas core vs. año anterior</span></div>
+        <div><strong>12</strong><span data-i18n="about.r2.lbl">SKU incorporados en grandes cadenas</span></div>
+        <div><strong>7</strong><span data-i18n="about.r3.lbl">SKU nuevos desarrollados</span></div>
+      </div>
+    </div>
+
+    <!-- ========== ALIADOS REPRESENTADOS (tarjeta blanca a todo el ancho) ========== -->
+    <div class="mv-box ns-wide">
+      <h3 style="color: var(--color-navy);" data-i18n="about.ally.title">Aliados</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;" data-i18n="about.ally.intro">
+        Fabricantes internacionales representados con exclusividad para Chile (logos con autorización escrita).
+      </p>
+      <div class="ally-rows">
+        <div class="ally-row">
+          <strong data-i18n="about.ally.comary.name">Comary</strong>
+          <span data-i18n="about.ally.comary">Brasil, desde 1952</span>
+        </div>
+        <div class="ally-row">
+          <strong data-i18n="about.ally.vieira.name">Vieira</strong>
+          <span data-i18n="about.ally.vieira">Portugal</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ========== CIFRAS Y RESULTADOS (tarjeta redondeada, no full-bleed) ========== -->
-    <section class="section" style="padding-top: 0;">
-      <div class="container">
-        <div class="stats-band">
-          <div class="stats-band-grid">
-            <div><strong>+28%</strong><span data-i18n="about.r1.lbl">crecimiento en líneas core vs. año anterior</span></div>
-            <div><strong>12</strong><span data-i18n="about.r2.lbl">SKU incorporados en grandes cadenas</span></div>
-            <div><strong>7</strong><span data-i18n="about.r3.lbl">SKU nuevos desarrollados</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== ALIADOS Y EQUIPO ========== -->
-    <section class="section">
-      <div class="container">
-        <div class="mv-grid">
-          <!-- Aliados: fabricantes representados, con su autorización -->
-          <div class="mv-box">
-            <h3 data-i18n="about.ally.title">Aliados</h3>
-            <p style="color: var(--color-text-muted); margin-bottom: 1.25rem;" data-i18n="about.ally.intro">
-              Fabricantes internacionales representados con exclusividad para Chile (logos con autorización escrita).
-            </p>
-            <div class="features-grid" style="margin-top: 0;">
-              <div class="feature-item" style="padding: 1rem 0;">
-                <div class="brand-logo-full">
-                  <img src="img/comary-logo.webp" alt="Logo de Comary"
-                    onerror="this.outerHTML='<span>[LOGO COMARY]</span>'">
-                </div>
-                <h4 style="font-size: 0.95rem;" data-i18n="about.ally.comary">Comary · Brasil, desde 1952</h4>
-              </div>
-              <div class="feature-item" style="padding: 1rem 0;">
-                <div class="brand-logo-full">
-                  <img src="img/Vieira_Logo.svg.webp" alt="Logo de Vieira"
-                    onerror="this.outerHTML='<span>[LOGO VIEIRA]</span>'">
-                </div>
-                <h4 style="font-size: 0.95rem;" data-i18n="about.ally.vieira">Vieira · Portugal</h4>
-              </div>
-            </div>
-          </div>
-
-          <!-- Botón que abre el modal del equipo -->
-          <div class="mv-box"
-            style="background: white; border: 1px solid var(--color-cream-dark); display: flex; flex-direction: column; justify-content: center;">
-            <h3 style="color: var(--color-navy); margin-bottom: 0.5rem;" data-i18n="about.team.title">Equipo directivo
-            </h3>
-            <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;" data-i18n="about.team.text">
-              Personas con trayectoria comprobable en áreas comerciales de multinacionales de consumo masivo.
-            </p>
-            <button type="button" id="btnOpenTeam" class="btn btn-dark" style="align-self: flex-start; cursor: pointer;"
-              data-i18n="about.team.cta">
-              Conocer al equipo
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ========== EQUIPO DIRECTIVO (tarjeta blanca a todo el ancho) ========== -->
+    <div class="mv-box ns-wide ns-team">
+      <h3 style="color: var(--color-navy); margin-bottom: 0.5rem;" data-i18n="about.team.title">Equipo directivo</h3>
+      <p style="color: var(--color-text-muted); margin-bottom: 1.25rem; font-size: 0.9rem; max-width: 560px;"
+        data-i18n="about.team.text">
+        Personas con trayectoria comprobable en áreas comerciales de multinacionales de consumo masivo.
+      </p>
+      <button type="button" id="btnOpenTeam" class="btn btn-dark" style="cursor: pointer;" data-i18n="about.team.cta">
+        Conocer al equipo
+      </button>
+    </div>
 
     <!-- ========== MODAL DEL EQUIPO (misma funcionalidad de siempre) ========== -->
     <div id="teamModal" class="custom-modal">
@@ -345,7 +313,6 @@
   </div>
 
   <script src="js/main.js"></script>
-
 
 </body>
 
