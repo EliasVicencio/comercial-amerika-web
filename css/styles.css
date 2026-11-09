@@ -756,3 +756,225 @@ main, section, header, footer {
   }
 
 }
+
+/* ============================================
+   MENÚ MÓVIL LATERAL
+   Panel único desde la derecha, sin desplazar
+   el contenido de la página.
+   ============================================ */
+
+.nav-drawer {
+  display: contents;
+}
+
+.menu-backdrop {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    z-index: 300;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: nowrap;
+    height: 70px;
+    padding: 0 1.25rem;
+    gap: 0;
+  }
+
+  .header-inner:has(.nav-drawer.open) {
+    height: 70px;
+    padding-bottom: 0;
+  }
+
+  .header-inner .logo {
+    order: 0;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 302;
+  }
+
+  .logo img {
+    height: 44px;
+    width: auto;
+  }
+
+  .nav-drawer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    width: min(86vw, 370px);
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 1.5rem 1.25rem 2rem;
+    background: var(--color-cream);
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: -18px 12px 35px rgba(15, 23, 42, 0.14);
+    z-index: 301;
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.32s;
+  }
+
+  .nav-drawer.open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-drawer .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+  }
+
+  .nav-drawer .nav-side-left {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .nav-drawer .nav-side-right {
+    padding-top: 0;
+  }
+
+  .nav-drawer .nav > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 0.75rem 0.25rem;
+    font-size: 1rem;
+    white-space: normal;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  }
+
+  .nav-drawer .nav > a.active::after {
+    display: none;
+  }
+
+  .nav-drawer .nav > a.active {
+    color: var(--color-orange);
+    font-weight: 700;
+  }
+
+  .nav-drawer .nav-side-right > .btn.btn-dark {
+    justify-content: center;
+    margin-top: 1.25rem;
+    min-height: 48px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .nav-drawer .lang-switch {
+    display: flex;
+    align-self: flex-start;
+    margin: 0.9rem 0 0.25rem;
+    position: relative;
+  }
+
+  .nav-drawer .lang-switch summary {
+    min-height: 42px;
+  }
+
+  /* Idioma visible junto al logo cuando el panel está cerrado */
+  .nav-drawer:not(.open) .lang-switch {
+    position: fixed;
+    top: 14px;
+    right: 4.25rem;
+    z-index: 303;
+    margin: 0;
+    transform: none;
+  }
+
+  .nav-drawer:not(.open) .lang-switch .lang-menu {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    z-index: 304;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 10px;
+    font-size: 1.7rem;
+    line-height: 1;
+    color: var(--color-navy);
+    background: transparent;
+  }
+
+  .mobile-toggle:hover {
+    background: rgba(15, 23, 42, 0.06);
+  }
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 70px 0 0;
+    z-index: 299;
+    border: 0;
+    padding: 0;
+    background: rgba(15, 23, 42, 0.38);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+  }
+
+  body.menu-open .menu-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  .nav-drawer:not(.open) .lang-switch {
+    right: 3.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-drawer,
+  .menu-backdrop {
+    transition: none !important;
+  }
+}
