@@ -810,17 +810,27 @@ h3 { font-size: 1.25rem; }
   border-radius: 3px;
 }
 
-/* Mostrar solamente la bandera activa */
-.lang-switch .lang-current {
-  display: none;
+/* BANDERA DEL IDIOMA ACTUAL */
+.lang-switch summary .lang-current {
+  display: none !important;
 }
 
-html[data-lang="es"] .lang-switch .lang-es {
-  display: block;
+/* Mostrar únicamente la bandera seleccionada */
+html[data-lang="es"] .lang-switch summary .lang-current.lang-es {
+  display: block !important;
 }
 
-html[data-lang="en"] .lang-switch .lang-en {
-  display: block;
+html[data-lang="en"] .lang-switch summary .lang-current.lang-en {
+  display: block !important;
+}
+
+/* Mantener visibles las banderas dentro del desplegable */
+.lang-menu img {
+  display: block !important;
+  width: 25px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* Desplegable */
@@ -864,6 +874,35 @@ html[data-lang="en"] .lang-switch .lang-en {
   background: #f5f3ef;
 }
 
+
+/* FIX: dimensiones de banderas en todas las páginas */
+.lang-switch summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 36px;
+}
+
+.lang-switch img {
+    display: block !important;
+    width: 25px !important;
+    min-width: 25px !important;
+    max-width: 25px !important;
+    height: 18px !important;
+    min-height: 18px !important;
+    max-height: 18px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    border-radius: 3px;
+}
+
+.lang-menu img {
+    width: 25px !important;
+    height: 18px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+}
 
 /* ---------- CORRECCIONES RESPONSIVE (header) ---------- */
 
