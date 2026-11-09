@@ -774,6 +774,10 @@ main, section, header, footer {
 @media (max-width: 1024px) {
   .header {
     z-index: 300;
+    /* Evita que backdrop-filter convierta el header en el contenedor
+       de referencia de los elementos fixed del menú lateral. */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .header-inner {
