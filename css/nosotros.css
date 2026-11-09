@@ -610,16 +610,36 @@ main {
 }
 
 /* ---------- Píldoras (móvil) ---------- */
+
 .ns-pills {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   overflow-x: auto;
-  padding-bottom: 1rem;
+  overflow-y: hidden;
+
+  padding: .35rem .1rem 1rem;
   margin-bottom: 1.5rem;
+
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
 }
+
+.ns-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.ns-pill {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  scroll-snap-align: center;
+}
+
 .ns-pills::-webkit-scrollbar { display: none; }
 
 .ns-pill {

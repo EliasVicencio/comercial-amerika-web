@@ -410,7 +410,7 @@
       'cookies.reject': 'Rechazar'
     },
 
-  en: {
+    en: {
       // ---------- Navigation / common ----------
       'nav.home': 'Home',
       'nav.brands': 'Our brands',
@@ -814,10 +814,10 @@
   const ALLIES_LOGOS = [
     { src: 'img/movimiento/1 (1).svg', alt: 'Vieira' },
     { src: 'img/movimiento/2.svg', alt: 'Cacaolat' },
-    { src: 'img/movimiento/3.svg',     alt: 'Comary' },
-    { src: 'img/movimiento/4.svg',   alt: 'My Foods' },
+    { src: 'img/movimiento/3.svg', alt: 'Comary' },
+    { src: 'img/movimiento/4.svg', alt: 'My Foods' },
     { src: 'img/movimiento/5 (1).svg', alt: 'Drinkball' },
-    { src: 'img/movimiento/6 (1).svg',           alt: 'Pink Moon' },
+    { src: 'img/movimiento/6 (1).svg', alt: 'Pink Moon' },
     { src: 'img/movimiento/7.svg', alt: 'Top-K9' }
   ];
 
@@ -1364,6 +1364,58 @@
         pill.classList.toggle('is-active', parseInt(pill.getAttribute('data-step'), 10) === etapa);
       });
 
+
+      // Desplazamiento automático de las etapas en móviles
+      if (window.innerWidth <= 1024) {
+        const contenedor = document.querySelector('.ns-pills');
+
+        if (contenedor) {
+          const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
+
+          if (etapaActiva) {
+            const posicion =
+              etapaActiva.offsetLeft -
+              contenedor.offsetLeft -
+              (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
+
+            const reducirMovimiento = window.matchMedia(
+              '(prefers-reduced-motion: reduce)'
+            ).matches;
+
+            contenedor.scrollTo({
+              left: Math.max(0, posicion),
+              behavior: reducirMovimiento ? 'auto' : 'smooth'
+            });
+          }
+        }
+      }
+
+      // Desplazamiento automático de las etapas en móviles
+      if (window.innerWidth <= 1024) {
+        const contenedor = document.querySelector('.ns-pills');
+
+        if (contenedor) {
+          const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
+
+          if (etapaActiva) {
+            const posicion =
+              etapaActiva.offsetLeft -
+              contenedor.offsetLeft -
+              (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
+
+            const reducirMovimiento = window.matchMedia(
+              '(prefers-reduced-motion: reduce)'
+            ).matches;
+
+            contenedor.scrollTo({
+              left: Math.max(0, posicion),
+              behavior: reducirMovimiento ? 'auto' : 'smooth'
+            });
+          }
+        }
+      }
+
+
       // línea de progreso: 20% por etapa
       progreso.style.width = (etapa * 20) + '%';
 
@@ -1423,7 +1475,7 @@
     const btnYes = document.getElementById('btnAgeYes');
     if (btnYes) {
       btnYes.addEventListener('click', function () {
-        try { sessionStorage.setItem(AGE_KEY, 'si'); } catch (error) {}
+        try { sessionStorage.setItem(AGE_KEY, 'si'); } catch (error) { }
         modal.classList.add('hidden');
       });
     }
@@ -1470,7 +1522,7 @@
     initCookieBanner();
     initScrollReveal();
     initAgeGate();
-  initNsStepper();
+    initNsStepper();
     setLanguage(readStoredLanguage());
     initFormAlert();
     reportMissingKeys();
