@@ -29,42 +29,58 @@
       </a>
       <div class="nav-drawer" id="mobileNavigation" aria-hidden="true" inert>
         <nav class="nav nav-side-left" aria-label="Menú principal izquierda">
-        <a href="index.html" class="active" data-i18n="nav.home">Inicio</a>
-        <a href="marcas.html" data-i18n="nav.brands">Nuestras marcas</a>
-      </nav>
+          <a href="index.html" class="active" data-i18n="nav.home">Inicio</a>
+          <a href="marcas.html" data-i18n="nav.brands">Nuestras marcas</a>
+        </nav>
         <nav class="nav nav-side-right" aria-label="Menú principal derecha">
-        <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
-        <a href="route-market.html" data-i18n="nav.route">Route to market</a>
+          <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
+          <a href="route-market.html" data-i18n="nav.route">Route to market</a>
+          <!-- Selector de idioma para escritorio -->
+          <details class="lang-switch">
+            <summary aria-label="Seleccionar idioma">
+              <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+              <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+              <i data-lucide="chevron-down"></i>
+            </summary>
 
+            <div class="lang-menu">
+              <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+                <img src="img/flags/es.svg" alt="">
+                Español
+              </button>
 
-
-
-
-        <!-- Botón destacado del menú (ver 3.2 del documento) -->
-        <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
-      </nav>
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+                <img src="img/flags/gb.svg" alt="">
+                English
+              </button>
+            </div>
+          </details>
+          <!-- Botón destacado del menú (ver 3.2 del documento) -->
+          <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
+        </nav>
       </div>
       <details class="lang-switch mobile-lang-switch">
-      <summary aria-label="Seleccionar idioma">
-      <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
-      <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
-      <i data-lucide="chevron-down"></i>
-      </summary>
-      
-      <div class="lang-menu">
-      <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
-      <img src="img/flags/es.svg" alt="">
-      Español
-      </button>
-      
-      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
-      <img src="img/flags/gb.svg" alt="">
-      English
-      </button>
-      </div>
+        <summary aria-label="Seleccionar idioma">
+          <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+          <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+          <i data-lucide="chevron-down"></i>
+        </summary>
+
+        <div class="lang-menu">
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+            <img src="img/flags/es.svg" alt="">
+            Español
+          </button>
+
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+            <img src="img/flags/gb.svg" alt="">
+            English
+          </button>
+        </div>
       </details>
       <button type="button" class="menu-backdrop" aria-label="Cerrar menú" tabindex="-1"></button>
-      <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú" aria-expanded="false" aria-controls="mobileNavigation">☰</button>
+      <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú"
+        aria-expanded="false" aria-controls="mobileNavigation">☰</button>
     </div>
   </header>
 

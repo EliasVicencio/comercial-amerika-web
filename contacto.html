@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/contacto.css">
 </head>
+
 <body>
 
   <header class="header">
@@ -31,34 +33,52 @@
         <nav class="nav nav-side-right" aria-label="Menú principal derecha">
           <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
           <a href="route-market.html" data-i18n="nav.route">Route to market</a>
+          <!-- Selector de idioma para escritorio -->
+          <details class="lang-switch">
+            <summary aria-label="Seleccionar idioma">
+              <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+              <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+              <i data-lucide="chevron-down"></i>
+            </summary>
 
+            <div class="lang-menu">
+              <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+                <img src="img/flags/es.svg" alt="">
+                Español
+              </button>
 
-
-        <!-- Botón destacado del menú (ver 3.2 del documento) -->
-        <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
-      </nav>
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+                <img src="img/flags/gb.svg" alt="">
+                English
+              </button>
+            </div>
+          </details>
+          <!-- Botón destacado del menú (ver 3.2 del documento) -->
+          <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
+        </nav>
       </div>
       <details class="lang-switch mobile-lang-switch">
-      <summary aria-label="Seleccionar idioma">
-      <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
-      <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
-      <i data-lucide="chevron-down"></i>
-      </summary>
-      
-      <div class="lang-menu">
-      <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
-      <img src="img/flags/es.svg" alt="">
-      Español
-      </button>
-      
-      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
-      <img src="img/flags/gb.svg" alt="">
-      English
-      </button>
-      </div>
+        <summary aria-label="Seleccionar idioma">
+          <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+          <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+          <i data-lucide="chevron-down"></i>
+        </summary>
+
+        <div class="lang-menu">
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+            <img src="img/flags/es.svg" alt="">
+            Español
+          </button>
+
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+            <img src="img/flags/gb.svg" alt="">
+            English
+          </button>
+        </div>
       </details>
       <button type="button" class="menu-backdrop" aria-label="Cerrar menú" tabindex="-1"></button>
-      <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú" aria-expanded="false" aria-controls="mobileNavigation">☰</button>
+      <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú"
+        aria-expanded="false" aria-controls="mobileNavigation">☰</button>
     </div>
   </header>
 
@@ -188,8 +208,8 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%;"
-            data-i18n="contact.form.submit">Enviar mensaje</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.form.submit">Enviar
+            mensaje</button>
         </form>
       </div>
     </div>
@@ -208,24 +228,30 @@
       <ul class="consent-list">
         <li><strong data-i18n="consent.r1.lbl">Responsable del Tratamiento:</strong>
           <span data-i18n="consent.r1.val">Comercial Amerika SpA, RUT 78.474.378-0, domiciliado en Colina,
-            Región Metropolitana, Chile.</span></li>
+            Región Metropolitana, Chile.</span>
+        </li>
         <li><strong data-i18n="consent.r2.lbl">Finalidad Principal:</strong>
           <span data-i18n="consent.r2.val">Gestionar su solicitud de contacto, procesar su solicitud de compra o
-            distribución y/o responder a las consultas enviadas a través de este formulario.</span></li>
+            distribución y/o responder a las consultas enviadas a través de este formulario.</span>
+        </li>
         <li><strong data-i18n="consent.r3.lbl">Bases de Licitud:</strong>
           <span data-i18n="consent.r3.val">Ejecución del contrato/servicio solicitado y su consentimiento
-            explícito.</span></li>
+            explícito.</span>
+        </li>
         <li><strong data-i18n="consent.r4.lbl">Plazo de Conservación:</strong>
           <span data-i18n="consent.r4.val">Los datos se conservarán únicamente durante el tiempo necesario para
-            cumplir con la finalidad descrita o mientras no solicite su supresión.</span></li>
+            cumplir con la finalidad descrita o mientras no solicite su supresión.</span>
+        </li>
         <li><strong data-i18n="consent.r5.lbl">Destinatarios:</strong>
           <span data-i18n="consent.r5.val">No se cederán datos a terceros salvo obligación legal o proveedores
-            tecnológicos esenciales bajo estricto contrato de encargo de tratamiento.</span></li>
+            tecnológicos esenciales bajo estricto contrato de encargo de tratamiento.</span>
+        </li>
         <li><strong data-i18n="consent.r6.lbl">Derechos (ARSOP):</strong>
           <span data-i18n="consent.r6.val">Usted tiene derecho a acceder, rectificar, suprimir, oponerse y solicitar
             la portabilidad de sus datos personales, así como a revocar este consentimiento en cualquier momento.
             Puede ejercerlos enviando un correo electrónico a [correo de privacidad]. Para más detalle, consulte
-            nuestra <a href="privacidad.html">Política de Privacidad completa</a>.</span></li>
+            nuestra <a href="privacidad.html">Política de Privacidad completa</a>.</span>
+        </li>
       </ul>
 
       <h3 style="font-size: 1.05rem; color: var(--color-navy);" data-i18n="consent.dec.title">
@@ -244,8 +270,8 @@
           ofertas y novedades de Comercial Amerika SpA por medios electrónicos (Email/WhatsApp). Opcional.</label>
       </div>
       <div class="consent-actions">
-        <button type="button" class="btn-consent-accept" id="btnConsentAccept"
-          data-i18n="consent.accept" disabled>Aceptar y continuar</button>
+        <button type="button" class="btn-consent-accept" id="btnConsentAccept" data-i18n="consent.accept"
+          disabled>Aceptar y continuar</button>
         <button type="button" class="btn-consent-reject" id="btnConsentReject"
           data-i18n="consent.reject">Rechazar</button>
       </div>
@@ -255,7 +281,8 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
-        <img src="img/logo.png" alt="Logo de Comercial Amerika SpA" class="footer-logo" onerror="this.style.display='none'">
+        <img src="img/logo.png" alt="Logo de Comercial Amerika SpA" class="footer-logo"
+          onerror="this.style.display='none'">
         <div class="footer-links">
           <a href="index.html" data-i18n="nav.home">Inicio</a>
           <a href="marcas.html" data-i18n="nav.brands">Nuestras marcas</a>
@@ -289,7 +316,9 @@
   <!-- Aviso de cookies (Leyes 19.628 / 21.719): la lógica vive en js/main.js -->
   <div class="cookie-banner" id="cookieBanner" hidden>
     <div class="cookie-inner">
-      <p data-i18n="cookies.text">Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.</p>
+      <p data-i18n="cookies.text">Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y
+        mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.
+      </p>
       <div class="cookie-actions">
         <button type="button" class="btn-accept" id="cookieAccept" data-i18n="cookies.accept">Aceptar</button>
         <button type="button" id="cookieReject" data-i18n="cookies.reject">Rechazar</button>
@@ -299,4 +328,5 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
