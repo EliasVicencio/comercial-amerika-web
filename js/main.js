@@ -1047,12 +1047,32 @@
   /* ------------------------------------------
      MENÚ MÓVIL
      ------------------------------------------ */
+
   function initMobileMenu() {
     const toggle = document.querySelector('.mobile-toggle');
     const drawer = document.querySelector('.nav-drawer');
     const backdrop = document.querySelector('.menu-backdrop');
 
     if (!toggle || !drawer || !backdrop) return;
+
+    function closeMenu(returnFocus) {
+      drawer.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+
+      // En escritorio, la navegación debe estar habilitada.
+      if (window.innerWidth > 1024) {
+        drawer.removeAttribute('inert');
+        drawer.setAttribute('aria-hidden', 'false');
+      } else {
+        // En móvil, permanece deshabilitada mientras está cerrada.
+        drawer.setAttribute('inert', '');
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+
+      if (returnFocus) toggle.focus();
+    }
 
     function openMenu() {
       drawer.classList.add('open');
@@ -1063,19 +1083,20 @@
       toggle.textContent = '×';
     }
 
-    function closeMenu(returnFocus) {
-      drawer.classList.remove('open');
-      drawer.setAttribute('inert', '');
-      drawer.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('menu-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
-      if (returnFocus) toggle.focus();
+    // Estado inicial según el tamaño de pantalla.
+    if (window.innerWidth > 1024) {
+      drawer.removeAttribute('inert');
+      drawer.setAttribute('aria-hidden', 'false');
+    } else {
+      closeMenu(false);
     }
 
     toggle.addEventListener('click', function () {
-      if (drawer.classList.contains('open')) closeMenu(false);
-      else openMenu();
+      if (drawer.classList.contains('open')) {
+        closeMenu(false);
+      } else {
+        openMenu();
+      }
     });
 
     backdrop.addEventListener('click', function () {
@@ -1084,7 +1105,10 @@
 
     drawer.querySelectorAll('a, .lang-btn').forEach(function (item) {
       item.addEventListener('click', function () {
-        closeMenu(false);
+        // Solo cerrar el menú cuando estamos en móvil.
+        if (window.innerWidth <= 1024) {
+          closeMenu(false);
+        }
       });
     });
 
@@ -1095,11 +1119,14 @@
     });
 
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 1024 && drawer.classList.contains('open')) {
+      if (window.innerWidth > 1024) {
+        closeMenu(false);
+      } else if (!drawer.classList.contains('open')) {
         closeMenu(false);
       }
     });
   }
+
 
   /* ------------------------------------------
      MODAL DEL EQUIPO (Quiénes somos)
