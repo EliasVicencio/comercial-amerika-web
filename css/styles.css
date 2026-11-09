@@ -803,3 +803,18 @@ h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
 @media (max-width: 600px) {
   .section { padding: 3rem 0; }
 }
+
+
+/* ---------- Pulido transversal responsive ---------- */
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+main, section, header, footer {
+  min-width: 0;
+}
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 2rem, 1140px);
+  }
+}

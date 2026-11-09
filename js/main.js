@@ -26,8 +26,6 @@
       'nav.contact': 'Contáctanos',
       'nav.distribute': 'Distribuye con nosotros',
       'nav.menu': 'Menú',
-      'nav.nav.left': 'Menú principal izquierda',
-      'nav.nav.right': 'Menú principal derecha',
       'common.close': 'Cerrar',
       'footer.legal': 'Comercial Amerika SpA · RUT 78.474.378-0',
       'footer.contactline': '[correo comercial] · Tel./WhatsApp +56 9 5610 0329',
@@ -189,13 +187,6 @@
       'route.ch5.text': 'Gourmet y salud. Rol: posicionamiento premium.',
       'route.ch6.title': 'E-commerce',
       'route.ch6.text': 'Ventas online y apps de despacho. Rol: alcance directo al consumidor.',
-      'route.lbl.multicanal': 'Estrategia Multicanal',
-      'route.lbl.infra': 'Infraestructura',
-      'route.lbl.proceso': 'Proceso Integrado',
-      'route.lbl.soporte': 'Soporte Continuo',
-      'route.map.badge': 'RED CONO SUR',
-      'route.map.title': 'Chile · Perú · Argentina',
-      'route.map.sub': 'Centro Operativo Principal: Colina, Santiago de Chile',
       'route.coverage.title': 'Cobertura y logística',
       'route.coverage.p1': 'Operamos desde nuestro centro de almacenaje y distribución en <strong>Colina, Región Metropolitana</strong>, con distribución en <strong>Chile, Perú y Argentina</strong>.',
       'route.coverage.p2': '[Completar: cadenas y canales cubiertos hoy por país, y lo que viene.]',
@@ -298,41 +289,6 @@
       'db.f.ph3': '[PACKSHOT: lata Piña Bolada]',
       'db.f.ph4': '[PACKSHOT: lata Banana Split]',
       'db.f.ph5': '[PACKSHOT: lata Doce de Leite]',
-      // ---------- DrinkBall: por qué venderla ----------
-      // ---------- Marcas: galería y ficha emergente ----------
-      'bg.badge': 'Portafolio exclusivo Chile',
-      'bg.view.label': 'Cambiar vista de la galería',
-      'bg.view.accordion': 'Acordeón',
-      'bg.view.grid': 'Mosaico',
-      'bg.filters.label': 'Filtrar por categoría',
-      'bg.open': 'Ver ficha completa',
-      'bg.open.sr': 'Ver ficha de',
-      'bg.details': 'Ver detalles',
-      'bg.close': 'Cerrar',
-      'bg.modal.about': 'Sobre la marca',
-      'bg.modal.origin': 'Origen',
-      'bg.modal.maker': 'Fabricante',
-      'bg.modal.dist': 'Distribución',
-      'bg.modal.dist.val': 'Exclusiva en Chile',
-      'bg.modal.flavors': 'Sabores',
-      'bg.modal.page': 'Ver página de la marca',
-      'bg.modal.cta': '¿Interesado en comercializar esta marca?',
-      'bg.modal.btn': 'Consultar por esta marca',
-      'bg.about.drinkball': 'Cócteles listos para disfrutar, directo desde Brasil. De Comary, fabricante con más de 70 años de historia (1952).',
-      'bg.about.pinkmoon': 'Frisante de Comary, Brasil. Lema de la marca: “Experiencia y estilo”.',
-      'bg.about.phantom': 'Bebida energética para deportistas y consumidores en general.',
-      'bg.about.cacaolat': 'Creada en 1933 en Barcelona, es considerada uno de los primeros batidos de cacao industrializados del mundo.',
-      'bg.about.myfoods': 'Línea de alimentos con foco en alimentación sin gluten.',
-      'bg.about.topk9': 'Productos para mascotas, con foco en alimentos y accesorios para perros y gatos.',
-      'bg.country.br': 'Brasil',
-      'bg.country.es': 'España',
-      'db.why.title': '¿Por qué vender DrinkBall?',
-      'db.why1.title': 'Categoría que crece',
-      'db.why1.text': 'Los cócteles listos para beber (RTD) están entre las categorías de más crecimiento en liquor stores y conveniencia a nivel mundial.',
-      'db.why2.title': '5 sabores, 1 exhibidor',
-      'db.why2.text': 'Clásicos tropicales y cremosos: una góndola completa con una sola marca y material POP listo para activar.',
-      'db.why3.title': 'Respaldo de origen',
-      'db.why3.text': 'Fabricado por Comary (Brasil, desde 1952) e importado por Comercial Amerika con exclusividad para Chile.',
       'db.occasion.title': 'Ocasión de consumo',
       'db.occasion.note': 'Fiestas, playa, festivales y reuniones. Personas mayores de 25 años y espacios privados (Ley 21.363).',
       'db.occ1.title': 'Terraza / verano chileno',
@@ -355,14 +311,6 @@
       'pm.ph1': '[PACKSHOT: botella Pink Moon]',
       'pm.pending': '[Producto por confirmar]',
       'pm.pending.desc': 'Formato y sabor por confirmar con Comary',
-      // ---------- Pink Moon: por qué venderla ----------
-      'pm.why.title': '¿Por qué vender Pink Moon?',
-      'pm.why1.title': 'Producto diferente',
-      'pm.why1.text': 'Una frisante liviana y versátil: se consume sola como espumante suave o como base de tragos en la terraza.',
-      'pm.why2.title': 'Marca con identidad',
-      'pm.why2.text': 'Nombre, color y estilo propios: se distingue en góndola y conecta con el público joven-adulto.',
-      'pm.why3.title': 'Distribuidor oficial',
-      'pm.why3.text': 'Importación directa con Comary (Brasil, desde 1952), gestión aduanera y despacho desde Colina.',
       'pm.occasion.title': 'Ocasión de consumo',
       'pm.occasion.note': 'Celebraciones, brindis y salidas. Personas mayores de 25 años y espacios privados (Ley 21.363).',
       'pm.occ1.title': 'Celebración en casa',
@@ -471,8 +419,6 @@
       'nav.contact': 'Contact us',
       'nav.distribute': 'Distribute with us',
       'nav.menu': 'Menu',
-      'nav.nav.left': 'Main navigation (left)',
-      'nav.nav.right': 'Main navigation (right)',
       'common.close': 'Close',
       'footer.legal': 'Comercial Amerika SpA · Tax ID 78.474.378-0',
       'footer.contactline': '[commercial email] · Phone/WhatsApp +56 9 5610 0329',
@@ -634,13 +580,6 @@
       'route.ch5.text': 'Gourmet and health. Role: premium positioning.',
       'route.ch6.title': 'E-commerce',
       'route.ch6.text': 'Online sales and delivery apps. Role: direct reach to the consumer.',
-      'route.lbl.multicanal': 'Multichannel strategy',
-      'route.lbl.infra': 'Infrastructure',
-      'route.lbl.proceso': 'Integrated process',
-      'route.lbl.soporte': 'Ongoing support',
-      'route.map.badge': 'SOUTHERN-CONE NETWORK',
-      'route.map.title': 'Chile · Peru · Argentina',
-      'route.map.sub': 'Main Operations Center: Colina, Santiago de Chile',
       'route.coverage.title': 'Coverage and logistics',
       'route.coverage.p1': 'We operate from our storage and distribution center in <strong>Colina, Metropolitan Region</strong>, with distribution in <strong>Chile, Peru and Argentina</strong>.',
       'route.coverage.p2': '[To complete: chains and channels currently covered per country, and what is coming.]',
@@ -743,40 +682,6 @@
       'db.f.ph3': '[PACKSHOT: Piña Bolada can]',
       'db.f.ph4': '[PACKSHOT: Banana Split can]',
       'db.f.ph5': '[PACKSHOT: Doce de Leite can]',
-      // ---------- Brands gallery / popup ----------
-      'bg.badge': 'Exclusive portfolio for Chile',
-      'bg.view.label': 'Switch gallery view',
-      'bg.view.accordion': 'Accordion',
-      'bg.view.grid': 'Grid',
-      'bg.filters.label': 'Filter by category',
-      'bg.open': 'View full profile',
-      'bg.open.sr': 'View profile of',
-      'bg.details': 'View details',
-      'bg.close': 'Close',
-      'bg.modal.about': 'About the brand',
-      'bg.modal.origin': 'Origin',
-      'bg.modal.maker': 'Manufacturer',
-      'bg.modal.dist': 'Distribution',
-      'bg.modal.dist.val': 'Exclusive for Chile',
-      'bg.modal.flavors': 'Flavors',
-      'bg.modal.page': 'View brand page',
-      'bg.modal.cta': 'Interested in carrying this brand?',
-      'bg.modal.btn': 'Ask about this brand',
-      'bg.about.drinkball': 'Ready-to-drink cocktails, straight from Brazil. By Comary, a manufacturer with more than 70 years of history (since 1952).',
-      'bg.about.pinkmoon': 'Frisante by Comary, Brazil. Brand tagline: “Experience and style”.',
-      'bg.about.phantom': 'Energy drink for athletes and general consumers.',
-      'bg.about.cacaolat': 'Created in 1933 in Barcelona, it is considered one of the first industrially produced cocoa milkshakes in the world.',
-      'bg.about.myfoods': 'Food line focused on gluten-free eating.',
-      'bg.about.topk9': 'Pet products, focused on food and accessories for dogs and cats.',
-      'bg.country.br': 'Brazil',
-      'bg.country.es': 'Spain',
-      'db.why.title': 'Why sell DrinkBall?',
-      'db.why1.title': 'A growing category',
-      'db.why1.text': 'Ready-to-drink cocktails are among the fastest-growing categories in liquor stores and convenience retail worldwide.',
-      'db.why2.title': '5 flavors, 1 display',
-      'db.why2.text': 'Tropical classics and creamy ones: a full shelf with a single brand and POP material ready to activate.',
-      'db.why3.title': 'Backed by the origin',
-      'db.why3.text': 'Made by Comary (Brazil, since 1952) and imported by Comercial Amerika exclusively for Chile.',
       'db.occasion.title': 'Consumption occasion',
       'db.occasion.note': 'Parties, beach, festivals and gatherings. People over 25 and private settings (Law 21.363).',
       'db.occ1.title': 'Terrace / Chilean summer',
@@ -799,13 +704,6 @@
       'pm.ph1': '[PACKSHOT: Pink Moon bottle]',
       'pm.pending': '[Product to be confirmed]',
       'pm.pending.desc': 'Format and flavor to be confirmed with Comary',
-      'pm.why.title': 'Why sell Pink Moon?',
-      'pm.why1.title': 'A different product',
-      'pm.why1.text': 'A light, versatile frisante: enjoy it on its own as a soft sparkling wine, or as the base for terrace cocktails.',
-      'pm.why2.title': 'A brand with identity',
-      'pm.why2.text': 'Name, color and style of its own: it stands out on the shelf and connects with the young-adult audience.',
-      'pm.why3.title': 'Official distributor',
-      'pm.why3.text': 'Direct import with Comary (Brazil, since 1952), customs management and dispatch from Colina.',
       'pm.occasion.title': 'Consumption occasion',
       'pm.occasion.note': 'Celebrations, toasts and nights out. People over 25 and private settings (Law 21.363).',
       'pm.occ1.title': 'Home celebration',
@@ -929,90 +827,103 @@
 
   function initAlliesBand() {
     const track = document.getElementById('alliesTrack');
-    if (!track) return; // solo existe en index.html
+    if (!track) return;
 
-    // Se construye una "tarjeta" por marca (imagen con texto alternativo).
-    // Sin loading="lazy": si la carga es diferida, las copias tardan en
-    // aparecer y dejan un espacio vacío grande en la cinta.
-    alliesHtml = ALLIES_LOGOS.map(function (logo) {
-      return '<img src="' + logo.src + '" alt="' + logo.alt + '">';
-    }).join('');
+    const createGroup = function (hidden) {
+      const group = document.createElement('div');
+      group.className = 'allies-group';
+      if (hidden) group.setAttribute('aria-hidden', 'true');
+      ALLIES_LOGOS.forEach(function (logo) {
+        const img = document.createElement('img');
+        img.src = logo.src;
+        img.alt = hidden ? '' : logo.alt;
+        img.loading = 'eager';
+        img.decoding = 'async';
+        group.appendChild(img);
+      });
+      return group;
+    };
 
-    // Primero una sola copia; initAlliesScrollDirection agrega las demás
-    // cuando las imágenes ya cargaron y se conoce su ancho real.
-    track.innerHTML = alliesHtml;
+    track.replaceChildren(createGroup(false), createGroup(true));
+    track.dataset.ready = 'true';
   }
 
-  /* Dirección de la cinta según el scroll:
-     al BAJAR en la página, los logos van de derecha a izquierda;
-     al SUBIR, van de izquierda a derecha.
-     La velocidad no cambia de golpe: se va acercando a su objetivo
-     poco a poco, así la cinta frena y da la vuelta sin corte visible. */
+  /* Cinta continua: dos grupos idénticos permiten repetir el recorrido
+     sin huecos. Se vuelve a medir después de cargar logos y al redimensionar. */
   function initAlliesScrollDirection() {
     const track = document.getElementById('alliesTrack');
-    if (!track) return; // solo existe en index.html
+    if (!track || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Accesibilidad: quien pidió menos movimiento, no ve la cinta moverse
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const band = track.closest('.allies-band');
+    const SPEED = 0.42;
+    let pos = 0;
+    let direction = -1;
+    let groupWidth = 0;
+    let rafId = 0;
+    let paused = false;
 
-    const VELOCIDAD_BASE = 0.6;     // píxeles por cuadro: despacio
-    const SUAVIDAD = 0.04;          // qué tan rápido frena/acelera (0 = nunca, 1 = al instante)
-    let pos = 0;                    // posición actual de la cinta
-    let velocidad = -VELOCIDAD_BASE;       // arranca yendo hacia la izquierda
-    let velocidadObjetivo = -VELOCIDAD_BASE;
-
-    let ultimaPosicion = window.scrollY;
-
-    window.addEventListener('scroll', function () {
-      const ahora = window.scrollY;
-      if (ahora > ultimaPosicion) {
-        velocidadObjetivo = -VELOCIDAD_BASE;  // bajando
-      } else if (ahora < ultimaPosicion) {
-        velocidadObjetivo = VELOCIDAD_BASE;   // subiendo
+    const measure = function () {
+      const group = track.querySelector('.allies-group');
+      if (!group) return;
+      groupWidth = group.getBoundingClientRect().width;
+      if (groupWidth > 0 && track.children.length < 2) {
+        track.appendChild(createClone());
       }
-      ultimaPosicion = ahora;
+      if (groupWidth > 0 && groupWidth < band.clientWidth * 1.15 && track.children.length < 3) {
+        // Una copia extra evita que se vea el final de la cinta en móviles anchos.
+        const second = track.children[1];
+        if (second) {
+          const third = second.cloneNode(true);
+          third.setAttribute('aria-hidden', 'true');
+          track.appendChild(third);
+        }
+      }
+    };
+
+    const createClone = function () {
+      const clone = track.querySelector('.allies-group').cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach(img => img.alt = '');
+      return clone;
+    };
+
+    const tick = function () {
+      if (!paused && groupWidth > 0) {
+        pos += SPEED * direction;
+        if (pos <= -groupWidth) pos += groupWidth;
+        if (pos > 0) pos -= groupWidth;
+        track.style.transform = 'translate3d(' + pos + 'px,0,0)';
+      }
+      rafId = window.requestAnimationFrame(tick);
+    };
+
+    let lastY = window.scrollY;
+    window.addEventListener('scroll', function () {
+      const y = window.scrollY;
+      if (y !== lastY) direction = y > lastY ? -1 : 1;
+      lastY = y;
     }, { passive: true });
 
-    // Con el cursor sobre la banda, la cinta se detiene (de forma suave)
-    const banda = track.closest('.allies-band');
-    banda.addEventListener('mouseenter', function () { velocidadObjetivo = 0; });
-    banda.addEventListener('mouseleave', function () {
-      velocidadObjetivo = (window.scrollY < ultimaPosicion) ? VELOCIDAD_BASE : -VELOCIDAD_BASE;
+    band.addEventListener('mouseenter', () => paused = true);
+    band.addEventListener('mouseleave', () => paused = false);
+    band.addEventListener('focusin', () => paused = true);
+    band.addEventListener('focusout', () => paused = false);
+
+    track.querySelectorAll('img').forEach(img => {
+      if (!img.complete) img.addEventListener('load', measure, { once: true });
+      img.addEventListener('error', measure, { once: true });
     });
+    measure();
+    window.addEventListener('resize', measure, { passive: true });
+    rafId = window.requestAnimationFrame(tick);
 
-    // BUCLE CONTINUO: la cinta debe medir, al menos, el doble de la pantalla.
-    // Esto se revisa cuando ya cargaron las imágenes (con "load"), porque
-    // antes de eso los logos no tienen ancho real y la medida sale mal.
-    function completarCopias() {
-      while (track.scrollWidth < window.innerWidth * 2) {
-        track.innerHTML += alliesHtml;
-        alliesCopias = alliesCopias + 1;
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        window.cancelAnimationFrame(rafId);
+      } else {
+        rafId = window.requestAnimationFrame(tick);
       }
-    }
-    if (document.readyState === 'complete') {
-      completarCopias();
-    } else {
-      window.addEventListener('load', completarCopias);
-    }
-
-    // Bucle de animación: aplica la transformación y ajusta la velocidad
-    function animar() {
-      velocidad = velocidad + (velocidadObjetivo - velocidad) * SUAVIDAD;
-      pos = pos + velocidad;
-
-      // cada copia de la lista mide lo mismo: scrollWidth / copias.
-      // Ese ancho es el "vuelta completa": cuando la cinta avanza esa
-      // distancia, vuelve a iniciar por el mismo lado por donde iba,
-      // así una marca que sale por la izquierda reaparece por la derecha
-      // (y viceversa), sin espacio vacío en ningún momento.
-      const vuelta = track.scrollWidth / alliesCopias;
-      if (pos <= -vuelta) pos = pos + vuelta;
-      if (pos > 0) pos = pos - vuelta;
-
-      track.style.transform = 'translateX(' + pos + 'px)';
-      requestAnimationFrame(animar);
-    }
-    animar();
+    });
   }
 
   /* ------------------------------------------
@@ -1173,20 +1084,35 @@
     const modal = document.getElementById('teamModal');
     if (!modal) return;
 
+    let previousFocus = null;
+
     function openModal() {
+      previousFocus = document.activeElement;
       modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      if (btnClose) btnClose.focus();
     }
 
     function closeModal() {
       modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
     }
 
     if (btnOpen) btnOpen.addEventListener('click', openModal);
-    if (btnClose) btnClose.addEventListener('click', closeModal);
+    if (btnClose) {
+      btnClose.addEventListener('click', closeModal);
+      btnClose.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          closeModal();
+        }
+      });
+    }
 
-    window.addEventListener('click', function (event) {
+    modal.addEventListener('click', function (event) {
       if (event.target === modal) closeModal();
     });
 
@@ -1532,6 +1458,7 @@
      ARRANQUE
      ------------------------------------------ */
   function init() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
     initLanguageButtons();
     initMobileMenu();
     initTeamModal();
