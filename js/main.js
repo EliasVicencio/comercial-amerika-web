@@ -1049,35 +1049,54 @@
      ------------------------------------------ */
   function initMobileMenu() {
     const toggle = document.querySelector('.mobile-toggle');
-    const navs = document.querySelectorAll('.nav');
-    if (!toggle || !navs.length) return;
+    const drawer = document.querySelector('.nav-drawer');
+    const backdrop = document.querySelector('.menu-backdrop');
+
+    if (!toggle || !drawer || !backdrop) return;
+
+    function openMenu() {
+      drawer.classList.add('open');
+      drawer.removeAttribute('inert');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.textContent = '×';
+    }
+
+    function closeMenu(returnFocus) {
+      drawer.classList.remove('open');
+      drawer.setAttribute('inert', '');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+      if (returnFocus) toggle.focus();
+    }
 
     toggle.addEventListener('click', function () {
-      // Abre o cierra los dos grupos del menú a la vez
-      let abrirAhora = true;
-      navs.forEach(function (n) {
-        if (n.classList.contains('open')) abrirAhora = false;
-      });
-      navs.forEach(function (n) {
-        n.classList.toggle('open', abrirAhora);
-      });
-      toggle.setAttribute('aria-expanded', abrirAhora ? 'true' : 'false');
+      if (drawer.classList.contains('open')) closeMenu(false);
+      else openMenu();
     });
 
-    // Al elegir una sección (o cambiar idioma), el menú se cierra
-    navs.forEach(function (nav) {
-      nav.querySelectorAll('a, .lang-btn').forEach(function (item) {
-        item.addEventListener('click', function () {
-          navs.forEach(function (n) { n.classList.remove('open'); });
-          toggle.setAttribute('aria-expanded', 'false');
-        });
+    backdrop.addEventListener('click', function () {
+      closeMenu(true);
+    });
+
+    drawer.querySelectorAll('a, .lang-btn').forEach(function (item) {
+      item.addEventListener('click', function () {
+        closeMenu(false);
       });
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+      if (event.key === 'Escape' && drawer.classList.contains('open')) {
+        closeMenu(true);
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1024 && drawer.classList.contains('open')) {
+        closeMenu(false);
       }
     });
   }
