@@ -707,3 +707,52 @@ main, section, header, footer {
   overflow: hidden;
   clip-path: inset(0 round 6px);
 }
+
+
+/* ============================================
+   HEADER MÓVIL: SELECTOR DE IDIOMA JUNTO AL LOGO
+   ============================================ */
+
+@media (max-width: 1024px) {
+
+  /* Mantener el header como contenedor de referencia */
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Mostrar el nav derecho como contenedor transparente
+     cuando el menú está cerrado */
+  .nav.nav-side-right:not(.open) {
+    display: contents;
+  }
+
+  /* Ocultar los enlaces y botón de contacto mientras
+     el menú está cerrado */
+  .nav.nav-side-right:not(.open) > a {
+    display: none;
+  }
+
+  /* Mantener visible el selector de idiomas */
+  .nav.nav-side-right:not(.open) .lang-switch {
+    display: flex;
+    position: absolute;
+    right: 4.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 110;
+  }
+
+  /* Cuando se abre el menú, recuperar su disposición normal */
+  .nav.nav-side-right.open {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+}
