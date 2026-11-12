@@ -4,11 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="page.index.title">Distribuidora de Alimentos y Bebidas | Comercial Amerika SpA</title>
+  <title data-i18n="page.index.title">Desarrollo y distribución de marcas de consumo masivo | Comercial Amerika SpA</title>
   <link rel="canonical" href="https://www.comercialamerika.cl/">
   <link rel="icon" type="image/png" href="img/logo.png">
   <meta name="description" data-i18n-content="page.index.desc"
-    content="Importador y distribuidor de marcas de alimentos y bebidas para Chile y la Región Andina. Supermercados, conveniencia, canal tradicional y HORECA. Más de 30 años de experiencia.">
+    content="Potenciamos marcas de alimentos y bebidas en Chile: desarrollo, posicionamiento, distribución y ejecución en punto de venta. Más de 30 años de experiencia.">
+  <meta property="og:title" data-i18n-content="page.index.title" content="">
+  <meta property="og:description" data-i18n-content="page.index.desc" content="">
+  <meta property="og:image" content="https://www.comercialamerika.cl/img/logo.png">
+  <meta property="og:type" content="website">
 
   <!-- Google Fonts - Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +23,7 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
+<body class="index">
 
   <!-- ========== HEADER ========== -->
   <header class="header">
@@ -56,7 +60,7 @@
             </div>
           </details>
           <!-- Botón destacado del menú (ver 3.2 del documento) -->
-          <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
+          <a href="contacto.html" class="btn btn-dark" data-i18n="cta.brand">Potencia tu marca</a>
         </nav>
       </div>
       <details class="lang-switch mobile-lang-switch">
@@ -84,36 +88,74 @@
     </div>
   </header>
 
-  <!-- ========== 1. HERO ========== -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <p class="section-label" data-i18n="hero.label">Chile · Perú · Argentina</p>
-        <h1 data-i18n="hero.title">Llevamos grandes marcas a la mesa de Chile y la Región Andina</h1>
-        <p data-i18n="hero.subtitle">Alimentos y bebidas importados y distribuidos en todo Chile y la Región Andina.</p>
+  <!-- ========== HERO (estilo vitrina) ========== -->
+  <section class="hero-showcase">
+    <div class="container">
+      <h1 class="hs-title">
+        <span class="hs-kicker" data-i18n="hero.kicker">Potenciadora de marcas de consumo masivo</span>
+        <span class="hs-headline" data-i18n="hero.headline">Potenciamos marcas que conquistan góndolas</span>
+      </h1>
+      <p class="hs-sub" data-i18n="hero.subtitle">Desarrollamos, posicionamos y vendemos marcas de consumo masivo en
+        Chile y la región. Del origen a la góndola, y de la góndola al consumidor.</p>
 
-        <div class="hero-actions">
-          <a href="marcas.html" class="btn btn-primary" data-i18n="hero.cta1">Ver nuestras marcas</a>
-          <a href="contacto.html" class="btn btn-outline" data-i18n="hero.cta2">Distribuye con nosotros</a>
-        </div>
+      <div class="hs-actions">
+        <a href="contacto.html" class="hs-btn primary" data-i18n="cta.brand">Potencia tu marca</a>
+        <a href="contacto.html" class="hs-btn ghost" data-i18n="cta.buy">Quiero comprar</a>
       </div>
+    </div>
 
-      <div class="hero-image">
-        <span data-i18n="hero.image">[VIDEO CORTO O CARRUSEL: góndola con productos · bodega en Colina · brindis con
-          DrinkBall]</span>
+    <!-- Fila de productos sobre la "mesa". Lo ideal son PNG con fondo transparente.
+       --s = tamaño relativo (1 = normal)   --d = retraso de la animación de entrada
+       Para cambiar productos: reemplaza el src. Para agregar/quitar: copia o borra una línea <img>. -->
+    <div class="hs-shelf" aria-hidden="true">
+      <img class="hs-item" style="--s:.80; --d:.05s" src="img/pinkmoon-logo.png" alt="" decoding="async"
+        onerror="this.style.display='none'">
+      <img class="hs-item" style="--s:.95; --d:.15s" src="img/Phantom (2).jpg" alt="" decoding="async"
+        onerror="this.style.display='none'">
+      <img class="hs-item" style="--s:1.10; --d:.25s" src="img/drinkball02.png" alt="" decoding="async"
+        onerror="this.style.display='none'">
+      <img class="hs-item" style="--s:1.05; --d:.35s" src="img/pinkmoon-brindis.webp" alt="" decoding="async"
+        onerror="this.style.display='none'">
+      <img class="hs-item" style="--s:1.05; --d:.45s" src="img/top-k9.png" alt="" decoding="async"
+        onerror="this.style.display='none'">
+      <img class="hs-item" style="--s:.95; --d:.55s" src="img/myfoods.jpg" alt="" decoding="async"
+        onerror="this.style.display='none'">
+      <img class="hs-item" style="--s:.80; --d:.65s" src="img/doce-de-leite.png" alt="" decoding="async"
+        onerror="this.style.display='none'">
+    </div>
+  </section>
+
+  <!-- ========== CIFRAS (franja bajo el hero, estilo ICB) ========== -->
+  <section class="stats-band" aria-label="Cifras de Comercial Amerika">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-num" data-i18n="stats.n1">+30</span>
+        <span class="stat-lbl" data-i18n="stats.n1.lbl">años de experiencia en consumo masivo</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-i18n="stats.n2">6</span>
+        <span class="stat-lbl" data-i18n="stats.n2.lbl">canales de venta</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-i18n="stats.n3">5</span>
+        <span class="stat-lbl" data-i18n="stats.n3.lbl">marcas en portafolio</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-i18n="stats.n4">Chile</span>
+        <span class="stat-lbl" data-i18n="stats.n4.lbl">con proyección a Perú y Argentina</span>
       </div>
     </div>
   </section>
 
   <!-- ========== 2. DOS CAMINOS ========== -->
-  <section class="section" style="padding-top: 0;">
+  <section class="section">
     <div class="container">
       <div class="paths-grid">
         <div class="path-card">
           <h2 style="font-size: 1.3rem;" data-i18n="paths.brand.title">Soy una marca o fabricante</h2>
           <p data-i18n="paths.brand.text">Busco un distribuidor en Chile, Perú o Argentina para mi marca de alimentos o
             bebidas.</p>
-          <a href="route-market.html" class="btn btn-primary" data-i18n="paths.brand.cta">Ver cómo trabajamos</a>
+          <a href="contacto.html" class="btn btn-primary" data-i18n="cta.brand">Potencia tu marca</a>
         </div>
 
         <div class="path-card green">
@@ -136,44 +178,6 @@
     </div>
   </div>
 
-  <!-- ========== 1. HERO (estilo vitrina) ==========
-     Reemplaza TODA la <section class="hero"> ... </section> actual de index.html por este bloque. -->
-  <section class="hero-showcase">
-    <div class="container">
-      <h1 class="hs-title">
-        <span class="hs-kicker" data-i18n="hero.kicker">Llevamos grandes marcas</span>
-        <span class="hs-headline" data-i18n="hero.headline">A la mesa de Chile</span>
-      </h1>
-      <p class="hs-sub" data-i18n="hero.subtitle">Alimentos y bebidas importados y distribuidos en todo Chile y la
-        Región Andina.</p>
-
-      <div class="hs-actions">
-        <a href="marcas.html" class="hs-btn primary" data-i18n="hero.cta1">Ver nuestras marcas</a>
-        <a href="contacto.html" class="hs-btn ghost" data-i18n="hero.cta2">Distribuye con nosotros</a>
-      </div>
-    </div>
-
-    <!-- Fila de productos sobre la "mesa". Lo ideal son PNG con fondo transparente.
-       --s = tamaño relativo (1 = normal)   --d = retraso de la animación de entrada
-       Para cambiar productos: reemplaza el src. Para agregar/quitar: copia o borra una línea <img>. -->
-    <div class="hs-shelf" aria-hidden="true">
-      <img class="hs-item" style="--s:.80; --d:.05s" src="img/pinkmoon-logo.png" alt="" decoding="async"
-        onerror="this.style.display='none'">
-      <img class="hs-item" style="--s:.95; --d:.15s" src="img/Phantom (2).jpg" alt="" decoding="async"
-        onerror="this.style.display='none'">
-      <img class="hs-item" style="--s:1.10; --d:.25s" src="img/drinkball02.png" alt="" decoding="async"
-        onerror="this.style.display='none'">
-      <img class="hs-item" style="--s:1.20; --d:.35s" src="img/cacao-lat.jpg" alt="" decoding="async"
-        onerror="this.style.display='none'">
-      <img class="hs-item" style="--s:1.05; --d:.45s" src="img/top-k9.png" alt="" decoding="async"
-        onerror="this.style.display='none'">
-      <img class="hs-item" style="--s:.95; --d:.55s" src="img/myfoods.jpg" alt="" decoding="async"
-        onerror="this.style.display='none'">
-      <img class="hs-item" style="--s:.80; --d:.65s" src="img/doce-de-leite.png" alt="" decoding="async"
-        onerror="this.style.display='none'">
-    </div>
-  </section>
-
   <!-- ========== 5. DESTACADO DEL MES ========== -->
   <section class="section" style="background: var(--color-cream-dark);">
     <div class="container hero-grid">
@@ -186,7 +190,7 @@
         <h2 data-i18n="featured.title">DrinkBall y Pink Moon llegan a Chile</h2>
         <p style="color: var(--color-text-muted); margin-top: 1rem;" data-i18n="featured.text">
           Cócteles listos para disfrutar, directo desde Brasil. De Comary, fabricante con más de 70 años de historia
-          (1952).
+          (1952). Un nuevo ejemplo de cómo llevamos marcas con éxito probado a un mercado nuevo.
         </p>
         <a href="drinkball.html" class="btn btn-primary" style="margin-top: 1.25rem;" data-i18n="featured.cta">Conocer
           DrinkBall</a>
@@ -194,41 +198,94 @@
     </div>
   </section>
 
-  <!-- ========== 6. CÓMO TRABAJAMOS ========== -->
+  <!-- ========== 6. LO QUE HACEMOS POR TU MARCA (4 pilares) ========== -->
   <section class="section">
     <div class="container">
-      <h2 data-i18n="how.title">Cómo trabajamos</h2>
+      <p class="section-label" data-i18n="how.label">Lo que hacemos por tu marca</p>
+      <h2 data-i18n="how.title">Posicionamiento, ventas y ejecución que se ven</h2>
 
       <div class="features-grid">
         <div class="feature-item">
-          <div class="feature-icon"><i data-lucide="package" aria-hidden="true"></i></div>
-          <h4 data-i18n="how.item1.title">Importación</h4>
-          <p data-i18n="how.item1.text">Comercio exterior y aduanas directas con fabricantes.</p>
+          <div class="feature-icon"><i data-lucide="trending-up" aria-hidden="true"></i></div>
+          <h4 data-i18n="how.item1.title">Desarrollo de marca</h4>
+          <p data-i18n="how.item1.text">Definimos el posicionamiento, el precio y el surtido correctos para cada canal,
+            para que tu marca entre al mercado con una propuesta clara.</p>
         </div>
         <div class="feature-item">
-          <div class="feature-icon"><i data-lucide="clipboard-check" aria-hidden="true"></i></div>
-          <h4 data-i18n="how.item2.title">Registro y cumplimiento</h4>
-          <p data-i18n="how.item2.text">SAG, SEREMI de Salud, Aduanas y etiquetado chileno.</p>
+          <div class="feature-icon"><i data-lucide="bar-chart-3" aria-hidden="true"></i></div>
+          <h4 data-i18n="how.item2.title">Ventas con método</h4>
+          <p data-i18n="how.item2.text">Gestionamos la cartera, negociamos con las cadenas y medimos cada resultado:
+            venta, cobertura y rotación.</p>
         </div>
         <div class="feature-item">
-          <div class="feature-icon"><i data-lucide="shopping-cart" aria-hidden="true"></i></div>
-          <h4 data-i18n="how.item3.title">Comercialización</h4>
-          <p data-i18n="how.item3.text">Posicionamiento, precios por canal y planes promocionales.</p>
+          <div class="feature-icon"><i data-lucide="megaphone" aria-hidden="true"></i></div>
+          <h4 data-i18n="how.item3.title">Ejecución que se ve</h4>
+          <p data-i18n="how.item3.text">Exhibición, material en punto de venta, degustaciones y activaciones para que
+            tu producto no solo llegue, sino que rote.</p>
         </div>
         <div class="feature-item">
-          <div class="feature-icon"><i data-lucide="store" aria-hidden="true"></i></div>
-          <h4 data-i18n="how.item4.title">Ejecución en punto de venta</h4>
-          <p data-i18n="how.item4.text">Lanzamientos, degustaciones y trade marketing.</p>
+          <div class="feature-icon"><i data-lucide="heart-handshake" aria-hidden="true"></i></div>
+          <h4 data-i18n="how.item4.title">Servicio excepcional</h4>
+          <p data-i18n="how.item4.text">Un equipo dedicado que responde rápido y trata tu marca como propia.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== 8. LLAMADO FINAL ========== -->
+  <!-- ========== 7. DEL ORIGEN AL CONSUMIDOR (modelo en 5 pasos) ========== -->
+  <section class="section" style="background: var(--color-cream-dark);">
+    <div class="container">
+      <p class="section-label" data-i18n="steps.label">Nuestro modelo</p>
+      <h2 data-i18n="steps.title">Del origen al consumidor, en 5 pasos</h2>
+
+      <ol class="steps-flow">
+        <li class="step-card">
+          <span class="step-num">1</span>
+          <h3 data-i18n="steps.s1.title">Evaluamos</h3>
+          <p data-i18n="steps.s1.text">Tu marca y el mercado.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-num">2</span>
+          <h3 data-i18n="steps.s2.title">Importamos</h3>
+          <p data-i18n="steps.s2.text">Y cumplimos toda la normativa chilena.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-num">3</span>
+          <h3 data-i18n="steps.s3.title">Diseñamos</h3>
+          <p data-i18n="steps.s3.text">La estrategia comercial y de precios por canal.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-num">4</span>
+          <h3 data-i18n="steps.s4.title">Llevamos</h3>
+          <p data-i18n="steps.s4.text">Tu producto a cadenas, conveniencia, canal tradicional y HORECA.</p>
+        </li>
+        <li class="step-card">
+          <span class="step-num">5</span>
+          <h3 data-i18n="steps.s5.title">Activamos</h3>
+          <p data-i18n="steps.s5.text">La venta en el punto de venta y medimos los resultados.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========== 8. MANIFIESTO (bloque verde; ya no repite el hero) ========== -->
   <section class="cta-banner green">
     <div class="container cta-banner-inner">
-      <h2 data-i18n="cta.title">¿Tienes una marca con potencial? Conversemos.</h2>
-      <a href="contacto.html" class="btn btn-dark" data-i18n="cta.button">Agenda una reunión</a>
+      <h2 data-i18n="manifesto.title">Tu marca. Nuestro mercado. Resultados reales.</h2>
+      <p data-i18n="manifesto.text">Creemos que una buena marca merece una buena ejecución. Por eso combinamos más de 30
+        años de experiencia comercial con la agilidad de una empresa joven, para conectar productos de calidad con las
+        personas que los van a disfrutar.</p>
+    </div>
+  </section>
+
+  <!-- ========== 9. CIERRE ========== -->
+  <section class="section">
+    <div class="container" style="text-align: center;">
+      <h2 data-i18n="close.title">¿Tienes una marca con potencial? Hagámosla crecer juntos.</h2>
+      <p style="color: var(--color-text-muted); margin-top: 0.75rem;" data-i18n="close.text">Cuéntanos de tu producto y
+        te mostramos cómo llevarlo a la góndola en Chile.</p>
+      <a href="contacto.html" class="btn btn-primary" style="margin-top: 1.25rem;" data-i18n="cta.meeting">Agenda una
+        reunión</a>
     </div>
   </section>
 

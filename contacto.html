@@ -9,6 +9,10 @@
   <link rel="icon" type="image/png" href="img/logo.png">
   <meta name="description" data-i18n-content="page.contact.desc"
     content="Contáctanos: si eres una marca que busca distribuidor o un cliente que quiere comprar, te respondemos en menos de 24 horas hábiles. Colina, Región Metropolitana, Chile.">
+  <meta property="og:title" data-i18n-content="page.contact.title" content="">
+  <meta property="og:description" data-i18n-content="page.contact.desc" content="">
+  <meta property="og:image" content="https://www.comercialamerika.cl/img/logo.png">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +58,7 @@
             </div>
           </details>
           <!-- Botón destacado del menú (ver 3.2 del documento) -->
-          <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
+          <a href="contacto.html" class="btn btn-dark" data-i18n="cta.brand">Potencia tu marca</a>
         </nav>
       </div>
       <details class="lang-switch mobile-lang-switch">
@@ -254,26 +258,12 @@
         </li>
       </ul>
 
-      <h3 style="font-size: 1.05rem; color: var(--color-navy);" data-i18n="consent.dec.title">
-        Declaración de Consentimiento
-      </h3>
-      <div class="form-check">
-        <!-- Obligatoria: sin ella no se puede aceptar ni avanzar -->
-        <input type="checkbox" id="consentObligatoria" value="SI">
-        <label for="consentObligatoria" data-i18n="consent.dec1">Acepto el tratamiento de mis datos personales para las
-          finalidades principales descritas arriba (opción obligatoria: sin ella no se puede avanzar).</label>
-      </div>
-      <div class="form-check">
-        <!-- Opcional: el usuario decide si quiere recibir comunicaciones -->
-        <input type="checkbox" id="consentComunicaciones" value="SI">
-        <label for="consentComunicaciones" data-i18n="consent.dec2">Autorizo el envío de comunicaciones comerciales,
-          ofertas y novedades de Comercial Amerika SpA por medios electrónicos (Email/WhatsApp). Opcional.</label>
-      </div>
+      <!-- El modal es solo información: las casillas viven UNA vez, en el formulario
+           (obligatoria: privacidad; opcional: comunicaciones). Aceptar marca la
+           obligatoria del formulario y cierra. -->
       <div class="consent-actions">
-        <button type="button" class="btn-consent-accept" id="btnConsentAccept" data-i18n="consent.accept"
-          disabled>Aceptar y continuar</button>
-        <button type="button" class="btn-consent-reject" id="btnConsentReject"
-          data-i18n="consent.reject">Rechazar</button>
+        <button type="button" class="btn-consent-accept" id="btnConsentAccept" data-i18n="consent.accept">Aceptar y
+          continuar</button>
       </div>
     </div>
   </div>

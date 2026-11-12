@@ -9,6 +9,10 @@
   <link rel="icon" type="image/png" href="img/logo.png">
   <meta name="description" data-i18n-content="page.brands.desc"
     content="Portafolio de marcas de Comercial Amerika: bebidas con alcohol (DrinkBall, Pink Moon), bebidas sin alcohol y alimentos. Importación y distribución en Chile y la Región Andina.">
+  <meta property="og:title" data-i18n-content="page.brands.title" content="">
+  <meta property="og:description" data-i18n-content="page.brands.desc" content="">
+  <meta property="og:image" content="https://www.comercialamerika.cl/img/logo.png">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +59,7 @@
             </div>
           </details>
           <!-- Botón destacado del menú (ver 3.2 del documento) -->
-          <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
+          <a href="contacto.html" class="btn btn-dark" data-i18n="cta.brand">Potencia tu marca</a>
         </nav>
       </div>
       <details class="lang-switch mobile-lang-switch">
@@ -87,10 +91,10 @@
     <div class="container">
       <span class="ga-badge"><span class="ga-dot" aria-hidden="true"></span><span data-i18n="bg.badge">Portafolio
           exclusivo Chile</span></span>
-      <h1 data-i18n="bp.h1">Marcas que llevamos a la góndola</h1>
+      <h1 data-i18n="bp.h1">Marcas que hacemos crecer</h1>
       <p style="margin-top: 1rem; color: var(--color-text-muted); max-width: 640px;" data-i18n="bp.intro">
-        Marcas con potencial de crecimiento, importadas y distribuidas en exclusividad para Chile.
-        Haz clic en una marca para ver su ficha completa.
+        Cada marca de nuestro portafolio tiene un plan propio: posicionamiento, canales, precios y ejecución en punto
+        de venta. Conoce las marcas que representamos en Chile.
       </p>
 
       <!-- Controles: filtros por categoría (izquierda) + cambio de vista (derecha) -->
@@ -190,26 +194,6 @@
                 completa</span> &rarr;</button>
           </div>
         </article>
-        <article class="ga-item" data-categorias="sin-alcohol" data-brand="cacaolat" tabindex="0">
-          <img class="ga-bg" src="img/cacao-lat.jpg" alt="" loading="lazy" decoding="async"
-            onerror="this.style.display='none'">
-          <div class="ga-shade"></div>
-          <div class="ga-top">
-            <span class="ga-pill" data-i18n="bp.filter.noalcohol">Bebidas sin alcohol</span>
-            <button type="button" class="ga-arrow" data-open="cacaolat"><span class="sr-only"><span
-                  data-i18n="bg.open.sr">Ver ficha de</span> CacaoLat</span><svg viewBox="0 0 24 24" width="18"
-                height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 17 17 7M8 7h9v9" />
-              </svg></button>
-          </div>
-          <div class="ga-bottom">
-            <h3 data-i18n="brands.cacaolat.name">CacaoLat</h3>
-            <p class="ga-desc" data-i18n="bp.card.cacaolat">Batidos lácteos de cacao</p>
-            <button type="button" class="ga-link" data-open="cacaolat"><span data-i18n="bg.open">Ver ficha
-                completa</span> &rarr;</button>
-          </div>
-        </article>
         <article class="ga-item" data-categorias="alimentos" data-brand="myfoods" tabindex="0">
           <img class="ga-bg" src="img/logo-b-myfoods.jpg" alt="" loading="lazy" decoding="async"
             onerror="this.style.display='none'">
@@ -288,18 +272,6 @@
             <h3 data-i18n="brands.phantom.name">Phantom</h3>
             <p class="ga-desc" data-i18n="bp.card.phantom">Bebida energética</p>
             <button type="button" class="ga-link gb-link" data-open="phantom"><span data-i18n="bg.details">Ver
-                detalles</span> &rarr;</button>
-          </div>
-        </article>
-        <article class="gb-card" data-categorias="sin-alcohol">
-          <img class="ga-bg" src="img/cacao-lat.jpg" alt="" loading="lazy" decoding="async"
-            onerror="this.style.display='none'">
-          <div class="ga-shade"></div>
-          <div class="ga-top"><span class="ga-pill" data-i18n="bp.filter.noalcohol">Bebidas sin alcohol</span></div>
-          <div class="ga-bottom">
-            <h3 data-i18n="brands.cacaolat.name">CacaoLat</h3>
-            <p class="ga-desc" data-i18n="bp.card.cacaolat">Batidos lácteos de cacao</p>
-            <button type="button" class="ga-link gb-link" data-open="cacaolat"><span data-i18n="bg.details">Ver
                 detalles</span> &rarr;</button>
           </div>
         </article>
@@ -437,35 +409,6 @@
           </dl>
         </div>
       </div>
-      <div class="ga-detail" data-brand="cacaolat" hidden>
-        <div class="ga-detail-head">
-          <img class="ga-bg" src="img/cacao-lat.jpg" alt="" loading="lazy" decoding="async"
-            onerror="this.style.display='none'">
-          <div class="ga-shade"></div>
-          <div class="ga-detail-text">
-            <span class="ga-pill" data-i18n="bp.filter.noalcohol">Bebidas sin alcohol</span>
-            <h2 id="ga-title-cacaolat" data-i18n="brands.cacaolat.name">CacaoLat</h2>
-            <p data-i18n="bp.card.cacaolat">Batidos lácteos de cacao</p>
-          </div>
-        </div>
-        <div class="ga-detail-body">
-          <div>
-            <h3 class="ga-h" data-i18n="bg.modal.about">Sobre la marca</h3>
-            <p data-i18n="bg.about.cacaolat">Creada en 1933 en Barcelona, es considerada uno de los primeros batidos de
-              cacao industrializados del mundo.</p>
-          </div>
-          <dl class="ga-facts">
-            <div>
-              <dt data-i18n="bg.modal.origin">Origen</dt>
-              <dd data-i18n="bg.country.es">España</dd>
-            </div>
-            <div>
-              <dt data-i18n="bg.modal.dist">Distribución</dt>
-              <dd data-i18n="bg.modal.dist.val">Exclusiva en Chile</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
       <div class="ga-detail" data-brand="myfoods" hidden>
         <div class="ga-detail-head">
           <img class="ga-bg" src="img/logo-b-myfoods.jpg" alt="" loading="lazy" decoding="async"
@@ -526,13 +469,13 @@
   <section class="cta-banner green">
     <div class="container cta-banner-inner">
       <div>
-        <h2 data-i18n="representa.title">Representa tu marca con nosotros</h2>
+        <h2 data-i18n="representa.title">¿Quieres que tu marca sea la próxima?</h2>
         <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem; max-width: 480px;" data-i18n="representa.text">
-          Buscamos marcas con potencial de crecimiento, con capacidad de producción y respaldo de fabricante.
-          Aportamos importación, registros, estrategia comercial y ejecución en Chile y la Región Andina.
+          Buscamos marcas de alimentos y bebidas con calidad probada y potencial de crecimiento. Nosotros ponemos el
+          conocimiento del mercado, la red comercial y la ejecución.
         </p>
       </div>
-      <a href="contacto.html" class="btn btn-dark" data-i18n="cta.button">Agenda una reunión</a>
+      <a href="contacto.html" class="btn btn-dark" data-i18n="cta.brand">Potencia tu marca</a>
     </div>
   </section>
 

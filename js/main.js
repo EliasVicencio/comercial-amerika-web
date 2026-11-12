@@ -41,9 +41,9 @@
       'page.brands.title': 'Nuestras marcas | Comercial Amerika SpA',
       'page.brands.desc': 'Portafolio de marcas de Comercial Amerika: bebidas con alcohol (DrinkBall, Pink Moon), bebidas sin alcohol y alimentos. Importación y distribución en Chile y la Región Andina.',
       'page.about.title': 'Quiénes somos | Comercial Amerika SpA',
-      'page.about.desc': 'Importador y distribuidor de alimentos y bebidas con más de 30 años de experiencia en consumo masivo. Conoce la historia de Comercial Amerika SpA y su equipo.',
+      'page.about.desc': 'Potenciadora de marcas de consumo masivo con más de 30 años de experiencia. Conoce la historia de Comercial Amerika SpA, su misión, visión y valores.',
       'page.route.title': 'Route to market | Comercial Amerika SpA',
-      'page.route.desc': 'Llevamos tu marca desde el puerto hasta la góndola: canales, cobertura en Chile, Perú y Argentina, logística en Colina y gestión regulatoria.',
+      'page.route.desc': 'Llevamos tu marca del puerto a la góndola: importación, normativa, estrategia por canal, distribución y activación en el punto de venta.',
       'page.contact.title': 'Contáctanos | Comercial Amerika SpA',
       'page.contact.desc': 'Contáctanos: si eres una marca que busca distribuidor o un cliente que quiere comprar, te respondemos en menos de 24 horas hábiles. Colina, Región Metropolitana, Chile.',
       'page.drinkball.title': 'DrinkBall | Comercial Amerika SpA',
@@ -54,12 +54,12 @@
       // ---------- Inicio ----------
       'hero.label': 'Chile · Perú · Argentina',
       'hero.title': 'Llevamos grandes marcas a la mesa de Chile y la Región Andina',
-      'hero.subtitle': 'Alimentos y bebidas importados y distribuidos en todo Chile y la Región Andina.',
+      'hero.subtitle': 'Desarrollamos, posicionamos y vendemos marcas de consumo masivo en Chile y la región. Del origen a la góndola, y de la góndola al consumidor.',
       'hero.cta1': 'Ver nuestras marcas',
       'hero.cta2': 'Distribuye con nosotros',
       'hero.rot1': 'Cobertura real: supermercados, conveniencia, canal tradicional y HORECA',
-      'hero.kicker': 'Llevamos grandes marcas',
-      'hero.headline': 'A la mesa de Chile',
+      'hero.kicker': 'Potenciadora de marcas de consumo masivo',
+      'hero.headline': 'Potenciamos marcas que conquistan góndolas',
       'impact.title': 'Marcas que se venden solas',
       'impact.cta': 'Ver portafolio',
       'hero.image': '[VIDEO CORTO O CARRUSEL: góndola con productos · bodega en Colina · brindis con DrinkBall]',
@@ -85,30 +85,28 @@
       'brands.phantom.desc': 'Bebida energética',
       'brands.myfoods.name': 'My Foods',
       'brands.myfoods.desc': 'Alimentos sin gluten',
-      'brands.cacaolat.name': 'CacaoLat',
-      'brands.cacaolat.desc': 'Batidos lácteos de cacao',
       'brands.topk9.name': 'Top-K9',
       'brands.topk9.desc': 'Productos para mascotas',
       'featured.label': 'Lanzamiento',
       'featured.title': 'DrinkBall y Pink Moon llegan a Chile',
-      'featured.text': 'Cócteles listos para disfrutar, directo desde Brasil. De Comary, fabricante con más de 70 años de historia (1952).',
+      'featured.text': 'Cócteles listos para disfrutar, directo desde Brasil. De Comary, fabricante con más de 70 años de historia (1952). Un nuevo ejemplo de cómo llevamos marcas con éxito probado a un mercado nuevo.',
       'featured.cta': 'Conocer DrinkBall',
-      'featured.image': '[FOTO DE OCASIÓN DE CONSUMO: terraza frente al mar, personas mayores de 25 años]',
-      'how.title': 'Cómo trabajamos',
-      'how.item1.title': 'Importación',
-      'how.item1.text': 'Comercio exterior y aduanas directas con fabricantes.',
-      'how.item2.title': 'Registro y cumplimiento',
-      'how.item2.text': 'SAG, SEREMI de Salud, Aduanas y etiquetado chileno.',
-      'how.item3.title': 'Comercialización',
-      'how.item3.text': 'Posicionamiento, precios por canal y planes promocionales.',
-      'how.item4.title': 'Ejecución en punto de venta',
-      'how.item4.text': 'Lanzamientos, degustaciones y trade marketing.',
+      'featured.image': '[FOTO DE OCASIÓN DE CONSUMO: terraza frente al mar, personas adultas (campañas: solo +25 años)]',
+      'how.title': 'Posicionamiento, ventas y ejecución que se ven',
+      'how.item1.title': 'Desarrollo de marca',
+      'how.item1.text': 'Definimos el posicionamiento, el precio y el surtido correctos para cada canal, para que tu marca entre al mercado con una propuesta clara.',
+      'how.item2.title': 'Ventas con método',
+      'how.item2.text': 'Gestionamos la cartera, negociamos con las cadenas y medimos cada resultado: venta, cobertura y rotación.',
+      'how.item3.title': 'Ejecución que se ve',
+      'how.item3.text': 'Exhibición, material en punto de venta, degustaciones y activaciones para que tu producto no solo llegue, sino que rote.',
+      'how.item4.title': 'Servicio excepcional',
+      'how.item4.text': 'Un equipo dedicado que responde rápido y trata tu marca como propia.',
       'cta.title': '¿Tienes una marca con potencial? Conversemos.',
       'cta.button': 'Agenda una reunión',
 
       // ---------- Nuestras marcas (página índice) ----------
-      'bp.h1': 'Marcas que llevamos a la góndola',
-      'bp.intro': 'Marcas con potencial de crecimiento, importadas y distribuidas en exclusividad para Chile. Haz clic en una marca para ver su ficha completa.',
+      'bp.h1': 'Marcas que hacemos crecer',
+      'bp.intro': 'Cada marca de nuestro portafolio tiene un plan propio: posicionamiento, canales, precios y ejecución en punto de venta. Conoce las marcas que representamos en Chile.',
       'bp.filter.all': 'Todas',
       'bp.filter.alcohol': 'Bebidas con alcohol',
       'bp.filter.noalcohol': 'Bebidas sin alcohol',
@@ -117,14 +115,13 @@
       'bp.card.pinkmoon': 'Frisante · Comary, Brasil · "Experiencia y estilo"',
       'bp.card.phantom': 'Bebida energética',
       'bp.card.myfoods': 'Alimentos sin gluten',
-      'bp.card.cacaolat': 'Batidos lácteos de cacao',
       'bp.card.topk9': 'Productos para mascotas: arenas, snacks y accesorios',
-      'representa.title': 'Representa tu marca con nosotros',
-      'representa.text': 'Buscamos marcas con potencial de crecimiento, con capacidad de producción y respaldo de fabricante. Aportamos importación, registros, estrategia comercial y ejecución en Chile y la Región Andina.',
+      'representa.title': '¿Quieres que tu marca sea la próxima?',
+      'representa.text': 'Buscamos marcas de alimentos y bebidas con calidad probada y potencial de crecimiento. Nosotros ponemos el conocimiento del mercado, la red comercial y la ejecución.',
 
       // ---------- Quiénes somos ----------
       'about.label': 'Quiénes somos',
-      'about.h1': 'Somos el puente entre marcas con potencial y los consumidores de la Región Andina',
+      'about.h1': 'Somos una potenciadora de marcas de consumo masivo',
       'about.image': '[FOTO / VIDEO CORPORATIVO]',
       'about.history.title': 'Nuestra historia',
       'about.history.p1': '<strong>Comercial Amerika SpA</strong> es una empresa chilena que importa, comercializa y distribuye alimentos y bebidas. Llevamos marcas con potencial de crecimiento a los consumidores de Chile y la Región Andina.',
@@ -157,7 +154,7 @@
       'about.r2.lbl': 'SKU incorporados en grandes cadenas',
       'about.r3.lbl': 'SKU nuevos desarrollados',
       'about.ally.title': 'Aliados',
-      'about.ally.intro': 'Fabricantes internacionales representados con exclusividad para Chile (logos con autorización escrita).',
+      'about.ally.intro': 'Fabricantes internacionales representados con exclusividad para Chile.',
       'about.ally.comary': 'Brasil · Desde 1952',
       'about.ally.comary.name': 'Comary',
       'about.ally.vieira': 'Portugal',
@@ -172,8 +169,8 @@
       'role.supply': 'Jefe Supply',
 
       // ---------- Route to market ----------
-      'route.h1': 'Llevamos tu marca desde el puerto hasta la góndola',
-      'route.intro': '"Route to market" es el camino que recorre un producto desde el fabricante hasta el consumidor final. Diseñamos y ejecutamos ese camino por ti.',
+      'route.h1': 'Llevamos tu marca del puerto a la góndola, y de la góndola al carro del consumidor',
+      'route.intro': 'Diseñamos y ejecutamos la ruta completa de tu producto: importación, cumplimiento normativo, estrategia por canal, distribución y activación en el punto de venta. Una sola contraparte para todo el camino.',
       'route.channels.title': 'Canales que atendemos',
       'route.ch1.title': 'Supermercados',
       'route.ch1.text': 'Cadenas grandes y regionales. Rol de la marca: volumen y visibilidad.',
@@ -188,7 +185,7 @@
       'route.ch6.title': 'E-commerce',
       'route.ch6.text': 'Ventas online y apps de despacho. Rol: alcance directo al consumidor.',
       'route.coverage.title': 'Cobertura y logística',
-      'route.coverage.p1': 'Operamos desde nuestro centro de almacenaje y distribución en <strong>Colina, Región Metropolitana</strong>, con distribución en <strong>Chile, Perú y Argentina</strong>.',
+      'route.coverage.p1': 'Operamos estratégicamente desde nuestro centro de almacenaje y distribución ubicado en <strong>Colina, Región Metropolitana</strong>. Desde esta central articulamos la importación y distribución en <strong>Chile, con proyección a Perú y Argentina</strong>.',
       'route.coverage.p2': '[Completar: cadenas y canales cubiertos hoy por país, y lo que viene.]',
       'route.coverage.image': '[MAPA DE CHILE, PERÚ Y ARGENTINA: cobertura hoy y proyectada]',
       'route.steps.title': 'Cómo trabajamos con una marca',
@@ -209,14 +206,14 @@
       'route.srv2.text': 'Etiquetado y registros chilenos resueltos desde el país de origen.',
       'route.srv3.title': 'Reportes de venta y rotación',
       'route.srv3.text': 'Seguimiento periódico para tomar decisiones con datos.',
-      'route.model.title': 'Modelo de acuerdo transparente.',
+      'route.model.title': 'Modelo de acuerdo transparente:',
       'route.model.text': ' Las condiciones comerciales (márgenes, plazos y compromisos de servicio) se conversan en reunión con cada marca.',
       'route.trends.title': 'Lo que vemos en el mercado',
       'route.trends.subtitle': 'Adaptamos nuestras estrategias a las realidades y demandas del consumidor actual.',
       'route.trend1.title': 'Conveniencia',
-      'route.trend1.text': 'Aumento de alimentos preparados, compras online y entregas a domicilio (80% de relevancia según estudio citado en el diagnóstico).',
+      'route.trend1.text': 'Aumento de alimentos preparados, compras online y entregas a domicilio.',
       'route.trend2.title': 'Salud y bienestar',
-      'route.trend2.text': 'Crecimiento en la búsqueda de productos saludables y con etiquetas claras (65% según estudio citado en el diagnóstico).',
+      'route.trend2.text': 'Crecimiento en la búsqueda de productos saludables y con etiquetas claras.',
       'route.trend3.title': 'Precio-calidad',
       'route.trend3.text': 'Calidad a precio razonable como factor de decisión en el canal moderno y tradicional.',
       'route.cta.title': '¿Quieres llevar tu marca a Chile?',
@@ -290,7 +287,7 @@
       'db.f.ph4': '[PACKSHOT: lata Banana Split]',
       'db.f.ph5': '[PACKSHOT: lata Doce de Leite]',
       'db.occasion.title': 'Ocasión de consumo',
-      'db.occasion.note': 'Fiestas, playa, festivales y reuniones. Personas mayores de 25 años y espacios privados (Ley 21.363).',
+      'db.occasion.note': 'Fiestas, playa, festivales y reuniones. Para adultos: la venta es solo para mayores de 18 años (Ley 21.363); la regla de 25+ aplica únicamente a personas que aparecen en fotos y campañas.',
       'db.occ1.title': 'Terraza / verano chileno',
       'db.occ1.text': 'Atardecer, cooler y latas listas para compartir.',
       'db.occ1.ph': '[FOTO: consumo en terraza frente al mar]',
@@ -312,7 +309,7 @@
       'pm.pending': '[Producto por confirmar]',
       'pm.pending.desc': 'Formato y sabor por confirmar con Comary',
       'pm.occasion.title': 'Ocasión de consumo',
-      'pm.occasion.note': 'Celebraciones, brindis y salidas. Personas mayores de 25 años y espacios privados (Ley 21.363).',
+      'pm.occasion.note': 'Celebraciones, brindis y salidas. Para adultos: la venta es solo para mayores de 18 años (Ley 21.363); la regla de 25+ aplica únicamente a personas que aparecen en fotos y campañas.',
       'pm.occ1.title': 'Celebración en casa',
       'pm.occ1.text': 'Mesa al aire libre con luces colgantes y brindis al atardecer.',
       'pm.occ1.ph': '[FOTO: asado o celebración en casa, luces colgantes, brindis]',
@@ -365,11 +362,7 @@
       'consent.r5.val': 'No se cederán datos a terceros salvo obligación legal o proveedores tecnológicos esenciales bajo estricto contrato de encargo de tratamiento.',
       'consent.r6.lbl': 'Derechos (ARSOP):',
       'consent.r6.val': 'Usted tiene derecho a acceder, rectificar, suprimir, oponerse y solicitar la portabilidad de sus datos personales, así como a revocar este consentimiento en cualquier momento. Puede ejercerlos enviando un correo electrónico a [correo de privacidad]. Para más detalle, consulte nuestra Política de Privacidad completa.',
-      'consent.dec.title': 'Declaración de Consentimiento',
-      'consent.dec1': 'Acepto el tratamiento de mis datos personales para las finalidades principales descritas arriba. (Casilla obligatoria del formulario: no se puede enviar el mensaje sin ella.)',
-      'consent.dec2': 'Autorizo el envío de comunicaciones comerciales, ofertas y novedades de Comercial Amerika SpA por medios electrónicos (Email/WhatsApp). (Casilla opcional del formulario: elige según prefieras.)',
       'consent.accept': 'Aceptar y continuar',
-      'consent.reject': 'Rechazar',
       'contact.form.comms': 'Autorizo el envío de comunicaciones comerciales, ofertas y novedades de Comercial Amerika SpA por medios electrónicos (Email/WhatsApp). Opcional.',
       'cookies.text': 'Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.',
       'cookies.accept': 'Aceptar',
@@ -407,7 +400,80 @@
       'ns.prev': 'Anterior',
       'ns.next': 'Siguiente etapa →',
       'ns.first': 'Volver al inicio',
-      'cookies.reject': 'Rechazar'
+      'bg.badge': 'Portafolio exclusivo Chile',
+      'bg.view.label': 'Cambiar vista de la galería',
+      'bg.view.accordion': 'Acordeón',
+      'bg.view.grid': 'Mosaico',
+      'bg.filters.label': 'Filtrar por categoría',
+      'bg.open': 'Ver ficha completa',
+      'bg.open.sr': 'Ver ficha de',
+      'bg.details': 'Ver detalles',
+      'bg.close': 'Cerrar',
+      'bg.modal.about': 'Sobre la marca',
+      'bg.modal.origin': 'Origen',
+      'bg.modal.maker': 'Fabricante',
+      'bg.modal.dist': 'Distribución',
+      'bg.modal.dist.val': 'Exclusiva en Chile',
+      'bg.modal.flavors': 'Sabores',
+      'bg.modal.page': 'Ver página de la marca',
+      'bg.modal.cta': '¿Interesado en comercializar esta marca?',
+      'bg.modal.btn': 'Consultar por esta marca',
+      'bg.about.drinkball': 'Cócteles listos para disfrutar, directo desde Brasil. De Comary, fabricante con más de 70 años de historia (1952).',
+      'bg.about.pinkmoon': 'Frisante de Comary, Brasil. Lema de la marca: “Experiencia y estilo”.',
+      'bg.about.phantom': 'Bebida energética para deportistas y consumidores en general.',
+      'bg.about.myfoods': 'Línea de alimentos con foco en alimentación sin gluten.',
+      'bg.about.topk9': 'Productos para mascotas, con foco en alimentos y accesorios para perros y gatos.',
+      'bg.country.br': 'Brasil',
+      'bg.country.es': 'España',
+      'route.lbl.multicanal': 'Estrategia Multicanal',
+      'route.lbl.infra': 'Infraestructura',
+      'route.lbl.proceso': 'Proceso Integrado',
+      'route.lbl.soporte': 'Soporte Continuo',
+      'route.map.badge': 'RED CONO SUR',
+      'cookies.reject': 'Rechazar',
+      'cta.brand': 'Potencia tu marca',
+      'cta.buy': 'Quiero comprar',
+      'cta.meeting': 'Agenda una reunión',
+      'stats.n1': '+30',
+      'stats.n1.lbl': 'años de experiencia en consumo masivo',
+      'stats.n2': '6',
+      'stats.n2.lbl': 'canales de venta',
+      'stats.n3': '5',
+      'stats.n3.lbl': 'marcas en portafolio',
+      'stats.n4': 'Chile',
+      'stats.n4.lbl': 'con proyección a Perú y Argentina',
+      'how.label': 'Lo que hacemos por tu marca',
+      'steps.label': 'Nuestro modelo',
+      'steps.title': 'Del origen al consumidor, en 5 pasos',
+      'steps.s1.title': 'Evaluamos',
+      'steps.s1.text': 'Tu marca y el mercado.',
+      'steps.s2.title': 'Importamos',
+      'steps.s2.text': 'Y cumplimos toda la normativa chilena.',
+      'steps.s3.title': 'Diseñamos',
+      'steps.s3.text': 'La estrategia comercial y de precios por canal.',
+      'steps.s4.title': 'Llevamos',
+      'steps.s4.text': 'Tu producto a cadenas, conveniencia, canal tradicional y HORECA.',
+      'steps.s5.title': 'Activamos',
+      'steps.s5.text': 'La venta en el punto de venta y medimos los resultados.',
+      'manifesto.title': 'Tu marca. Nuestro mercado. Resultados reales.',
+      'manifesto.text': 'Creemos que una buena marca merece una buena ejecución. Por eso combinamos más de 30 años de experiencia comercial con la agilidad de una empresa joven, para conectar productos de calidad con las personas que los van a disfrutar.',
+      'close.title': '¿Tienes una marca con potencial? Hagámosla crecer juntos.',
+      'close.text': 'Cuéntanos de tu producto y te mostramos cómo llevarlo a la góndola en Chile.',
+      'route.map.title': 'Chile · proyección Perú y Argentina',
+      'route.map.sub': 'Centro Operativo Principal: Colina, Región Metropolitana',
+      'about.mission.short': 'Conectamos productos de calidad con las personas, con servicio excepcional y ventas eficientes.',
+      'about.vision.short': 'Ser referentes en excelencia comercial, dentro y fuera de Chile.',
+      'about.values.title': 'Nuestros valores',
+      'about.v1.title': 'Excelencia',
+      'about.v1.text': 'Hacemos las cosas bien, con método y medición.',
+      'about.v2.title': 'Cercanía',
+      'about.v2.text': 'Tratamos cada marca como propia.',
+      'about.v3.title': 'Agilidad',
+      'about.v3.text': 'Decidimos y ejecutamos rápido.',
+      'about.v4.title': 'Transparencia',
+      'about.v4.text': 'Acuerdos claros y reportes abiertos.',
+      'about.v5.title': 'Resultados',
+      'about.v5.text': 'Medimos nuestro éxito por el crecimiento de las marcas que representamos.',
     },
 
     en: {
@@ -434,9 +500,9 @@
       'page.brands.title': 'Our brands | Comercial Amerika SpA',
       'page.brands.desc': 'Comercial Amerika brand portfolio: alcoholic beverages (DrinkBall, Pink Moon), non-alcoholic beverages and food. Import and distribution in Chile and the Andean Region.',
       'page.about.title': 'About us | Comercial Amerika SpA',
-      'page.about.desc': 'Food and beverage importer and distributor with over 30 years of experience in mass consumption. Learn about Comercial Amerika SpA\'s history and team.',
+      'page.about.desc': 'Mass-market brand developer with more than 30 years of experience. Learn about Comercial Amerika SpA\'s story, mission, vision and values.',
       'page.route.title': 'Route to market | Comercial Amerika SpA',
-      'page.route.desc': 'We take your brand from the port to the shelf: channels, coverage in Chile, Peru and Argentina, logistics in Colina and regulatory management.',
+      'page.route.desc': 'We take your brand from the port to the shelf: importing, regulations, channel strategy, distribution and point-of-sale activation.',
       'page.contact.title': 'Contact us | Comercial Amerika SpA',
       'page.contact.desc': 'Contact us: whether you are a brand looking for a distributor or a customer looking to buy, we reply within 24 business hours. Colina, Metropolitan Region, Chile.',
       'page.drinkball.title': 'DrinkBall | Comercial Amerika SpA',
@@ -447,20 +513,20 @@
       // ---------- Home ----------
       'hero.label': 'Chile · Peru · Argentina',
       'hero.title': 'We bring great brands to the tables of Chile and the Andean Region',
-      'hero.subtitle': 'Food and beverages imported and distributed across Chile and the Andean Region.',
+      'hero.subtitle': 'We develop, position and sell mass-market consumer brands in Chile and the region. From origin to shelf, and from shelf to consumer.',
       'hero.cta1': 'See our brands',
       'hero.cta2': 'Distribute with us',
       'hero.image': '[SHORT VIDEO OR CAROUSEL: shelf with products · Colina warehouse · DrinkBall toast]',
       'hero.rot1': 'Real coverage: supermarkets, convenience, traditional trade and HORECA',
-      'hero.kicker': 'We bring great brands',
-      'hero.headline': "To Chile's table",
+      'hero.kicker': 'Mass-market brand developer',
+      'hero.headline': 'We grow brands that conquer the shelf',
       'impact.title': 'Brands that sell themselves',
       'impact.cta': 'See the portfolio',
       'paths.brand.title': 'I am a brand or manufacturer',
       'paths.brand.text': 'I am looking for a distributor in Chile, Peru or Argentina for my food or beverage brand.',
       'paths.brand.cta': 'See how we work',
       'paths.client.title': 'I am a customer',
-      'paths.client.text': 'I want to buy for my supermarket, store, convenience shop or HORECA business.',
+      'paths.client.text': 'I want to buy for my supermarket, grocery store, convenience store or HORECA business.',
       'paths.client.cta': 'I want to buy',
       'stats.years.lbl': 'years in mass consumption',
       'stats.countries.lbl': 'countries',
@@ -473,51 +539,48 @@
       'brands.drinkball.name': 'DrinkBall',
       'brands.drinkball.desc': 'Ready-to-drink cocktails · RTD',
       'brands.pinkmoon.name': 'Pink Moon',
-      'brands.pinkmoon.desc': 'Frisante · Experience and style',
+      'brands.pinkmoon.desc': 'Sparkling drink · Experience and style',
       'brands.phantom.name': 'Phantom',
       'brands.phantom.desc': 'Energy drink',
       'brands.myfoods.name': 'My Foods',
       'brands.myfoods.desc': 'Gluten-free foods',
-      'brands.cacaolat.name': 'CacaoLat',
-      'brands.cacaolat.desc': 'Cocoa milkshakes',
       'brands.topk9.name': 'Top-K9',
       'brands.topk9.desc': 'Pet products',
       'featured.label': 'Launch',
       'featured.title': 'DrinkBall and Pink Moon arrive in Chile',
-      'featured.text': 'Cocktails ready to enjoy, straight from Brazil. From Comary, a manufacturer with more than 70 years of history (1952).',
+      'featured.text': 'Cocktails ready to enjoy, straight from Brazil. From Comary, a manufacturer with more than 70 years of history (1952). A new example of how we take proven brands into a new market.',
       'featured.cta': 'Discover DrinkBall',
       'featured.image': '[LIFESTYLE PHOTO: seaside terrace, people over 25]',
-      'how.title': 'How we work',
-      'how.item1.title': 'Import',
-      'how.item1.text': 'Foreign trade and customs handled directly with manufacturers.',
-      'how.item2.title': 'Registration and compliance',
-      'how.item2.text': 'SAG, SEREMI de Salud, customs and Chilean labeling.',
-      'how.item3.title': 'Commercialization',
-      'how.item3.text': 'Positioning, pricing by channel and promotional plans.',
-      'how.item4.title': 'Point-of-sale execution',
-      'how.item4.text': 'Launches, tastings and trade marketing.',
+      'how.title': 'Positioning, sales and visible execution',
+      'how.item1.title': 'Brand development',
+      'how.item1.text': 'We define the right positioning, pricing and assortment for each channel, so your brand enters the market with a clear proposition.',
+      'how.item2.title': 'Sales with method',
+      'how.item2.text': 'We manage the portfolio, negotiate with chains and measure every result: sales, coverage and rotation.',
+      'how.item3.title': 'Execution you can see',
+      'how.item3.text': 'Displays, point-of-sale material, tastings and activations so your product does not just arrive, it rotates.',
+      'how.item4.title': 'Exceptional service',
+      'how.item4.text': 'A dedicated team that responds fast and treats your brand as its own.',
       'cta.title': 'Have a brand with potential? Let\'s talk.',
       'cta.button': 'Book a meeting',
 
       // ---------- Our brands (index page) ----------
-      'bp.h1': 'Brands we take to the shelf',
-      'bp.intro': 'Brands with growth potential, imported and distributed exclusively for Chile. Click on a brand to see its full profile.',
+      'bp.h1': 'Brands we grow',
+      'bp.intro': 'Every brand in our portfolio has its own plan: positioning, channels, pricing and point-of-sale execution. Meet the brands we represent in Chile.',
       'bp.filter.all': 'All',
       'bp.filter.alcohol': 'Alcoholic beverages',
       'bp.filter.noalcohol': 'Non-alcoholic beverages',
       'bp.filter.alimentos': 'Food and pets',
       'bp.card.drinkball': 'Ready-to-drink cocktails · Comary, Brazil · "Innovation and attitude"',
-      'bp.card.pinkmoon': 'Frisante · Comary, Brazil · "Experience and style"',
+      'bp.card.pinkmoon': 'Sparkling drink · Comary, Brazil · "Experience and style"',
       'bp.card.phantom': 'Energy drink',
       'bp.card.myfoods': 'Gluten-free foods',
-      'bp.card.cacaolat': 'Cocoa milkshakes',
       'bp.card.topk9': 'Pet products: litter, snacks and accessories',
-      'representa.title': 'Represent your brand with us',
-      'representa.text': 'We look for brands with growth potential, production capacity and manufacturer backing. We provide import, registrations, commercial strategy and execution in Chile and the Andean Region.',
+      'representa.title': 'Want your brand to be next?',
+      'representa.text': 'We look for food and beverage brands with proven quality and growth potential. We bring market knowledge, the commercial network and execution.',
 
       // ---------- About us ----------
       'about.label': 'About us',
-      'about.h1': 'We are the bridge between brands with potential and consumers in the Andean Region',
+      'about.h1': 'We are a mass-market brand developer',
       'about.image': '[CORPORATE PHOTO / VIDEO]',
       'about.history.title': 'Our history',
       'about.history.p1': '<strong>Comercial Amerika SpA</strong> is a Chilean company that imports, markets and distributes food and beverages. We bring brands with growth potential to consumers in Chile and the Andean Region.',
@@ -529,13 +592,13 @@
       'about.ded1.title': 'Import',
       'about.ded1.text': 'We work directly with international manufacturers, such as Comary (Brazil, since 1952) and Vieira (Portugal), and manage foreign trade and customs.',
       'about.ded2.title': 'Registration and compliance',
-      'about.ded2.text': 'We process registrations with SAG, SEREMI de Salud, customs and municipal authorities. We adapt labeling and seals at the origin.',
+      'about.ded2.text': 'We process registrations with SAG, the Health Authority (SEREMI), Customs and municipal authorities. We adapt labeling and seals at the origin.',
       'about.ded3.title': 'Commercial strategy',
       'about.ded3.text': 'We define positioning, pricing per channel, assortment and promotional plans for each brand.',
       'about.ded4.title': 'Distribution',
       'about.ded4.text': 'We reach supermarkets, convenience, traditional trade, wholesalers, HORECA and specialized stores, from our warehouse in Colina.',
       'about.ded5.title': 'Point-of-sale execution',
-      'about.ded5.text': 'Launches, tastings, activations and trade marketing so the product sells.',
+      'about.ded5.text': 'Launches, tastings, activations and trade marketing so the product keeps moving.',
       'about.mission': 'Mission',
       'about.mission.text': 'We deliver high-value commercial solutions through exceptional service and efficient sales management, connecting quality products with the needs of our clients and consumers to guarantee their satisfaction.',
       'about.vision': 'Vision',
@@ -550,7 +613,7 @@
       'about.r2.lbl': 'SKUs incorporated in major chains',
       'about.r3.lbl': 'new SKUs developed',
       'about.ally.title': 'Partners',
-      'about.ally.intro': 'International manufacturers represented exclusively in Chile (logos with written authorization).',
+      'about.ally.intro': 'International manufacturers represented exclusively in Chile.',
       'about.ally.comary': 'Brazil · Since 1952',
       'about.ally.comary.name': 'Comary',
       'about.ally.vieira': 'Portugal',
@@ -565,8 +628,8 @@
       'role.supply': 'Supply Manager',
 
       // ---------- Route to market ----------
-      'route.h1': 'We take your brand from the port to the shelf',
-      'route.intro': '"Route to market" is the path a product travels from the manufacturer to the end consumer. We design and execute that path for you.',
+      'route.h1': 'We take your brand from the port to the shelf, and from the shelf to the consumer',
+      'route.intro': 'We design and execute the full route of your product: importing, regulatory compliance, channel strategy, distribution and point-of-sale activation. One single counterpart for the whole journey.',
       'route.channels.title': 'Channels we serve',
       'route.ch1.title': 'Supermarkets',
       'route.ch1.text': 'Large and regional chains. Brand role: volume and visibility.',
@@ -581,20 +644,20 @@
       'route.ch6.title': 'E-commerce',
       'route.ch6.text': 'Online sales and delivery apps. Role: direct reach to the consumer.',
       'route.coverage.title': 'Coverage and logistics',
-      'route.coverage.p1': 'We operate from our storage and distribution center in <strong>Colina, Metropolitan Region</strong>, with distribution in <strong>Chile, Peru and Argentina</strong>.',
+      'route.coverage.p1': 'We operate strategically from our storage and distribution center located in <strong>Colina, Metropolitan Region</strong>. From this hub we coordinate importing and distribution in <strong>Chile, with expansion planned for Peru and Argentina</strong>.',
       'route.coverage.p2': '[To complete: chains and channels currently covered per country, and what is coming.]',
       'route.coverage.image': '[MAP OF CHILE, PERU AND ARGENTINA: current and projected coverage]',
       'route.steps.title': 'How we work with a brand',
       'route.step1.title': 'Brand and market assessment',
       'route.step1.text': 'We analyze the product\'s potential, competition and opportunity per channel.',
       'route.step2.title': 'Registration and compliance',
-      'route.step2.text': 'SAG, SEREMI de Salud, customs and labeling with Chilean seals, from the origin.',
+      'route.step2.text': 'SAG, the Health Authority (SEREMI), Customs, and labeling with Chilean seals, done from the origin.',
       'route.step3.title': 'Commercial strategy and pricing per channel',
       'route.step3.text': 'Positioning, assortment and promotional plans for each type of client.',
       'route.step4.title': 'Entry into chains and distribution',
       'route.step4.text': 'Entry negotiation and dispatch from the Colina warehouse.',
       'route.step5.title': 'Point-of-sale execution and marketing',
-      'route.step5.text': 'Launches, tastings and trade marketing so the brand sells.',
+      'route.step5.text': 'Launches, tastings and trade marketing so the brand keeps rotating.',
       'route.services.title': 'Added-value services',
       'route.srv1.title': 'Marketing and trade marketing',
       'route.srv1.text': 'Launches, tastings, activations and trade fair presence.',
@@ -602,14 +665,14 @@
       'route.srv2.text': 'Chilean labeling and registrations sorted out from the country of origin.',
       'route.srv3.title': 'Sales and rotation reports',
       'route.srv3.text': 'Periodic follow-up to make data-driven decisions.',
-      'route.model.title': 'Transparent agreement model.',
+      'route.model.title': 'Transparent agreement model:',
       'route.model.text': ' Commercial terms (margins, deadlines and service commitments) are discussed in a meeting with each brand.',
       'route.trends.title': 'What we see in the market',
       'route.trends.subtitle': 'We adapt our strategies to the realities and demands of today\'s consumer.',
       'route.trend1.title': 'Convenience',
-      'route.trend1.text': 'Growth in prepared foods, online shopping and home delivery (80% relevance according to the study cited in the diagnosis).',
+      'route.trend1.text': 'Growth in prepared foods, online shopping and home delivery.',
       'route.trend2.title': 'Health and wellness',
-      'route.trend2.text': 'Growing demand for healthy products with clear labels (65% according to the study cited in the diagnosis).',
+      'route.trend2.text': 'Growing demand for healthy products with clear labels.',
       'route.trend3.title': 'Value for money',
       'route.trend3.text': 'Quality at a reasonable price as the deciding factor in modern and traditional channels.',
       'route.cta.title': 'Want to bring your brand to Chile?',
@@ -628,7 +691,7 @@
       'contact.map': '[MAP: warehouse in Colina, Metropolitan Region]',
       'contact.form.perfil': 'I am…',
       'contact.perfil1': 'Brand or manufacturer',
-      'contact.perfil2': 'Customer: supermarket, store, HORECA',
+      'contact.perfil2': 'Customer: supermarket, grocery store, HORECA',
       'contact.perfil3': 'Service provider',
       'contact.perfil4': 'Job applicant (work with us)',
       'contact.pais1': 'Chile',
@@ -676,14 +739,14 @@
       'db.f4.name': 'Banana Split',
       'db.f4.desc': 'Banana · Creamy',
       'db.f5.name': 'Doce de Leite',
-      'db.f5.desc': 'Dulce de leche · Creamy',
+      'db.f5.desc': 'Milk caramel · Creamy',
       'db.f.ph1': '[PACKSHOT: Caipiríssima can]',
       'db.f.ph2': '[PACKSHOT: Mate Limao Spritz can]',
       'db.f.ph3': '[PACKSHOT: Piña Bolada can]',
       'db.f.ph4': '[PACKSHOT: Banana Split can]',
       'db.f.ph5': '[PACKSHOT: Doce de Leite can]',
       'db.occasion.title': 'Consumption occasion',
-      'db.occasion.note': 'Parties, beach, festivals and gatherings. People over 25 and private settings (Law 21.363).',
+      'db.occasion.note': 'Parties, beach, festivals and gatherings. For adults: sale is only to people over 18 (Law 21.363); the 25+ rule applies only to people appearing in photos and campaigns.',
       'db.occ1.title': 'Terrace / Chilean summer',
       'db.occ1.text': 'Sunset, cooler and cans ready to share.',
       'db.occ1.ph': '[PHOTO: consumption on a seaside terrace]',
@@ -696,16 +759,16 @@
       'db.cta2.title': 'Want to sell DrinkBall in your business?',
 
       // ---------- Pink Moon ----------
-      'pm.tagline': 'Frisante · "Experience and style"',
+      'pm.tagline': 'Sparkling drink · "Experience and style"',
       'pm.hero.photo': '[HERO: toast with glasses, Pink Moon bottle in focus, golden sunset light]',
-      'pm.history': 'Pink Moon is a <strong>frisante</strong> (soft sparkling drink) from <strong>Comary</strong>, a Brazilian beverage manufacturer since 1952 (over 70 years of history). Comercial Amerika imports and distributes it exclusively in Chile.',
+      'pm.history': 'Pink Moon is a <strong>soft sparkling drink</strong> (frisante) from <strong>Comary</strong>, a Brazilian beverage manufacturer since 1952 (over 70 years of history). Comercial Amerika imports and distributes it exclusively in Chile.',
       'pm.portfolio.title': 'Portfolio',
       'pm.portfolio.note': 'Flavors and formats are confirmed with Comary together with the official graphic material.',
       'pm.ph1': '[PACKSHOT: Pink Moon bottle]',
       'pm.pending': '[Product to be confirmed]',
       'pm.pending.desc': 'Format and flavor to be confirmed with Comary',
       'pm.occasion.title': 'Consumption occasion',
-      'pm.occasion.note': 'Celebrations, toasts and nights out. People over 25 and private settings (Law 21.363).',
+      'pm.occasion.note': 'Celebrations, toasts and nights out. For adults: sale is only to people over 18 (Law 21.363); the 25+ rule applies only to people appearing in photos and campaigns.',
       'pm.occ1.title': 'Home celebration',
       'pm.occ1.text': 'Outdoor table with string lights and a sunset toast.',
       'pm.occ1.ph': '[PHOTO: barbecue or home celebration, string lights, toast]',
@@ -735,7 +798,7 @@
       'privacy.s4.text': 'We keep your data for [2] years from the last contact, or for as long as needed to handle your inquiry, or until you request deletion.',
       'privacy.s5.title': '5. Third parties and international transfer',
       'privacy.s5.text': 'Your data may be shared with our allied manufacturers when your inquiry is about distributing a brand in Chile (for example, Comary in Brazil or Vieira in Portugal). These communications are the minimum necessary and are made with your consent. We do not sell or hand over your data to third parties for advertising purposes.',
-      'privacy.s6.title': '6. Your rights (access, rectification, cancellation and opposition)',
+      'privacy.s6.title': '6. Your rights (ARCO)',
       'privacy.s6.text': 'You may request at any time: (a) access to your data; (b) rectification or amendment; (c) cancellation or deletion; and (d) opposition to their processing. To exercise your rights, write to [privacy email] with the subject "Data protection"; the reply will be sent within [10] business days. You may also request, under Law 21.719, information about the scope and characteristics of the processing of your data.',
       'privacy.s7.title': '7. Security and consent record',
       'privacy.s7.text': 'The site travels over an encrypted connection (HTTPS) and data access is restricted to the company\'s commercial team. Every form submission records the date, time, the version of the consent text accepted and the verified acceptance of the checkbox, in an internal consent log intended to provide traceability of compliance with Laws 19.628 and 21.719.',
@@ -758,15 +821,84 @@
       'consent.r5.val': 'No data is handed over to third parties except under a legal obligation or to essential technology providers under a strict data-processing agreement.',
       'consent.r6.lbl': 'Rights (ARSOP):',
       'consent.r6.val': 'You have the right to access, rectify, delete, oppose and request portability of your personal data, as well as to revoke this consent at any time. You may exercise these rights by writing to [privacy email]. For more detail, see our full Privacy Policy.',
-      'consent.dec.title': 'Consent statement',
-      'consent.dec1': 'I accept the processing of my personal data for the main purposes described above. (Mandatory checkbox on the form: the message cannot be sent without it.)',
-      'consent.dec2': 'I authorize the sending of commercial communications, offers and news from Comercial Amerika SpA via electronic means (Email/WhatsApp). (Optional checkbox on the form: choose according to your preference.)',
       'consent.accept': 'Accept and continue',
-      'consent.reject': 'Reject',
       'contact.form.comms': 'I authorize the sending of commercial communications, offers and news from Comercial Amerika SpA via electronic means (Email/WhatsApp). Optional.',
       'cookies.text': 'We use measurement cookies (Google Analytics) to understand how the site is used and improve it. You can accept or reject; details in the <a href="privacidad.html">privacy policy</a>.',
       'cookies.accept': 'Accept',
+      'bg.badge': 'Exclusive portfolio for Chile',
+      'bg.view.label': 'Switch gallery view',
+      'bg.view.accordion': 'Accordion',
+      'bg.view.grid': 'Grid',
+      'bg.filters.label': 'Filter by category',
+      'bg.open': 'View full profile',
+      'bg.open.sr': 'View profile of',
+      'bg.details': 'View details',
+      'bg.close': 'Close',
+      'bg.modal.about': 'About the brand',
+      'bg.modal.origin': 'Origin',
+      'bg.modal.maker': 'Manufacturer',
+      'bg.modal.dist': 'Distribution',
+      'bg.modal.dist.val': 'Exclusive for Chile',
+      'bg.modal.flavors': 'Flavors',
+      'bg.modal.page': 'View brand page',
+      'bg.modal.cta': 'Interested in carrying this brand?',
+      'bg.modal.btn': 'Ask about this brand',
+      'bg.about.drinkball': 'Ready-to-drink cocktails, straight from Brazil. By Comary, a manufacturer with more than 70 years of history (since 1952).',
+      'bg.about.pinkmoon': 'Soft sparkling drink by Comary, Brazil. Brand tagline: “Experience and style”.',
+      'bg.about.phantom': 'Energy drink for athletes and general consumers.',
+      'bg.about.myfoods': 'Food line focused on gluten-free eating.',
+      'bg.about.topk9': 'Pet products, focused on food and accessories for dogs and cats.',
+      'bg.country.br': 'Brazil',
+      'bg.country.es': 'Spain',
+      'route.lbl.multicanal': 'Multichannel strategy',
+      'route.lbl.infra': 'Infrastructure',
+      'route.lbl.proceso': 'Integrated process',
+      'route.lbl.soporte': 'Ongoing support',
+      'route.map.badge': 'SOUTHERN-CONE NETWORK',
       'cookies.reject': 'Reject',
+      'about.mission.short': 'We connect quality products with people, through exceptional service and efficient sales.',
+      'about.vision.short': 'To be a benchmark of commercial excellence, inside and outside Chile.',
+      'about.values.title': 'Our values',
+      'about.v1.title': 'Excellence',
+      'about.v1.text': 'We do things right, with method and measurement.',
+      'about.v2.title': 'Closeness',
+      'about.v2.text': 'We treat every brand as our own.',
+      'about.v3.title': 'Agility',
+      'about.v3.text': 'We decide and execute fast.',
+      'about.v4.title': 'Transparency',
+      'about.v4.text': 'Clear agreements and open reporting.',
+      'about.v5.title': 'Results',
+      'about.v5.text': 'We measure our success by the growth of the brands we represent.',
+      'cta.brand': 'Boost your brand',
+      'cta.buy': 'I want to buy',
+      'cta.meeting': 'Book a meeting',
+      'stats.n1': '+30',
+      'stats.n1.lbl': 'years of experience in mass consumption',
+      'stats.n2': '6',
+      'stats.n2.lbl': 'sales channels',
+      'stats.n3': '5',
+      'stats.n3.lbl': 'brands in portfolio',
+      'stats.n4': 'Chile',
+      'stats.n4.lbl': 'with expansion planned for Peru and Argentina',
+      'how.label': 'What we do for your brand',
+      'steps.label': 'Our model',
+      'steps.title': 'From origin to consumer, in 5 steps',
+      'steps.s1.title': 'We assess',
+      'steps.s1.text': 'Your brand and the market.',
+      'steps.s2.title': 'We import',
+      'steps.s2.text': 'And meet every Chilean regulation.',
+      'steps.s3.title': 'We design',
+      'steps.s3.text': 'The commercial strategy and pricing by channel.',
+      'steps.s4.title': 'We deliver',
+      'steps.s4.text': 'Your product to chains, convenience, traditional trade and HORECA.',
+      'steps.s5.title': 'We activate',
+      'steps.s5.text': 'Sales at the point of sale, and we measure the results.',
+      'manifesto.title': 'Your brand. Our market. Real results.',
+      'manifesto.text': 'We believe a good brand deserves good execution. That is why we combine more than 30 years of commercial experience with the agility of a young company, connecting quality products with the people who will enjoy them.',
+      'close.title': 'Have a brand with potential? Let\'s make it grow together.',
+      'close.text': 'Tell us about your product and we will show you how to take it to the Chilean shelf.',
+      'route.map.title': 'Chile · expansion to Peru and Argentina',
+      'route.map.sub': 'Main Operations Center: Colina, Metropolitan Region',
 
       // ---------- Nosotros: stepper ----------
       'ns.l1': '1. Import',
@@ -813,7 +945,6 @@
      ------------------------------------------ */
   const ALLIES_LOGOS = [
     { src: 'img/movimiento/1 (1).svg', alt: 'Vieira' },
-    { src: 'img/movimiento/2.svg', alt: 'Cacaolat' },
     { src: 'img/movimiento/3.svg', alt: 'Comary' },
     { src: 'img/movimiento/4.svg', alt: 'My Foods' },
     { src: 'img/movimiento/5 (1).svg', alt: 'Drinkball' },
@@ -1186,10 +1317,6 @@
     function openModal() {
       modal.classList.add('show');
       document.body.style.overflow = 'hidden';
-      // El modal parte mostrando lo que ya está marcado en el formulario
-      if (chkObligatoria && formPrivacidad) chkObligatoria.checked = formPrivacidad.checked;
-      if (chkComunicaciones && formComunicaciones) chkComunicaciones.checked = formComunicaciones.checked;
-      actualizarBotonAceptar();
     }
 
     function closeModal() {
@@ -1197,46 +1324,14 @@
       document.body.style.overflow = '';
     }
 
-    // Los checkboxes del modal y los del formulario van juntos:
-    // - al abrir, el modal parte con lo que hay en el formulario;
-    // - los cambios en el modal se reflejan al momento en el formulario.
-    // Como el checkbox "privacidad" del formulario es "required",
-    // sin marcarlo no se puede enviar: el usuario no puede avanzar
-    // sin dar su consentimiento.
-    const chkObligatoria = document.getElementById('consentObligatoria');
-    const chkComunicaciones = document.getElementById('consentComunicaciones');
+    // El modal es solo información: las casillas viven una sola vez, en el
+    // formulario (privacidad = obligatoria, comunicaciones = opcional).
+    // "Aceptar y continuar" marca la obligatoria del formulario y cierra.
     const btnAccept = document.getElementById('btnConsentAccept');
-    const btnReject = document.getElementById('btnConsentReject');
     const formPrivacidad = document.getElementById('privacidad');
-    const formComunicaciones = document.getElementById('comunicaciones');
 
-    // El botón "Aceptar y continuar" solo se activa con la casilla
-    // obligatoria marcada (la de comunicaciones es opcional).
-    function actualizarBotonAceptar() {
-      if (btnAccept) btnAccept.disabled = !chkObligatoria.checked;
-    }
-
-    if (chkObligatoria) {
-      chkObligatoria.addEventListener('change', function () {
-        if (formPrivacidad) formPrivacidad.checked = chkObligatoria.checked;
-        actualizarBotonAceptar();
-      });
-    }
-    if (chkComunicaciones) {
-      chkComunicaciones.addEventListener('change', function () {
-        if (formComunicaciones) formComunicaciones.checked = chkComunicaciones.checked;
-      });
-    }
-
-    if (btnAccept) btnAccept.addEventListener('click', closeModal);
-    if (btnReject) btnReject.addEventListener('click', function () {
-      // Rechazar: se desmarcan ambas (el envío del formulario queda bloqueado
-      // porque la casilla "privacidad" del formulario es obligatoria)
-      if (formPrivacidad) formPrivacidad.checked = false;
-      if (formComunicaciones) formComunicaciones.checked = false;
-      chkObligatoria.checked = false;
-      chkComunicaciones.checked = false;
-      actualizarBotonAceptar();
+    if (btnAccept) btnAccept.addEventListener('click', function () {
+      if (formPrivacidad) formPrivacidad.checked = true;
       closeModal();
     });
 
@@ -1329,13 +1424,29 @@
     // Accesibilidad: quien pide menos movimiento, ve todo estático
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    /* Corrección del cliente: en celular el contenido aparecía "casi
+       transparente" hasta hacer scroll. Solución de dos partes:
+       1) en pantallas chicas la animación no se aplica (todo visible);
+       2) en desktop, un temporizador de seguridad revela todo igual
+          aunque el observador nunca se dispare. */
+    const esMovil = window.matchMedia('(max-width: 767px)').matches;
+
     const objetivos = document.querySelectorAll(
       '.section > .container, .page-hero > .container, .cta-banner-inner, .impact-banner-inner'
     );
 
+    if (esMovil) return; // sin animación en móvil: el contenido se ve siempre
+
     objetivos.forEach(function (bloque) {
       bloque.classList.add('reveal');
     });
+
+    // Red de seguridad: a los 1.5 s todo el contenido queda visible
+    setTimeout(function () {
+      objetivos.forEach(function (bloque) {
+        bloque.classList.add('reveal-in');
+      });
+    }, 1500);
 
     const observador = new IntersectionObserver(function (entradas) {
       entradas.forEach(function (entrada) {
@@ -1349,6 +1460,24 @@
     objetivos.forEach(function (bloque) {
       observador.observe(bloque);
     });
+  }
+
+  /* ------------------------------------------
+     NAVBAR ESTILO ICB (solo index):
+     verde arriba; cuando el usuario baja, blanco.
+     La clase .scrolled cambia los colores vía CSS.
+     ------------------------------------------ */
+  function initNavbarScroll() {
+    const header = document.querySelector('.header');
+    if (!header || !document.querySelector('.hero-showcase')) return;
+
+    function actualizar() {
+      // Un poco más de la mitad del primer bloque: ahí el navbar pasa a blanco
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    }
+
+    actualizar();
+    window.addEventListener('scroll', actualizar, { passive: true });
   }
 
   /* ------------------------------------------
@@ -1574,6 +1703,7 @@
     initHeroRotator();
     initCookieBanner();
     initScrollReveal();
+    initNavbarScroll();
     initAgeGate();
     initNsStepper();
     setLanguage(readStoredLanguage());

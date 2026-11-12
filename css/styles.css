@@ -983,3 +983,10 @@ main, section, header, footer {
     transition: none !important;
   }
 }
+
+/* =========================================================
+   (El selector de idioma vuelve a estar ACTIVO: el inglés está
+   completo y verificado. Si algún día hay que ocultarlo otra vez,
+   basta reponer la regla .lang-switch, .mobile-lang-switch
+   { display: none !important; }
+   ========================================================= */

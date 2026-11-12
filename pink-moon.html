@@ -8,6 +8,10 @@
   <link rel="icon" type="image/png" href="img/logo.png">
   <meta name="description" data-i18n-content="page.pinkmoon.desc"
     content="Pink Moon: bebida frisante de Comary, Brasil, distribuida en exclusividad para Chile por Comercial Amerika. Experiencia y estilo.">
+  <meta property="og:title" data-i18n-content="page.pinkmoon.title" content="">
+  <meta property="og:description" data-i18n-content="page.pinkmoon.desc" content="">
+  <meta property="og:image" content="https://www.comercialamerika.cl/img/logo.png">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,50 +22,69 @@
 </head>
 <body>
 
+    <!-- ========== HEADER ========== -->
   <header class="header">
     <div class="container header-inner">
-      <!-- Logo protagonista al centro; los menús se reparten a los lados -->
-      <nav class="nav nav-side-left" aria-label="Menú principal izquierda">
-          <a href="index.html" data-i18n="nav.home">Inicio</a>
-          <a href="marcas.html" class="active" data-i18n="nav.brands">Nuestras marcas</a>
-        </nav>
-
       <a href="index.html" class="logo">
         <img src="img/logo.png" alt="Logo de Comercial Amerika SpA" onerror="this.style.display='none'">
       </a>
-
-      <nav class="nav nav-side-right" aria-label="Menú principal derecha">
+      <div class="nav-drawer" id="mobileNavigation" aria-hidden="true" inert>
+        <nav class="nav nav-side-left" aria-label="Menú principal izquierda">
+          <a href="index.html" data-i18n="nav.home">Inicio</a>
+          <a href="marcas.html" class="active" data-i18n="nav.brands">Nuestras marcas</a>
+        </nav>
+        <nav class="nav nav-side-right" aria-label="Menú principal derecha">
           <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
           <a href="route-market.html" data-i18n="nav.route">Route to market</a>
+          <!-- Selector de idioma para escritorio -->
+          <details class="lang-switch">
+            <summary aria-label="Seleccionar idioma">
+              <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+              <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+              <i data-lucide="chevron-down"></i>
+            </summary>
 
-        <details class="lang-switch">
-          <summary aria-label="Seleccionar idioma">
-            <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
-            <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
-            <i data-lucide="chevron-down"></i>
-          </summary>
+            <div class="lang-menu">
+              <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+                <img src="img/flags/es.svg" alt="">
+                Español
+              </button>
 
-          <div class="lang-menu">
-            <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
-              <img src="img/flags/es.svg" alt="">
-              Español
-            </button>
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+                <img src="img/flags/gb.svg" alt="">
+                English
+              </button>
+            </div>
+          </details>
+          <!-- Botón destacado del menú (ver 3.2 del documento) -->
+          <a href="contacto.html" class="btn btn-dark" data-i18n="cta.brand">Potencia tu marca</a>
+        </nav>
+      </div>
+      <details class="lang-switch mobile-lang-switch">
+        <summary aria-label="Seleccionar idioma">
+          <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+          <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+          <i data-lucide="chevron-down"></i>
+        </summary>
 
-            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
-              <img src="img/flags/gb.svg" alt="">
-              English
-            </button>
-          </div>
-        </details>
+        <div class="lang-menu">
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+            <img src="img/flags/es.svg" alt="">
+            Español
+          </button>
 
-        <!-- Botón destacado del menú (ver 3.2 del documento) -->
-        <a href="contacto.html" class="btn btn-dark" data-i18n="nav.distribute">Distribuye con nosotros</a>
-      </nav>
-
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+            <img src="img/flags/gb.svg" alt="">
+            English
+          </button>
+        </div>
+      </details>
+      <button type="button" class="menu-backdrop" aria-label="Cerrar menú" tabindex="-1"></button>
       <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú"
-        aria-expanded="false">☰</button>
+        aria-expanded="false" aria-controls="mobileNavigation">☰</button>
     </div>
   </header>
+
 
   <!-- ========== CONTROL DE EDAD 18+ ========== -->
   <div class="age-modal" id="ageModal" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
@@ -144,7 +167,8 @@
     <div class="container">
       <h2 data-i18n="pm.occasion.title">Ocasión de consumo</h2>
       <p style="color: var(--color-text-muted); margin-top: 0.5rem;" data-i18n="pm.occasion.note">
-        Celebraciones, brindis y salidas. Personas mayores de 25 años y espacios privados (Ley 21.363).
+        Celebraciones, brindis y salidas. Para adultos: la venta es solo para mayores de 18 años (Ley
+        21.363); la regla de 25+ aplica únicamente a personas que aparecen en fotos y campañas.
       </p>
 
       <div class="cards-grid">
@@ -161,8 +185,10 @@
           <p data-i18n="pm.occ2.text">Luz cálida de atardecer, copas y botella en foco.</p>
         </div>
         <div class="card">
-          <div class="hero-image" style="margin-bottom: 1rem;"><span data-i18n="pm.occ3.ph">[FOTO: producto en la góndola
-              o material POP]</span></div>
+          <div class="hero-image" style="margin-bottom: 1rem;">
+            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80"
+              alt="Pasillo de supermercado con góndolas abastecidas" loading="lazy" decoding="async">
+          </div>
           <h4 data-i18n="pm.occ3.title">Dónde encontrarla</h4>
           <p data-i18n="pm.occ3.text">Supermercados, tiendas de conveniencia y canal tradicional.</p>
         </div>
@@ -223,6 +249,29 @@
     </div>
   </div>
 
+  <!-- Biblioteca Lucide -->
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+  <!-- JavaScript principal -->
   <script src="js/main.js"></script>
+
+  <!-- Inicialización de iconos -->
+  <script>
+    (function () {
+      function renderLucideIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+          window.lucide.createIcons({
+            attrs: {
+              "stroke-width": 1.8
+            }
+          });
+        } else {
+          // Si la librería no cargó (sin internet), reintenta en un momento
+          setTimeout(renderLucideIcons, 400);
+        }
+      }
+      renderLucideIcons();
+    })();
+  </script>
 </body>
 </html>
