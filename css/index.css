@@ -773,13 +773,15 @@ html[data-lang="en"] .lang-switch .lang-en {
 
 /* =========================================================
    NAVBAR ESTILO ICB (solo index): verde mientras el hero
-   verde está a la vista, blanco cuando el usuario baja.
+   verde está a la vista, crema cuando el usuario baja.
+   El enlace de la sección ACTIVA va en blanco (arriba) o
+   negro (abajo): nunca verde, para no fundirse con el hero.
    La clase .scrolled la agrega js/main.js (initNavbarScroll).
    ========================================================= */
 .index .header {
-  background-color: var(--color-green, #52B044);
+  background-color: var(--color-green, #16a34a);
   border-bottom: 1px solid transparent;
-  /* Transición suave al pasar de verde a blanco (y de vuelta) */
+  /* Transición suave al pasar de verde a crema (y de vuelta) */
   transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
@@ -791,6 +793,7 @@ html[data-lang="en"] .lang-switch .lang-en {
 .index .header .nav a:hover,
 .index .header .nav a.active {
   color: #fff;
+  font-weight: 700;
 }
 .index .header .nav a.active::after {
   background: #fff;
@@ -800,35 +803,36 @@ html[data-lang="en"] .lang-switch .lang-en {
   transition: color 0.4s ease;
 }
 .index .header.scrolled {
-  /* Mismo tono crema del sitio (antes era blanco puro y chocaban) */
   background-color: var(--color-cream-dark, #f1ebe3);
   border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 .index .header.scrolled .logo,
-.index .header.scrolled .nav a {
-  color: var(--color-navy);
+.index .header.scrolled .nav a,
+.index .header.scrolled .nav a:hover,
+.index .header.scrolled .nav a.active {
+  color: var(--color-navy, #0f172a);
 }
 
 /* El botón destacado mantiene su propio esquema (fondo navy + texto blanco) */
+.index .header .nav a.btn,
 .index .header.scrolled .nav a.btn {
   color: #fff;
 }
-.index .header.scrolled .nav a:hover,
-.index .header.scrolled .nav a.active {
-  color: var(--color-navy);
-}
-.index .header.scrolled .mobile-toggle {
-  color: var(--color-navy);
+.index .header.scrolled .nav a.btn:hover,
+.index .header.scrolled .nav a.btn.active {
+  color: #fff;
 }
 
 /* El drawer móvil tiene su PROPIO fondo crema: sus enlaces siempre
-   van en navy, aunque el navbar esté en verde (o en crema al bajar). */
+   van en navy, y el activo se marca con subrayado verde (no letras
+   verdes, que se confunden con la marca). */
 .index .header .nav-drawer .nav a {
   color: var(--color-navy, #0f172a);
 }
 .index .header .nav-drawer .nav a:hover,
 .index .header .nav-drawer .nav a.active {
-  color: var(--color-green, #16a34a);
+  color: var(--color-navy, #0f172a);
+  font-weight: 700;
 }
 .index .header .nav-drawer .nav a.active::after {
   background: var(--color-green, #16a34a);
