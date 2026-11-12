@@ -690,7 +690,8 @@ html[data-lang="en"] .lang-switch .lang-en {
 /* Franja de cifras ESTILO ICB: una bajo la otra, números gigantes
    y bien marcados sobre fondo claro. */
 .stats-band {
-  background: #fff;
+  /* Mismo tono crema de las demás secciones (antes blanco puro) */
+  background: var(--color-cream-dark, #f1ebe3);
   color: var(--color-navy, #0D2240);
   padding: 4.5rem 1rem 5rem;
 }
@@ -799,8 +800,9 @@ html[data-lang="en"] .lang-switch .lang-en {
   transition: color 0.4s ease;
 }
 .index .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.97);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  /* Mismo tono crema del sitio (antes era blanco puro y chocaban) */
+  background-color: var(--color-cream-dark, #f1ebe3);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 .index .header.scrolled .logo,
 .index .header.scrolled .nav a {
@@ -817,6 +819,22 @@ html[data-lang="en"] .lang-switch .lang-en {
 }
 .index .header.scrolled .mobile-toggle {
   color: var(--color-navy);
+}
+
+/* El drawer móvil tiene su PROPIO fondo crema: sus enlaces siempre
+   van en navy, aunque el navbar esté en verde (o en crema al bajar). */
+.index .header .nav-drawer .nav a {
+  color: var(--color-navy, #0f172a);
+}
+.index .header .nav-drawer .nav a:hover,
+.index .header .nav-drawer .nav a.active {
+  color: var(--color-green, #16a34a);
+}
+.index .header .nav-drawer .nav a.active::after {
+  background: var(--color-green, #16a34a);
+}
+.index .header .nav-drawer .nav a.btn {
+  color: #fff;
 }
 
 /* Sin animaciones bruscas para quien pide menos movimiento */
