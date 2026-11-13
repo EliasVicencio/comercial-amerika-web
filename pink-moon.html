@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="page.pinkmoon.title">Pink Moon | Vinos Frisantes & Lifestyle | Comercial Amerika SpA</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/pink-moon.css">
 </head>
 <body>
@@ -28,15 +29,24 @@
         <nav class="nav nav-side-right" aria-label="Menú principal derecha">
           <a href="nosotros.html">Quiénes somos</a>
           <a href="route-to-market.html">Route to market</a>
-          <!-- Selector de idioma -->
+          <!-- Selector de idioma para escritorio -->
           <details class="lang-switch">
             <summary aria-label="Seleccionar idioma">
-              <span>🇨🇱 ES</span>
-              <i data-lucide="chevron-down" style="width:15px;height:15px;"></i>
+              <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
+              <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
+              <i data-lucide="chevron-down"></i>
             </summary>
+
             <div class="lang-menu">
-              <button type="button" class="lang-btn active" onclick="switchLang('es')">🇨🇱 Español</button>
-              <button type="button" class="lang-btn" onclick="switchLang('en')">🇬🇧 English</button>
+              <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+                <img src="img/flags/es.svg" alt="">
+                Español
+              </button>
+
+              <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+                <img src="img/flags/gb.svg" alt="">
+                English
+              </button>
             </div>
           </details>
           <a href="#contacto" class="btn btn-dark">Potencia tu marca</a>
@@ -255,10 +265,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
-        <div class="logo" style="color: white;">
-          <div class="logo-mark" style="background: white; color: var(--color-navy);">CA</div>
-          <span>COMERCIAL AMERIKA</span>
-        </div>
+        <img src="img/logo.png" alt="Logo de Comercial Amerika SpA" class="footer-logo">
         <div class="footer-links">
           <a href="index.html">Inicio</a>
           <a href="marcas.html">Nuestras marcas</a>
