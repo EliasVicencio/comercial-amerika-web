@@ -990,3 +990,97 @@ main, section, header, footer {
    basta reponer la regla .lang-switch, .mobile-lang-switch
    { display: none !important; }
    ========================================================= */
+/* =========================================================
+   UNIFICACIÓN GLOBAL DE NAVBARS (Todas las páginas)
+   ========================================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Tipografía, colores y estados de los enlaces del navbar */
+.header .logo,
+.header .nav a {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  transition: color 0.4s ease, font-weight 0.2s ease;
+}
+
+.header .nav a:hover,
+.header .nav a.active {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+.header .nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-green);
+  border-radius: 2px;
+}
+
+.header .mobile-toggle {
+  color: var(--color-navy);
+  transition: color 0.4s ease;
+}
+
+/* El botón destacado ("Potencia tu marca") mantiene su estilo oscuro/claro independiente */
+.header .nav a.btn {
+  color: var(--color-white);
+  font-weight: 600;
+}
+.header .nav a.btn:hover {
+  color: var(--color-white);
+}
+
+/* Drawer móvil unificado */
+.header .nav-drawer .nav a {
+  color: var(--color-navy);
+}
+.header .nav-drawer .nav a:hover,
+.header .nav-drawer .nav a.active {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+.header .nav-drawer .nav a.active::after {
+  background: var(--color-green);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header .logo,
+  .header .nav a,
+  .header .mobile-toggle {
+    transition: none;
+  }
+}
+
+/* El botón destacado ("Potencia tu marca") idéntico al index en todas las páginas */
+.header .nav a.btn.btn-dark,
+.header .nav-drawer .nav a.btn.btn-dark {
+  background-color: var(--color-navy) !important;
+  color: var(--color-white) !important;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.1;
+  padding: 0.8em 1.4em;
+  border-radius: 9px;
+}
+
+.header .nav a.btn.btn-dark:hover,
+.header .nav-drawer .nav a.btn.btn-dark:hover {
+  background-color: #1e293b !important;
+  color: var(--color-white) !important;
+  transform: translateY(-1px);
+}
