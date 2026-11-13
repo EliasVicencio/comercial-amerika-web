@@ -13,7 +13,7 @@
 date_default_timezone_set('America/Santiago');
 
 // ---------- CONFIGURACIÓN: CAMBIA ESTOS VALORES ----------
-$destinatario  = "tu-correo@tudominio.cl";   // Donde recibes los mensajes
+$destinatario  = "Contacto@comercialamerika.cl";   // Donde recibes los mensajes
 $dominio_envio = "comercialamerika.cl";      // Tu dominio real (se usa en el From; NO usar HTTP_HOST)
 $asunto_base   = "Nuevo contacto desde web Comercial Amerika SpA";
 
