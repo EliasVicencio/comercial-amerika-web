@@ -1,41 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="page.drinkball.title">DrinkBall | Comercial Amerika SpA</title>
-  <link rel="canonical" href="https://www.comercialamerika.cl/drinkball.html">
-  <link rel="icon" type="image/png" href="img/logo.png">
-  <meta name="description" data-i18n-content="page.drinkball.desc"
-    content="DrinkBall: cócteles listos para beber (RTD) de Comary, Brasil, distribuidos en exclusividad para Chile por Comercial Amerika. Innovación y actitud.">
-  <meta property="og:title" data-i18n-content="page.drinkball.title" content="">
-  <meta property="og:description" data-i18n-content="page.drinkball.desc" content="">
-  <meta property="og:image" content="https://www.comercialamerika.cl/img/logo.png">
-  <meta property="og:type" content="website">
+  <link rel="icon" href="img/logo.png" type="image/x-icon">
 
+  <!-- Google Fonts - Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/drinkball.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- ========== HEADER ========== -->
+  <!-- ========== HEADER UNIFICADO ========== -->
   <header class="header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="img/logo.png" alt="Logo de Comercial Amerika SpA" onerror="this.style.display='none'">
+      <a href="index.html" class="logo" aria-label="Comercial Amerika">
+        <img src="img/logo.png" alt="Comercial Amerika SpA" width="120" height="auto">
       </a>
-      <div class="nav-drawer" id="mobileNavigation" aria-hidden="true" inert>
+
+      <div class="nav-drawer" id="mobileNavigation">
         <nav class="nav nav-side-left" aria-label="Menú principal izquierda">
-          <a href="index.html" data-i18n="nav.home">Inicio</a>
+          <a href="index.html" data-i18n="nav.home" class="demo-link">Inicio</a>
           <a href="marcas.html" class="active" data-i18n="nav.brands">Nuestras marcas</a>
         </nav>
+
         <nav class="nav nav-side-right" aria-label="Menú principal derecha">
           <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
           <a href="route-market.html" data-i18n="nav.route">Route to market</a>
+
           <!-- Selector de idioma para escritorio -->
           <details class="lang-switch">
             <summary aria-label="Seleccionar idioma">
@@ -56,10 +52,11 @@
               </button>
             </div>
           </details>
-          <!-- Botón destacado del menú (ver 3.2 del documento) -->
+
           <a href="contacto.html" class="btn btn-dark" data-i18n="cta.brand">Potencia tu marca</a>
         </nav>
       </div>
+
       <details class="lang-switch mobile-lang-switch">
         <summary aria-label="Seleccionar idioma">
           <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
@@ -79,218 +76,661 @@
           </button>
         </div>
       </details>
-      <button type="button" class="menu-backdrop" aria-label="Cerrar menú" tabindex="-1"></button>
-      <button type="button" class="mobile-toggle" data-i18n-aria-label="nav.menu" aria-label="Menú"
-        aria-expanded="false" aria-controls="mobileNavigation">☰</button>
+
+      <button type="button" class="menu-backdrop" aria-label="Cerrar menú"></button>
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Menú" aria-expanded="false">☰</button>
     </div>
   </header>
 
-
-  <!-- ========== CONTROL DE EDAD 18+ ==========
-       Este aviso aparece al entrar y se guarda en la sesión.
-       main.js lo muestra/oculta con las clases .age-modal / .hidden -->
+  <!-- ========== MODAL DE CONTROL DE EDAD 18+ (Ley 21.363) ========== -->
   <div class="age-modal" id="ageModal" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
-    <div class="age-modal-content">
+    <div class="age-modal-content" id="ageConfirmView">
       <span class="age-badge">⚠ +18</span>
       <h2 id="ageTitle" data-i18n="age.title">Contenido para mayores de 18 años</h2>
-      <p data-i18n="age.text">Esta página muestra bebidas alcohólicas. Su venta está prohibida a menores de 18 años
-        (Ley 21.363).</p>
+      <p data-i18n="age.text">Esta página muestra bebidas alcohólicas. Su venta está prohibida a menores de 18 años (Ley 21.363).</p>
       <div class="age-modal-actions">
-        <button type="button" class="btn btn-primary" id="btnAgeYes" data-i18n="age.yes">Sí, soy mayor de 18
-          años</button>
+        <button type="button" class="btn btn-primary" id="btnAgeYes" data-i18n="age.yes">Sí, soy mayor de 18 años</button>
         <button type="button" class="btn btn-outline" id="btnAgeNo" data-i18n="age.no">No, salir</button>
+      </div>
+    </div>
+
+    <!-- Vista alternativa si elige "No, salir" -->
+    <div class="age-modal-content" id="ageRestrictedView" style="display: none;">
+      <span class="age-badge" style="background: #dc2626;">⛔ Acceso Restringido</span>
+      <h2 data-i18n="age.restricted.title">Lo sentimos, no puedes ingresar</h2>
+      <p data-i18n="age.restricted.text">De acuerdo con la Ley 21.363, debes ser mayor de 18 años para visualizar contenido relacionado con bebidas alcohólicas.</p>
+      <div class="age-modal-actions">
+        <button type="button" class="btn btn-primary" id="btnAgeRetry" data-i18n="age.retry">Volver a verificar</button>
       </div>
     </div>
   </div>
 
   <!-- ========== 1. HERO DE LA MARCA ========== -->
-  <section class="page-hero">
+  <section class="page-hero" id="inicio">
     <div class="container">
-      <p class="section-label" style="color: var(--color-green);" data-i18n="nav.brands">Nuestras marcas</p>
+      <p class="section-label" data-i18n="db.label">Cócteles Listos para Beber (RTD) · Comary</p>
       <h1>DrinkBall</h1>
-      <p style="margin-top: 0.75rem; font-size: 1.15rem; color: var(--color-text-muted); max-width: 560px;"
-        data-i18n="db.tagline">Cócteles listos para beber · "Enfría, abre, disfruta"</p>
-      <span class="age-badge" style="margin-top: 1rem;" data-i18n="age.badge">⚠ Bebida alcohólica · Solo para mayores de
-        18 años</span>
+      <p style="margin-top: 0.75rem; font-size: 1.15rem; color: var(--color-text-muted); max-width: 680px;" data-i18n="db.tagline">
+        "Enfría, abre, disfruta." Innovación lista para beber y compartir. Creada para una nueva generación de consumidores, une conveniencia, variedad y un formato propio de alto impacto visual pensado para destacar en el punto de venta.
+      </p>
 
-      <div class="hero-actions" style="margin-top: 1.5rem;">
-        <a href="contacto.html" class="btn btn-primary" data-i18n="db.cta">Quiero venderla en mi negocio</a>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
+        <span class="age-badge" data-i18n="db.abv">⚠ Graduación alcohólica: 10% - 14% Vol.</span>
+        <span class="age-badge" style="background: var(--color-green);" data-i18n="db.format">Formato oficial: 300 ml · Exclusiva Chile: Comercial Amerika</span>
+      </div>
+
+      <div class="hero-actions" style="margin-top: 1.75rem;">
+        <a href="#contacto" class="btn btn-primary" data-i18n="db.cta">Quiero venderla en mi negocio</a>
+        <a href="#portafolio" class="btn btn-outline" data-i18n="db.explore">Ver los 10 sabores</a>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;">
+  <!-- ========== BANNER EDITORIAL DESTACADO (Inspirado en Comary) ========== -->
+  <section class="section" style="padding-top: 0.5rem; padding-bottom: 2rem;">
     <div class="container">
-      <div class="hero-image hero-contain">
-        <img src="img/drink-sabores.png" alt="Packshot de DrinkBall" onerror="this.outerHTML='<span>[IMAGEN DESTACADO]</span>'">
+      <div class="drinkball-editorial-banner">
+        <div>
+          <span class="editorial-pill" data-i18n="db.ed.badge">I+D · Innovación y Experiencia</span>
+          <h2 data-i18n="db.ed.title">Enfrió, abrió, disfrutó: una nueva categoría de consumo</h2>
+          <p data-i18n="db.ed.text">
+            Nacida del área de Investigación y Desarrollo de Comary, DrinkBall revoluciona el segmento RTD combinando recetas de coctelería clásica y sabores cremosos en un envase de 300 ml práctico, irreverente y listo para cualquier ocasión.
+          </p>
+          <div class="editorial-stats-row">
+            <div class="ed-stat">
+              <strong>300 ml</strong>
+              <span data-i18n="db.ed.s1">Formato individual</span>
+            </div>
+            <div class="ed-stat">
+              <strong>10% - 14%</strong>
+              <span data-i18n="db.ed.s2">Graduación ABV</span>
+            </div>
+            <div class="ed-stat">
+              <strong>10 Sabores</strong>
+              <span data-i18n="db.ed.s3">Tropicales y Cremosos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ilustración SVG de trío de envases DrinkBall 300ml -->
+        <div class="bottles-showcase" aria-hidden="true">
+          <!-- Botella 1: Piña Bolada (Amarillo) -->
+          <svg width="82" height="175" viewBox="0 0 90 190" fill="none">
+            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+            <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#eab308"/>
+            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white" fill-opacity="0.35"/>
+            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a"/>
+            <text x="45" y="116" text-anchor="middle" fill="#facc15" font-family="Inter, sans-serif" font-weight="800" font-size="9">DRINK</text>
+            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="9">BALL</text>
+            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600" font-size="6">PIÑA BOLADA</text>
+          </svg>
+
+          <!-- Botella 2 (Central más alta): Caipiríssima (Verde) -->
+          <svg width="96" height="205" viewBox="0 0 90 190" fill="none">
+            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+            <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#16a34a"/>
+            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white" fill-opacity="0.35"/>
+            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a"/>
+            <text x="45" y="116" text-anchor="middle" fill="#4ade80" font-family="Inter, sans-serif" font-weight="800" font-size="9">DRINK</text>
+            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="9">BALL</text>
+            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600" font-size="5.8">CAIPIRÍSSIMA</text>
+          </svg>
+
+          <!-- Botella 3: Summer Blue (Azul) -->
+          <svg width="82" height="175" viewBox="0 0 90 190" fill="none">
+            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+            <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#0284c7"/>
+            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white" fill-opacity="0.35"/>
+            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a"/>
+            <text x="45" y="116" text-anchor="middle" fill="#38bdf8" font-family="Inter, sans-serif" font-weight="800" font-size="9">DRINK</text>
+            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="9">BALL</text>
+            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600" font-size="5.8">SUMMER BLUE</text>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ========== 2. HISTORIA BREVE ========== -->
-  <section class="section" style="padding-top: 0;">
+  <section class="section" id="historia" style="padding-top: 0;">
     <div class="container">
       <div class="highlight-box">
         <p data-i18n="db.history">
-          DrinkBall es la línea de cócteles listos para beber (RTD) de <strong>Comary</strong>,
-          fabricante brasileño de bebidas desde 1952 (más de 70 años de historia).
-          Comercial Amerika la importa y distribuye en exclusividad para Chile.
+          DrinkBall es la línea de cócteles listos para beber (RTD) de <strong>Comary</strong>, fabricante brasileño de bebidas desde 1952 (más de 70 años de historia). Comercial Amerika la importa y distribuye en exclusividad para Chile, llevando innovación, alta rotación y propuesta de valor a supermercados, conveniencia y canal tradicional.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ========== 3. PORTAFOLIO ========== -->
-  <section class="section" style="background: var(--color-cream-dark); padding-top: 3.5rem;">
+  <!-- ========== 3. PORTAFOLIO COMPLETO DE 10 SABORES ========== -->
+  <section class="section" id="portafolio" style="background: var(--color-cream-dark); padding-top: 3.75rem;">
     <div class="container">
-      <h2 data-i18n="db.portfolio.title">Portafolio de sabores</h2>
+      <div class="portfolio-header">
+        <div>
+          <p class="section-label" data-i18n="db.port.label">Portafolio Oficial Comary</p>
+          <h2 data-i18n="db.portfolio.title">10 sabores listos para disfrutar</h2>
+        </div>
 
-      <div class="brands-grid">
-        <div class="product-card">
-          <img src="img/caipirissima.png" alt="Packshot de Caipiríssima" class="product-image" onerror="this.outerHTML='<span>[PACKSHOT: lata Caipiríssima]</span>'">
-          <h4 data-i18n="db.f1.name">Caipiríssima</h4>
-          <p data-i18n="db.f1.desc">Limón y menta · Clásico tropical</p>
+        <!-- Filtros interactivos por línea -->
+        <div class="filter-tabs" role="tablist" aria-label="Filtrar sabores">
+          <button type="button" class="filter-btn active" data-filter="all" data-i18n="db.filter.all">Todos (10)</button>
+          <button type="button" class="filter-btn" data-filter="tropical" data-i18n="db.filter.tropical">Clásicos y Tropicales (6)</button>
+          <button type="button" class="filter-btn" data-filter="creamy" data-i18n="db.filter.creamy">Cremosos y Milkshakes (4)</button>
         </div>
-        <div class="product-card">
-          <img src="img/mate-limao-spritz.png" alt="Packshot de Mate Limao Spritz" class="product-image" onerror="this.outerHTML='<span>[PACKSHOT: lata Mate Limao Spritz]</span>'">
-          <h4 data-i18n="db.f2.name">Mate Limao Spritz</h4>
-          <p data-i18n="db.f2.desc">Hojas de mate y limón · Clásicos</p>
+      </div>
+
+      <div class="brands-grid" id="flavorsGrid">
+        <!-- 1. Piña Bolada -->
+        <div class="product-card" data-category="tropical">
+          <div class="product-visual" style="background: #fef9c3;">
+            <span class="product-cat-badge" data-i18n="db.cat.tropical">Tropical</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#eab308"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#facc15" font-family="Inter, sans-serif" font-weight="800" font-size="9">PIÑA</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f1.name">Piña Bolada</h4>
+          <p data-i18n="db.f1.desc">Piña y coco · Refrescante y exótico de perfil tropical.</p>
+          <span class="product-meta">300 ml · 10% Vol.</span>
         </div>
-        <div class="product-card">
-          <img src="img/pina-bolada.png" alt="Packshot de Piña Bolada" class="product-image" onerror="this.outerHTML='<span>[PACKSHOT: lata Piña Bolada]</span>'">
-          <h4 data-i18n="db.f3.name">Piña Bolada</h4>
-          <p data-i18n="db.f3.desc">Piña y coco · Tropical</p>
+
+        <!-- 2. Tropical Sunset -->
+        <div class="product-card" data-category="tropical">
+          <div class="product-visual" style="background: #ffedd5;">
+            <span class="product-cat-badge" data-i18n="db.cat.tropical">Tropical</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#f97316"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#fb923c" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">SUNSET</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f2.name">Tropical Sunset</h4>
+          <p data-i18n="db.f2.desc">Frutas tropicales y cítricos · Vibrante y aromático.</p>
+          <span class="product-meta">300 ml · 10% Vol.</span>
         </div>
-        <div class="product-card">
-          <img src="img/banana-split.png" alt="Packshot de Banana Split" class="product-image" onerror="this.outerHTML='<span>[PACKSHOT: lata Banana Split]</span>'">
-          <h4 data-i18n="db.f4.name">Banana Split</h4>
-          <p data-i18n="db.f4.desc">Plátano · Cremosos</p>
+
+        <!-- 3. Summer Blue -->
+        <div class="product-card" data-category="tropical">
+          <div class="product-visual" style="background: #e0f2fe;">
+            <span class="product-cat-badge" data-i18n="db.cat.tropical">Tropical</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#0284c7"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#38bdf8" font-family="Inter, sans-serif" font-weight="800" font-size="9">BLUE</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f3.name">Summer Blue</h4>
+          <p data-i18n="db.f3.desc">Cítrico refrescante · Color azul intenso y toque curaçao.</p>
+          <span class="product-meta">300 ml · 10% Vol.</span>
         </div>
-        <div class="product-card">
-          <img src="img/doce-de-leite.png" alt="Packshot de Doce de Leite" class="product-image" onerror="this.outerHTML='<span>[PACKSHOT: lata Doce de Leite]</span>'">
-          <h4 data-i18n="db.f5.name">Doce de Leite</h4>
-          <p data-i18n="db.f5.desc">Manjar · Cremosos</p>
+
+        <!-- 4. Caipiríssima -->
+        <div class="product-card" data-category="tropical">
+          <div class="product-visual" style="background: #dcfce7;">
+            <span class="product-cat-badge" data-i18n="db.cat.classic">Clásico</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#16a34a"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#4ade80" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">CAIPI</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f4.name">Caipiríssima</h4>
+          <p data-i18n="db.f4.desc">Limón y menta · El clásico brasileño listo para servir.</p>
+          <span class="product-meta">300 ml · 12% Vol.</span>
+        </div>
+
+        <!-- 5. Mate Iced Club -->
+        <div class="product-card" data-category="tropical">
+          <div class="product-visual" style="background: #fef3c7;">
+            <span class="product-cat-badge" data-i18n="db.cat.classic">Clásico</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#b45309"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#fbbf24" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">MATE</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f5.name">Mate Iced Club</h4>
+          <p data-i18n="db.f5.desc">Hojas de mate y limón · Frescura herbal de playa.</p>
+          <span class="product-meta">300 ml · 10% Vol.</span>
+        </div>
+
+        <!-- 6. Moscow Ball -->
+        <div class="product-card" data-category="tropical">
+          <div class="product-visual" style="background: #f1f5f9;">
+            <span class="product-cat-badge" data-i18n="db.cat.classic">Clásico</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#64748b"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">MOSCOW</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f6.name">Moscow Ball</h4>
+          <p data-i18n="db.f6.desc">Jengibre y limón · Inspirado en el icónico Moscow Mule.</p>
+          <span class="product-meta">300 ml · 12% Vol.</span>
+        </div>
+
+        <!-- 7. Banana Split -->
+        <div class="product-card" data-category="creamy">
+          <div class="product-visual" style="background: #fef08a;">
+            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#ca8a04"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#fef08a" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">BANANA</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f7.name">Banana Split</h4>
+          <p data-i18n="db.f7.desc">Plátano y crema · Textura aterciopelada e indulgente.</p>
+          <span class="product-meta">300 ml · 14% Vol.</span>
+        </div>
+
+        <!-- 8. Milkshake Chocolate -->
+        <div class="product-card" data-category="creamy">
+          <div class="product-visual" style="background: #e7e5e4;">
+            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#57534e"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#d6d3d1" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">CHOCO</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f8.name">Milkshake Chocolate</h4>
+          <p data-i18n="db.f8.desc">Chocolate cremoso · Cacao intenso con notas lácteas.</p>
+          <span class="product-meta">300 ml · 14% Vol.</span>
+        </div>
+
+        <!-- 9. Milkshake Fresa -->
+        <div class="product-card" data-category="creamy">
+          <div class="product-visual" style="background: #fce7f3;">
+            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#ec4899"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#f9a8d4" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">FRESA</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f9.name">Milkshake Fresa</h4>
+          <p data-i18n="db.f9.desc">Frutilla cremosa · Dulzor equilibrado y cuerpo suave.</p>
+          <span class="product-meta">300 ml · 14% Vol.</span>
+        </div>
+
+        <!-- 10. Dulce de Leche -->
+        <div class="product-card" data-category="creamy">
+          <div class="product-visual" style="background: #fed7aa;">
+            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
+            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
+              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#9a3412"/>
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
+              <text x="45" y="122" text-anchor="middle" fill="#fdba74" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">MANJAR</text>
+            </svg>
+          </div>
+          <h4 data-i18n="db.f10.name">Dulce de Leche</h4>
+          <p data-i18n="db.f10.desc">Manjar · El favorito latinoamericano hecho cóctel cremoso.</p>
+          <span class="product-meta">300 ml · 14% Vol.</span>
         </div>
       </div>
     </div>
   </section>
 
-  
-
-  <!-- ========== 5 Y 6. OCASIÓN DE CONSUMO + DÓNDE ENCONTRARLA ========== -->
-  <section class="section" style="background: var(--color-cream-dark);">
+  <!-- ========== 4. OCASIÓN DE CONSUMO Y CANALES ========== -->
+  <section class="section" id="ocasiones" style="background: var(--color-white);">
     <div class="container">
+      <p class="section-label" data-i18n="db.occ.label">Experiencia y Punto de Venta</p>
       <h2 data-i18n="db.occasion.title">Ocasión de consumo</h2>
-      <p style="color: var(--color-text-muted); margin-top: 0.5rem;" data-i18n="db.occasion.note">
-        Fiestas, playa, festivales y reuniones. Para adultos: la venta es solo para mayores de 18 años (Ley
-        21.363); la regla de 25+ aplica únicamente a personas que aparecen en fotos y campañas.
+      <p style="color: var(--color-text-muted); margin-top: 0.5rem; max-width: 720px;" data-i18n="db.occasion.note">
+        Fiestas, playa, festivales y reuniones. Para adultos: su venta está prohibida a menores de 18 años (Ley 21.363).
       </p>
 
       <div class="cards-grid">
         <div class="card">
-          <!-- Mismo recuadro que los otros (hero-image), pero con clase
-               fit-contain: la foto se ve completa dentro del hueco, sin
-               recortarse ni extender la tarjeta hacia abajo. -->
-          <div class="hero-image" style="margin-bottom: 1rem;">
-            <img src="img/drinkball02.png" alt="Icono de terraza y verano" class="fit-contain"
-              onerror="this.outerHTML='<span>[ICONO: terraza y verano]</span>'">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Terraza y verano chileno" loading="lazy">
           </div>
-          <h4 data-i18n="db.occ1.title">Terraza / verano chileno</h4>
-          <p data-i18n="db.occ1.text">Atardecer, cooler y latas listas para compartir.</p>
+          <h4 data-i18n="db.occ1.title">Terraza y Verano Chileno</h4>
+          <p data-i18n="db.occ1.text">Atardecer, cooler con hielo y botellas de 300 ml listas para abrir y compartir sin preparación previa.</p>
         </div>
+
         <div class="card">
-          <div class="hero-image" style="margin-bottom: 1rem;"><span data-i18n="db.occ2.ph">[FOTO: servido en vaso con
-              hielo y decoración]</span></div>
-          <h4 data-i18n="db.occ2.title">Servido en vaso</h4>
-          <p data-i18n="db.occ2.text">Muestra que es un cóctel de verdad, no un refresco.</p>
-        </div>
-        <div class="card">
-          <div class="hero-image" style="margin-bottom: 1rem;">
-            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80"
-              alt="Pasillo de supermercado con góndolas abastecidas" loading="lazy" decoding="async">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Servido en vaso con hielo" loading="lazy">
           </div>
-          <h4 data-i18n="db.occ3.title">Dónde encontrarla</h4>
-          <p data-i18n="db.occ3.text">Supermercados, tiendas de conveniencia y canal tradicional.</p>
+          <h4 data-i18n="db.occ2.title">Servido en Vaso / Coctelería Real</h4>
+          <p data-i18n="db.occ2.text">Recetas equilibradas con graduación alcohólica real (10% - 14%), ideales para servir con hielo y garnish.</p>
+        </div>
+
+        <div class="card">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80" alt="Canal HORECA y Retail" loading="lazy">
+          </div>
+          <h4 data-i18n="db.occ3.title">Canal HORECA y Retail</h4>
+          <p data-i18n="db.occ3.text">Alto impacto visual en góndolas de supermercados, tiendas de conveniencia, botillerías y canal tradicional.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== 7. LLAMADO FINAL ========== -->
-  <section class="cta-banner green">
+  <!-- ========== 5. LLAMADO FINAL ========== -->
+  <section class="cta-banner green" id="contacto">
     <div class="container cta-banner-inner">
       <h2 data-i18n="db.cta2.title">¿Quieres vender DrinkBall en tu negocio?</h2>
-      <a href="contacto.html" class="btn btn-dark" data-i18n="db.cta">Quiero venderla en mi negocio</a>
+      <a href="#contacto" class="btn btn-dark demo-cta" data-i18n="db.cta">Quiero venderla en mi negocio</a>
     </div>
   </section>
 
+  <!-- ========== FOOTER CORPORATIVO ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
-        <img src="img/logo.png" alt="Logo de Comercial Amerika SpA" class="footer-logo" onerror="this.style.display='none'">
+        <!-- Logo versión blanca para footer -->
+        <svg width="160" height="40" viewBox="0 0 185 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="2" y="36" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="30" letter-spacing="-0.03em">AMERIKA</text>
+          <path d="M137 15C144 7 156 6 163 8C160 15 151 21 141 20C139 19 138 17 137 15Z" fill="#16a34a"/>
+          <path d="M136 18C142 14 149 12 157 11" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+
         <div class="footer-links">
-          <a href="index.html" data-i18n="nav.home">Inicio</a>
-          <a href="marcas.html" data-i18n="nav.brands">Nuestras marcas</a>
-          <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
-          <a href="route-market.html" data-i18n="nav.route">Route to market</a>
-          <a href="contacto.html" data-i18n="nav.contact">Contáctanos</a>
+          <a href="#inicio" data-i18n="nav.home">Inicio</a>
+          <a href="#portafolio" data-i18n="nav.brands">Nuestras marcas</a>
+          <a href="#historia" data-i18n="nav.about">Quiénes somos</a>
+          <a href="#ocasiones" data-i18n="nav.route">Route to market</a>
+          <a href="#contacto" data-i18n="nav.contact">Contáctanos</a>
         </div>
       </div>
+
       <div class="footer-bottom">
         <div>
           <span data-i18n="footer.legal">Comercial Amerika SpA · RUT 78.474.378-0</span><br>
-          <span data-i18n="footer.contactline">contacto@comercialamerika.cl · Tel./WhatsApp +56 9 5610 0329</span><br>
+          <span data-i18n="footer.contactline">Contacto@comercialamerika.cl · Tel./WhatsApp +56 9 5610 0329</span><br>
           <span data-i18n="footer.location">Colina, Región Metropolitana · Chile</span>
         </div>
-        <div><span data-i18n="footer.rights">© 2026 Comercial Amerika SpA. Todos los derechos reservados.</span></div>
+        <div>
+          <span data-i18n="footer.rights">© 2026 Comercial Amerika SpA. Todos los derechos reservados.</span>
+        </div>
       </div>
+
       <p class="footer-age" data-i18n="footer.age">Venta de alcohol prohibida a menores de 18 años.</p>
-      <p class="footer-age"><a href="privacidad.html" data-i18n="footer.privacy">Política de privacidad</a></p>
+      <p class="footer-age"><a href="#privacidad" class="demo-link" data-i18n="footer.privacy">Política de privacidad</a></p>
     </div>
   </footer>
 
-  <a href="https://wa.me/56956100329?text=Hola%20Comercial%20Amerika,%20quisiera%20cotizar%20sus%20productos"
-    class="whatsapp-float" target="_blank" rel="noopener" data-i18n-aria-label="wa.aria"
-    aria-label="Escríbenos por WhatsApp">
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/56956100329?text=Hola%20Comercial%20Amerika,%20quisiera%20cotizar%20DrinkBall"
+    class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.3S24.6.5 16 .5zm0 28.1c-2.5 0-4.8-.7-6.8-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.3-2.1-2-4.7-2-7.3 0-7 5.7-12.8 12.9-12.8S28.8 8.2 28.8 15.3 23.1 28.6 16 28.6zm7.2-9.6c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.7-.2-1 .2-.3.4-1.2 1.3-1.5 1.6-.3.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.3-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.6.1-1 .5-.3.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9-.1-.2-.4-.3-.8-.5z" />
+      <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.3S24.6.5 16 .5zm0 28.1c-2.5 0-4.8-.7-6.8-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.3-2.1-2-4.7-2-7.3 0-7 5.7-12.8 12.9-12.8S28.8 8.2 28.8 15.3 23.1 28.6 16 28.6zm7.2-9.6c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.7-.2-1 .2-.3.4-1.2 1.3-1.5 1.6-.3.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.3-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.6.1-1 .5-.3.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9-.1-.2-.4-.3-.8-.5z" />
     </svg>
   </a>
 
-  <!-- Aviso de cookies (Leyes 19.628 / 21.719): la lógica vive en js/main.js -->
-  <div class="cookie-banner" id="cookieBanner" hidden>
-    <div class="cookie-inner">
-      <p data-i18n="cookies.text">Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.</p>
-      <div class="cookie-actions">
-        <button type="button" class="btn-accept" id="cookieAccept" data-i18n="cookies.accept">Aceptar</button>
-        <button type="button" id="cookieReject" data-i18n="cookies.reject">Rechazar</button>
-      </div>
-    </div>
-  </div>
+  <div class="toast-msg" id="toastMsg">Redirigiendo a formulario de contacto Comercial Amerika...</div>
 
-  <!-- Biblioteca Lucide -->
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-
-  <!-- JavaScript principal -->
-  <script src="js/main.js"></script>
-
-  <!-- Inicialización de iconos -->
   <script>
     (function () {
-      function renderLucideIcons() {
-        if (window.lucide && typeof window.lucide.createIcons === "function") {
-          window.lucide.createIcons({
-            attrs: {
-              "stroke-width": 1.8
+      /* ==========================================
+         1. CONTROL DE EDAD +18 (Ley 21.363)
+         ========================================== */
+      const ageModal = document.getElementById('ageModal');
+      const ageConfirmView = document.getElementById('ageConfirmView');
+      const ageRestrictedView = document.getElementById('ageRestrictedView');
+      const btnAgeYes = document.getElementById('btnAgeYes');
+      const btnAgeNo = document.getElementById('btnAgeNo');
+      const btnAgeRetry = document.getElementById('btnAgeRetry');
+
+      btnAgeYes.addEventListener('click', () => {
+        ageModal.classList.add('hidden');
+      });
+
+      btnAgeNo.addEventListener('click', () => {
+        ageConfirmView.style.display = 'none';
+        ageRestrictedView.style.display = 'block';
+      });
+
+      btnAgeRetry.addEventListener('click', () => {
+        ageRestrictedView.style.display = 'none';
+        ageConfirmView.style.display = 'block';
+      });
+
+      /* ==========================================
+         2. FILTROS INTERACTIVOS DE SABORES
+         ========================================== */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const productCards = document.querySelectorAll('#flavorsGrid .product-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          productCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.classList.remove('hidden-item');
+            } else {
+              card.classList.add('hidden-item');
             }
           });
-        } else {
-          // Si la librería no cargó (sin internet), reintenta en un momento
-          setTimeout(renderLucideIcons, 400);
-        }
+        });
+      });
+
+      /* ==========================================
+         3. MENÚ MÓVIL
+         ========================================== */
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navDrawer = document.getElementById('mobileNavigation');
+      const backdrop = document.querySelector('.menu-backdrop');
+
+      function toggleMobileMenu(forceClose) {
+        const isOpen = forceClose ? false : !navDrawer.classList.contains('open');
+        navDrawer.classList.toggle('open', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
       }
-      renderLucideIcons();
+
+      mobileToggle.addEventListener('click', () => toggleMobileMenu());
+      backdrop.addEventListener('click', () => toggleMobileMenu(true));
+
+      /* ==========================================
+         4. SISTEMA MULTI-IDIOMA (ES / EN) EN VIVO
+         ========================================== */
+      const i18nData = {
+        es: {
+          'page.drinkball.title': 'DrinkBall | Comercial Amerika SpA',
+          'nav.home': 'Inicio',
+          'nav.brands': 'Nuestras marcas',
+          'nav.about': 'Quiénes somos',
+          'nav.route': 'Route to market',
+          'nav.contact': 'Contáctanos',
+          'cta.brand': 'Potencia tu marca',
+          'age.title': 'Contenido para mayores de 18 años',
+          'age.text': 'Esta página muestra bebidas alcohólicas. Su venta está prohibida a menores de 18 años (Ley 21.363).',
+          'age.yes': 'Sí, soy mayor de 18 años',
+          'age.no': 'No, salir',
+          'age.restricted.title': 'Lo sentimos, no puedes ingresar',
+          'age.restricted.text': 'De acuerdo con la Ley 21.363, debes ser mayor de 18 años para visualizar contenido relacionado con bebidas alcohólicas.',
+          'age.retry': 'Volver a verificar',
+          'db.label': 'Cócteles Listos para Beber (RTD) · Comary',
+          'db.tagline': '"Enfría, abre, disfruta." Innovación lista para beber y compartir. Creada para una nueva generación de consumidores, une conveniencia, variedad y un formato propio de alto impacto visual pensado para destacar en el punto de venta.',
+          'db.abv': '⚠ Graduación alcohólica: 10% - 14% Vol.',
+          'db.format': 'Formato oficial: 300 ml · Exclusiva Chile: Comercial Amerika',
+          'db.cta': 'Quiero venderla en mi negocio',
+          'db.explore': 'Ver los 10 sabores',
+          'db.ed.badge': 'I+D · Innovación y Experiencia',
+          'db.ed.title': 'Enfrió, abrió, disfrutó: una nueva categoría de consumo',
+          'db.ed.text': 'Nacida del área de Investigación y Desarrollo de Comary, DrinkBall revoluciona el segmento RTD combinando recetas de coctelería clásica y sabores cremosos en un envase de 300 ml práctico, irreverente y listo para cualquier ocasión.',
+          'db.ed.s1': 'Formato individual',
+          'db.ed.s2': 'Graduación ABV',
+          'db.ed.s3': 'Tropicales y Cremosos',
+          'db.history': 'DrinkBall es la línea de cócteles listos para beber (RTD) de <strong>Comary</strong>, fabricante brasileño de bebidas desde 1952 (más de 70 años de historia). Comercial Amerika la importa y distribuye en exclusividad para Chile, llevando innovación, alta rotación y propuesta de valor a supermercados, conveniencia y canal tradicional.',
+          'db.port.label': 'Portafolio Oficial Comary',
+          'db.portfolio.title': '10 sabores listos para disfrutar',
+          'db.filter.all': 'Todos (10)',
+          'db.filter.tropical': 'Clásicos y Tropicales (6)',
+          'db.filter.creamy': 'Cremosos y Milkshakes (4)',
+          'db.cat.tropical': 'Tropical',
+          'db.cat.classic': 'Clásico',
+          'db.cat.creamy': 'Cremoso',
+          'db.f1.name': 'Piña Bolada',
+          'db.f1.desc': 'Piña y coco · Refrescante y exótico de perfil tropical.',
+          'db.f2.name': 'Tropical Sunset',
+          'db.f2.desc': 'Frutas tropicales y cítricos · Vibrante y aromático.',
+          'db.f3.name': 'Summer Blue',
+          'db.f3.desc': 'Cítrico refrescante · Color azul intenso y toque curaçao.',
+          'db.f4.name': 'Caipiríssima',
+          'db.f4.desc': 'Limón y menta · El clásico brasileño listo para servir.',
+          'db.f5.name': 'Mate Iced Club',
+          'db.f5.desc': 'Hojas de mate y limón · Frescura herbal de playa.',
+          'db.f6.name': 'Moscow Ball',
+          'db.f6.desc': 'Jengibre y limón · Inspirado en el icónico Moscow Mule.',
+          'db.f7.name': 'Banana Split',
+          'db.f7.desc': 'Plátano y crema · Textura aterciopelada e indulgente.',
+          'db.f8.name': 'Milkshake Chocolate',
+          'db.f8.desc': 'Chocolate cremoso · Cacao intenso con notas lácteas.',
+          'db.f9.name': 'Milkshake Fresa',
+          'db.f9.desc': 'Frutilla cremosa · Dulzor equilibrado y cuerpo suave.',
+          'db.f10.name': 'Dulce de Leche',
+          'db.f10.desc': 'Manjar · El favorito latinoamericano hecho cóctel cremoso.',
+          'db.occ.label': 'Experiencia y Punto de Venta',
+          'db.occasion.title': 'Ocasión de consumo',
+          'db.occasion.note': 'Fiestas, playa, festivales y reuniones. Para adultos: su venta está prohibida a menores de 18 años (Ley 21.363).',
+          'db.occ1.title': 'Terraza y Verano Chileno',
+          'db.occ1.text': 'Atardecer, cooler con hielo y botellas de 300 ml listas para abrir y compartir sin preparación previa.',
+          'db.occ2.title': 'Servido en Vaso / Coctelería Real',
+          'db.occ2.text': 'Recetas equilibradas con graduación alcohólica real (10% - 14%), ideales para servir con hielo y garnish.',
+          'db.occ3.title': 'Canal HORECA y Retail',
+          'db.occ3.text': 'Alto impacto visual en góndolas de supermercados, tiendas de conveniencia, botillerías y canal tradicional.',
+          'db.cta2.title': '¿Quieres vender DrinkBall en tu negocio?',
+          'footer.legal': 'Comercial Amerika SpA · RUT 78.474.378-0',
+          'footer.contactline': 'Contacto@comercialamerika.cl · Tel./WhatsApp +56 9 5610 0329',
+          'footer.location': 'Colina, Región Metropolitana · Chile',
+          'footer.rights': '© 2026 Comercial Amerika SpA. Todos los derechos reservados.',
+          'footer.age': 'Venta de alcohol prohibida a menores de 18 años.',
+          'footer.privacy': 'Política de privacidad'
+        },
+        en: {
+          'page.drinkball.title': 'DrinkBall | Comercial Amerika SpA',
+          'nav.home': 'Home',
+          'nav.brands': 'Our brands',
+          'nav.about': 'About us',
+          'nav.route': 'Route to market',
+          'nav.contact': 'Contact us',
+          'cta.brand': 'Boost your brand',
+          'age.title': 'Content for adults 18+',
+          'age.text': 'This page displays alcoholic beverages. Sale is prohibited to minors under 18 years old (Law 21.363).',
+          'age.yes': 'Yes, I am 18 or older',
+          'age.no': 'No, exit',
+          'age.restricted.title': 'Sorry, access restricted',
+          'age.restricted.text': 'In accordance with Law 21.363, you must be 18 or older to view content related to alcoholic beverages.',
+          'age.retry': 'Verify age again',
+          'db.label': 'Ready-to-Drink Cocktails (RTD) · Comary',
+          'db.tagline': '"Chill, open, enjoy." Ready-to-drink innovation made to share. Created for a new generation of consumers, combining convenience, variety and a high-impact visual bottle designed to stand out at the point of sale.',
+          'db.abv': '⚠ Alcohol by volume: 10% - 14% ABV',
+          'db.format': 'Official format: 300 ml · Exclusive in Chile: Comercial Amerika',
+          'db.cta': 'I want to sell it in my business',
+          'db.explore': 'Explore all 10 flavors',
+          'db.ed.badge': 'R&D · Innovation & Experience',
+          'db.ed.title': 'Chilled, opened, enjoyed: a new consumption category',
+          'db.ed.text': 'Born from Comary’s Research & Development department, DrinkBall revolutionizes the RTD segment by combining classic cocktail recipes and creamy flavors in a practical 300 ml bottle ready for any occasion.',
+          'db.ed.s1': 'Single-serve format',
+          'db.ed.s2': 'ABV Strength',
+          'db.ed.s3': 'Tropical & Creamy',
+          'db.history': 'DrinkBall is the Ready-to-Drink (RTD) cocktail line from <strong>Comary</strong>, a Brazilian beverage manufacturer since 1952 (over 70 years of heritage). Comercial Amerika imports and distributes it exclusively in Chile, bringing innovation, high turnover and value to supermarkets, convenience stores and the traditional channel.',
+          'db.port.label': 'Official Comary Portfolio',
+          'db.portfolio.title': '10 ready-to-enjoy flavors',
+          'db.filter.all': 'All (10)',
+          'db.filter.tropical': 'Classics & Tropical (6)',
+          'db.filter.creamy': 'Creamy & Milkshakes (4)',
+          'db.cat.tropical': 'Tropical',
+          'db.cat.classic': 'Classic',
+          'db.cat.creamy': 'Creamy',
+          'db.f1.name': 'Piña Bolada',
+          'db.f1.desc': 'Pineapple & coconut · Refreshing and exotic tropical profile.',
+          'db.f2.name': 'Tropical Sunset',
+          'db.f2.desc': 'Tropical fruits & citrus · Vibrant and aromatic blend.',
+          'db.f3.name': 'Summer Blue',
+          'db.f3.desc': 'Refreshing citrus · Vibrant blue hue with curaçao notes.',
+          'db.f4.name': 'Caipiríssima',
+          'db.f4.desc': 'Lime & mint · The Brazilian classic ready to serve.',
+          'db.f5.name': 'Mate Iced Club',
+          'db.f5.desc': 'Mate leaves & lime · Crisp herbal beach freshness.',
+          'db.f6.name': 'Moscow Ball',
+          'db.f6.desc': 'Ginger & lime · Inspired by the iconic Moscow Mule.',
+          'db.f7.name': 'Banana Split',
+          'db.f7.desc': 'Banana & cream · Velvety and indulgent texture.',
+          'db.f8.name': 'Chocolate Milkshake',
+          'db.f8.desc': 'Creamy chocolate · Rich cocoa with smooth dairy notes.',
+          'db.f9.name': 'Strawberry Milkshake',
+          'db.f9.desc': 'Creamy strawberry · Balanced sweetness and smooth body.',
+          'db.f10.name': 'Dulce de Leche',
+          'db.f10.desc': 'Caramel milk · The Latin American favorite turned creamy cocktail.',
+          'db.occ.label': 'Experience & Point of Sale',
+          'db.occasion.title': 'Consumption occasions',
+          'db.occasion.note': 'Parties, beach, festivals and gatherings. For adults only: sale prohibited to minors under 18 (Law 21.363).',
+          'db.occ1.title': 'Terrace & Chilean Summer',
+          'db.occ1.text': 'Sunsets, ice coolers and 300 ml bottles ready to open and share with zero preparation.',
+          'db.occ2.title': 'Served in a Glass / Real Mixology',
+          'db.occ2.text': 'Balanced recipes with real alcohol strength (10% - 14%), ideal served over ice with garnish.',
+          'db.occ3.title': 'HORECA & Retail Channel',
+          'db.occ3.text': 'High visual impact on shelves across supermarkets, convenience stores, liquor stores and traditional retail.',
+          'db.cta2.title': 'Want to sell DrinkBall in your business?',
+          'footer.legal': 'Comercial Amerika SpA · Tax ID 78.474.378-0',
+          'footer.contactline': 'Contacto@comercialamerika.cl · Tel./WhatsApp +56 9 5610 0329',
+          'footer.location': 'Colina, Metropolitan Region · Chile',
+          'footer.rights': '© 2026 Comercial Amerika SpA. All rights reserved.',
+          'footer.age': 'Sale of alcohol prohibited to minors under 18 years old.',
+          'footer.privacy': 'Privacy Policy'
+        }
+      };
+
+      function setLanguage(lang) {
+        const dict = i18nData[lang] || i18nData.es;
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('data-lang', lang);
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key]) {
+            el.innerHTML = dict[key];
+          }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          const isCurrent = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('active', isCurrent);
+          btn.setAttribute('aria-pressed', String(isCurrent));
+        });
+
+        document.querySelectorAll('.lang-switch').forEach(det => det.removeAttribute('open'));
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setLanguage(btn.getAttribute('data-lang'));
+        });
+      });
+
+      /* ==========================================
+         5. FEEDBACK INTERACTIVO DE ENLACES DEMO
+         ========================================== */
+      const toast = document.getElementById('toastMsg');
+      let toastTimer;
+      document.querySelectorAll('.demo-cta').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          toast.classList.add('show');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+        });
+      });
     })();
   </script>
 </body>

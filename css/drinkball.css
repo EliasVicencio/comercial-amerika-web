@@ -1,364 +1,254 @@
 /* ============================================
-   AMERIKA - Estilos de la página DRINKBALL
-   (drinkball.html)
-   Incluye el MODAL DE CONTROL DE EDAD (+18),
-   compartido con pink-moon.html.
-   ============================================ */
+    VARIABLES GLOBALES Y PALETA COMERCIAL AMERIKA
+    ============================================ */
+:root {
+  --color-navy: #0f172a;
+  --color-navy-light: #1e293b;
+  --color-orange: #eab308;
+  --color-orange-hover: #ca8a04;
+  --color-green: #16a34a;
+  --color-green-dark: #15803d;
+  --color-cream: #f8f5f0;
+  --color-cream-dark: #f1ebe3;
+  --color-white: #ffffff;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
 
-/* ---------- Page Hero ---------- */
-.page-hero {
-  padding: 3.5rem 0 2rem;
-}
-
-.page-hero h1 {
-  margin-bottom: 1rem;
-}
-
-.page-hero p {
-  font-size: 1.1rem;
-  color: var(--color-text-muted);
-  max-width: 560px;
-}
-
-/* Versión posterior (bloque "Optimización") */
-.page-hero {
-  padding: 4rem 0 2rem;
-  text-align: left;
+  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.25s ease;
 }
 
-/* ---------- Hero: acciones + caja de imagen ---------- */
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.hero-image {
-  background: var(--color-cream-dark);
-  border-radius: var(--radius);
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+body {
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
-/* Variante para imágenes que NO deben recortarse (la paleta
-   de colores de DrinkBall): la caja se ajusta al alto natural
-   de la imagen, así no queda espacio de sobra arriba ni abajo. */
-.hero-image.hero-contain {
-  aspect-ratio: auto;
-}
-.hero-image.hero-contain img {
-  display: block;        /* quita el pequeño hueco que deja img como inline */
-  height: auto;          /* la caja toma el alto real de la imagen */
-  object-fit: contain;
-}
-
-/* Versión posterior de .hero-image (bloque "Optimización") */
-.hero-image {
-  background: var(--color-white);
-  border-radius: var(--radius);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  padding: 1rem;
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* FOTO dentro de un recuadro hero-image: llena TODO el espacio
-   disponible del recuadro (ocupa el contorno completo). */
-.hero-image img.fit-contain {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Si la foto es vertical, el recuadro se alarga: la sección crece
-   (aceptado) y así la imagen casi no se recorta. */
-.card .hero-image:has(img.fit-contain) {
-  aspect-ratio: 3 / 4;
-}
-
-/* ---------- Cards ---------- */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-.card {
-  background: var(--color-white);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(15, 23, 42, 0.04);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.card h3 {
-  margin-bottom: 0.6rem;
-}
-
-.card p {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-}
-
-/* Versión posterior (bloque "Optimización") */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-.card {
-  background: var(--color-white);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(15, 23, 42, 0.05);
-  transition: transform var(--transition);
-}
-
-.card:hover {
-  transform: translateY(-3px);
-}
-
-/* ---------- Brands ---------- */
-.brands-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-/* ---------- TARJETA DE PRODUCTO (portafolio) ---------- */
-.product-card {
-  background: var(--color-white);
-  border-radius: var(--radius);
-  border: 1px solid rgba(15, 23, 42, 0.05);
-  padding: 1.5rem;
-  text-align: center;
-}
-.product-card .product-image {
-  height: 180px;              /* misma caja "cover" que .brand-logo */
-  background: var(--color-cream-dark);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-
-/* Igual que en las tarjetas de marca: la imagen llena su caja */
-.product-card .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Caso donde la clase .product-image está puesta DIRECTAMENTE en el <img>
-   (sin caja contenedora):
-   la imagen se centra y llena el ancho de la tarjeta. */
-.product-card img.product-image {
+img, svg {
+  max-width: 100%;
   display: block;
-  width: 100%;
-  height: 180px;              /* misma altura de caja que las demás */
-  object-fit: cover;          /* llena la tarjeta sin deformarse */
-  border-radius: var(--radius-sm);
-  background: var(--color-cream-dark);
-}
-.product-card h4 {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-.product-card p {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
 }
 
-/* FOTO usada como icono de tarjeta (ocasiones):
-   la imagen ocupa el ancho del lugar que tiene designado y la caja
-   se ajusta a su alto natural, así no se deforma ni se corta. */
-.card > img.card-icon {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-sm);
-  margin-bottom: 1rem;
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
 }
 
-/* ---------- Caja destacada ---------- */
-.highlight-box {
-  background: var(--color-navy);
-  color: var(--color-white);
-  padding: 1.5rem 2rem;
-  border-radius: var(--radius);
-  margin: 2rem 0;
-}
-
-.highlight-box p {
-  font-size: 1.05rem;
-  line-height: 1.55;
-}
-
-/* Versión posterior (bloque "Optimización") */
-.highlight-box {
-  background: var(--color-navy);
-  color: var(--color-white);
-  padding: 1.75rem 2rem;
-  border-radius: var(--radius);
-  margin-top: 2.5rem;
-  border-left: 5px solid var(--color-green);
-}
-
-.highlight-box p {
-  font-size: 1.05rem;
-  line-height: 1.55;
-}
-
-/* ---------- CTA Banner ---------- */
-.cta-banner {
-  background: var(--color-orange);
-  padding: 3rem 0;
-}
-
-.cta-banner-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.cta-banner h2 {
-  color: var(--color-navy);
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
-  max-width: 520px;
-}
-
-/* El banner de "llamado final" ahora es verde, no amarillo */
-.cta-banner.green {
-  background: var(--color-green);
-}
-.cta-banner.green h2 {
-  color: var(--color-white);
-}
-
-/* Versión posterior (bloque "Optimización") */
-.cta-banner.green {
-  background: var(--color-green);
-  padding: 3.5rem 0;
-  color: white;
-}
-
-.cta-banner-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.cta-banner h2 {
-  color: white;
-  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
-}
-
-/*
-   AVISO +18 Y CONTROL DE EDAD
-   (a) Modal de control de edad en las páginas de bebidas con alcohol.
-   (b) Sello de advertencia reutilizable dentro de la página.
-*/
-.age-modal {
-  position: fixed;
-  z-index: 2000;
-  inset: 0;                    /* atajo para: top/right/bottom/left = 0 */
-  background: rgba(15, 23, 42, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-.age-modal.hidden {
-  display: none;               /* cuando el JS agrega .hidden, desaparece */
-}
-.age-modal-content {
-  background: var(--color-white);
-  border-radius: var(--radius);
-  padding: 2.5rem 2rem;
-  max-width: 440px;
-  width: 100%;
-  text-align: center;
-}
-.age-modal-content h2 {
-  color: var(--color-navy);
-  margin: 1rem 0 0.5rem;
-}
-.age-modal-content p {
-  color: var(--color-text-muted);
+button, .btn {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-}
-.age-modal-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  font-weight: 600;
+  transition: all var(--transition);
 }
 
-.age-badge {
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-navy);
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-green);
+  margin-bottom: 0.75rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+/* ---------- Botones ---------- */
+.btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  background: var(--color-navy);
-  color: var(--color-white);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.45rem 0.9rem;
+  padding: 0.85rem 1.6rem;
   border-radius: 999px;
+  font-weight: 600;
 }
 
+.btn-primary {
+  background-color: var(--color-orange);
+  color: var(--color-navy);
+}
 
-/* SELECTOR DE IDIOMAS */
+.btn-primary:hover {
+  background-color: var(--color-orange-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.btn.btn-dark {
+  background-color: var(--color-navy) !important;
+  color: var(--color-white) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  padding: 0.8em 1.4em;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.btn.btn-dark:hover {
+  background-color: var(--color-navy-light) !important;
+  color: var(--color-white) !important;
+  transform: translateY(-1px);
+}
+
+/* ============================================
+    HEADER UNIFICADO (Comercial Amerika)
+    ============================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  background-color: rgba(248, 245, 240, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.header-inner {
+  max-width: 100% !important;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 90px;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--color-navy);
+}
+
+.nav-drawer {
+  display: contents;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.nav.nav-side-left {
+  justify-content: flex-end;
+}
+
+.nav.nav-side-right {
+  justify-content: flex-start;
+}
+
+.header .nav a {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.header .nav a:hover,
+.header .nav a.active {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+.header .nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-green);
+  border-radius: 2px;
+}
+
+/* Selector de idiomas */
 .lang-switch {
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: .5rem;
+  margin-left: 0.4rem;
 }
 
-/* Botón que muestra el idioma actual */
 .lang-switch summary {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 7px 9px;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 9px;
   border-radius: 8px;
   cursor: pointer;
   list-style: none;
-  transition: background .2s ease;
+  transition: background 0.2s ease;
 }
 
 .lang-switch summary::-webkit-details-marker {
@@ -366,31 +256,30 @@
 }
 
 .lang-switch summary:hover {
-  background: rgba(15, 23, 42, .06);
+  background: rgba(15, 23, 42, 0.06);
 }
 
-/* Banderas */
-.lang-switch img {
-  width: 25px;
-  height: 18px;
-  object-fit: cover;
-  border-radius: 3px;
-}
-
-/* Mostrar solamente la bandera activa */
-.lang-switch .lang-current {
+.lang-switch summary .lang-current {
   display: none;
 }
 
-html[data-lang="es"] .lang-switch .lang-es {
+html[data-lang="es"] .lang-switch summary .lang-current.lang-es {
   display: block;
 }
 
-html[data-lang="en"] .lang-switch .lang-en {
+html[data-lang="en"] .lang-switch summary .lang-current.lang-en {
   display: block;
 }
 
-/* Desplegable */
+.flag-icon {
+  width: 25px;
+  height: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+}
+
 .lang-menu {
   position: absolute;
   top: calc(100% + 10px);
@@ -400,23 +289,22 @@ html[data-lang="en"] .lang-switch .lang-en {
   background: #fff;
   border: 1px solid #e8e5df;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, .12);
-  z-index: 200;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  z-index: 350;
 }
 
-/* Opciones */
 .lang-menu .lang-btn {
   display: flex;
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 11px;
+  padding: 10px 11px;
   border: none;
   border-radius: 8px;
   background: transparent;
   color: #64748b;
   font-family: inherit;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: left;
   cursor: pointer;
 }
@@ -431,9 +319,591 @@ html[data-lang="en"] .lang-switch .lang-en {
   background: #f5f3ef;
 }
 
-
-/* ---------- Responsive ---------- */
-@media (max-width: 600px) {
-  .cards-grid { grid-template-columns: 1fr; }
-  .cta-banner-inner { flex-direction: column; text-align: center; }
+.header-inner > .mobile-lang-switch,
+.mobile-toggle,
+.menu-backdrop {
+  display: none;
 }
+
+/* ============================================
+    MODAL +18 (LEY 21.363)
+    ============================================ */
+.age-modal {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.86);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.age-modal.hidden {
+  display: none;
+}
+
+.age-modal-content {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: modalPop 0.28s ease;
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.age-modal-content h2 {
+  color: var(--color-navy);
+  margin: 1rem 0 0.6rem;
+  font-size: 1.45rem;
+}
+
+.age-modal-content p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.65rem;
+}
+
+.age-modal-actions {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.age-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+}
+
+/* ============================================
+    CONTENIDO DRINKBALL (Inspirado en Comary)
+    ============================================ */
+.page-hero {
+  padding: 4rem 0 2.25rem;
+}
+
+.page-hero h1 {
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Banner Editorial Comary / DrinkBall */
+.drinkball-editorial-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #064e3b 100%);
+  border-radius: 18px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.drinkball-editorial-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.editorial-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--color-orange);
+  color: var(--color-navy);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.drinkball-editorial-banner h2 {
+  color: var(--color-white);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: 0.85rem;
+}
+
+.drinkball-editorial-banner p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 540px;
+}
+
+.editorial-stats-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  flex-wrap: wrap;
+}
+
+.ed-stat strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-orange);
+}
+
+.ed-stat span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bottles-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Caja destacada Historia */
+.highlight-box {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 1.85rem 2.1rem;
+  border-radius: var(--radius);
+  border-left: 5px solid var(--color-green);
+  box-shadow: var(--shadow-md);
+}
+
+.highlight-box p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.highlight-box strong {
+  color: var(--color-orange);
+}
+
+/* Filtros de Portafolio */
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background: var(--color-white);
+  padding: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn {
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: var(--color-navy);
+}
+
+.filter-btn.active {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* Grid de Productos */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  padding: 1.35rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-card.hidden-item {
+  display: none;
+}
+
+.product-visual {
+  height: 175px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 0.75rem;
+}
+
+.product-cat-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--color-navy);
+}
+
+.product-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-navy);
+}
+
+.product-card p {
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+  flex-grow: 1;
+  margin-bottom: 0.85rem;
+}
+
+.product-meta {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  background: var(--color-cream);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  align-self: center;
+}
+
+/* Ocasiones de consumo */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.25rem;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-image {
+  background: var(--color-cream-dark);
+  border-radius: var(--radius-sm);
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.45rem;
+}
+
+.card p {
+  font-size: 0.93rem;
+  color: var(--color-text-muted);
+}
+
+/* CTA Banner Verde */
+.cta-banner.green {
+  background: var(--color-green);
+  padding: 3.5rem 0;
+  color: var(--color-white);
+}
+
+.cta-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-banner h2 {
+  color: var(--color-white);
+  font-size: clamp(1.45rem, 3.5vw, 2.05rem);
+  max-width: 580px;
+}
+
+/* ============================================
+    FOOTER CORPORATIVO (Comercial Amerika)
+    ============================================ */
+.footer {
+  background: var(--color-navy);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3rem 0 1.75rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-orange);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-age {
+  font-size: 0.8rem;
+  opacity: 0.72;
+  margin-top: 0.75rem;
+}
+
+.footer-age a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 150;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+/* Toast / Mensaje flotante de demostración */
+.toast-msg {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  background: var(--color-navy);
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--color-orange);
+  z-index: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.toast-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+    RESPONSIVE
+    ============================================ */
+@media (max-width: 1024px) {
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 1.25rem;
+  }
+
+  .nav-drawer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    width: min(85vw, 350px);
+    padding: 1.5rem 1.25rem;
+    background: var(--color-cream);
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: -18px 12px 35px rgba(15, 23, 42, 0.14);
+    z-index: 301;
+    transform: translateX(105%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-drawer.open {
+    transform: translateX(0);
+  }
+
+  .nav-drawer .nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+  }
+
+  .nav-drawer .nav a {
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  }
+
+  .nav-drawer .lang-switch {
+    display: none;
+  }
+
+  .nav-drawer .btn.btn-dark {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .header-inner > .mobile-lang-switch {
+    display: flex;
+    position: absolute;
+    right: 4.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    font-size: 1.65rem;
+    color: var(--color-navy);
+  }
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 70px 0 0;
+    background: rgba(15, 23, 42, 0.38);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 299;
+  }
+
+  body.menu-open .menu-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 820px) {
+  .drinkball-editorial-banner {
+    grid-template-columns: 1fr;
+    padding: 1.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 3rem 0;
+  }
+  .cta-banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
