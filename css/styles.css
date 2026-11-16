@@ -709,6 +709,13 @@ main, section, header, footer {
 }
 
 
+/* Flecha del selector de idioma (SVG inline): nunca se encoje ni desaparece */
+.lang-switch summary svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
 /* El selector independiente existe solo para móvil; en escritorio
    debe permanecer oculto para no convertirse en una fila del grid. */
 .header-inner > .mobile-lang-switch {
