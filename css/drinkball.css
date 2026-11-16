@@ -856,10 +856,9 @@ html[data-lang="en"] .lang-switch summary .lang-current.lang-en {
 
   .header-inner > .mobile-lang-switch {
     display: flex;
-    position: absolute;
-    right: 4.25rem;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .mobile-toggle {
