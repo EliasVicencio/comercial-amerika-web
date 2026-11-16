@@ -1,10 +1,17 @@
 /* =========================================================
    PÁGINAS LEGALES (privacidad.html)
-   Estilo sobrio: texto legible, secciones separadas.
+   Contenido centrado en una sola columna limpia, sin líneas
+   separadoras: el aire entre secciones hace el trabajo.
    ========================================================= */
 
 .legal-page {
   padding: 3.5rem 1rem 4.5rem;
+}
+
+/* Columna única centrada */
+.legal-page .container {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .legal-page h1 {
@@ -12,21 +19,18 @@
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   line-height: 1.15;
   margin: 0.5rem 0 1rem;
-  max-width: 760px;
 }
 
 .legal-intro {
   color: var(--color-text-muted, #64748b);
   font-size: 1.05rem;
   line-height: 1.65;
-  max-width: 760px;
   margin-bottom: 2.5rem;
 }
 
 .legal-sec {
-  max-width: 760px;
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 0;
+  margin-bottom: 2.25rem;
 }
 
 .legal-sec h2 {
@@ -43,10 +47,29 @@
 }
 
 .legal-version {
-  max-width: 760px;
-  margin-top: 2.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  margin-top: 3rem;
   color: var(--color-text-muted, #64748b);
   font-size: 0.8rem;
+}
+
+/* Enlace sutil "← Volver al inicio" sobre el título */
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1.25rem;
+  color: var(--color-text-muted, #64748b);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.legal-back svg {
+  width: 16px;
+  height: 16px;
+}
+
+.legal-back:hover {
+  color: var(--color-navy);
 }
