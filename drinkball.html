@@ -24,7 +24,7 @@
 
       <div class="nav-drawer" id="mobileNavigation">
         <nav class="nav nav-side-left" aria-label="Menú principal izquierda">
-          <a href="index.html" data-i18n="nav.home" class="demo-link">Inicio</a>
+          <a href="index.html" data-i18n="nav.home">Inicio</a>
           <a href="marcas.html" class="active" data-i18n="nav.brands">Nuestras marcas</a>
         </nav>
 
@@ -455,7 +455,7 @@
       </div>
 
       <p class="footer-age" data-i18n="footer.age">Venta de alcohol prohibida a menores de 18 años.</p>
-      <p class="footer-age"><a href="#privacidad" class="demo-link" data-i18n="footer.privacy">Política de privacidad</a></p>
+      <p class="footer-age"><a href="privacidad.html" data-i18n="footer.privacy">Política de privacidad</a></p>
     </div>
   </footer>
 
@@ -609,7 +609,10 @@
           'footer.location': 'Colina, Región Metropolitana · Chile',
           'footer.rights': '© 2026 Comercial Amerika SpA. Todos los derechos reservados.',
           'footer.age': 'Venta de alcohol prohibida a menores de 18 años.',
-          'footer.privacy': 'Política de privacidad'
+          'footer.privacy': 'Política de privacidad',
+          'cookies.text': 'Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.',
+          'cookies.accept': 'Aceptar',
+          'cookies.reject': 'Rechazar'
         },
         en: {
           'page.drinkball.title': 'DrinkBall | Comercial Amerika SpA',
@@ -682,7 +685,10 @@
           'footer.location': 'Colina, Metropolitan Region · Chile',
           'footer.rights': '© 2026 Comercial Amerika SpA. All rights reserved.',
           'footer.age': 'Sale of alcohol prohibited to minors under 18 years old.',
-          'footer.privacy': 'Privacy Policy'
+          'footer.privacy': 'Privacy Policy',
+          'cookies.text': 'We use measurement cookies (Google Analytics) to understand how the site is used and improve it. You can accept or reject; details in the <a href="privacidad.html">privacy policy</a>.',
+          'cookies.accept': 'Accept',
+          'cookies.reject': 'Reject'
         }
       };
 
@@ -730,6 +736,18 @@
   </script>
 
   <!-- Biblioteca Lucide (iconos, ej: flecha del selector de idioma) -->
+
+  <!-- Aviso de cookies (la lógica vive en js/main.js) -->
+  <div class="cookie-banner" id="cookieBanner" hidden>
+    <div class="cookie-inner">
+      <p data-i18n="cookies.text">Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.</p>
+      <div class="cookie-actions">
+        <button type="button" class="btn-accept" id="cookieAccept" data-i18n="cookies.accept">Aceptar</button>
+        <button type="button" id="cookieReject" data-i18n="cookies.reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script>
     (function () {

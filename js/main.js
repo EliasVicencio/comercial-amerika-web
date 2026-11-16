@@ -330,23 +330,23 @@
       'privacy.h1': 'Política de privacidad y consentimiento de datos',
       'privacy.intro': 'Usamos tus datos únicamente para responder tus consultas comerciales. Aquí encuentras la finalidad, la base legal, tus derechos y los plazos, según las leyes chilenas 19.628 y 21.719.',
       'privacy.s1.title': 'Responsable',
-      'privacy.s1.text': 'Comercial Amerika SpA, RUT, Colina, Región Metropolitana, Chile. Contacto de temas de datos personales: correo comercial, teléfono o WhatsApp.',
+      'privacy.s1.text': '<strong>Comercial Amerika SpA</strong>, RUT 78.474.378-0, con oficina y centro de distribución en Colina, Región Metropolitana, Chile. Contacto para temas de datos personales: contacto@comercialamerika.cl · Teléfono/WhatsApp: +56 9 5610 0329.',
       'privacy.s2.title': 'Datos tratados',
-      'privacy.s2.text': 'Nombre, empresa, cargo, correo electrónico, teléfono, país, perfil y mensaje, entregados voluntariamente en el formulario. No se solicitan datos sensibles ni datos de menores de 18 años.',
+      'privacy.s2.text': 'Los datos que entregas voluntariamente en el formulario de contacto: nombre, empresa, cargo, correo electrónico, teléfono, país, tipo de perfil y el contenido de tu mensaje. No solicitamos datos sensibles (salud, origen étnico, creencias, etc.). No recopilamos conscientemente datos de personas menores de 18 años.',
       'privacy.s3.title': 'Finalidad y base legal',
-      'privacy.s3.text': 'Responder consultas, coordinar reuniones y enviar cotizaciones de importación y distribución. Base legal: consentimiento expreso e informado al marcar la casilla.',
+      'privacy.s3.text': 'Usamos tus datos únicamente para responder tu consulta, coordinar una reunión o enviar cotizaciones relacionadas con la importación y distribución de alimentos y bebidas. La base legal es tu <strong>consentimiento expreso e informado</strong>, otorgado al marcar la casilla de aceptación del formulario. No usamos tus datos para decisiones automatizadas ni perfiles de comportamiento.',
       'privacy.s4.title': 'Plazo de conservación',
-      'privacy.s4.text': 'Los datos se conservan durante 2 años desde la última comunicación o hasta que solicites su supresión.',
+      'privacy.s4.text': 'Conservamos tus datos durante 2 años desde el último contacto, o por el tiempo necesario para gestionar tu consulta, o hasta que solicites su supresión.',
       'privacy.s5.title': 'Terceros y transferencia internacional',
-      'privacy.s5.text': 'Tus datos pueden enviarse a fabricantes aliados (Comary, Vieira) si consultas por distribuir una marca en Chile. No se venden a terceros.',
+      'privacy.s5.text': 'Tus datos pueden compartirse con nuestros fabricantes aliados cuando tu consulta trata sobre distribuir una marca en Chile (por ejemplo, Comary en Brasil o Vieira en Portugal). Estas comunicaciones son las mínimas necesarias y se realizan con tu consentimiento. No vendemos ni cedemos tus datos a terceros con fines publicitarios.',
       'privacy.s6.title': 'Derechos ARCO',
-      'privacy.s6.text': 'Acceso, rectificación, cancelación y oposición, escribiendo al correo oficial con el asunto indicado. Respuesta dentro de 10 días hábiles.',
+      'privacy.s6.text': 'Puedes solicitar en cualquier momento: (a) acceso a tus datos; (b) rectificación o modificación; (c) cancelación o eliminación; y (d) oposición a su tratamiento. Para ejercer tus derechos, escribe a contacto@comercialamerika.cl con el asunto "Protección de datos"; la respuesta se enviará dentro de 10 días hábiles. También puedes solicitar, conforme a la Ley 21.719, información sobre el alcance y características del tratamiento de tus datos.',
       'privacy.s7.title': 'Seguridad y registro de consentimiento',
-      'privacy.s7.text': 'Sitio bajo HTTPS, acceso restringido, y registro de fecha, hora y versión del consentimiento aceptado (planilla interna).',
+      'privacy.s7.text': 'El sitio viaja por una conexión cifrada (HTTPS) y el acceso a los datos está restringido al equipo comercial de la empresa. Cada envío del formulario registra fecha, hora, la versión del texto de consentimiento aceptado y la verificación de la casilla de aceptación, en un registro interno de consentimientos destinado a dar trazabilidad del cumplimiento de las Leyes 19.628 y 21.719.',
       'privacy.s8.title': 'Medición y cookies',
-      'privacy.s8.text': 'Uso de Google Analytics 4 y Google Tag Manager con cookies medibles desactivables en tu navegador.',
+      'privacy.s8.text': 'El sitio usa Google Analytics 4 y Google Tag Manager para medir, de forma agregada, las visitas y el uso de sus secciones (por ejemplo, envíos del formulario y clics en WhatsApp). Estas herramientas pueden instalar cookies en tu navegador; puedes desactivarlas en la configuración de tu navegador sin perder funcionalidad del sitio.',
       'privacy.s9.title': 'Cambios en la política',
-      'privacy.s9.text': 'Cualquier cambio se publicará en esta misma página con la fecha de la nueva versión.',
+      'privacy.s9.text': 'Esta política puede actualizarse; cualquier cambio se publicará en esta misma página, indicando la versión correspondiente al final del texto.',
       'privacy.version': 'Versión 1.0 · Publicada el 27 de octubre de 2026 · Comercial Amerika SpA',
       'consent.link': 'Información básica sobre protección de datos',
       'consent.title': 'Información básica sobre protección de datos',
@@ -785,17 +785,17 @@
       'privacy.h1': 'Privacy policy and data consent',
       'privacy.intro': 'We use your data only to answer your commercial inquiries. Here you find the purpose, the legal basis, your rights and timelines, under Chilean Laws 19.628 and 21.719.',
       'privacy.s1.title': '1. Data controller',
-      'privacy.s1.text': '<strong>Comercial Amerika SpA</strong>, Tax ID 78.474.378-0, with office and distribution center in Colina, Metropolitan Region, Chile. Contact for personal data matters: [privacy email] · Phone/WhatsApp: +56 9 5610 0329.',
+      'privacy.s1.text': '<strong>Comercial Amerika SpA</strong>, Tax ID 78.474.378-0, with office and distribution center in Colina, Metropolitan Region, Chile. Contact for personal data matters: contacto@comercialamerika.cl · Phone/WhatsApp: +56 9 5610 0329.',
       'privacy.s2.title': '2. Data we process',
       'privacy.s2.text': 'The data you provide voluntarily in the contact form: name, company, position, email, phone, country, profile type and your message contents. We do not request sensitive data (health, ethnic origin, beliefs, etc.). We do not knowingly collect data from people under 18.',
       'privacy.s3.title': '3. Purpose and legal basis',
       'privacy.s3.text': 'We use your data only to answer your inquiry, arrange a meeting or send quotations related to the import and distribution of food and beverages. The legal basis is your <strong>express and informed consent</strong>, given when you check the acceptance box in the form. We do not use your data for automated decisions or behavioral profiling.',
       'privacy.s4.title': '4. Retention period',
-      'privacy.s4.text': 'We keep your data for [2] years from the last contact, or for as long as needed to handle your inquiry, or until you request deletion.',
+      'privacy.s4.text': 'We keep your data for 2 years from the last contact, or for as long as needed to handle your inquiry, or until you request deletion.',
       'privacy.s5.title': '5. Third parties and international transfer',
       'privacy.s5.text': 'Your data may be shared with our allied manufacturers when your inquiry is about distributing a brand in Chile (for example, Comary in Brazil or Vieira in Portugal). These communications are the minimum necessary and are made with your consent. We do not sell or hand over your data to third parties for advertising purposes.',
       'privacy.s6.title': '6. Your rights (ARCO)',
-      'privacy.s6.text': 'You may request at any time: (a) access to your data; (b) rectification or amendment; (c) cancellation or deletion; and (d) opposition to their processing. To exercise your rights, write to [privacy email] with the subject "Data protection"; the reply will be sent within [10] business days. You may also request, under Law 21.719, information about the scope and characteristics of the processing of your data.',
+      'privacy.s6.text': 'You may request at any time: (a) access to your data; (b) rectification or amendment; (c) cancellation or deletion; and (d) opposition to their processing. To exercise your rights, write to contacto@comercialamerika.cl with the subject "Data protection"; the reply will be sent within 10 business days. You may also request, under Law 21.719, information about the scope and characteristics of the processing of your data.',
       'privacy.s7.title': '7. Security and consent record',
       'privacy.s7.text': 'The site travels over an encrypted connection (HTTPS) and data access is restricted to the company\'s commercial team. Every form submission records the date, time, the version of the consent text accepted and the verified acceptance of the checkbox, in an internal consent log intended to provide traceability of compliance with Laws 19.628 and 21.719.',
       'privacy.s8.title': '8. Measurement and cookies',
@@ -930,121 +930,32 @@
   };
 
   /* ------------------------------------------
-     BANDA "TRABAJAMOS CON" (index.html)
-     Lista de logos que se muestra en una cinta animada.
-     Para agregar o quitar una marca, edita solo este array:
-     siempre con la ruta de la imagen y su texto alternativo.
+     FRANJA "TRABAJAMOS CON" (index.html) — VERSIÓN ESTÁTICA
+     Grid estilo ICB: los logos se pintan una sola vez,
+     sin cinta ni animación. Para agregar o quitar una marca,
+     edita solo este array (ruta de imagen + texto alternativo).
      ------------------------------------------ */
   const ALLIES_LOGOS = [
-    { src: 'img/movimiento/1 (1).svg', alt: 'Vieira' },
-    { src: 'img/movimiento/3.svg', alt: 'Comary' },
-    { src: 'img/movimiento/5 (1).svg', alt: 'Drinkball' },
-{ src: 'img/movimiento/6 (1).svg', alt: 'Pink Moon' }
+    { src: 'img/movimiento/5 (1).svg', alt: 'DrinkBall', href: 'drinkball.html' },
+    { src: 'img/movimiento/6 (1).svg', alt: 'Pink Moon', href: 'pink-moon.html' }
   ];
 
-  // Variables compartidas de la cinta (las usan las dos funciones de abajo)
-  var alliesHtml = '';
-  var alliesCopias = 1;   // cuántas veces está pegada la lista dentro del track
-
   function initAlliesBand() {
-    const track = document.getElementById('alliesTrack');
-    if (!track) return;
-
-    const createGroup = function (hidden) {
-      const group = document.createElement('div');
-      group.className = 'allies-group';
-      if (hidden) group.setAttribute('aria-hidden', 'true');
-      ALLIES_LOGOS.forEach(function (logo) {
-        const img = document.createElement('img');
-        img.src = logo.src;
-        img.alt = hidden ? '' : logo.alt;
-        img.loading = 'eager';
-        img.decoding = 'async';
-        group.appendChild(img);
-      });
-      return group;
-    };
-
-    track.replaceChildren(createGroup(false), createGroup(true));
-    track.dataset.ready = 'true';
-  }
-
-  /* Cinta continua: dos grupos idénticos permiten repetir el recorrido
-     sin huecos. Se vuelve a medir después de cargar logos y al redimensionar. */
-  function initAlliesScrollDirection() {
-    const track = document.getElementById('alliesTrack');
-    if (!track || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const band = track.closest('.allies-band');
-    const SPEED = 0.42;
-    let pos = 0;
-    let direction = -1;
-    let groupWidth = 0;
-    let rafId = 0;
-    let paused = false;
-
-    const measure = function () {
-      const group = track.querySelector('.allies-group');
-      if (!group) return;
-      groupWidth = group.getBoundingClientRect().width;
-      if (groupWidth > 0 && track.children.length < 2) {
-        track.appendChild(createClone());
-      }
-      if (groupWidth > 0 && groupWidth < band.clientWidth * 1.15 && track.children.length < 3) {
-        // Una copia extra evita que se vea el final de la cinta en móviles anchos.
-        const second = track.children[1];
-        if (second) {
-          const third = second.cloneNode(true);
-          third.setAttribute('aria-hidden', 'true');
-          track.appendChild(third);
-        }
-      }
-    };
-
-    const createClone = function () {
-      const clone = track.querySelector('.allies-group').cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      clone.querySelectorAll('img').forEach(img => img.alt = '');
-      return clone;
-    };
-
-    const tick = function () {
-      if (!paused && groupWidth > 0) {
-        pos += SPEED * direction;
-        if (pos <= -groupWidth) pos += groupWidth;
-        if (pos > 0) pos -= groupWidth;
-        track.style.transform = 'translate3d(' + pos + 'px,0,0)';
-      }
-      rafId = window.requestAnimationFrame(tick);
-    };
-
-    let lastY = window.scrollY;
-    window.addEventListener('scroll', function () {
-      const y = window.scrollY;
-      if (y !== lastY) direction = y > lastY ? -1 : 1;
-      lastY = y;
-    }, { passive: true });
-
-    band.addEventListener('mouseenter', () => paused = true);
-    band.addEventListener('mouseleave', () => paused = false);
-    band.addEventListener('focusin', () => paused = true);
-    band.addEventListener('focusout', () => paused = false);
-
-    track.querySelectorAll('img').forEach(img => {
-      if (!img.complete) img.addEventListener('load', measure, { once: true });
-      img.addEventListener('error', measure, { once: true });
-    });
-    measure();
-    window.addEventListener('resize', measure, { passive: true });
-    rafId = window.requestAnimationFrame(tick);
-
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) {
-        window.cancelAnimationFrame(rafId);
-      } else {
-        rafId = window.requestAnimationFrame(tick);
-      }
-    });
+    const grid = document.getElementById('alliesTrack');
+    if (!grid) return;
+    grid.replaceChildren(...ALLIES_LOGOS.map(function (logo) {
+      const a = document.createElement('a');
+      a.href = logo.href;
+      a.setAttribute('aria-label', logo.alt);
+      const img = document.createElement('img');
+      img.src = logo.src;
+      img.alt = logo.alt;
+      img.loading = 'eager';
+      img.decoding = 'async';
+      a.appendChild(img);
+      return a;
+    }));
+    grid.dataset.ready = 'true';
   }
 
   /* ------------------------------------------
@@ -1689,7 +1600,6 @@
     initConsentModal();
     initBrandFilters();
     initAlliesBand();
-    initAlliesScrollDirection();
     initHeroRotator();
     initCookieBanner();
     initScrollReveal();

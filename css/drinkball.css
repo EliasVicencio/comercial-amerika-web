@@ -747,7 +747,11 @@ html[data-lang="en"] .lang-switch summary .lang-current.lang-en {
 
 .footer-age a {
   color: rgba(255, 255, 255, 0.85);
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.footer-age a:hover {
+  text-decoration: none;
 }
 
 /* Botón flotante WhatsApp */
