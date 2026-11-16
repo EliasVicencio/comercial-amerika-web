@@ -734,6 +734,40 @@
           toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
         });
       });
+
+      /* ==========================================
+         6. AVISO DE COOKIES (misma lógica que js/main.js)
+         Clave versionada: al subir de versión el aviso
+         vuelve a aparecer para todos los visitantes.
+         ========================================== */
+      const COOKIES_KEY = 'amerika-cookies-v1';
+
+      function initCookieAviso() {
+        const cookieBanner = document.getElementById('cookieBanner');
+        if (!cookieBanner) return;
+
+        const leerDecision = () => {
+          try { return localStorage.getItem(COOKIES_KEY); } catch (e) { return null; }
+        };
+        const guardarDecision = (valor) => {
+          try { localStorage.setItem(COOKIES_KEY, valor); } catch (e) { /* sin almacenamiento */ }
+          cookieBanner.hidden = true;
+        };
+
+        if (!leerDecision()) cookieBanner.hidden = false;
+
+        const btnAccept = document.getElementById('cookieAccept');
+        const btnReject = document.getElementById('cookieReject');
+        if (btnAccept) btnAccept.addEventListener('click', () => guardarDecision('aceptada'));
+        if (btnReject) btnReject.addEventListener('click', () => guardarDecision('rechazada'));
+      }
+
+      // El banner vive más abajo en el HTML: esperar al DOM completo
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCookieAviso);
+      } else {
+        initCookieAviso();
+      }
     })();
   </script>
 

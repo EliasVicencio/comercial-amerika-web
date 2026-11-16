@@ -1319,26 +1319,40 @@
   /* ------------------------------------------
      AVISO DE COOKIES (todas las páginas)
      La primera vez, muestra la barra y guarda la decisión
-     en localStorage ("amerika-cookies": aceptada / rechazada).
-     Con una decisión guardada, la barra ya no vuelve a aparecer.
+     en localStorage ("amerika-cookies-v1": aceptada / rechazada).
+     Con una decisión guardada, la barra ya no vuelve a aparecer,
+     pero puede reabrirse con el enlace "Política de cookies"
+     del pie de página (data-cookies-open).
+     La clave es versionada: al subir la versión (v2, v3...) todos
+     los visitantes vuelven a ver el aviso (p. ej. si cambia la
+     política), y nunca se arrastran decisiones de pruebas viejas.
      ------------------------------------------ */
-  const COOKIES_KEY = 'amerika-cookies';
+  const COOKIES_KEY = 'amerika-cookies-v1';
 
   function initCookieBanner() {
     const banner = document.getElementById('cookieBanner');
     if (!banner) return; // la página no incluye el aviso
 
-    // Respeta la Ley 21.719: sin decisión guardada, no se instala NADA.
-    if (window.localStorage.getItem(COOKIES_KEY)) return;
-    banner.hidden = false;
+    const btnAccept = document.getElementById('cookieAccept');
+    const btnReject = document.getElementById('cookieReject');
 
-    document.getElementById('cookieAccept').addEventListener('click', function () {
-      window.localStorage.setItem(COOKIES_KEY, 'aceptada');
+    function leerDecision() {
+      try { return window.localStorage.getItem(COOKIES_KEY); } catch (e) { return null; }
+    }
+
+    function guardarDecision(valor) {
+      try { window.localStorage.setItem(COOKIES_KEY, valor); } catch (e) { /* file:// puede bloquear localStorage */ }
       banner.hidden = true;
+    }
+
+    // Respeta la Ley 21.719: sin decisión guardada, no se instala NADA.
+    if (!leerDecision()) banner.hidden = false;
+
+    if (btnAccept) btnAccept.addEventListener('click', function () {
+      guardarDecision('aceptada');
     });
-    document.getElementById('cookieReject').addEventListener('click', function () {
-      window.localStorage.setItem(COOKIES_KEY, 'rechazada');
-      banner.hidden = true;
+    if (btnReject) btnReject.addEventListener('click', function () {
+      guardarDecision('rechazada');
     });
   }
 
