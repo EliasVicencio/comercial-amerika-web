@@ -1391,6 +1391,34 @@
      ------------------------------------------ */
   const COOKIES_KEY = 'amerika-cookies-v1';
 
+  /* ------------------------------------------
+     GOOGLE ANALYTICS 4 (con consentimiento previo)
+     El script de GA solo se instala si el usuario
+     aceptó las cookies de medición en el aviso.
+     REEMPLAZA 'G-XXXXXXXXXX' por tu ID de medición
+     real de Google Analytics (formato G-XXXXXXXXXX).
+     ------------------------------------------ */
+  // >>> REEMPLAZA por tu ID de medición real de Google Analytics 4 (formato G-XXXXXXXXXX) <<<
+  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+  function loadGoogleAnalytics() {
+    // Sin ID configurado (o ya cargado) no instalamos nada
+    if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+    if (document.getElementById('ga-script')) return;
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+
+    const script = document.createElement('script');
+    script.id = 'ga-script';
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(script);
+  }
+
   function initCookieBanner() {
     const banner = document.getElementById('cookieBanner');
     if (!banner) return; // la página no incluye el aviso
@@ -1426,10 +1454,16 @@
 
     if (btnAccept) btnAccept.addEventListener('click', function () {
       guardarDecision('aceptada');
+      // Consentimiento otorgado: recién ahora se instala GA
+      loadGoogleAnalytics();
     });
     if (btnReject) btnReject.addEventListener('click', function () {
       guardarDecision('rechazada');
+      // Rechazado: no se instala NINGÚN script de medición
     });
+
+    // Si en una visita anterior ya aceptó, GA se carga de inmediato
+    if (leerDecision() === 'aceptada') loadGoogleAnalytics();
   }
 
   /* REVEAL AL HACER SCROLL (todas las páginas):
