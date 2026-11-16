@@ -795,11 +795,18 @@ main, section, header, footer {
     justify-content: flex-start;
     position: relative;
     z-index: 302;
+    /* Dejar que el logo se encoja en pantallas angostas para no
+       pisar el selector de idioma ni el botón del menú */
+    min-width: 0;
+    margin-right: auto;
   }
 
   .logo img {
     height: 44px;
     width: auto;
+    max-width: min(46vw, 220px);
+    object-fit: contain;
+    object-position: left center;
   }
 
   .nav-drawer {
@@ -810,9 +817,12 @@ main, section, header, footer {
     position: fixed;
     top: 70px;
     right: 0;
+    left: auto;
     bottom: 0;
-    width: min(86vw, 370px);
-    max-height: calc(100dvh - 70px);
+    height: auto;
+    max-height: none;
+    width: 86vw;
+    max-width: 370px;
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: 1.5rem 1.25rem 2rem;
@@ -820,13 +830,16 @@ main, section, header, footer {
     border-left: 1px solid rgba(15, 23, 42, 0.08);
     box-shadow: -18px 12px 35px rgba(15, 23, 42, 0.14);
     z-index: 301;
-    transform: translateX(105%);
+    -webkit-transform: translateX(110%);
+    transform: translateX(110%);
     visibility: hidden;
     pointer-events: none;
+    -webkit-transition: -webkit-transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.32s;
     transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.32s;
   }
 
   .nav-drawer.open {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
     visibility: visible;
     pointer-events: auto;
@@ -893,16 +906,15 @@ main, section, header, footer {
     min-height: 42px;
   }
 
-  /* Selector independiente: queda junto al logo sin desplazarse
-     con el panel lateral */
+  /* Selector independiente: vive en la fila del header (logo · idioma · menú),
+     sin posicionarse absoluto para que nunca pise al logo */
   .header-inner > .mobile-lang-switch {
     display: flex;
-    position: absolute;
-    top: 50%;
-    right: 4.25rem;
-    transform: translateY(-50%);
+    position: static;
     z-index: 303;
     margin: 0;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .header-inner > .mobile-lang-switch .lang-menu {
@@ -970,10 +982,7 @@ main, section, header, footer {
 
   .logo img {
     height: 38px;
-  }
-
-  .header-inner > .mobile-lang-switch {
-    right: 3.8rem;
+    max-width: min(45vw, 190px);
   }
 }
 
