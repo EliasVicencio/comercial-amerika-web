@@ -252,6 +252,9 @@
       'age.yes': 'Sí, soy mayor de 18 años',
       'age.no': 'No, salir',
       'age.badge': '⚠ Bebida alcohólica · Solo para mayores de 18 años',
+      'age.restricted.title': 'Lo sentimos, no puedes ingresar',
+      'age.restricted.text': 'De acuerdo con la Ley 21.363, debes ser mayor de 18 años para visualizar contenido relacionado con bebidas alcohólicas.',
+      'age.retry': 'Volver a verificar',
 
       // ---------- DrinkBall ----------
       'db.tagline': 'Cócteles listos para beber · "Enfría, abre, disfruta"',
@@ -287,6 +290,34 @@
       'db.occ3.text': 'Supermercados, tiendas de conveniencia y canal tradicional.',
       'db.occ3.ph': '[FOTO: lata en la góndola o cooler de conveniencia]',
       'db.cta2.title': '¿Quieres vender DrinkBall en tu negocio?',
+      'db.label': 'Cócteles Listos para Beber (RTD) · Comary',
+      'db.abv': '⚠ Graduación alcohólica: 10% - 14% Vol.',
+      'db.format': 'Formato oficial: 300 ml · Exclusiva Chile: Comercial Amerika',
+      'db.explore': 'Ver los 10 sabores',
+      'db.port.label': 'Portafolio Oficial Comary',
+      'db.filter.all': 'Todos (10)',
+      'db.filter.tropical': 'Clásicos y Tropicales (6)',
+      'db.filter.creamy': 'Cremosos y Milkshakes (4)',
+      'db.cat.classic': 'Clásico',
+      'db.cat.tropical': 'Tropical',
+      'db.cat.creamy': 'Cremoso',
+      'db.occ.label': 'Experiencia y Punto de Venta',
+      'db.ed.badge': 'I+D · Innovación y Experiencia',
+      'db.ed.title': 'Enfriō, abriō, disfrutō: una nueva categoría de consumo',
+      'db.ed.text': 'Nacida del área de Investigación y Desarrollo de Comary, DrinkBall revoluciona el segmento RTD combinando recetas de coctelería clásica y sabores cremosos en un envase de 300 ml práctico, irreverente y listo para cualquier ocasión.',
+      'db.ed.s1': 'Formato individual',
+      'db.ed.s2': 'Graduación ABV',
+      'db.ed.s3': 'Tropicales y Cremosos',
+      'db.f6.name': 'Moscow Ball',
+      'db.f6.desc': 'Jengibre y limón · Inspirado en el icónico Moscow Mule.',
+      'db.f7.name': 'Banana Split',
+      'db.f7.desc': 'Plátano y crema · Textura aterciopelada e indulgente.',
+      'db.f8.name': 'Milkshake Chocolate',
+      'db.f8.desc': 'Chocolate cremoso · Cacao intenso con notas lácteas.',
+      'db.f9.name': 'Milkshake Fresa',
+      'db.f9.desc': 'Frutilla cremosa · Dulzor equilibrado y cuerpo suave.',
+      'db.f10.name': 'Dulce de Leche',
+      'db.f10.desc': 'Manjar · El favorito latinoamericano hecho cóctel cremoso.',
 
       // ---------- Pink Moon ----------
       'pm.label': 'Vinos Frisantes & Lifestyle · Comary',
@@ -719,6 +750,9 @@
       'age.yes': 'Yes, I am over 18',
       'age.no': 'No, leave',
       'age.badge': '⚠ Alcoholic beverage · For people over 18 only',
+      'age.restricted.title': 'Sorry, access restricted',
+      'age.restricted.text': 'In accordance with Law 21.363, you must be 18 or older to view content related to alcoholic beverages.',
+      'age.retry': 'Verify age again',
 
       // ---------- DrinkBall ----------
       'db.tagline': 'Ready-to-drink cocktails · "Chill it, open it, enjoy it"',
@@ -754,6 +788,34 @@
       'db.occ3.text': 'Supermarkets, convenience stores and traditional trade.',
       'db.occ3.ph': '[PHOTO: can on the shelf or in a convenience cooler]',
       'db.cta2.title': 'Want to sell DrinkBall in your business?',
+      'db.label': 'Ready-to-Drink Cocktails (RTD) · Comary',
+      'db.abv': '⚠ Alcohol by volume: 10% - 14% ABV',
+      'db.format': 'Official format: 300 ml · Exclusive in Chile: Comercial Amerika',
+      'db.explore': 'Explore all 10 flavors',
+      'db.port.label': 'Official Comary Portfolio',
+      'db.filter.all': 'All (10)',
+      'db.filter.tropical': 'Classics & Tropical (6)',
+      'db.filter.creamy': 'Creamy & Milkshakes (4)',
+      'db.cat.classic': 'Classic',
+      'db.cat.tropical': 'Tropical',
+      'db.cat.creamy': 'Creamy',
+      'db.occ.label': 'Experience & Point of Sale',
+      'db.ed.badge': 'R&D · Innovation & Experience',
+      'db.ed.title': 'Chilled, opened, enjoyed: a new consumption category',
+      'db.ed.text': 'Born from Comary\'s Research & Development department, DrinkBall revolutionizes the RTD segment by combining classic cocktail recipes and creamy flavors in a practical 300 ml bottle ready for any occasion.',
+      'db.ed.s1': 'Single-serve format',
+      'db.ed.s2': 'ABV Strength',
+      'db.ed.s3': 'Tropical & Creamy',
+      'db.f6.name': 'Moscow Ball',
+      'db.f6.desc': 'Ginger & lime · Inspired by the iconic Moscow Mule.',
+      'db.f7.name': 'Banana Split',
+      'db.f7.desc': 'Banana & cream · Velvety and indulgent texture.',
+      'db.f8.name': 'Chocolate Milkshake',
+      'db.f8.desc': 'Creamy chocolate · Rich cocoa with smooth dairy notes.',
+      'db.f9.name': 'Strawberry Milkshake',
+      'db.f9.desc': 'Creamy strawberry · Balanced sweetness and smooth body.',
+      'db.f10.name': 'Dulce de Leche',
+      'db.f10.desc': 'Caramel milk · The Latin American favorite turned creamy cocktail.',
 
       // ---------- Pink Moon ----------
       'pm.label': 'Sparkling Wines & Lifestyle · Comary',
@@ -1346,7 +1408,21 @@
     }
 
     // Respeta la Ley 21.719: sin decisión guardada, no se instala NADA.
-    if (!leerDecision()) banner.hidden = false;
+    // Además, no se muestra mientras el modal de control de edad (+18)
+    // esté abierto: el aviso aparece recién cuando la puerta se resuelve,
+    // para no tapar sus botones (bug del banner compacto).
+    const ageModal = document.getElementById('ageModal');
+
+    function bannerDebeEsperar() {
+      return !!(ageModal && !ageModal.classList.contains('hidden'));
+    }
+
+    function mostrarBanner() {
+      if (!leerDecision()) banner.hidden = false;
+    }
+
+    if (!bannerDebeEsperar()) mostrarBanner();
+    document.addEventListener('amerika:age-confirmed', mostrarBanner);
 
     if (btnAccept) btnAccept.addEventListener('click', function () {
       guardarDecision('aceptada');
@@ -1598,13 +1674,36 @@
       btnYes.addEventListener('click', function () {
         try { sessionStorage.setItem(AGE_KEY, 'si'); } catch (error) { }
         modal.classList.add('hidden');
+        // Avisar al resto del sitio (ej: el aviso de cookies espera esta puerta)
+        document.dispatchEvent(new CustomEvent('amerika:age-confirmed'));
       });
     }
 
     const btnNo = document.getElementById('btnAgeNo');
     if (btnNo) {
       btnNo.addEventListener('click', function () {
+        // Página con vista "restringida" (drinkball): mostrarla en vez de navegar
+        const restricted = document.getElementById('ageRestrictedView');
+        const confirmView = document.getElementById('ageConfirmView');
+        if (restricted && confirmView) {
+          confirmView.style.display = 'none';
+          restricted.style.display = 'block';
+          return;
+        }
         window.location.href = 'index.html';
+      });
+    }
+
+    // Botón "Volver a verificar" de la vista restringida (drinkball)
+    const btnRetry = document.getElementById('btnAgeRetry');
+    if (btnRetry) {
+      btnRetry.addEventListener('click', function () {
+        const restricted = document.getElementById('ageRestrictedView');
+        const confirmView = document.getElementById('ageConfirmView');
+        if (restricted && confirmView) {
+          restricted.style.display = 'none';
+          confirmView.style.display = 'block';
+        }
       });
     }
   }
@@ -1628,6 +1727,24 @@
   }
 
   /* ------------------------------------------
+     TOAST de enlaces demo (páginas de marca)
+     Muestra un aviso al hacer clic en un enlace demo.
+     ------------------------------------------ */
+  function initDemoToast() {
+    const toast = document.getElementById('toastMsg');
+    if (!toast) return;
+    let toastTimer;
+    document.querySelectorAll('.demo-cta').forEach(function (el) {
+      el.addEventListener('click', function (event) {
+        event.preventDefault();
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 3200);
+      });
+    });
+  }
+
+  /* ------------------------------------------
      ARRANQUE
      ------------------------------------------ */
   function init() {
@@ -1639,11 +1756,12 @@
     initBrandFilters();
     initAlliesBand();
     initHeroRotator();
+    initAgeGate();
     initCookieBanner();
     initScrollReveal();
     initNavbarScroll();
-    initAgeGate();
     initNsStepper();
+    initDemoToast();
     setLanguage(readStoredLanguage());
     initFormAlert();
     reportMissingKeys();

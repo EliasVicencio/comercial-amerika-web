@@ -442,7 +442,7 @@ h3 { font-size: 1.25rem; }
   position: fixed;
   bottom: 1rem;
   left: 1rem;
-  z-index: 2000;
+  z-index: 1500; /* bajo el modal de edad (2000): nunca lo tapa */
   max-width: 340px;
   background: var(--color-navy);
   color: #fff;
