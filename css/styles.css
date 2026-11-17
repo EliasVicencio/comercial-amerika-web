@@ -438,7 +438,7 @@ h3 { font-size: 1.25rem; }
 }
 
 /* ---------- AVISO DE COOKIES (tarjeta compacta) ---------- */
-.cookie-banner {
+.cb-card {
   position: fixed;
   bottom: 1rem;
   left: 1rem;
@@ -451,30 +451,30 @@ h3 { font-size: 1.25rem; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.cookie-inner {
+.cb-card-inner {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.cookie-banner p {
+.cb-card p {
   margin: 0;
   font-size: 0.8rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
 }
 
-.cookie-banner a {
+.cb-card a {
   color: #fff;
   text-decoration: underline;
 }
 
-.cookie-actions {
+.cb-card-actions {
   display: flex;
   gap: 0.5rem;
 }
 
-.cookie-actions button {
+.cb-card-actions button {
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: transparent;
   color: #fff;
@@ -486,7 +486,7 @@ h3 { font-size: 1.25rem; }
   cursor: pointer;
 }
 
-.cookie-actions button.btn-accept {
+.cb-card-actions button.btn-accept {
   background: var(--color-green);
   border-color: var(--color-green);
   color: #fff;
@@ -494,7 +494,7 @@ h3 { font-size: 1.25rem; }
 
 /* En pantallas angostas la tarjeta ocupa casi todo el ancho */
 @media (max-width: 480px) {
-  .cookie-banner {
+  .cb-card {
     left: 0.75rem;
     right: 0.75rem;
     max-width: none;

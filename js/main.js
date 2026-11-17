@@ -1420,11 +1420,11 @@
   }
 
   function initCookieBanner() {
-    const banner = document.getElementById('cookieBanner');
+    const banner = document.getElementById('cbCard');
     if (!banner) return; // la página no incluye el aviso
 
-    const btnAccept = document.getElementById('cookieAccept');
-    const btnReject = document.getElementById('cookieReject');
+    const btnAccept = document.getElementById('cbAccept');
+    const btnReject = document.getElementById('cbReject');
 
     function leerDecision() {
       try { return window.localStorage.getItem(COOKIES_KEY); } catch (e) { return null; }
