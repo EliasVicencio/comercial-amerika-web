@@ -784,7 +784,8 @@ html[data-lang="en"] .lang-switch .lang-en {
 .index .header.scrolled .logo,
 .index .header.scrolled .nav a,
 .index .header.scrolled .nav a:hover,
-.index .header.scrolled .nav a.active {
+.index .header.scrolled .nav a.active,
+.index .header.scrolled .mobile-toggle {
   color: var(--color-navy, #0f172a);
 }
 
