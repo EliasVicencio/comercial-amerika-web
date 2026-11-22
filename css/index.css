@@ -311,7 +311,7 @@
 }
 .allies-title {
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -346,14 +346,97 @@
    --color-orange-hover, --color-navy.
    ============================================ */
 
+
+/* ============================================
+   HERO PRINCIPAL - NUEVO DISEÑO
+   Sin imágenes de productos
+   ============================================ */
+
 .hero-showcase {
   position: relative;
   overflow: hidden;
-  background: var(--color-green, #1e7b3c);
-  color: #fff;
+
+  background: #0f172a;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  padding: clamp(2.5rem, 7vw, 5.5rem) 0 0;
+
+  min-height: 480px;
+  padding: clamp(5rem, 10vw, 8rem) 1.5rem;
+
+  box-sizing: border-box;
 }
+
+/* Contenedor del contenido */
+.hero-showcase > .container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Titular */
+.hero-showcase .hs-title {
+  max-width: 950px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.12;
+}
+
+.hero-showcase .hs-headline {
+  display: block;
+  color: #ffffff !important;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+/* Descripción */
+.hero-showcase .hs-sub {
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  color: #e2e8f0 !important;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.7;
+}
+
+/* Botones */
+.hero-showcase .hs-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Botón principal celeste */
+.hero-showcase .hs-btn.primary {
+  background: #438db5 !important;
+  color: #ffffff !important;
+  border: 2px solid #438db5;
+}
+
+.hero-showcase .hs-btn.primary:hover {
+  background: #34789f !important;
+  border-color: #34789f;
+  transform: translateY(-3px);
+}
+
+/* Botón secundario */
+.hero-showcase .hs-btn.ghost {
+  background: transparent;
+  color: #ffffff !important;
+  border: 2px solid #ffffff;
+}
+
+.hero-showcase .hs-btn.ghost:hover {
+  background: #ffffff;
+  color: #0f172a !important;
+}
+
 
 /* Titular: línea chica + frase gigante */
 .hs-title { margin: 0 0 1rem; line-height: 1; }
@@ -367,7 +450,7 @@
   font-size: clamp(2.6rem, 9vw, 6.4rem);
   font-weight: 800;
   letter-spacing: -.02em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .hs-sub {
   max-width: 560px;
@@ -666,7 +749,7 @@ html[data-lang="en"] .lang-switch .lang-en {
    y bien marcados sobre fondo claro. */
 .stats-band {
   /* Mismo tono crema de las demás secciones (antes blanco puro) */
-  background: var(--color-cream-dark, #f1ebe3);
+  background: #ffffff;
   color: var(--color-navy, #0D2240);
   padding: 4.5rem 1rem 5rem;
 }
@@ -825,4 +908,399 @@ html[data-lang="en"] .lang-switch .lang-en {
   .index .header .mobile-toggle {
     transition: none;
   }
+}
+
+
+/* ============================================
+   INDEX - CONTRASTE DE TEXTOS
+   ============================================ */
+
+/* Hero principal azul marino */
+.index .hero-showcase {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* Evitar que los encabezados hereden azul marino */
+.index .hero-showcase h1,
+.index .hero-showcase h2,
+.index .hero-showcase .hs-title,
+.index .hero-showcase .hs-headline {
+  color: #ffffff !important;
+}
+
+/* Descripción y textos del hero */
+.index .hero-showcase p,
+.index .hero-showcase .hs-sub {
+  color: #ffffff;
+}
+
+/* Mantener legibles los botones */
+.index .hero-showcase .hs-btn.primary {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.index .hero-showcase .hs-btn.ghost {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+
+/* ============================================
+   INDEX - NAVBAR Y CONTRASTE
+   ============================================ */
+
+/* Navbar mientras estamos arriba */
+.index .header {
+  background: #0f172a !important;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.index .header .nav a,
+.index .header .logo,
+.index .header .mobile-toggle,
+.index .header .lang-switch summary {
+  color: #ffffff !important;
+}
+
+/* Enlace activo */
+.index .header .nav a.active,
+.index .header .nav a:hover {
+  color: #ffffff !important;
+}
+
+.index .header .nav a.active::after {
+  background: #ffffff !important;
+}
+
+/* Navbar cuando bajamos haciendo scroll */
+.index .header.scrolled {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.index .header.scrolled .nav a,
+.index .header.scrolled .logo,
+.index .header.scrolled .mobile-toggle,
+.index .header.scrolled .lang-switch summary {
+  color: #0f172a !important;
+}
+
+/* Drawer móvil: fondo blanco y enlaces azul marino */
+.index .header .nav-drawer {
+  background: #ffffff;
+}
+
+.index .header .nav-drawer .nav a,
+.index .header .nav-drawer .nav a:hover,
+.index .header .nav-drawer .nav a.active {
+  color: #0f172a !important;
+}
+
+.index .header .nav-drawer .nav a.active::after {
+  background: #438db5 !important;
+}
+
+/* El botón destacado conserva su contraste */
+.index .header .nav a.btn-dark,
+.index .header.scrolled .nav a.btn-dark {
+  background: #0f172a;
+  color: #ffffff !important;
+}
+
+
+/* ============================================
+   INDEX - NAVBAR DEFINITIVO
+   ============================================ */
+
+/* Navbar blanco para mantener visible el logo original */
+.index .header,
+.index .header.scrolled {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Todos los enlaces del navbar */
+.index .header .nav a:not(.btn),
+.index .header.scrolled .nav a:not(.btn) {
+  color: #0f172a !important;
+  font-weight: 500;
+}
+
+/* Hover y sección activa */
+.index .header .nav a:not(.btn):hover,
+.index .header .nav a:not(.btn).active,
+.index .header.scrolled .nav a:not(.btn).active {
+  color: #0f172a !important;
+  font-weight: 700;
+}
+
+/* Línea de sección activa */
+.index .header .nav a.active::after {
+  background: #438db5 !important;
+}
+
+/* Iconos, selector de idioma y menú */
+.index .header .mobile-toggle,
+.index .header .lang-switch summary,
+.index .header .logo {
+  color: #0f172a !important;
+}
+
+/* Drawer móvil */
+.index .header .nav-drawer {
+  background: #ffffff !important;
+}
+
+.index .header .nav-drawer .nav a:not(.btn) {
+  color: #0f172a !important;
+}
+
+/* Botón destacado */
+.index .header .nav a.btn.btn-dark {
+  background: #39B54A !important;
+  border-color: #39B54A !important;
+  color: #ffffff !important;
+}
+
+
+/* ============================================
+   INDEX - CONTRASTE GENERAL DEL HERO
+   ============================================ */
+
+.index .hero-showcase {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+
+/* Todos los encabezados del hero */
+.index .hero-showcase h1,
+.index .hero-showcase h2,
+.index .hero-showcase h3,
+.index .hero-showcase .hs-title,
+.index .hero-showcase .hs-title span,
+.index .hero-showcase .hs-headline,
+.index .hero-showcase .hs-kicker {
+  color: #ffffff !important;
+}
+
+/* Descripciones */
+.index .hero-showcase p,
+.index .hero-showcase .hs-sub {
+  color: #ffffff !important;
+}
+
+/* Botón principal */
+.index .hero-showcase .hs-btn.primary {
+  background: #438db5 !important;
+  border-color: #438db5 !important;
+  color: #ffffff !important;
+}
+
+.index .hero-showcase .hs-btn.primary:hover {
+  background: #34789f !important;
+  border-color: #34789f !important;
+  color: #ffffff !important;
+}
+
+/* Botón secundario */
+.index .hero-showcase .hs-btn.ghost {
+  background: transparent !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.index .hero-showcase .hs-btn.ghost:hover {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Indicadores y textos de cifras */
+.index .stats-band {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.index .stats-band .stat-num {
+  color: #0f172a !important;
+}
+
+.index .stats-band .stat-lbl {
+  color: #475569 !important;
+}
+
+
+/* ============================================
+   INDEX - BOTONES HERO
+   ============================================ */
+
+.index .hero-showcase .hs-btn.primary {
+  background: #438db5 !important;
+  color: #ffffff !important;
+  border-color: #438db5 !important;
+}
+
+.index .hero-showcase .hs-btn.primary:hover {
+  background: #34789f !important;
+  color: #ffffff !important;
+}
+
+.index .hero-showcase .hs-btn.ghost {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.index .hero-showcase .hs-btn.ghost:hover {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+
+/* ============================================
+   INDEX - PROFUNDIDAD Y SOMBRAS DE TARJETAS
+   Nueva identidad visual Comercial Amerika
+   ============================================ */
+
+/* Tarjetas principales */
+.index .card,
+.index .path-card,
+.index .step-card,
+.index .hero-image {
+  background-color: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  box-shadow:
+    0 4px 8px rgba(15, 23, 42, 0.04),
+    0 10px 25px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Efecto al pasar el cursor */
+.index .card:hover,
+.index .path-card:hover,
+.index .step-card:hover,
+.index .hero-image:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 15px rgba(15, 23, 42, 0.06),
+    0 16px 35px rgba(15, 23, 42, 0.12);
+}
+
+/* Iconos de características */
+.index .feature-icon {
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.10);
+}
+
+/* Accesibilidad: respetar movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .index .card,
+  .index .path-card,
+  .index .step-card,
+  .index .hero-image {
+    transition: none;
+  }
+}
+
+
+/* ============================================
+   INDEX - CIFRAS CORPORATIVAS HORIZONTALES
+   ============================================ */
+
+.index .stats-band {
+  background: #ffffff;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.index .stats-band .container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 0;
+}
+
+.index .stats-band .stat-item {
+  text-align: center;
+  padding: 1rem 1.25rem;
+  border-right: 1px solid #e2e8f0;
+}
+
+.index .stats-band .stat-item:last-child {
+  border-right: none;
+}
+
+.index .stats-band .stat-num {
+  display: block;
+  color: #0f172a !important;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.index .stats-band .stat-lbl {
+  display: block;
+  color: #64748b !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .index .stats-band {
+    padding: 1.5rem 0;
+  }
+
+  .index .stats-band .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .index .stats-band .stat-item {
+    padding: 1.25rem 0.75rem;
+    border-right: none;
+  }
+
+  .index .stats-band .stat-item:nth-child(odd) {
+    border-right: 1px solid #e2e8f0;
+  }
+
+  .index .stats-band .stat-item:nth-child(-n+2) {
+    border-bottom: 1px solid #e2e8f0;
+  }
+}
+
+@media (max-width: 380px) {
+  .index .stats-band .stat-num {
+    font-size: 1.8rem;
+  }
+
+  .index .stats-band .stat-lbl {
+    font-size: 0.8rem;
+  }
+}
+
+.index .stats-band {
+  border-bottom: none !important;
+}
+
+.index .stats-band .stat-item {
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+/* HERO - BOTÓN POTENCIA TU MARCA */
+.hero-showcase .hs-actions .hs-btn.primary {
+  background-color: #39B54A !important;
+  color: #FFFFFF !important;
+  border: 1px solid #39B54A !important;
+}
+
+.hero-showcase .hs-actions .hs-btn.primary:hover {
+  background-color: #2E9E3E !important;
+  border-color: #2E9E3E !important;
+  color: #FFFFFF !important;
 }

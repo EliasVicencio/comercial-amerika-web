@@ -14,30 +14,55 @@
    ============================================ */
 
 /* ---------- Variables ---------- */
+
+/* ============================================
+   IDENTIDAD VISUAL - COMERCIAL AMERIKA
+   Paleta corporativa: blanco, azul y verde
+   ============================================ */
+
+
+/* ============================================
+   IDENTIDAD VISUAL - COMERCIAL AMERIKA
+   Azul marino, blanco y celeste
+   ============================================ */
+
 :root {
+  /* Colores corporativos */
   --color-navy: #0f172a;
   --color-navy-light: #1e293b;
-  --color-orange: #eab308;
-  --color-orange-hover: #ca8a04;
-  --color-cream: #f8f5f0;
-  --color-cream-dark: #f1ebe3;
+
+  /* Celeste para banners y mensajes */
+  --color-sky: #438db5;
+  --color-sky-dark: #34789f;
+
+  /* Fondos */
   --color-white: #ffffff;
+  --color-cream: #ffffff;
+  --color-cream-dark: #ffffff;
+
+  /* Compatibilidad con estilos anteriores */
+  --color-orange: #0f172a;
+  --color-orange-hover: #1e293b;
+  --color-green: #0f172a;
+  --color-green-dark: #1e293b;
+
+  /* Textos */
   --color-text: #1e293b;
   --color-text-muted: #64748b;
   --color-border: #e2e8f0;
 
-  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Tipografía */
+  --font-main: 'Inter', system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sombras */
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.1);
+
+  /* Bordes */
   --radius: 12px;
   --radius-sm: 8px;
-}
-
-/* Paleta del sitio */
-:root {
-  --color-green: #16a34a;
-  --color-green-dark: #15803d;
 }
 
 /* ---------- Reset & Base ---------- */
@@ -204,7 +229,7 @@ h3 { font-size: 1.25rem; }
   z-index: 100;
   background-color: rgba(248, 245, 240, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .header-inner {
@@ -1114,4 +1139,124 @@ main, section, header, footer {
   background-color: #1e293b !important;
   color: var(--color-white) !important;
   transform: translateY(-1px);
+}
+
+
+/* ============================================
+   BANNERS DE MENSAJES - NUEVA IDENTIDAD
+   ============================================ */
+
+.cta-banner,
+.cta-banner.green {
+  background: #438db5 !important;
+  color: #ffffff;
+}
+
+.cta-banner h2,
+.cta-banner.green h2,
+.cta-banner p {
+  color: #ffffff !important;
+}
+
+/* Mantener el botón de acción azul marino */
+.cta-banner .btn-dark {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.cta-banner .btn-dark:hover {
+  background: #1e293b;
+}
+
+/* Color de los enlaces activos */
+.header .nav a.active::after {
+  background: #438db5 !important;
+}
+
+/* Selector de idiomas */
+.header .lang-switch summary {
+  color: #0f172a;
+}
+
+
+/* ============================================
+   BOTONES - PALETA DEFINITIVA
+   Azul marino, blanco y celeste
+   ============================================ */
+
+/* BOTONES PRINCIPALES - VERDE VIVO */
+.btn-primary,
+.btn.btn-dark,
+.header .nav a.btn.btn-dark,
+.header .nav-drawer .nav a.btn.btn-dark,
+.cta-banner .btn,
+.hs-btn.primary {
+  background-color: #39B54A !important;
+  color: #FFFFFF !important;
+  border-color: #39B54A !important;
+}
+
+/* Texto e iconos */
+.btn-primary *,
+.btn.btn-dark *,
+.cta-banner .btn *,
+.hs-btn.primary * {
+  color: #FFFFFF !important;
+}
+
+/* Hover */
+.btn-primary:hover,
+.btn.btn-dark:hover,
+.header .nav a.btn.btn-dark:hover,
+.header .nav-drawer .nav a.btn.btn-dark:hover,
+.cta-banner .btn:hover,
+.hs-btn.primary:hover {
+  background-color: #2E9E3E !important;
+  color: #FFFFFF !important;
+  border-color: #2E9E3E !important;
+}
+
+/* Foco accesible */
+.btn-primary:focus-visible,
+.btn.btn-dark:focus-visible {
+  outline: 3px solid #438db5;
+  outline-offset: 3px;
+}
+
+/* Botones secundarios: fondo blanco y borde navy */
+.btn-outline {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #0f172a;
+}
+
+.btn-outline:hover {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* ============================================
+   NAVBAR - BOTÓN POTENCIA TU MARCA
+   Verde corporativo en todas las páginas
+   ============================================ */
+
+.header .nav a.btn,
+.header .nav a.btn.btn-dark,
+.header .nav-drawer .nav a.btn,
+.header .nav-drawer .nav a.btn.btn-dark {
+  background: #39B54A !important;
+  background-color: #39B54A !important;
+  color: #FFFFFF !important;
+  border: 1px solid #39B54A !important;
+  box-shadow: none !important;
+}
+
+.header .nav a.btn:hover,
+.header .nav a.btn.btn-dark:hover,
+.header .nav-drawer .nav a.btn:hover,
+.header .nav-drawer .nav a.btn.btn-dark:hover {
+  background: #2E9E3E !important;
+  background-color: #2E9E3E !important;
+  color: #FFFFFF !important;
+  border-color: #2E9E3E !important;
 }
