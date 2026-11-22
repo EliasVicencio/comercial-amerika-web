@@ -583,26 +583,30 @@
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* ICONOS DE CARACTERÍSTICAS - AZUL SUAVE */
 .feature-icon {
   width: 58px;
   height: 58px;
   display: grid;
   place-items: center;
   margin: 0 auto 1rem;
-  color: var(--color-green);
-  background: rgba(22, 163, 74, .10);
-  border: 1px solid rgba(22, 163, 74, .12);
+  color: #438DB5;
+  background: rgba(67, 141, 181, .10);
+  border: 1px solid rgba(67, 141, 181, .18);
   border-radius: 18px;
   transition: transform .25s ease, background .25s ease;
 }
+
 .feature-icon svg {
   width: 28px;
   height: 28px;
+  stroke: #438DB5;
   stroke-width: 1.8;
 }
+
 .feature-item:hover .feature-icon {
   transform: translateY(-4px);
-  background: rgba(22, 163, 74, .15);
+  background: rgba(67, 141, 181, .16);
 }
 
 /* Los logos del grid estático no necesitan reglas extra aquí. */
