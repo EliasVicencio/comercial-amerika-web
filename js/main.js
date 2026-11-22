@@ -82,7 +82,7 @@
       'brands.pinkmoon.name': 'Pink Moon',
       'brands.pinkmoon.desc': 'Frisante · Experiencia y estilo',      'featured.label': 'Lanzamiento',
       'featured.title': 'DrinkBall y Pink Moon llegan a Chile',
-      'featured.text': 'Marca brasileña con deseo de expandir su negocio a la vía internacional, han confiado en nosotros para trabajaren conjunto con el mismo objetivo.',
+      'featured.text': 'En Comercial Amerika nos enorgullece anunciar nuestra alianza estratégica con Comary, empresa brasileña especializada en la exportación de bebidas tropicales, que apuesta por expandir su presencia y llevar sus productos al mercado chileno. Esta colaboración representa una nueva oportunidad para conectar mercados, acercar nuevos sabores a Chile y fortalecer los lazos comerciales entre ambos países. ¡Comercial Amerika y Comary, creciendo juntos y creando nuevas oportunidades!.',
       'featured.cta': 'Conocer DrinkBall',
       'featured.image': '[FOTO DE OCASIÓN DE CONSUMO: terraza frente al mar, personas adultas (campañas: solo +25 años)]',
       'how.title': 'Posicionamiento, ventas y ejecución que se ven',
