@@ -422,17 +422,31 @@ html[data-lang="en"] .lang-switch summary .lang-current.lang-en {
   margin-bottom: 1rem;
 }
 
+/* Textos del banner editorial DrinkBall */
 .drinkball-editorial-banner h2 {
-  color: var(--color-white);
+  color: #ffffff !important;
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   margin-bottom: 0.85rem;
 }
 
 .drinkball-editorial-banner p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.85) !important;
   font-size: 1rem;
   line-height: 1.6;
   max-width: 540px;
+}
+
+.drinkball-editorial-banner p strong,
+.drinkball-editorial-banner p span {
+  color: inherit !important;
+}
+
+.drinkball-editorial-banner .ed-stat strong {
+  color: var(--color-orange) !important;
+}
+
+.drinkball-editorial-banner .ed-stat span {
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 .editorial-stats-row {
@@ -1389,4 +1403,21 @@ html[data-lang="en"] .lang-switch summary .lang-current.lang-en {
 .product-card > img {
   border-radius: 12px;
   margin-bottom: 1.25rem;
+}
+
+/* Corrección de colores del banner editorial DrinkBall */
+
+/* Etiqueta I+D */
+.drinkball-editorial-banner .editorial-pill {
+  color: #ffffff !important;
+}
+
+/* Cifras: 300 ml, 10% - 14%, 10 Sabores */
+.drinkball-editorial-banner .ed-stat strong {
+  color: #ffffff !important;
+}
+
+/* Descripciones de las cifras */
+.drinkball-editorial-banner .ed-stat span {
+  color: rgba(255, 255, 255, 0.75) !important;
 }
