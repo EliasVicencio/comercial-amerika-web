@@ -1308,3 +1308,16 @@ html[data-lang="en"] .lang-switch .lang-en {
   border-color: #2E9E3E !important;
   color: #FFFFFF !important;
 }
+
+/* ============================================
+   FIX MENÚ MÓVIL - PANEL DESPLEGABLE
+   Evita que backdrop-filter limite el menú
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .index .header,
+  .index .header.scrolled {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
