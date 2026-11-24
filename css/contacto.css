@@ -105,19 +105,8 @@
   color: var(--color-text-muted);
 }
 
-.form-check input[type="checkbox"] {
-  width: 1.4rem;
-  height: 1.4rem;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-  accent-color: var(--color-green);
-  cursor: pointer;
-}
-
-.form-check label {
-  cursor: pointer;
-  flex: 1;
-  min-height: 2.75rem; /* área táctil completa en móvil (44px+) */
+.form-check input {
+  margin-top: 0.2rem;
 }
 
 .form-check label a {
