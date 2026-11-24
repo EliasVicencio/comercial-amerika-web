@@ -297,3 +297,12 @@ html[data-lang="en"] .lang-switch .lang-en {
   position: relative;
   z-index: 3;
 }
+
+a.gb-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
