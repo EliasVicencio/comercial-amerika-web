@@ -1654,7 +1654,7 @@
 
   /* CONTROL DE EDAD 18+ */
   /* ------------------------------------------ */
-  const AGE_KEY = 'amerika-mayor-de-18';
+  const AGE_KEY = 'amerika-mayor-de-18:' + window.location.pathname;
 
   function initAgeGate() {
     const modal = document.getElementById('ageModal');

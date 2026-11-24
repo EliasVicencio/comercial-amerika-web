@@ -81,41 +81,6 @@
     applyLang(localStorage.getItem('amerika-lang') || 'es');
     document.querySelectorAll('.lang-btn').forEach(b =>
       b.addEventListener('click', () => applyLang(b.dataset.lang)));
-
-    const items = [...document.querySelectorAll('.ga-item')];
-
-    // ---------- 2) Acordeón: qué tarjeta está abierta ----------
-    function setActive(item) {
-      items.forEach(i => i.classList.toggle('is-active', i === item));
-    }
-    const hoverMQ = window.matchMedia('(min-width: 768px) and (hover: hover)');
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => { if (hoverMQ.matches) setActive(item); });
-      item.addEventListener('focusin', () => setActive(item));
-      item.addEventListener('click', e => { if (!e.target.closest('[data-open]')) setActive(item); });
-    });
-
-    // ---------- 3) Cambio de vista: acordeón / mosaico ----------
-    const vAcc = document.getElementById('viewAccordion'), vGrid = document.getElementById('viewGrid');
-    const bAcc = document.getElementById('viewAccordionBtn'), bGrid = document.getElementById('viewGridBtn');
-    function showView(grid) {
-      vAcc.hidden = grid; vGrid.hidden = !grid;
-      bAcc.setAttribute('aria-pressed', !grid); bGrid.setAttribute('aria-pressed', grid);
-    }
-    bAcc.addEventListener('click', () => showView(false));
-    bGrid.addEventListener('click', () => showView(true));
-
-    // ---------- 4) Ficha emergente ----------
-    const dialog = document.getElementById('brandDialog');
-    const details = [...dialog.querySelectorAll('.ga-detail')];
-    function openBrand(id) {
-      details.forEach(d => { d.hidden = d.dataset.brand !== id; });
-      const title = dialog.querySelector('.ga-detail:not([hidden]) h2');
-      if (title) dialog.setAttribute('aria-labelledby', title.id);
-      document.documentElement.classList.add('ga-lock');
-      dialog.showModal();
-      dialog.scrollTop = 0;
-    }
     document.querySelectorAll('[data-open]').forEach(el =>
       el.addEventListener('click', e => { e.stopPropagation(); openBrand(el.dataset.open); }));
     document.getElementById('brandClose').addEventListener('click', () => dialog.close());
