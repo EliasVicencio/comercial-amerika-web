@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" data-lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
   <link rel="stylesheet" href="css/drinkball.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
   <!-- ========== HEADER UNIFICADO ========== -->
@@ -37,7 +39,11 @@
             <summary aria-label="Seleccionar idioma">
               <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
               <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
             </summary>
 
             <div class="lang-menu">
@@ -61,7 +67,10 @@
         <summary aria-label="Seleccionar idioma">
           <img class="lang-current lang-es" src="img/flags/es.svg" alt="Español">
           <img class="lang-current lang-en" src="img/flags/gb.svg" alt="English">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
         </summary>
 
         <div class="lang-menu">
@@ -87,9 +96,11 @@
     <div class="age-modal-content" id="ageConfirmView">
       <span class="age-badge">⚠ +18</span>
       <h2 id="ageTitle" data-i18n="age.title">Contenido para mayores de 18 años</h2>
-      <p data-i18n="age.text">Esta página muestra bebidas alcohólicas. Su venta está prohibida a menores de 18 años (Ley 21.363).</p>
+      <p data-i18n="age.text">Esta página muestra bebidas alcohólicas. Su venta está prohibida a menores de 18 años (Ley
+        21.363).</p>
       <div class="age-modal-actions">
-        <button type="button" class="btn btn-primary" id="btnAgeYes" data-i18n="age.yes">Sí, soy mayor de 18 años</button>
+        <button type="button" class="btn btn-primary" id="btnAgeYes" data-i18n="age.yes">Sí, soy mayor de 18
+          años</button>
         <button type="button" class="btn btn-outline" id="btnAgeNo" data-i18n="age.no">No, salir</button>
       </div>
     </div>
@@ -98,7 +109,8 @@
     <div class="age-modal-content" id="ageRestrictedView" style="display: none;">
       <span class="age-badge" style="background: #dc2626;">⛔ Acceso Restringido</span>
       <h2 data-i18n="age.restricted.title">Lo sentimos, no puedes ingresar</h2>
-      <p data-i18n="age.restricted.text">De acuerdo con la Ley 21.363, debes ser mayor de 18 años para visualizar contenido relacionado con bebidas alcohólicas.</p>
+      <p data-i18n="age.restricted.text">De acuerdo con la Ley 21.363, debes ser mayor de 18 años para visualizar
+        contenido relacionado con bebidas alcohólicas.</p>
       <div class="age-modal-actions">
         <button type="button" class="btn btn-primary" id="btnAgeRetry" data-i18n="age.retry">Volver a verificar</button>
       </div>
@@ -106,25 +118,70 @@
   </div>
 
   <!-- ========== 1. HERO DE LA MARCA ========== -->
-  <section class="page-hero" id="inicio">
-    <div class="container">
-      <p class="section-label" data-i18n="db.label">Cócteles Listos para Beber (RTD) · Comary</p>
-      <h1>DrinkBall</h1>
-      <p style="margin-top: 0.75rem; font-size: 1.15rem; color: var(--color-text-muted); max-width: 680px;" data-i18n="db.tagline">
-        "Enfría, abre, disfruta." Innovación lista para beber y compartir. Creada para una nueva generación de consumidores, une conveniencia, variedad y un formato propio de alto impacto visual pensado para destacar en el punto de venta.
-      </p>
 
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
-        <span class="age-badge" data-i18n="db.abv">⚠ Graduación alcohólica: 10% - 14% Vol.</span>
-        <span class="age-badge" style="background: var(--color-green);" data-i18n="db.format">Formato oficial: 300 ml · Exclusiva Chile: Comercial Amerika</span>
-      </div>
+  <section class="page-hero brand-hero drinkball-hero" id="inicio">
 
-      <div class="hero-actions" style="margin-top: 1.75rem;">
-        <a href="#contacto" class="btn btn-primary" data-i18n="db.cta">Quiero venderla en mi negocio</a>
-        <a href="#portafolio" class="btn btn-outline" data-i18n="db.explore">Ver los 10 sabores</a>
+    <!-- Imagen de fondo -->
+    <div class="brand-hero-background" aria-hidden="true">
+      <img src="img/drinkball02.webp" alt="" fetchpriority="high">
+    </div>
+
+    <!-- Oscurecimiento -->
+    <div class="brand-hero-shade" aria-hidden="true"></div>
+
+    <div class="container brand-hero-inner">
+
+      <div class="brand-hero-copy">
+
+        <p class="section-label" data-i18n="db.label">
+          Cócteles Listos para Beber (RTD) · Comary
+        </p>
+
+        <h1>DrinkBall</h1>
+
+        <p class="brand-hero-lead" data-i18n="db.tagline">
+          "Enfría, abre, disfruta." Innovación lista para beber y compartir.
+          Una propuesta que combina conveniencia, variedad y personalidad
+          para destacar en cada ocasión.
+        </p>
+
+        <div class="brand-hero-badges">
+          <span class="age-badge" data-i18n="db.abv">
+            ⚠ Graduación alcohólica: 10% - 14% Vol.
+          </span>
+
+          <span class="age-badge brand-exclusive" data-i18n="db.format">
+            Formato oficial: 300 ml · Exclusiva Chile: Comercial Amerika
+          </span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary" data-i18n="db.cta">
+            Quiero venderla en mi negocio
+          </a>
+
+          <a href="#portafolio" class="btn btn-outline" data-i18n="db.explore">
+            Ver los 10 sabores
+          </a>
+        </div>
+
+        <span class="brand-hero-signature">
+          Una marca Comary · Comercializada en Chile por Comercial Amerika
+        </span>
+
       </div>
     </div>
+
+    <span class="brand-hero-image-caption">
+      DRINKBALL · READY TO DRINK
+    </span>
+
+    <a href="#portafolio" class="brand-hero-scroll" aria-label="Desplazarse al contenido">
+      <span></span>
+    </a>
+
   </section>
+
 
   <!-- ========== BANNER EDITORIAL DESTACADO (Inspirado en Comary) ========== -->
   <section class="section" style="padding-top: 0.5rem; padding-bottom: 2rem;">
@@ -134,7 +191,9 @@
           <span class="editorial-pill" data-i18n="db.ed.badge">I+D · Innovación y Experiencia</span>
           <h2 data-i18n="db.ed.title">Enfrió, abrió, disfrutó: una nueva categoría de consumo</h2>
           <p data-i18n="db.ed.text">
-            Nacida del área de Investigación y Desarrollo de Comary, DrinkBall revoluciona el segmento RTD combinando recetas de coctelería clásica y sabores cremosos en un envase de 300 ml práctico, irreverente y listo para cualquier ocasión.
+            Nacida del área de Investigación y Desarrollo de Comary, DrinkBall revoluciona el segmento RTD combinando
+            recetas de coctelería clásica y sabores cremosos en un envase de 300 ml práctico, irreverente y listo para
+            cualquier ocasión.
           </p>
           <div class="editorial-stats-row">
             <div class="ed-stat">
@@ -156,35 +215,53 @@
         <div class="bottles-showcase" aria-hidden="true">
           <!-- Botella 1: Piña Bolada (Amarillo) -->
           <svg width="82" height="175" viewBox="0 0 90 190" fill="none">
-            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-            <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#eab308"/>
-            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white" fill-opacity="0.35"/>
-            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a"/>
-            <text x="45" y="116" text-anchor="middle" fill="#facc15" font-family="Inter, sans-serif" font-weight="800" font-size="9">DRINK</text>
-            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="9">BALL</text>
-            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600" font-size="6">PIÑA BOLADA</text>
+            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a" />
+            <path
+              d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z"
+              fill="#eab308" />
+            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white"
+              fill-opacity="0.35" />
+            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a" />
+            <text x="45" y="116" text-anchor="middle" fill="#facc15" font-family="Inter, sans-serif" font-weight="800"
+              font-size="9">DRINK</text>
+            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800"
+              font-size="9">BALL</text>
+            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600"
+              font-size="6">PIÑA BOLADA</text>
           </svg>
 
           <!-- Botella 2 (Central más alta): Caipiríssima (Verde) -->
           <svg width="96" height="205" viewBox="0 0 90 190" fill="none">
-            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-            <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#16a34a"/>
-            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white" fill-opacity="0.35"/>
-            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a"/>
-            <text x="45" y="116" text-anchor="middle" fill="#4ade80" font-family="Inter, sans-serif" font-weight="800" font-size="9">DRINK</text>
-            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="9">BALL</text>
-            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600" font-size="5.8">CAIPIRÍSSIMA</text>
+            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a" />
+            <path
+              d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z"
+              fill="#16a34a" />
+            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white"
+              fill-opacity="0.35" />
+            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a" />
+            <text x="45" y="116" text-anchor="middle" fill="#4ade80" font-family="Inter, sans-serif" font-weight="800"
+              font-size="9">DRINK</text>
+            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800"
+              font-size="9">BALL</text>
+            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600"
+              font-size="5.8">CAIPIRÍSSIMA</text>
           </svg>
 
           <!-- Botella 3: Summer Blue (Azul) -->
           <svg width="82" height="175" viewBox="0 0 90 190" fill="none">
-            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-            <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#0284c7"/>
-            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white" fill-opacity="0.35"/>
-            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a"/>
-            <text x="45" y="116" text-anchor="middle" fill="#38bdf8" font-family="Inter, sans-serif" font-weight="800" font-size="9">DRINK</text>
-            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="9">BALL</text>
-            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600" font-size="5.8">SUMMER BLUE</text>
+            <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a" />
+            <path
+              d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z"
+              fill="#0284c7" />
+            <path d="M23 98C23 82 26 69 32 58L38 28H43L37 59C31 70 28 82 28 98V168H23V98Z" fill="white"
+              fill-opacity="0.35" />
+            <rect x="20" y="92" width="50" height="58" rx="8" fill="#0f172a" />
+            <text x="45" y="116" text-anchor="middle" fill="#38bdf8" font-family="Inter, sans-serif" font-weight="800"
+              font-size="9">DRINK</text>
+            <text x="45" y="127" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800"
+              font-size="9">BALL</text>
+            <text x="45" y="140" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-weight="600"
+              font-size="5.8">SUMMER BLUE</text>
           </svg>
         </div>
       </div>
@@ -196,7 +273,10 @@
     <div class="container">
       <div class="highlight-box">
         <p data-i18n="db.history">
-          DrinkBall es la línea de cócteles listos para beber (RTD) de <strong>Comary</strong>, fabricante brasileño de bebidas desde 1952 (más de 70 años de historia). Comercial Amerika la importa y distribuye en exclusividad para Chile, llevando innovación, alta rotación y propuesta de valor a supermercados, conveniencia y canal tradicional.
+          DrinkBall es la línea de cócteles listos para beber (RTD) de <strong>Comary</strong>, fabricante brasileño de
+          bebidas desde 1952 (más de 70 años de historia). Comercial Amerika la importa y distribuye en exclusividad
+          para Chile, llevando innovación, alta rotación y propuesta de valor a supermercados, conveniencia y canal
+          tradicional.
         </p>
       </div>
     </div>
@@ -213,24 +293,19 @@
 
         <!-- Filtros interactivos por línea -->
         <div class="filter-tabs" role="tablist" aria-label="Filtrar sabores">
-          <button type="button" class="filter-btn active" data-filter="all" data-i18n="db.filter.all">Todos (10)</button>
-          <button type="button" class="filter-btn" data-filter="tropical" data-i18n="db.filter.tropical">Clásicos y Tropicales (6)</button>
-          <button type="button" class="filter-btn" data-filter="creamy" data-i18n="db.filter.creamy">Cremosos y Milkshakes (4)</button>
+          <button type="button" class="filter-btn active" data-filter="all" data-i18n="db.filter.all">Todos
+            (10)</button>
+          <button type="button" class="filter-btn" data-filter="tropical" data-i18n="db.filter.tropical">Clásicos y
+            Tropicales (6)</button>
+          <button type="button" class="filter-btn" data-filter="creamy" data-i18n="db.filter.creamy">Cremosos y
+            Milkshakes (4)</button>
         </div>
       </div>
 
       <div class="brands-grid" id="flavorsGrid">
         <!-- 1. Piña Bolada -->
         <div class="product-card" data-category="tropical">
-          <div class="product-visual" style="background: #fef9c3;">
-            <span class="product-cat-badge" data-i18n="db.cat.tropical">Tropical</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#eab308"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#facc15" font-family="Inter, sans-serif" font-weight="800" font-size="9">PIÑA</text>
-            </svg>
-          </div>
+          <img src="img/pina-bolada.webp" alt="DrinkBall Piña Bolada" loading="lazy">
           <h4 data-i18n="db.f1.name">Piña Bolada</h4>
           <p data-i18n="db.f1.desc">Piña y coco · Refrescante y exótico de perfil tropical.</p>
           <span class="product-meta">300 ml · 10% Vol.</span>
@@ -238,15 +313,7 @@
 
         <!-- 2. Tropical Sunset -->
         <div class="product-card" data-category="tropical">
-          <div class="product-visual" style="background: #ffedd5;">
-            <span class="product-cat-badge" data-i18n="db.cat.tropical">Tropical</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#f97316"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#fb923c" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">SUNSET</text>
-            </svg>
-          </div>
+          <img src="img/mate-limao-spritz.webp" alt="">
           <h4 data-i18n="db.f2.name">Tropical Sunset</h4>
           <p data-i18n="db.f2.desc">Frutas tropicales y cítricos · Vibrante y aromático.</p>
           <span class="product-meta">300 ml · 10% Vol.</span>
@@ -254,15 +321,7 @@
 
         <!-- 3. Summer Blue -->
         <div class="product-card" data-category="tropical">
-          <div class="product-visual" style="background: #e0f2fe;">
-            <span class="product-cat-badge" data-i18n="db.cat.tropical">Tropical</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#0284c7"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#38bdf8" font-family="Inter, sans-serif" font-weight="800" font-size="9">BLUE</text>
-            </svg>
-          </div>
+          <img src="img/torta-de-limao.webp" alt="Torta de Limao" loading="lazy">
           <h4 data-i18n="db.f3.name">Summer Blue</h4>
           <p data-i18n="db.f3.desc">Cítrico refrescante · Color azul intenso y toque curaçao.</p>
           <span class="product-meta">300 ml · 10% Vol.</span>
@@ -270,15 +329,7 @@
 
         <!-- 4. Caipiríssima -->
         <div class="product-card" data-category="tropical">
-          <div class="product-visual" style="background: #dcfce7;">
-            <span class="product-cat-badge" data-i18n="db.cat.classic">Clásico</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#16a34a"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#4ade80" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">CAIPI</text>
-            </svg>
-          </div>
+          <img src="img/caipirissima.webp" alt="DrinkBall Caipiríssima" loading="lazy">
           <h4 data-i18n="db.f4.name">Caipiríssima</h4>
           <p data-i18n="db.f4.desc">Limón y menta · El clásico brasileño listo para servir.</p>
           <span class="product-meta">300 ml · 12% Vol.</span>
@@ -286,16 +337,8 @@
 
         <!-- 5. Mate Iced Club -->
         <div class="product-card" data-category="tropical">
-          <div class="product-visual" style="background: #fef3c7;">
-            <span class="product-cat-badge" data-i18n="db.cat.classic">Clásico</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#b45309"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#fbbf24" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">MATE</text>
-            </svg>
-          </div>
-          <h4 data-i18n="db.f5.name">Mate Iced Club</h4>
+          <img src="img/summer-blue.webp" alt="Summer Blue" loading="lazy">
+          <h4 data-i18n="db.f5.name">Summer Blue</h4>
           <p data-i18n="db.f5.desc">Hojas de mate y limón · Frescura herbal de playa.</p>
           <span class="product-meta">300 ml · 10% Vol.</span>
         </div>
@@ -305,10 +348,13 @@
           <div class="product-visual" style="background: #f1f5f9;">
             <span class="product-cat-badge" data-i18n="db.cat.classic">Clásico</span>
             <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#64748b"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">MOSCOW</text>
+              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a" />
+              <path
+                d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z"
+                fill="#64748b" />
+              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a" />
+              <text x="45" y="122" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-weight="800"
+                font-size="8.5">MOSCOW</text>
             </svg>
           </div>
           <h4 data-i18n="db.f6.name">Moscow Ball</h4>
@@ -318,15 +364,7 @@
 
         <!-- 7. Banana Split -->
         <div class="product-card" data-category="creamy">
-          <div class="product-visual" style="background: #fef08a;">
-            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#ca8a04"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#fef08a" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">BANANA</text>
-            </svg>
-          </div>
+          <img src="img/banana-split.webp" alt="DrinkBall Banana Split" loading="lazy">
           <h4 data-i18n="db.f7.name">Banana Split</h4>
           <p data-i18n="db.f7.desc">Plátano y crema · Textura aterciopelada e indulgente.</p>
           <span class="product-meta">300 ml · 14% Vol.</span>
@@ -334,15 +372,7 @@
 
         <!-- 8. Milkshake Chocolate -->
         <div class="product-card" data-category="creamy">
-          <div class="product-visual" style="background: #e7e5e4;">
-            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#57534e"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#d6d3d1" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">CHOCO</text>
-            </svg>
-          </div>
+          <img src="img/milkshare-chocolate.webp" alt="DrinkBall Banana Split" loading="lazy">
           <h4 data-i18n="db.f8.name">Milkshake Chocolate</h4>
           <p data-i18n="db.f8.desc">Chocolate cremoso · Cacao intenso con notas lácteas.</p>
           <span class="product-meta">300 ml · 14% Vol.</span>
@@ -350,32 +380,16 @@
 
         <!-- 9. Milkshake Fresa -->
         <div class="product-card" data-category="creamy">
-          <div class="product-visual" style="background: #fce7f3;">
-            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#ec4899"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#f9a8d4" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">FRESA</text>
-            </svg>
-          </div>
-          <h4 data-i18n="db.f9.name">Milkshake Fresa</h4>
+          <img src="img/milkshare-morango.webp" alt="Milkshare Morango" loading="lazy">
+          <h4 data-i18n="db.f9.name">Milkshake Morango</h4>
           <p data-i18n="db.f9.desc">Frutilla cremosa · Dulzor equilibrado y cuerpo suave.</p>
           <span class="product-meta">300 ml · 14% Vol.</span>
         </div>
 
         <!-- 10. Dulce de Leche -->
         <div class="product-card" data-category="creamy">
-          <div class="product-visual" style="background: #fed7aa;">
-            <span class="product-cat-badge" data-i18n="db.cat.creamy">Cremoso</span>
-            <svg width="56" height="120" viewBox="0 0 90 190" fill="none">
-              <rect x="33" y="6" width="24" height="16" rx="4" fill="#0f172a"/>
-              <path d="M35 22H55L66 56C72 68 74 82 74 102V166C74 176 66 184 56 184H34C24 184 16 176 16 166V102C16 82 18 68 24 56L35 22Z" fill="#9a3412"/>
-              <rect x="20" y="92" width="50" height="54" rx="8" fill="#0f172a"/>
-              <text x="45" y="122" text-anchor="middle" fill="#fdba74" font-family="Inter, sans-serif" font-weight="800" font-size="8.5">MANJAR</text>
-            </svg>
-          </div>
-          <h4 data-i18n="db.f10.name">Dulce de Leche</h4>
+        <img src="img/doce-de-leite.webp" alt="DrinkBall Dulce de Leche" loading="lazy">
+          <h4 data-i18n="db.f10.name">Doce de Leite</h4>
           <p data-i18n="db.f10.desc">Manjar · El favorito latinoamericano hecho cóctel cremoso.</p>
           <span class="product-meta">300 ml · 14% Vol.</span>
         </div>
@@ -398,7 +412,8 @@
             <img src="img/playa.webp" alt="Terraza y verano chileno" loading="lazy">
           </div>
           <h4 data-i18n="db.occ1.title">Terraza y Verano Chileno</h4>
-          <p data-i18n="db.occ1.text">Atardecer, cooler con hielo y botellas de 300 ml listas para abrir y compartir sin preparación previa.</p>
+          <p data-i18n="db.occ1.text">Atardecer, cooler con hielo y botellas de 300 ml listas para abrir y compartir sin
+            preparación previa.</p>
         </div>
 
         <div class="card">
@@ -406,7 +421,8 @@
             <img src="img/coctel.webp" alt="Servido en vaso con hielo" loading="lazy">
           </div>
           <h4 data-i18n="db.occ2.title">Servido en Vaso / Coctelería Real</h4>
-          <p data-i18n="db.occ2.text">Recetas equilibradas con graduación alcohólica real (10% - 14%), ideales para servir con hielo y garnish.</p>
+          <p data-i18n="db.occ2.text">Recetas equilibradas con graduación alcohólica real (10% - 14%), ideales para
+            servir con hielo y garnish.</p>
         </div>
 
         <div class="card">
@@ -414,7 +430,8 @@
             <img src="img/horeca.webp" alt="Canal HORECA y Retail" loading="lazy">
           </div>
           <h4 data-i18n="db.occ3.title">Canal HORECA y Retail</h4>
-          <p data-i18n="db.occ3.text">Alto impacto visual en góndolas de supermercados, tiendas de conveniencia, botillerías y canal tradicional.</p>
+          <p data-i18n="db.occ3.text">Alto impacto visual en góndolas de supermercados, tiendas de conveniencia,
+            botillerías y canal tradicional.</p>
         </div>
       </div>
     </div>
@@ -455,7 +472,8 @@
       </div>
 
       <p class="footer-age" data-i18n="footer.age">Venta de alcohol prohibida a menores de 18 años.</p>
-      <p class="footer-age"><a href="privacidad"><span data-i18n="footer.privacy">Política de privacidad</span></a> · <a href="cookies" data-i18n="footer.cookies">Política de cookies</a></p>
+      <p class="footer-age"><a href="privacidad"><span data-i18n="footer.privacy">Política de privacidad</span></a> · <a
+          href="cookies" data-i18n="footer.cookies">Política de cookies</a></p>
     </div>
   </footer>
 
@@ -463,7 +481,8 @@
   <a href="https://wa.me/56956100329?text=Hola%20Comercial%20Amerika,%20quisiera%20cotizar%20DrinkBall"
     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.3S24.6.5 16 .5zm0 28.1c-2.5 0-4.8-.7-6.8-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.3-2.1-2-4.7-2-7.3 0-7 5.7-12.8 12.9-12.8S28.8 8.2 28.8 15.3 23.1 28.6 16 28.6zm7.2-9.6c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.7-.2-1 .2-.3.4-1.2 1.3-1.5 1.6-.3.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.3-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.6.1-1 .5-.3.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9-.1-.2-.4-.3-.8-.5z" />
+      <path
+        d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.4 2 7.7L.5 31.5l8-2.1c2.2 1.2 4.8 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.3S24.6.5 16 .5zm0 28.1c-2.5 0-4.8-.7-6.8-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5c-1.3-2.1-2-4.7-2-7.3 0-7 5.7-12.8 12.9-12.8S28.8 8.2 28.8 15.3 23.1 28.6 16 28.6zm7.2-9.6c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.7-.2-1 .2-.3.4-1.2 1.3-1.5 1.6-.3.3-.5.3-.9.1-.4-.2-1.8-.7-3.4-2.1-1.3-1.1-2.1-2.5-2.4-2.9-.3-.4 0-.6.2-.9.2-.2.4-.5.6-.7.2-.2.3-.4.4-.6.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.6.1-1 .5-.3.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.7 4.2 6.6 5.9.9.4 1.6.6 2.2.8 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.7-1.9.3-.9.3-1.8.2-1.9-.1-.2-.4-.3-.8-.5z" />
     </svg>
   </a>
 
@@ -472,7 +491,8 @@
   <!-- Aviso de cookies (la lógica vive en js/main.js) -->
   <div class="cb-card" id="cbCard" hidden>
     <div class="cb-card-inner">
-      <p data-i18n="cookies.text">Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad">política de privacidad</a>.</p>
+      <p data-i18n="cookies.text">Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y
+        mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad">política de privacidad</a>.</p>
       <div class="cb-card-actions">
         <button type="button" class="btn-accept" id="cbAccept" data-i18n="cookies.accept">Aceptar</button>
         <button type="button" id="cbReject" data-i18n="cookies.reject">Rechazar</button>
@@ -500,4 +520,5 @@
     })();
   </script>
 </body>
+
 </html>

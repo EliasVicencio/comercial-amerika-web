@@ -446,3 +446,487 @@ img {
   .cards-grid { grid-template-columns: 1fr; }
   .cta-banner-inner { flex-direction: column; text-align: center; }
 }
+
+/* =========================================================
+   REDISEÑO EDITORIAL 2026 - HERO DE MARCA
+   Inspiración: narrativa visual y composición editorial.
+   ========================================================= */
+.brand-hero {
+  padding: clamp(2.5rem, 5vw, 5rem) 0;
+  overflow: hidden;
+}
+.brand-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+.brand-hero-copy { position: relative; z-index: 1; }
+.brand-hero-copy h1 {
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  margin: .25rem 0 1.2rem;
+}
+.brand-hero-lead {
+  max-width: 590px;
+  margin: 0 0 1.4rem;
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 1.4vw, 1.16rem);
+  line-height: 1.8;
+}
+.brand-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-bottom: 1.5rem;
+}
+.brand-hero-badges .age-badge {
+  font-size: .74rem;
+  line-height: 1.4;
+}
+.brand-hero-badges .brand-exclusive { background: var(--color-green); }
+.brand-hero .hero-actions { margin-top: 0; }
+.brand-hero-signature {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .025em;
+}
+.brand-hero-visual {
+  position: relative;
+  min-height: 440px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--color-cream-dark);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, .16);
+}
+.brand-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(15, 23, 42, .48));
+  pointer-events: none;
+}
+.brand-hero-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.brand-hero-visual:hover img { transform: scale(1.035); }
+.brand-hero-image-caption {
+  position: absolute;
+  z-index: 1;
+  left: 1.5rem;
+  bottom: 1.35rem;
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.pinkmoon-hero { background: linear-gradient(115deg, #fff 0%, #fff7fb 58%, #fce7f3 100%); }
+.pinkmoon-hero .section-label { color: #be185d !important; }
+.pinkmoon-hero .brand-hero-copy h1 { color: #831843; }
+.pinkmoon-hero .brand-hero-visual { border: 8px solid #fff; }
+.pinkmoon-hero .brand-hero-visual img { object-position: center center; }
+.pinkmoon-hero .brand-hero-badges .age-badge:first-child { background: #831843; }
+.pinkmoon-hero .brand-hero-badges .brand-exclusive { background: #db2777; }
+
+@media (max-width: 900px) {
+  .brand-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .brand-hero-copy { max-width: 760px; }
+  .brand-hero-visual, .brand-hero-visual img { min-height: 360px; }
+}
+@media (max-width: 600px) {
+  .brand-hero { padding: 2.2rem 0 2.8rem; }
+  .brand-hero-inner { gap: 1.5rem; }
+  .brand-hero-copy h1 { font-size: clamp(2.8rem, 13vw, 4rem); }
+  .brand-hero-lead { font-size: 1rem; line-height: 1.7; }
+  .brand-hero-badges { gap: .5rem; }
+  .brand-hero-badges .age-badge { font-size: .68rem; }
+  .brand-hero .hero-actions { display: grid; grid-template-columns: 1fr; }
+  .brand-hero .hero-actions .btn { width: 100%; }
+  .brand-hero-visual, .brand-hero-visual img { min-height: 300px; }
+  .brand-hero-visual { border-radius: 20px; border-width: 5px; }
+  .brand-hero-image-caption { left: 1rem; bottom: 1rem; font-size: .62rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-hero-visual img { transition: none; }
+}
+
+
+/* =====================================================
+   HERO INMERSIVO - COMERCIAL AMERIKA
+   Imagen de fondo + texto superpuesto
+   ===================================================== */
+
+.brand-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: clamp(620px, 78vh, 820px);
+  padding: 6rem 0;
+  overflow: hidden;
+  color: #fff;
+  background: #101827;
+}
+
+/* Imagen de fondo */
+
+.brand-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.brand-hero-background img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+  animation: brandHeroZoom 24s ease-in-out infinite alternate;
+}
+
+/* Capa oscura para mejorar la lectura */
+
+.brand-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 17, 31, .92) 0%,
+      rgba(8, 17, 31, .76) 45%,
+      rgba(8, 17, 31, .30) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 17, 31, .45),
+      transparent 55%
+    );
+}
+
+/* Contenido */
+
+.brand-hero-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(760px, 80%);
+}
+
+.brand-hero-copy .section-label {
+  display: inline-block;
+  margin-bottom: 1.3rem;
+  padding: .5rem .9rem;
+  color: #fff !important;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 30px;
+  font-size: .76rem;
+  letter-spacing: .08em;
+  backdrop-filter: blur(6px);
+}
+
+.brand-hero-copy h1 {
+  margin-bottom: 1.3rem;
+  color: #fff !important;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  text-shadow: 0 3px 25px rgba(0,0,0,.25);
+}
+
+.brand-hero-lead {
+  max-width: 650px;
+  margin-bottom: 1.6rem;
+  color: rgba(255,255,255,.94) !important;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.8;
+  text-shadow: 0 2px 12px rgba(0,0,0,.3);
+}
+
+/* Etiquetas */
+
+.brand-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-bottom: 1.7rem;
+}
+
+.brand-hero-badges .age-badge {
+  padding: .55rem .85rem;
+  color: #fff;
+  background: rgba(10,20,35,.65);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 30px;
+  font-size: .73rem;
+  backdrop-filter: blur(5px);
+}
+
+/* Botones */
+
+.brand-hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin: 0;
+}
+
+.brand-hero .btn-outline {
+  color: #fff;
+  background: rgba(255,255,255,.07);
+  border-color: #fff;
+}
+
+.brand-hero .btn-outline:hover {
+  color: #101827;
+  background: #fff;
+}
+
+.brand-hero-signature {
+  display: block;
+  margin-top: 1.6rem;
+  color: rgba(255,255,255,.78);
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+/* Identificación de marca */
+
+.brand-hero-image-caption {
+  position: absolute;
+  right: 2rem;
+  bottom: 1.6rem;
+  z-index: 2;
+  color: rgba(255,255,255,.85);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+/* Indicador de desplazamiento */
+
+.brand-hero-scroll {
+  position: absolute;
+  z-index: 2;
+  bottom: 1.2rem;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 25px;
+  transform: translateX(-50%);
+  opacity: .8;
+}
+
+.brand-hero-scroll span {
+  width: 4px;
+  height: 9px;
+  border-radius: 5px;
+  background: #fff;
+  animation: brandScroll 1.8s ease-in-out infinite;
+}
+
+/* Animaciones suaves */
+
+@keyframes brandHeroZoom {
+  from { transform: scale(1.03); }
+  to { transform: scale(1.09); }
+}
+
+@keyframes brandScroll {
+  0%, 100% {
+    transform: translateY(-5px);
+    opacity: .45;
+  }
+  55% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   IDENTIDAD VISUAL DRINKBALL
+   ===================================================== */
+
+.drinkball-hero .brand-hero-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,17,31,.93) 0%,
+      rgba(8,17,31,.75) 48%,
+      rgba(8,17,31,.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8,17,31,.45),
+      transparent 55%
+    );
+}
+
+.drinkball-hero .brand-exclusive {
+  background: rgba(36,133,64,.9);
+}
+
+.drinkball-hero .btn-primary {
+  background: #39B54A;
+  color: #fff;
+}
+
+.drinkball-hero .btn-primary:hover {
+  background: #2E9E3E;
+}
+
+/* =====================================================
+   IDENTIDAD VISUAL PINK MOON
+   ===================================================== */
+
+.pinkmoon-hero .brand-hero-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(48,13,34,.92) 0%,
+      rgba(48,13,34,.76) 48%,
+      rgba(48,13,34,.30) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(48,13,34,.45),
+      transparent 55%
+    );
+}
+
+.pinkmoon-hero .brand-exclusive {
+  background: rgba(190,24,93,.9);
+}
+
+.pinkmoon-hero .btn-primary {
+  background: #db2777;
+  color: #fff;
+}
+
+.pinkmoon-hero .btn-primary:hover {
+  background: #be185d;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .brand-hero {
+    min-height: 680px;
+    padding: 6rem 0;
+  }
+
+  .brand-hero-copy {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-hero {
+    min-height: max(700px, 82svh);
+    padding: 5rem 0;
+  }
+
+  .brand-hero-background img {
+    object-position: center center;
+  }
+
+  .brand-hero-copy {
+    width: 100%;
+  }
+
+  .brand-hero-copy h1 {
+    font-size: clamp(3.2rem, 14vw, 4.5rem);
+  }
+
+  .brand-hero-lead {
+    font-size: .98rem;
+    line-height: 1.7;
+  }
+
+  .brand-hero-badges {
+    gap: .5rem;
+  }
+
+  .brand-hero-badges .age-badge {
+    font-size: .66rem;
+  }
+
+  .brand-hero .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .brand-hero .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .brand-hero-signature {
+    max-width: 290px;
+    font-size: .7rem;
+    line-height: 1.5;
+  }
+
+  .brand-hero-image-caption {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: .57rem;
+  }
+
+  .brand-hero-scroll {
+    bottom: .8rem;
+  }
+
+  .drinkball-hero .brand-hero-shade {
+    background: linear-gradient(
+      90deg,
+      rgba(8,17,31,.88),
+      rgba(8,17,31,.62)
+    );
+  }
+
+  .pinkmoon-hero .brand-hero-shade {
+    background: linear-gradient(
+      90deg,
+      rgba(48,13,34,.90),
+      rgba(48,13,34,.65)
+    );
+  }
+}
+
+/* Accesibilidad: respetar preferencias de movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-hero-background img,
+  .brand-hero-scroll span {
+    animation: none !important;
+  }
+
+  .brand-hero-background img {
+    transform: none;
+  }
+}
