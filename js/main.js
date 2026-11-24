@@ -80,7 +80,7 @@
       'brands.drinkball.name': 'DrinkBall',
       'brands.drinkball.desc': 'Cócteles listos para beber · RTD',
       'brands.pinkmoon.name': 'Pink Moon',
-      'brands.pinkmoon.desc': 'Frisante · Experiencia y estilo',      'featured.label': 'Lanzamiento',
+      'brands.pinkmoon.desc': 'Frisante · Experiencia y estilo', 'featured.label': 'Lanzamiento',
       'featured.title': 'DrinkBall y Pink Moon llegan a Chile',
       'featured.text': 'En Comercial Amerika nos enorgullece anunciar nuestra alianza estratégica con Comary, empresa brasileña especializada en la exportación de bebidas tropicales, que apuesta por expandir su presencia y llevar sus productos al mercado chileno. Esta colaboración representa una nueva oportunidad para conectar mercados, acercar nuevos sabores a Chile y fortalecer los lazos comerciales entre ambos países. ¡Comercial Amerika y Comary, creciendo juntos y creando nuevas oportunidades!.',
       'featured.cta': 'Conocer DrinkBall',
@@ -105,7 +105,7 @@
       'bp.filter.noalcohol': 'Bebidas sin alcohol',
       'bp.filter.alimentos': 'Alimentos y mascotas',
       'bp.card.drinkball': 'Cócteles listos para beber · Comary, Brasil · "Innovación y actitud"',
-      'bp.card.pinkmoon': 'Frisante · Comary, Brasil · "Experiencia y estilo"',      'representa.title': '¿Quieres que tu marca sea la próxima?',
+      'bp.card.pinkmoon': 'Frisante · Comary, Brasil · "Experiencia y estilo"', 'representa.title': '¿Quieres que tu marca sea la próxima?',
       'representa.text': 'Buscamos marcas de alimentos y bebidas con calidad probada y potencial de crecimiento. Nosotros ponemos el conocimiento del mercado, la red comercial y la ejecución.',
 
       // ---------- Quiénes somos ----------
@@ -448,7 +448,7 @@
       'bg.modal.cta': '¿Interesado en comercializar esta marca?',
       'bg.modal.btn': 'Consultar por esta marca',
       'bg.about.drinkball': 'Cócteles listos para disfrutar, directo desde Brasil. De Comary, fabricante con más de 70 años de historia (1952).',
-      'bg.about.pinkmoon': 'Frisante de Comary, Brasil. Lema de la marca: “Experiencia y estilo”.',      'bg.country.br': 'Brasil',
+      'bg.about.pinkmoon': 'Frisante de Comary, Brasil. Lema de la marca: “Experiencia y estilo”.', 'bg.country.br': 'Brasil',
       'bg.country.es': 'España',
       'route.lbl.multicanal': 'Estrategia Multicanal',
       'route.lbl.infra': 'Infraestructura',
@@ -552,7 +552,7 @@
       'brands.drinkball.name': 'DrinkBall',
       'brands.drinkball.desc': 'Ready-to-drink cocktails · RTD',
       'brands.pinkmoon.name': 'Pink Moon',
-      'brands.pinkmoon.desc': 'Sparkling drink · Experience and style',      'featured.label': 'Launch',
+      'brands.pinkmoon.desc': 'Sparkling drink · Experience and style', 'featured.label': 'Launch',
       'featured.title': 'DrinkBall and Pink Moon arrive in Chile',
       'featured.text': 'Cocktails ready to enjoy, straight from Brazil. From Comary, a manufacturer with more than 70 years of history (1952). A new example of how we take proven brands into a new market.',
       'featured.cta': 'Discover DrinkBall',
@@ -577,7 +577,7 @@
       'bp.filter.noalcohol': 'Non-alcoholic beverages',
       'bp.filter.alimentos': 'Food and pets',
       'bp.card.drinkball': 'Ready-to-drink cocktails · Comary, Brazil · "Innovation and attitude"',
-      'bp.card.pinkmoon': 'Sparkling drink · Comary, Brazil · "Experience and style"',      'representa.title': 'Want your brand to be next?',
+      'bp.card.pinkmoon': 'Sparkling drink · Comary, Brazil · "Experience and style"', 'representa.title': 'Want your brand to be next?',
       'representa.text': 'We look for food and beverage brands with proven quality and growth potential. We bring market knowledge, the commercial network and execution.',
 
       // ---------- About us ----------
@@ -889,7 +889,7 @@
       'bg.modal.cta': 'Interested in carrying this brand?',
       'bg.modal.btn': 'Ask about this brand',
       'bg.about.drinkball': 'Ready-to-drink cocktails, straight from Brazil. By Comary, a manufacturer with more than 70 years of history (since 1952).',
-      'bg.about.pinkmoon': 'Soft sparkling drink by Comary, Brazil. Brand tagline: “Experience and style”.',      'bg.country.br': 'Brazil',
+      'bg.about.pinkmoon': 'Soft sparkling drink by Comary, Brazil. Brand tagline: “Experience and style”.', 'bg.country.br': 'Brazil',
       'bg.country.es': 'Spain',
       'route.lbl.multicanal': 'Multichannel strategy',
       'route.lbl.infra': 'Infrastructure',
@@ -1209,11 +1209,21 @@
     let previousFocus = null;
 
     function openModal() {
-      previousFocus = document.activeElement;
+      const consentContent = modal.querySelector('.consent-modal-content');
+      const consentList = modal.querySelector('.consent-list');
+
+      // Reiniciar únicamente el desplazamiento del desplegable
+      if (consentContent) consentContent.scrollTop = 0;
+      if (consentList) consentList.scrollTop = 0;
+
       modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-      if (btnClose) btnClose.focus();
+
+      // Asegurar que el contenido quede arriba después de abrirse
+      requestAnimationFrame(() => {
+        if (consentContent) consentContent.scrollTop = 0;
+        if (consentList) consentList.scrollTop = 0;
+      });
     }
 
     function closeModal() {
@@ -1243,18 +1253,36 @@
     });
   }
 
-  /* MODAL DE CONSENTIMIENTO DE DATOS (contacto.html)
-     Igual que el modal del equipo: se abre al hacer clic en
-     "Información básica sobre protección de datos" y se cierra
-     con la X, haciendo clic fuera o con la tecla Escape. */
+
+  /* MODAL DE CONSENTIMIENTO DE DATOS */
   function initConsentModal() {
     const btnClose = document.getElementById('btnCloseConsent');
     const modal = document.getElementById('consentModal');
     if (!modal) return;
 
+    const btnAccept = document.getElementById('btnConsentAccept');
+    const formPrivacidad = document.getElementById('privacidad');
+
     function openModal() {
+      // Reiniciar el desplazamiento del modal y su contenido
+      modal.scrollTop = 0;
+
+      const consentContent = modal.querySelector('.consent-modal-content');
+      if (consentContent) {
+        consentContent.scrollTop = 0;
+      }
+
       modal.classList.add('show');
       document.body.style.overflow = 'hidden';
+
+      // Asegurar que comience desde el principio una vez visible
+      requestAnimationFrame(() => {
+        modal.scrollTop = 0;
+
+        if (consentContent) {
+          consentContent.scrollTop = 0;
+        }
+      });
     }
 
     function closeModal() {
@@ -1262,477 +1290,477 @@
       document.body.style.overflow = '';
     }
 
-    // El modal es solo información: las casillas viven una sola vez, en el
-    // formulario (privacidad = obligatoria, comunicaciones = opcional).
-    // "Aceptar y continuar" marca la obligatoria del formulario y cierra.
-    const btnAccept = document.getElementById('btnConsentAccept');
-    const formPrivacidad = document.getElementById('privacidad');
+    // Aceptar consentimiento
+    if (btnAccept) {
+      btnAccept.addEventListener('click', function () {
+        if (formPrivacidad) formPrivacidad.checked = true;
+        closeModal();
+      });
+    }
 
-    if (btnAccept) btnAccept.addEventListener('click', function () {
-      if (formPrivacidad) formPrivacidad.checked = true;
-      closeModal();
-    });
-
-    /* El enlace que abre el modal vive DENTRO de la frase del checkbox,
-       y esa frase la reescribe el sistema multi-idioma cada vez que
-       cambia el idioma. Por eso el clic NO se engancha a un botón fijo:
-       se escucha en todo el documento y se reacciona a cualquier
-       elemento con data-consent-open (ver el texto en los diccionarios).
-       preventDefault: que el enlace no navegue; stopPropagation: que el
-       clic no active la casilla del label donde está el enlace. */
+    // Abrir desde el enlace de política de privacidad
     document.addEventListener('click', function (event) {
       const link = event.target.closest('[data-consent-open]');
       if (!link) return;
+
       event.preventDefault();
       event.stopPropagation();
+
       openModal();
     });
 
-    if (btnClose) btnClose.addEventListener('click', closeModal);
+    // Cerrar con la X
+    if (btnClose) {
+      btnClose.addEventListener('click', closeModal);
+    }
 
+    // Cerrar al hacer clic fuera del contenido
     window.addEventListener('click', function (event) {
       if (event.target === modal) closeModal();
     });
 
+    // Cerrar con Escape
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && modal.classList.contains('show')) closeModal();
+      if (event.key === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+      }
     });
   }
 
-  /* ------------------------------------------
-     AVISO DE COOKIES (todas las páginas)
-     La primera vez, muestra la barra y guarda la decisión
-     en localStorage ("amerika-cookies-v1": aceptada / rechazada).
-     Con una decisión guardada, la barra ya no vuelve a aparecer,
-     pero puede reabrirse con el enlace "Política de cookies"
-     del pie de página (data-cookies-open).
-     La clave es versionada: al subir la versión (v2, v3...) todos
-     los visitantes vuelven a ver el aviso (p. ej. si cambia la
-     política), y nunca se arrastran decisiones de pruebas viejas.
-     ------------------------------------------ */
-  const COOKIES_KEY = 'amerika-cookies-v1';
+        /* ------------------------------------------
+           AVISO DE COOKIES (todas las páginas)
+           La primera vez, muestra la barra y guarda la decisión
+           en localStorage ("amerika-cookies-v1": aceptada / rechazada).
+           Con una decisión guardada, la barra ya no vuelve a aparecer,
+           pero puede reabrirse con el enlace "Política de cookies"
+           del pie de página (data-cookies-open).
+           La clave es versionada: al subir la versión (v2, v3...) todos
+           los visitantes vuelven a ver el aviso (p. ej. si cambia la
+           política), y nunca se arrastran decisiones de pruebas viejas.
+           ------------------------------------------ */
+        const COOKIES_KEY = 'amerika-cookies-v1';
 
-  /* ------------------------------------------
-     GOOGLE ANALYTICS 4 (con consentimiento previo)
-     El script de GA solo se instala si el usuario
-     aceptó las cookies de medición en el aviso.
-     REEMPLAZA 'G-XXXXXXXXXX' por tu ID de medición
-     real de Google Analytics (formato G-XXXXXXXXXX).
-     ------------------------------------------ */
-  // >>> REEMPLAZA por tu ID de medición real de Google Analytics 4 (formato G-XXXXXXXXXX) <<<
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+        /* ------------------------------------------
+           GOOGLE ANALYTICS 4 (con consentimiento previo)
+           El script de GA solo se instala si el usuario
+           aceptó las cookies de medición en el aviso.
+           REEMPLAZA 'G-XXXXXXXXXX' por tu ID de medición
+           real de Google Analytics (formato G-XXXXXXXXXX).
+           ------------------------------------------ */
+        // >>> REEMPLAZA por tu ID de medición real de Google Analytics 4 (formato G-XXXXXXXXXX) <<<
+        const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
 
-  function loadGoogleAnalytics() {
-    // Sin ID configurado (o ya cargado) no instalamos nada
-    if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
-    if (document.getElementById('ga-script')) return;
+        function loadGoogleAnalytics() {
+          // Sin ID configurado (o ya cargado) no instalamos nada
+          if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+          if (document.getElementById('ga-script')) return;
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { window.dataLayer.push(arguments); }
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
 
-    const script = document.createElement('script');
-    script.id = 'ga-script';
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
-    document.head.appendChild(script);
-  }
-
-  function initCookieBanner() {
-    const banner = document.getElementById('cbCard');
-    if (!banner) return; // la página no incluye el aviso
-
-    const btnAccept = document.getElementById('cbAccept');
-    const btnReject = document.getElementById('cbReject');
-
-    function leerDecision() {
-      try { return window.localStorage.getItem(COOKIES_KEY); } catch (e) { return null; }
-    }
-
-    function guardarDecision(valor) {
-      try { window.localStorage.setItem(COOKIES_KEY, valor); } catch (e) { /* file:// puede bloquear localStorage */ }
-      banner.hidden = true;
-    }
-
-    // Respeta la Ley 21.719: sin decisión guardada, no se instala NADA.
-    // Además, no se muestra mientras el modal de control de edad (+18)
-    // esté abierto: el aviso aparece recién cuando la puerta se resuelve,
-    // para no tapar sus botones (bug del banner compacto).
-    const ageModal = document.getElementById('ageModal');
-
-    function bannerDebeEsperar() {
-      return !!(ageModal && !ageModal.classList.contains('hidden'));
-    }
-
-    function mostrarBanner() {
-      if (!leerDecision()) banner.hidden = false;
-    }
-
-    if (!bannerDebeEsperar()) mostrarBanner();
-    document.addEventListener('amerika:age-confirmed', mostrarBanner);
-
-    if (btnAccept) btnAccept.addEventListener('click', function () {
-      guardarDecision('aceptada');
-      // Consentimiento otorgado: recién ahora se instala GA
-      loadGoogleAnalytics();
-    });
-    if (btnReject) btnReject.addEventListener('click', function () {
-      guardarDecision('rechazada');
-      // Rechazado: no se instala NINGÚN script de medición
-    });
-
-    // Si en una visita anterior ya aceptó, GA se carga de inmediato
-    if (leerDecision() === 'aceptada') loadGoogleAnalytics();
-  }
-
-  /* REVEAL AL HACER SCROLL (todas las páginas):
-     los bloques "suben" suavemente al entrar en pantalla.
-     Aplica las clases automáticamente, sin tocar el HTML. */
-  function initScrollReveal() {
-    // Accesibilidad: quien pide menos movimiento, ve todo estático
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    /* Corrección del cliente: en celular el contenido aparecía "casi
-       transparente" hasta hacer scroll. Solución de dos partes:
-       1) en pantallas chicas la animación no se aplica (todo visible);
-       2) en desktop, un temporizador de seguridad revela todo igual
-          aunque el observador nunca se dispare. */
-    const esMovil = window.matchMedia('(max-width: 767px)').matches;
-
-    const objetivos = document.querySelectorAll(
-      '.section > .container, .page-hero > .container, .cta-banner-inner, .impact-banner-inner'
-    );
-
-    if (esMovil) return; // sin animación en móvil: el contenido se ve siempre
-
-    objetivos.forEach(function (bloque) {
-      bloque.classList.add('reveal');
-    });
-
-    // Red de seguridad: a los 1.5 s todo el contenido queda visible
-    setTimeout(function () {
-      objetivos.forEach(function (bloque) {
-        bloque.classList.add('reveal-in');
-      });
-    }, 1500);
-
-    const observador = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (entrada) {
-        if (entrada.isIntersecting) {
-          entrada.target.classList.add('reveal-in');
-          observador.unobserve(entrada.target); // solo una vez por bloque
+          const script = document.createElement('script');
+          script.id = 'ga-script';
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+          document.head.appendChild(script);
         }
-      });
-    }, { threshold: 0.12 });   /* se activa cuando ~12% del bloque se ve */
 
-    objetivos.forEach(function (bloque) {
-      observador.observe(bloque);
-    });
-  }
+        function initCookieBanner() {
+          const banner = document.getElementById('cbCard');
+          if (!banner) return; // la página no incluye el aviso
 
-  /* ------------------------------------------
-     NAVBAR ESTILO ICB (solo index):
-     verde arriba; cuando el usuario baja, blanco.
-     La clase .scrolled cambia los colores vía CSS.
-     ------------------------------------------ */
-  function initNavbarScroll() {
-    const header = document.querySelector('.header');
-    if (!header || !document.querySelector('.hero-showcase')) return;
+          const btnAccept = document.getElementById('cbAccept');
+          const btnReject = document.getElementById('cbReject');
 
-    function actualizar() {
-      // Un poco más de la mitad del primer bloque: ahí el navbar pasa a blanco
-      header.classList.toggle('scrolled', window.scrollY > 30);
-    }
+          function leerDecision() {
+            try { return window.localStorage.getItem(COOKIES_KEY); } catch (e) { return null; }
+          }
 
-    actualizar();
-    window.addEventListener('scroll', actualizar, { passive: true });
-  }
+          function guardarDecision(valor) {
+            try { window.localStorage.setItem(COOKIES_KEY, valor); } catch (e) { /* file:// puede bloquear localStorage */ }
+            banner.hidden = true;
+          }
 
-  /* ------------------------------------------
-     MENSAJES ROTATIVOS DEL HERO (index.html)     Cambia una frase cada 4 segundos con un fundido.
-     Usa el diccionario actual, así que respeta ES/EN.
-     ------------------------------------------ */
-  function initHeroRotator() {
-    const el = document.getElementById('heroRotator');
-    if (!el) return;
+          // Respeta la Ley 21.719: sin decisión guardada, no se instala NADA.
+          // Además, no se muestra mientras el modal de control de edad (+18)
+          // esté abierto: el aviso aparece recién cuando la puerta se resuelve,
+          // para no tapar sus botones (bug del banner compacto).
+          const ageModal = document.getElementById('ageModal');
 
-    const mensajes = ['hero.rot1', 'hero.rot2', 'hero.rot3'];
-    let indice = 0;
+          function bannerDebeEsperar() {
+            return !!(ageModal && !ageModal.classList.contains('hidden'));
+          }
 
-    function mostrarSiguiente() {
-      // fundido de salida -> cambio de texto -> fundido de entrada
-      el.style.opacity = '0';
-      setTimeout(function () {
-        el.textContent = window.AmerikaI18n.getTranslation(mensajes[indice]);
-        el.style.opacity = '1';
-        indice = (indice + 1) % mensajes.length;
-      }, 400);
-    }
+          function mostrarBanner() {
+            if (!leerDecision()) banner.hidden = false;
+          }
 
-    mostrarSiguiente();
-    setInterval(mostrarSiguiente, 4000);
-  }
+          if (!bannerDebeEsperar()) mostrarBanner();
+          document.addEventListener('amerika:age-confirmed', mostrarBanner);
 
-  /* NOSOTROS: stepper "A qué nos dedicamos" (distribución tipo referencia,
-     con los textos reales del documento comercial). 5 etapas navegables. */
-  const NS_ICONS = {
-    1: '<svg viewBox="0 0 24 24"><path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4"/></svg>',
-    2: '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4"/></svg>',
-    3: '<svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>',
-    4: '<svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>',
-    5: '<svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>'
-  };
+          if (btnAccept) btnAccept.addEventListener('click', function () {
+            guardarDecision('aceptada');
+            // Consentimiento otorgado: recién ahora se instala GA
+            loadGoogleAnalytics();
+          });
+          if (btnReject) btnReject.addEventListener('click', function () {
+            guardarDecision('rechazada');
+            // Rechazado: no se instala NINGÚN script de medición
+          });
 
-  function initNsStepper() {
-    const card = document.getElementById('nsCard');
-    if (!card) return; // solo existe en nosotros.html
+          // Si en una visita anterior ya aceptó, GA se carga de inmediato
+          if (leerDecision() === 'aceptada') loadGoogleAnalytics();
+        }
 
-    const botones = document.querySelectorAll('.ns-step, .ns-pill');
-    const prev = document.getElementById('nsPrev');
-    const next = document.getElementById('nsNext');
-    const progreso = document.getElementById('nsProgress');
-    let etapa = parseInt(document.querySelector('.ns-step.is-active').getAttribute('data-step'), 10) || 1;
+        /* REVEAL AL HACER SCROLL (todas las páginas):
+           los bloques "suben" suavemente al entrar en pantalla.
+           Aplica las clases automáticamente, sin tocar el HTML. */
+        function initScrollReveal() {
+          // Accesibilidad: quien pide menos movimiento, ve todo estático
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    function textos(num) {
-      return {
-        badge: window.AmerikaI18n.getTranslation('ns.b' + num),
-        title: window.AmerikaI18n.getTranslation('ns.t' + num),
-        desc: window.AmerikaI18n.getTranslation('ns.d' + num),
-        tagTitle: window.AmerikaI18n.getTranslation('ns.tt' + num),
-        tagDesc: window.AmerikaI18n.getTranslation('ns.td' + num)
-      };
-    }
+          /* Corrección del cliente: en celular el contenido aparecía "casi
+             transparente" hasta hacer scroll. Solución de dos partes:
+             1) en pantallas chicas la animación no se aplica (todo visible);
+             2) en desktop, un temporizador de seguridad revela todo igual
+                aunque el observador nunca se dispare. */
+          const esMovil = window.matchMedia('(max-width: 767px)').matches;
 
-    function pintarEstado() {
-      // etiquetas: activa / ya recorrida / pendiente
-      document.querySelectorAll('.ns-step').forEach(function (btn) {
-        const num = parseInt(btn.getAttribute('data-step'), 10);
-        btn.classList.toggle('is-active', num === etapa);
-        btn.classList.toggle('is-done', num < etapa);
-      });
-      document.querySelectorAll('.ns-pill').forEach(function (pill) {
-        pill.classList.toggle('is-active', parseInt(pill.getAttribute('data-step'), 10) === etapa);
-      });
+          const objetivos = document.querySelectorAll(
+            '.section > .container, .page-hero > .container, .cta-banner-inner, .impact-banner-inner'
+          );
+
+          if (esMovil) return; // sin animación en móvil: el contenido se ve siempre
+
+          objetivos.forEach(function (bloque) {
+            bloque.classList.add('reveal');
+          });
+
+          // Red de seguridad: a los 1.5 s todo el contenido queda visible
+          setTimeout(function () {
+            objetivos.forEach(function (bloque) {
+              bloque.classList.add('reveal-in');
+            });
+          }, 1500);
+
+          const observador = new IntersectionObserver(function (entradas) {
+            entradas.forEach(function (entrada) {
+              if (entrada.isIntersecting) {
+                entrada.target.classList.add('reveal-in');
+                observador.unobserve(entrada.target); // solo una vez por bloque
+              }
+            });
+          }, { threshold: 0.12 });   /* se activa cuando ~12% del bloque se ve */
+
+          objetivos.forEach(function (bloque) {
+            observador.observe(bloque);
+          });
+        }
+
+        /* ------------------------------------------
+           NAVBAR ESTILO ICB (solo index):
+           verde arriba; cuando el usuario baja, blanco.
+           La clase .scrolled cambia los colores vía CSS.
+           ------------------------------------------ */
+        function initNavbarScroll() {
+          const header = document.querySelector('.header');
+          if (!header || !document.querySelector('.hero-showcase')) return;
+
+          function actualizar() {
+            // Un poco más de la mitad del primer bloque: ahí el navbar pasa a blanco
+            header.classList.toggle('scrolled', window.scrollY > 30);
+          }
+
+          actualizar();
+          window.addEventListener('scroll', actualizar, { passive: true });
+        }
+
+        /* ------------------------------------------
+           MENSAJES ROTATIVOS DEL HERO (index.html)     Cambia una frase cada 4 segundos con un fundido.
+           Usa el diccionario actual, así que respeta ES/EN.
+           ------------------------------------------ */
+        function initHeroRotator() {
+          const el = document.getElementById('heroRotator');
+          if (!el) return;
+
+          const mensajes = ['hero.rot1', 'hero.rot2', 'hero.rot3'];
+          let indice = 0;
+
+          function mostrarSiguiente() {
+            // fundido de salida -> cambio de texto -> fundido de entrada
+            el.style.opacity = '0';
+            setTimeout(function () {
+              el.textContent = window.AmerikaI18n.getTranslation(mensajes[indice]);
+              el.style.opacity = '1';
+              indice = (indice + 1) % mensajes.length;
+            }, 400);
+          }
+
+          mostrarSiguiente();
+          setInterval(mostrarSiguiente, 4000);
+        }
+
+        /* NOSOTROS: stepper "A qué nos dedicamos" (distribución tipo referencia,
+           con los textos reales del documento comercial). 5 etapas navegables. */
+        const NS_ICONS = {
+          1: '<svg viewBox="0 0 24 24"><path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4"/></svg>',
+          2: '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4"/></svg>',
+          3: '<svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>',
+          4: '<svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>',
+          5: '<svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>'
+        };
+
+        function initNsStepper() {
+          const card = document.getElementById('nsCard');
+          if (!card) return; // solo existe en nosotros.html
+
+          const botones = document.querySelectorAll('.ns-step, .ns-pill');
+          const prev = document.getElementById('nsPrev');
+          const next = document.getElementById('nsNext');
+          const progreso = document.getElementById('nsProgress');
+          let etapa = parseInt(document.querySelector('.ns-step.is-active').getAttribute('data-step'), 10) || 1;
+
+          function textos(num) {
+            return {
+              badge: window.AmerikaI18n.getTranslation('ns.b' + num),
+              title: window.AmerikaI18n.getTranslation('ns.t' + num),
+              desc: window.AmerikaI18n.getTranslation('ns.d' + num),
+              tagTitle: window.AmerikaI18n.getTranslation('ns.tt' + num),
+              tagDesc: window.AmerikaI18n.getTranslation('ns.td' + num)
+            };
+          }
+
+          function pintarEstado() {
+            // etiquetas: activa / ya recorrida / pendiente
+            document.querySelectorAll('.ns-step').forEach(function (btn) {
+              const num = parseInt(btn.getAttribute('data-step'), 10);
+              btn.classList.toggle('is-active', num === etapa);
+              btn.classList.toggle('is-done', num < etapa);
+            });
+            document.querySelectorAll('.ns-pill').forEach(function (pill) {
+              pill.classList.toggle('is-active', parseInt(pill.getAttribute('data-step'), 10) === etapa);
+            });
 
 
-      // Desplazamiento automático de las etapas en móviles
-      if (window.innerWidth <= 1024) {
-        const contenedor = document.querySelector('.ns-pills');
+            // Desplazamiento automático de las etapas en móviles
+            if (window.innerWidth <= 1024) {
+              const contenedor = document.querySelector('.ns-pills');
 
-        if (contenedor) {
-          const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
+              if (contenedor) {
+                const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
 
-          if (etapaActiva) {
-            const posicion =
-              etapaActiva.offsetLeft -
-              contenedor.offsetLeft -
-              (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
+                if (etapaActiva) {
+                  const posicion =
+                    etapaActiva.offsetLeft -
+                    contenedor.offsetLeft -
+                    (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
 
-            const reducirMovimiento = window.matchMedia(
-              '(prefers-reduced-motion: reduce)'
-            ).matches;
+                  const reducirMovimiento = window.matchMedia(
+                    '(prefers-reduced-motion: reduce)'
+                  ).matches;
 
-            contenedor.scrollTo({
-              left: Math.max(0, posicion),
-              behavior: reducirMovimiento ? 'auto' : 'smooth'
+                  contenedor.scrollTo({
+                    left: Math.max(0, posicion),
+                    behavior: reducirMovimiento ? 'auto' : 'smooth'
+                  });
+                }
+              }
+            }
+
+            // Desplazamiento automático de las etapas en móviles
+            if (window.innerWidth <= 1024) {
+              const contenedor = document.querySelector('.ns-pills');
+
+              if (contenedor) {
+                const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
+
+                if (etapaActiva) {
+                  const posicion =
+                    etapaActiva.offsetLeft -
+                    contenedor.offsetLeft -
+                    (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
+
+                  const reducirMovimiento = window.matchMedia(
+                    '(prefers-reduced-motion: reduce)'
+                  ).matches;
+
+                  contenedor.scrollTo({
+                    left: Math.max(0, posicion),
+                    behavior: reducirMovimiento ? 'auto' : 'smooth'
+                  });
+                }
+              }
+            }
+
+
+            // línea de progreso: 20% por etapa
+            progreso.style.width = (etapa * 20) + '%';
+
+            // tarjeta con textos del idioma actual
+            const t = textos(etapa);
+            card.querySelector('.ns-watermark').textContent = etapa < 10 ? '0' + etapa : etapa;
+            document.getElementById('nsBadge').textContent = t.badge;
+            document.getElementById('nsTitle').textContent = t.title;
+            document.getElementById('nsDesc').textContent = t.desc;
+            document.getElementById('nsTagTitle').textContent = t.tagTitle;
+            document.getElementById('nsTagDesc').textContent = t.tagDesc;
+            document.getElementById('nsIcon').innerHTML = NS_ICONS[etapa] || NS_ICONS[1];
+
+            prev.disabled = etapa === 1;
+            next.textContent = etapa === 5
+              ? window.AmerikaI18n.getTranslation('ns.first')
+              : window.AmerikaI18n.getTranslation('ns.next');
+          }
+
+          botones.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              etapa = parseInt(btn.getAttribute('data-step'), 10);
+              pintarEstado();
+            });
+          });
+          prev.addEventListener('click', function () {
+            if (etapa > 1) { etapa--; pintarEstado(); }
+          });
+          next.addEventListener('click', function () {
+            etapa = etapa < 5 ? etapa + 1 : 1;
+            pintarEstado();
+          });
+
+          // al cambiar el idioma, la tarjeta se redibuja con el texto nuevo
+          document.addEventListener('amerika:languagechange', pintarEstado);
+          pintarEstado();
+        }
+
+        /* CONTROL DE EDAD 18+ */
+        /* ------------------------------------------ */
+        const AGE_KEY = 'amerika-mayor-de-18:' + window.location.pathname;
+
+        function initAgeGate() {
+          const modal = document.getElementById('ageModal');
+          if (!modal) return;
+
+          let yaConfirmo = false;
+          try {
+            yaConfirmo = sessionStorage.getItem(AGE_KEY) === 'si';
+          } catch (error) { /* sin almacenamiento: siempre preguntamos */ }
+
+          if (yaConfirmo) {
+            modal.classList.add('hidden');
+            return;
+          }
+
+          const btnYes = document.getElementById('btnAgeYes');
+          if (btnYes) {
+            btnYes.addEventListener('click', function () {
+              try { sessionStorage.setItem(AGE_KEY, 'si'); } catch (error) { }
+              modal.classList.add('hidden');
+              // Avisar al resto del sitio (ej: el aviso de cookies espera esta puerta)
+              document.dispatchEvent(new CustomEvent('amerika:age-confirmed'));
+            });
+          }
+
+          const btnNo = document.getElementById('btnAgeNo');
+          if (btnNo) {
+            btnNo.addEventListener('click', function () {
+              // Página con vista "restringida" (drinkball): mostrarla en vez de navegar
+              const restricted = document.getElementById('ageRestrictedView');
+              const confirmView = document.getElementById('ageConfirmView');
+              if (restricted && confirmView) {
+                confirmView.style.display = 'none';
+                restricted.style.display = 'block';
+                return;
+              }
+              window.location.href = 'index.html';
+            });
+          }
+
+          // Botón "Volver a verificar" de la vista restringida (drinkball)
+          const btnRetry = document.getElementById('btnAgeRetry');
+          if (btnRetry) {
+            btnRetry.addEventListener('click', function () {
+              const restricted = document.getElementById('ageRestrictedView');
+              const confirmView = document.getElementById('ageConfirmView');
+              if (restricted && confirmView) {
+                restricted.style.display = 'none';
+                confirmView.style.display = 'block';
+              }
             });
           }
         }
-      }
 
-      // Desplazamiento automático de las etapas en móviles
-      if (window.innerWidth <= 1024) {
-        const contenedor = document.querySelector('.ns-pills');
+        /* ------------------------------------------
+           AVISO DEL FORMULARIO DE CONTACTO
+           ------------------------------------------ */
+        function initFormAlert() {
+          const alerta = document.getElementById('formAlert');
+          if (!alerta) return;
 
-        if (contenedor) {
-          const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
-
-          if (etapaActiva) {
-            const posicion =
-              etapaActiva.offsetLeft -
-              contenedor.offsetLeft -
-              (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
-
-            const reducirMovimiento = window.matchMedia(
-              '(prefers-reduced-motion: reduce)'
-            ).matches;
-
-            contenedor.scrollTo({
-              left: Math.max(0, posicion),
-              behavior: reducirMovimiento ? 'auto' : 'smooth'
-            });
+          if (window.location.search.indexOf('enviado=1') !== -1) {
+            alerta.innerHTML = getTranslation(currentLang, 'contact.alert.success');
+            alerta.className = 'form-alert success';
+            window.history.replaceState({}, '', 'contacto');
+          } else if (window.location.search.indexOf('error=1') !== -1) {
+            alerta.innerHTML = getTranslation(currentLang, 'contact.alert.error');
+            alerta.className = 'form-alert error';
+            window.history.replaceState({}, '', 'contacto');
           }
         }
-      }
 
-
-      // línea de progreso: 20% por etapa
-      progreso.style.width = (etapa * 20) + '%';
-
-      // tarjeta con textos del idioma actual
-      const t = textos(etapa);
-      card.querySelector('.ns-watermark').textContent = etapa < 10 ? '0' + etapa : etapa;
-      document.getElementById('nsBadge').textContent = t.badge;
-      document.getElementById('nsTitle').textContent = t.title;
-      document.getElementById('nsDesc').textContent = t.desc;
-      document.getElementById('nsTagTitle').textContent = t.tagTitle;
-      document.getElementById('nsTagDesc').textContent = t.tagDesc;
-      document.getElementById('nsIcon').innerHTML = NS_ICONS[etapa] || NS_ICONS[1];
-
-      prev.disabled = etapa === 1;
-      next.textContent = etapa === 5
-        ? window.AmerikaI18n.getTranslation('ns.first')
-        : window.AmerikaI18n.getTranslation('ns.next');
-    }
-
-    botones.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        etapa = parseInt(btn.getAttribute('data-step'), 10);
-        pintarEstado();
-      });
-    });
-    prev.addEventListener('click', function () {
-      if (etapa > 1) { etapa--; pintarEstado(); }
-    });
-    next.addEventListener('click', function () {
-      etapa = etapa < 5 ? etapa + 1 : 1;
-      pintarEstado();
-    });
-
-    // al cambiar el idioma, la tarjeta se redibuja con el texto nuevo
-    document.addEventListener('amerika:languagechange', pintarEstado);
-    pintarEstado();
-  }
-
-  /* CONTROL DE EDAD 18+ */
-  /* ------------------------------------------ */
-  const AGE_KEY = 'amerika-mayor-de-18:' + window.location.pathname;
-
-  function initAgeGate() {
-    const modal = document.getElementById('ageModal');
-    if (!modal) return;
-
-    let yaConfirmo = false;
-    try {
-      yaConfirmo = sessionStorage.getItem(AGE_KEY) === 'si';
-    } catch (error) { /* sin almacenamiento: siempre preguntamos */ }
-
-    if (yaConfirmo) {
-      modal.classList.add('hidden');
-      return;
-    }
-
-    const btnYes = document.getElementById('btnAgeYes');
-    if (btnYes) {
-      btnYes.addEventListener('click', function () {
-        try { sessionStorage.setItem(AGE_KEY, 'si'); } catch (error) { }
-        modal.classList.add('hidden');
-        // Avisar al resto del sitio (ej: el aviso de cookies espera esta puerta)
-        document.dispatchEvent(new CustomEvent('amerika:age-confirmed'));
-      });
-    }
-
-    const btnNo = document.getElementById('btnAgeNo');
-    if (btnNo) {
-      btnNo.addEventListener('click', function () {
-        // Página con vista "restringida" (drinkball): mostrarla en vez de navegar
-        const restricted = document.getElementById('ageRestrictedView');
-        const confirmView = document.getElementById('ageConfirmView');
-        if (restricted && confirmView) {
-          confirmView.style.display = 'none';
-          restricted.style.display = 'block';
-          return;
+        /* ------------------------------------------
+           TOAST de enlaces demo (páginas de marca)
+           Muestra un aviso al hacer clic en un enlace demo.
+           ------------------------------------------ */
+        function initDemoToast() {
+          const toast = document.getElementById('toastMsg');
+          if (!toast) return;
+          let toastTimer;
+          document.querySelectorAll('.demo-cta').forEach(function (el) {
+            el.addEventListener('click', function (event) {
+              event.preventDefault();
+              toast.classList.add('show');
+              clearTimeout(toastTimer);
+              toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 3200);
+            });
+          });
         }
-        window.location.href = 'index.html';
-      });
-    }
 
-    // Botón "Volver a verificar" de la vista restringida (drinkball)
-    const btnRetry = document.getElementById('btnAgeRetry');
-    if (btnRetry) {
-      btnRetry.addEventListener('click', function () {
-        const restricted = document.getElementById('ageRestrictedView');
-        const confirmView = document.getElementById('ageConfirmView');
-        if (restricted && confirmView) {
-          restricted.style.display = 'none';
-          confirmView.style.display = 'block';
+        /* ------------------------------------------
+           ARRANQUE
+           ------------------------------------------ */
+        function init() {
+          if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+          initLanguageButtons();
+          initMobileMenu();
+          initTeamModal();
+          initConsentModal();
+          initAlliesBand();
+          initHeroRotator();
+          initAgeGate();
+          initCookieBanner();
+          initScrollReveal();
+          initNavbarScroll();
+          initNsStepper();
+          initDemoToast();
+          setLanguage(readStoredLanguage());
+          initFormAlert();
+          reportMissingKeys();
         }
-      });
-    }
-  }
 
-  /* ------------------------------------------
-     AVISO DEL FORMULARIO DE CONTACTO
-     ------------------------------------------ */
-  function initFormAlert() {
-    const alerta = document.getElementById('formAlert');
-    if (!alerta) return;
+        // API pública para depurar
+        window.AmerikaI18n = {
+          get language() { return currentLang; },
+          setLanguage: setLanguage,
+          applyTranslations: applyTranslations,
+          getTranslation: function (key) { return getTranslation(currentLang, key); },
+          translations: translations
+        };
 
-    if (window.location.search.indexOf('enviado=1') !== -1) {
-      alerta.innerHTML = getTranslation(currentLang, 'contact.alert.success');
-      alerta.className = 'form-alert success';
-      window.history.replaceState({}, '', 'contacto');
-    } else if (window.location.search.indexOf('error=1') !== -1) {
-      alerta.innerHTML = getTranslation(currentLang, 'contact.alert.error');
-      alerta.className = 'form-alert error';
-      window.history.replaceState({}, '', 'contacto');
-    }
-  }
-
-  /* ------------------------------------------
-     TOAST de enlaces demo (páginas de marca)
-     Muestra un aviso al hacer clic en un enlace demo.
-     ------------------------------------------ */
-  function initDemoToast() {
-    const toast = document.getElementById('toastMsg');
-    if (!toast) return;
-    let toastTimer;
-    document.querySelectorAll('.demo-cta').forEach(function (el) {
-      el.addEventListener('click', function (event) {
-        event.preventDefault();
-        toast.classList.add('show');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 3200);
-      });
-    });
-  }
-
-  /* ------------------------------------------
-     ARRANQUE
-     ------------------------------------------ */
-  function init() {
-    if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
-    initLanguageButtons();
-    initMobileMenu();
-    initTeamModal();
-    initConsentModal();
-    initAlliesBand();
-    initHeroRotator();
-    initAgeGate();
-    initCookieBanner();
-    initScrollReveal();
-    initNavbarScroll();
-    initNsStepper();
-    initDemoToast();
-    setLanguage(readStoredLanguage());
-    initFormAlert();
-    reportMissingKeys();
-  }
-
-  // API pública para depurar
-  window.AmerikaI18n = {
-    get language() { return currentLang; },
-    setLanguage: setLanguage,
-    applyTranslations: applyTranslations,
-    getTranslation: function (key) { return getTranslation(currentLang, key); },
-    translations: translations
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+      })();

@@ -1424,3 +1424,7 @@ html[data-lang="en"] .lang-switch .lang-en {
     height: 78px;
   }
 }
+
+.mv-box.ns-wide {
+  margin-top: 3rem !important;
+}
