@@ -1260,3 +1260,15 @@ main, section, header, footer {
   color: #FFFFFF !important;
   border-color: #2E9E3E !important;
 }
+
+/* Botón de aceptación de cookies en verde corporativo */
+.cb-card-actions button.btn-accept {
+  background-color: #39B54A !important;
+  border-color: #39B54A !important;
+  color: #ffffff !important;
+}
+
+.cb-card-actions button.btn-accept:hover {
+  background-color: #2E9E3E !important;
+  border-color: #2E9E3E !important;
+}
