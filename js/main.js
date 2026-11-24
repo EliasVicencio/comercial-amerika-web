@@ -1346,36 +1346,6 @@
   }
 
   /* ------------------------------------------
-     FILTRO DE MARCAS por categoría
-     ------------------------------------------ */
-  function initBrandFilters() {
-    const buttons = document.querySelectorAll('.brand-filters button');
-    const cards = document.querySelectorAll('[data-categorias]');
-    if (!buttons.length || !cards.length) return;
-
-    buttons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        const categoria = button.getAttribute('data-categoria');
-
-        buttons.forEach(function (b) { b.classList.remove('active'); });
-        button.classList.add('active');
-
-        cards.forEach(function (card) {
-          const categorias = card.getAttribute('data-categorias');
-
-          // La lista se separa por espacios en palabras ("alcohol",
-          // "sin-alcohol", "alimentos", ...) y se compara palabra por palabra.
-          // No se puede usar indexOf directo sobre el texto completo, porque
-          // "alcohol" está dentro de "sin-alcohol" y mezcla los filtros.
-          const mostrar = categoria === 'todas' ||
-            categorias.split(' ').indexOf(categoria) !== -1;
-          card.style.display = mostrar ? '' : 'none';
-        });
-      });
-    });
-  }
-
-  /* ------------------------------------------
      AVISO DE COOKIES (todas las páginas)
      La primera vez, muestra la barra y guarda la decisión
      en localStorage ("amerika-cookies-v1": aceptada / rechazada).
@@ -1784,7 +1754,6 @@
     initMobileMenu();
     initTeamModal();
     initConsentModal();
-    initBrandFilters();
     initAlliesBand();
     initHeroRotator();
     initAgeGate();

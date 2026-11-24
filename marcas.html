@@ -97,18 +97,8 @@
         de venta. Conoce las marcas que representamos en Chile.
       </p>
 
-      <!-- Controles: filtros por categoría (izquierda) + cambio de vista (derecha) -->
+      <!-- Control de vista: acordeón / mosaico -->
       <div class="ga-controls">
-        <div class="brand-filters" role="group" data-i18n-aria-label="bg.filters.label"
-          aria-label="Filtrar por categoría">
-          <button type="button" class="active" aria-pressed="true" data-categoria="todas"
-            data-i18n="bp.filter.all">Todas</button>
-          <button type="button" aria-pressed="false" data-categoria="alcohol" data-i18n="bp.filter.alcohol">Bebidas con
-            alcohol</button>
-          </button>
-          </button>
-        </div>
-
         <div class="ga-view" role="group" data-i18n-aria-label="bg.view.label" aria-label="Cambiar vista de la galería">
           <button type="button" id="viewAccordionBtn" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -176,7 +166,7 @@
 
       <!-- VISTA 2: MOSAICO -->
       <div id="viewGrid" class="gb-grid" hidden>
-        <article class="gb-card gb-featured" data-categorias="alcohol">
+        <article class="gb-card" data-categorias="alcohol">
           <img class="ga-bg" src="img/drinkball.webp" alt="" loading="lazy" decoding="async"
             onerror="this.style.display='none'">
           <div class="ga-shade"></div>

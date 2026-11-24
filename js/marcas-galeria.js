@@ -1,7 +1,7 @@
 /* ============================================
    GALERÍA DE MARCAS (marcas.html)
    Cargar DESPUÉS de main.js. No depende de librerías.
-   Hace 4 cosas: traduce sus textos (claves bg.*), filtra,
+   Hace 3 cosas: traduce sus textos (claves bg.*),
    cambia entre acordeón y mosaico, y abre la ficha de cada marca.
    ============================================ */
 (function () {
@@ -83,15 +83,10 @@
       b.addEventListener('click', () => applyLang(b.dataset.lang)));
 
     const items = [...document.querySelectorAll('.ga-item')];
-    const allCards = [...document.querySelectorAll('[data-categorias]')];
 
     // ---------- 2) Acordeón: qué tarjeta está abierta ----------
     function setActive(item) {
       items.forEach(i => i.classList.toggle('is-active', i === item));
-    }
-    function ensureActive() {
-      const visibles = items.filter(i => !i.classList.contains('ga-hidden'));
-      if (visibles.length && !visibles.some(i => i.classList.contains('is-active'))) setActive(visibles[0]);
     }
     const hoverMQ = window.matchMedia('(min-width: 768px) and (hover: hover)');
     items.forEach(item => {
@@ -100,19 +95,7 @@
       item.addEventListener('click', e => { if (!e.target.closest('[data-open]')) setActive(item); });
     });
 
-    // ---------- 3) Filtros por categoría ----------
-    const filterBtns = [...document.querySelectorAll('.brand-filters button')];
-    filterBtns.forEach(btn => btn.addEventListener('click', () => {
-      const f = btn.dataset.categoria;
-      filterBtns.forEach(b => { b.classList.toggle('active', b === btn); b.setAttribute('aria-pressed', b === btn); });
-      allCards.forEach(el => {
-        const show = f === 'todas' || el.dataset.categorias.split(' ').includes(f);
-        el.classList.toggle('ga-hidden', !show);
-      });
-      ensureActive();
-    }));
-
-    // ---------- 4) Cambio de vista: acordeón / mosaico ----------
+    // ---------- 3) Cambio de vista: acordeón / mosaico ----------
     const vAcc = document.getElementById('viewAccordion'), vGrid = document.getElementById('viewGrid');
     const bAcc = document.getElementById('viewAccordionBtn'), bGrid = document.getElementById('viewGridBtn');
     function showView(grid) {
@@ -122,7 +105,7 @@
     bAcc.addEventListener('click', () => showView(false));
     bGrid.addEventListener('click', () => showView(true));
 
-    // ---------- 5) Ficha emergente ----------
+    // ---------- 4) Ficha emergente ----------
     const dialog = document.getElementById('brandDialog');
     const details = [...dialog.querySelectorAll('.ga-detail')];
     function openBrand(id) {
