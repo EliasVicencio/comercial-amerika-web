@@ -44,7 +44,7 @@
   align-items: center;
   background:
     linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)),  /* velo oscuro */
-    url('../img/drink-sabores.png') center / cover no-repeat;
+    url('../img/drink-sabores.webp') center / cover no-repeat;
 }
 .impact-banner-inner {
   width: 100%;

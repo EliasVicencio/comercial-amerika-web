@@ -384,7 +384,7 @@
       'cookiep.s2.title': '2. Tipos de cookies que utilizamos',
       'cookiep.s2.text': '<strong>Cookies técnicas:</strong> necesarias para el funcionamiento básico del sitio web y no requieren el consentimiento del usuario. <strong>Cookies de análisis o medición:</strong> nos permiten cuantificar el número de usuarios y realizar la medición y análisis estadístico de la utilización que hacen los usuarios del sitio web (Google Analytics 4 y Google Tag Manager).',
       'cookiep.s3.title': '3. Gestión de cookies',
-      'cookiep.s3.text': 'Al llegar por primera vez, el aviso de cookies te permite <strong>aceptar</strong> o <strong>rechazar</strong> las cookies de medición antes de que se instale alguna. Puedes cambiar tu decisión borrando los datos del sitio en tu navegador o configurándolo para rechazar las cookies; si las desactivas, algunas funciones podrían no estar disponibles. Más información sobre el tratamiento de tus datos en la <a href="privacidad">política de privacidad</a>.',
+      'cookiep.s3.text': 'Al llegar por primera vez, el aviso de cookies te permite <strong>aceptar</strong> o <strong>rechazar</strong> las cookies de medición antes de que se instale alguna. Puedes cambiar tu decisión borrando los datos del sitio en tu navegador o configurándolo para rechazar las cookies; si las desactivas, algunas funciones podrían no estar disponibles. Más información sobre el tratamiento de tus datos en la <a href="privacidad.html">política de privacidad</a>.',
       'cookiep.s4.title': '4. Actualización de la política',
       'cookiep.s4.text': 'Comercial Amerika SpA se reserva el derecho de modificar esta política de cookies para adaptarla a novedades legislativas o cambios en nuestras prácticas. Recomendamos revisar esta política periódicamente.',
       'footer.cookies': 'Política de cookies',
@@ -404,7 +404,7 @@
       'consent.r6.val': 'Usted tiene derecho a acceder, rectificar, suprimir, oponerse y solicitar la portabilidad de sus datos personales, así como a revocar este consentimiento en cualquier momento. Puede ejercerlos enviando un correo electrónico a contacto@comercialamerika.cl. Para más detalle, consulte nuestra Política de Privacidad completa.',
       'consent.accept': 'Aceptar y continuar',
       'contact.form.comms': 'Autorizo el envío de comunicaciones comerciales, ofertas y novedades de Comercial Amerika SpA por medios electrónicos (Email/WhatsApp). Opcional.',
-      'cookies.text': 'Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad">política de privacidad</a>.',
+      'cookies.text': 'Usamos cookies de medición (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptar o rechazar; más detalles en la <a href="privacidad.html">política de privacidad</a>.',
       'cookies.accept': 'Aceptar',
       // ---------- Nosotros: stepper (textos ES) ----------
       'ns.l1': '1. Importación',
@@ -882,7 +882,7 @@
       'cookiep.s2.title': '2. Types of cookies we use',
       'cookiep.s2.text': '<strong>Technical cookies:</strong> necessary for the basic functioning of the website and do not require the user\'s consent. <strong>Analytics or measurement cookies:</strong> they allow us to quantify the number of users and carry out the measurement and statistical analysis of how users use the website (Google Analytics 4 and Google Tag Manager).',
       'cookiep.s3.title': '3. Cookie management',
-      'cookiep.s3.text': 'On your first visit, the cookie notice lets you <strong>accept</strong> or <strong>reject</strong> measurement cookies before any of them is installed. You can change your decision by clearing the site data in your browser or configuring it to reject cookies; if you disable them, some features may not be available. More information about the processing of your data in the <a href="privacidad">privacy policy</a>.',
+      'cookiep.s3.text': 'On your first visit, the cookie notice lets you <strong>accept</strong> or <strong>reject</strong> measurement cookies before any of them is installed. You can change your decision by clearing the site data in your browser or configuring it to reject cookies; if you disable them, some features may not be available. More information about the processing of your data in the <a href="privacidad.html">privacy policy</a>.',
       'cookiep.s4.title': '4. Updates to this policy',
       'cookiep.s4.text': 'Comercial Amerika SpA reserves the right to modify this cookie policy to adapt it to legislative developments or changes in our practices. We recommend reviewing this policy periodically.',
       'footer.cookies': 'Cookie policy',
@@ -902,7 +902,7 @@
       'consent.r6.val': 'You have the right to access, rectify, delete, oppose and request portability of your personal data, as well as to revoke this consent at any time. You may exercise these rights by writing to contacto@comercialamerika.cl. For more detail, see our full Privacy Policy.',
       'consent.accept': 'Accept and continue',
       'contact.form.comms': 'I authorize the sending of commercial communications, offers and news from Comercial Amerika SpA via electronic means (Email/WhatsApp). Optional.',
-      'cookies.text': 'We use measurement cookies (Google Analytics) to understand how the site is used and improve it. You can accept or reject; details in the <a href="privacidad">privacy policy</a>.',
+      'cookies.text': 'We use measurement cookies (Google Analytics) to understand how the site is used and improve it. You can accept or reject; details in the <a href="privacidad.html">privacy policy</a>.',
       'cookies.accept': 'Accept',
       'bg.badge': 'Exclusive portfolio for Chile',
       'bg.view.label': 'Switch gallery view',
@@ -1019,8 +1019,8 @@
      edita solo este array (ruta de imagen + texto alternativo).
      ------------------------------------------ */
   const ALLIES_LOGOS = [
-    { src: 'img/movimiento/5 (1).svg', alt: 'DrinkBall', href: 'drinkball' },
-    { src: 'img/movimiento/6 (1).svg', alt: 'Pink Moon', href: 'pink-moon' }
+    { src: 'img/movimiento/5 (1).svg', alt: 'DrinkBall', href: 'drinkball.html' },
+    { src: 'img/movimiento/6 (1).svg', alt: 'Pink Moon', href: 'pink-moon.html' }
   ];
 
   function initAlliesBand() {
@@ -1721,7 +1721,7 @@
           restricted.style.display = 'block';
           return;
         }
-        window.location.href = 'index';
+        window.location.href = 'index.html';
       });
     }
 
