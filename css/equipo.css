@@ -1,0 +1,411 @@
+
+/* ============================================
+   COMERCIAL AMERIKA - EQUIPO DIRECTIVO
+   Diseño horizontal renovado
+   equipo.html
+   ============================================ */
+
+/* ---------- Página general ---------- */
+
+.team-member {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.05),
+    0 8px 20px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  border-color: rgba(22, 163, 74, 0.3);
+  box-shadow:
+    0 6px 14px rgba(15, 23, 42, 0.07),
+    0 14px 28px rgba(15, 23, 42, 0.10);
+}
+
+.team-page .container {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* ---------- Introducción ---------- */
+
+.team-intro {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 4.5rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+.team-intro::before {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.045);
+  content: "";
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.team-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+.team-eyebrow {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  color: #16a34a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.team-intro h1 {
+  max-width: 850px;
+  margin: 0 auto;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.15;
+}
+
+.team-intro p {
+  max-width: 640px;
+  margin: 1.3rem auto 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.team-accent {
+  width: 55px;
+  height: 4px;
+  margin: 1.8rem auto 0;
+  border-radius: 20px;
+  background: #16a34a;
+}
+
+/* ---------- Sección del equipo ---------- */
+
+.team-section {
+  padding: 4.5rem 0 1rem;
+}
+
+.team-section-heading {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.team-section-heading > span {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: #16a34a;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.team-section-heading h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.team-section-heading p {
+  margin: 0.8rem 0 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ---------- Grid horizontal ---------- */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* ---------- Tarjetas individuales ---------- */
+
+.team-member {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.045);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-6px);
+  border-color: rgba(22, 163, 74, 0.3);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.09);
+}
+
+/* ---------- Fotografía ---------- */
+
+.team-member-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.7;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.team-member-image::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background: #16a34a;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .team-member-image::after {
+  transform: scaleX(1);
+}
+
+.team-member-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover .team-member-image img {
+  transform: scale(1.045);
+}
+
+/* ---------- Información ---------- */
+
+.team-member-info {
+  min-height: 112px;
+  padding: 1.35rem 1rem 1.4rem;
+  text-align: center;
+}
+
+.team-member-info h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.team-member-info p {
+  margin: 0.55rem 0 0;
+  color: #64748b;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ---------- Volver ---------- */
+
+.team-back {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+.team-back .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.team-back .btn span {
+  font-size: 1.15rem;
+}
+
+/* ---------- Escritorios medianos ---------- */
+
+@media (max-width: 1050px) {
+  .team-grid {
+    gap: 1rem;
+  }
+
+  .team-member-info {
+    padding: 1.2rem 0.75rem;
+  }
+
+  .team-member-info h3 {
+    font-size: 0.93rem;
+  }
+
+  .team-member-info p {
+    font-size: 0.78rem;
+  }
+}
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 800px) {
+  .team-intro {
+    padding: 4rem 0 3.5rem;
+  }
+
+  .team-section {
+    padding-top: 3.5rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .team-member-image {
+    aspect-ratio: 4 / 4.2;
+  }
+
+  .team-member-info {
+    min-height: 105px;
+    padding: 1.2rem 1rem;
+  }
+
+  .team-member-info h3 {
+    font-size: 1rem;
+  }
+
+  .team-member-info p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------- Móviles ---------- */
+
+@media (max-width: 520px) {
+  .team-page {
+    padding-bottom: 3rem;
+  }
+
+  .team-page .container {
+    width: calc(100% - 32px);
+  }
+
+  .team-intro {
+    padding: 3.2rem 0 3rem;
+  }
+
+  .team-intro h1 {
+    font-size: 2.05rem;
+    letter-spacing: -0.045em;
+  }
+
+  .team-intro p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .team-section {
+    padding-top: 3rem;
+  }
+
+  .team-section-heading {
+    margin-bottom: 2rem;
+  }
+
+  .team-section-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  .team-section-heading p {
+    font-size: 0.85rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .team-member {
+    border-radius: 12px;
+  }
+
+  .team-member-image {
+    aspect-ratio: 4 / 4.8;
+  }
+
+  .team-member-info {
+    min-height: 100px;
+    padding: 1rem 0.55rem;
+  }
+
+  .team-member-info h3 {
+    font-size: 0.88rem;
+  }
+
+  .team-member-info p {
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .team-back {
+    margin-top: 2.5rem;
+  }
+}
+
+/* ---------- Móviles pequeños ---------- */
+
+@media (max-width: 360px) {
+  .team-grid {
+    gap: 0.65rem;
+  }
+
+  .team-member-info {
+    padding-inline: 0.4rem;
+  }
+
+  .team-member-info h3 {
+    font-size: 0.82rem;
+  }
+
+  .team-member-info p {
+    font-size: 0.7rem;
+  }
+}
+
+/* ---------- Accesibilidad ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .team-member,
+  .team-member-image img,
+  .team-member-image::after {
+    transition: none;
+  }
+
+  .team-member:hover {
+    transform: none;
+  }
+}
