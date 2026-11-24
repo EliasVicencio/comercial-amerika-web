@@ -227,7 +227,7 @@ h3 { font-size: 1.25rem; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(248, 245, 240, 0.95);
+  background-color: #ffffff;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgb(255, 255, 255);
 }

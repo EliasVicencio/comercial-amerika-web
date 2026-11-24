@@ -1321,3 +1321,30 @@ html[data-lang="en"] .lang-switch .lang-en {
     -webkit-backdrop-filter: none !important;
   }
 }
+
+/* ============================================
+   INDEX - ALTURA DEL HERO
+   Igualar proporciones con DrinkBall y Pink Moon
+   ============================================ */
+
+.index .hero-showcase {
+  min-height: clamp(620px, 78vh, 820px) !important;
+  padding: 6rem 0 !important;
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .index .hero-showcase {
+    min-height: 680px !important;
+    padding: 6rem 0 !important;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .index .hero-showcase {
+    min-height: max(700px, 82svh) !important;
+    padding: 5rem 0 !important;
+  }
+}

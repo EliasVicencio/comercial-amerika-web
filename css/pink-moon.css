@@ -930,3 +930,9 @@ img {
     transform: none;
   }
 }
+
+/* Imágenes de productos Pink Moon */
+.product-card > img {
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+}
