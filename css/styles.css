@@ -1272,3 +1272,36 @@ main, section, header, footer {
   background-color: #2E9E3E !important;
   border-color: #2E9E3E !important;
 }
+
+/* ============================================
+   FOOTER - PROTECCIÓN CONTRA EFECTOS HOVER
+   Mantener el footer estable al pasar el cursor
+   ============================================ */
+
+.footer,
+.footer:hover,
+.footer * {
+  filter: none;
+}
+
+/* Evitar cambios de opacidad en los elementos */
+.footer:hover,
+.footer *:hover {
+  opacity: 1;
+}
+
+/* Mantener el fondo y los colores originales */
+.footer,
+.footer:hover {
+  background-color: var(--color-navy);
+}
+
+/* Las transiciones solo afectan al color de los enlaces */
+.footer a {
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: var(--color-sky);
+}
