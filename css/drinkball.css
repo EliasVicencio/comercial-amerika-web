@@ -8,8 +8,8 @@
   --color-orange-hover: #ca8a04;
   --color-green: #16a34a;
   --color-green-dark: #15803d;
-  --color-cream: #f8f5f0;
-  --color-cream-dark: #f1ebe3;
+  --color-cream: #ffffff;
+  --color-cream-dark: #ffffff;
   --color-white: #ffffff;
   --color-text: #1e293b;
   --color-text-muted: #64748b;
@@ -1420,4 +1420,13 @@ html[data-lang="en"] .lang-switch summary .lang-current.lang-en {
 /* Descripciones de las cifras */
 .drinkball-editorial-banner .ed-stat span {
   color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Tipografía del título editorial DrinkBall */
+.drinkball-editorial-banner h2[data-i18n="db.ed.title"] {
+    font-family: 'Inter', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.055em;
+    line-height: 1.2;
 }
