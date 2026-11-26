@@ -1305,3 +1305,157 @@ main, section, header, footer {
 .footer-social a:hover {
   color: var(--color-sky);
 }
+
+/* ============================================
+   FOOTER - ESTRUCTURA EN COLUMNAS
+   Comercial Amerika
+   ============================================ */
+
+.footer {
+  background: #0f172a;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 4rem 0 1.5rem;
+}
+
+/* Distribución principal */
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Columna corporativa */
+
+.footer-brand-column {
+  max-width: 340px;
+}
+
+.footer-logo {
+  width: 155px;
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1.5rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-contact p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Columnas de navegación */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.footer-column h4 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.88rem;
+  transition: color 0.2s ease;
+}
+
+/* Hover: solo cambia el color del enlace */
+
+.footer-column a:hover {
+  color: #438db5;
+}
+
+/* Información legal */
+
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-legal p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Evitar oscurecimientos y filtros en el footer */
+
+.footer,
+.footer:hover,
+.footer * {
+  filter: none;
+}
+
+.footer:hover,
+.footer *:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   FOOTER RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 3rem 0 1.25rem;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem 1.5rem;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .footer-logo {
+    width: 140px;
+  }
+
+  .footer-legal {
+    gap: 0.75rem;
+  }
+
+  .footer-legal p {
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand-column {
+    grid-column: auto;
+  }
+}
