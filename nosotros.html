@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://www.comercialamerika.cl/nosotros.html">
   <link rel="icon" type="image/webp" href="img/logo.webp">
   <meta name="description" data-i18n-content="page.about.desc"
-    content="Importador y distribuidor de alimentos y bebidas con más de 30 años de experiencia en consumo masivo. Conoce la historia de Comercial Amerika SpA y su equipo.">
+    content="Potenciadora de marcas de consumo masivo con más de 30 años de experiencia. Conoce la historia de Comercial Amerika SpA, su misión, visión y valores.">
   <meta property="og:title" data-i18n-content="page.about.title" content="">
   <meta property="og:description" data-i18n-content="page.about.desc" content="">
   <meta property="og:image" content="https://www.comercialamerika.cl/img/logo.webp">
@@ -94,212 +94,194 @@
     </div>
   </header>
 
-  <main>
+  <!-- ============================================================
+       REEMPLAZA TODO el bloque <main> ... </main> de nosotros.html por este.
+       (El header y el footer NO se tocan.)
+       Todos los textos y claves data-i18n son los que ya existen.
+       ============================================================ -->
+  <main class="nx-main">
 
-    <!-- ========== INTRO: HISTORIA Y PROPÓSITO (una columna angosta, como la referencia) ========== -->
-    <div class="ns-intro">
-      <span class="section-label" data-i18n="about.label">Quiénes somos</span>
-      <h1 data-i18n="about.h1">Somos la potenciadora que convierte marcas con potencial en marcas que crecen</h1>
-      <p data-i18n="about.history.p2">
-        Llevamos más de 30 años liderando equipos comerciales en multinacionales de consumo masivo, en Chile y en el
-        extranjero. Hoy ponemos esa experiencia al servicio de fabricantes que no buscan solo un distribuidor: buscan un
-        socio que desarrolle su marca, la posicione y la haga crecer.
-      </p>
-    </div>
+    <!-- ========== 1. PORTADA ========== -->
+    <section class="nx-hero">
+      <div class="nx-wrap nx-hero-grid">
 
-    <!-- ========== A QUÉ NOS DEDICAMOS (STEPPER INTERACTIVO) ========== -->
-    <div class="ns-heading">
-      <h2 data-i18n="about.dedicated.title">Cómo potenciamos tu marca</h2>
-      <p data-i18n="about.dedicated.sub">Cada etapa suma. Gestionamos el camino completo, desde el origen hasta la góndola, para que tu marca llegue más lejos.</p>
-    </div>
+        <div class="nx-hero-copy">
+          <span class="nx-pill"><span class="nx-dot" aria-hidden="true"></span><span data-i18n="about.label">Quiénes somos</span></span>
+          <h1 data-i18n="about.h1">Somos la potenciadora que convierte marcas con potencial en marcas que crecen</h1>
+          <p class="nx-lead" data-i18n="about.history.p2">
+            Llevamos más de 30 años liderando equipos comerciales en multinacionales de consumo masivo, en Chile y en el
+            extranjero. Hoy ponemos esa experiencia al servicio de fabricantes que no buscan solo un distribuidor: buscan un
+            socio que desarrolle su marca, la posicione y la haga crecer.
+          </p>
+          <div class="nx-actions">
+            <a href="contacto.html" class="nx-btn nx-btn-primary"><span data-i18n="cta.brand">Potencia tu marca</span><i data-lucide="arrow-right" aria-hidden="true"></i></a>
+            <a href="equipo.html" class="nx-btn nx-btn-light" data-i18n="about.team.cta">Conocer al equipo</a>
+          </div>
+        </div>
 
-    <div class="ns-stepper">
+        <div class="nx-hero-visual">
+          <!-- Foto del equipo: guarda la imagen como img/nosotros-equipo.jpg (o cambia el src).
+               Si el archivo no existe, se muestra un fondo con degradado. -->
+          <div class="nx-photo">
+            <img src="img/nosotros-equipo.jpg" alt="" decoding="async" onerror="this.remove()">
+            <i class="nx-photo-icon" data-lucide="users" aria-hidden="true"></i>
+            <div class="nx-photo-cap" data-i18n="about.team.title">Equipo directivo</div>
+          </div>
 
-      <!-- Pasos interactivos (desktop) -->
-      <div class="ns-steps-wrap">
-        <div class="ns-steps-rail"></div>
-        <div class="ns-progress" id="nsProgress"></div>
+          <div class="nx-mini">
+            <span class="nx-mini-ico"><i data-lucide="handshake" aria-hidden="true"></i></span>
+            <div>
+              <span class="nx-mini-title" data-i18n="about.ally.title">Aliados</span>
+              <div class="nx-mini-logos">
+                <span class="nx-logo-sm"><img src="img/comary-logo.webp" alt="" onerror="this.parentNode.classList.add('is-noimg')"><span class="nx-fb" data-i18n="about.ally.comary.name">Comary</span></span>
+                <span class="nx-logo-sm"><img src="img/Vieira_Logo.svg.webp" alt="" onerror="this.parentNode.classList.add('is-noimg')"><span class="nx-fb" data-i18n="about.ally.vieira.name">Vieira</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div class="ns-steps">
-          <button type="button" class="ns-step is-active" data-step="1">
-            <div class="ns-circle">01</div>
-            <span class="ns-label" data-i18n="ns.l1">1. Importación</span>
-          </button>
-          <button type="button" class="ns-step" data-step="2">
-            <div class="ns-circle">02</div>
-            <span class="ns-label" data-i18n="ns.l2">2. Cumplimiento</span>
-          </button>
-          <button type="button" class="ns-step" data-step="3">
-            <div class="ns-circle">03</div>
-            <span class="ns-label" data-i18n="ns.l3">3. Estrategia</span>
-          </button>
-          <button type="button" class="ns-step" data-step="4">
-            <div class="ns-circle">04</div>
-            <span class="ns-label" data-i18n="ns.l4">4. Distribución</span>
-          </button>
-          <button type="button" class="ns-step" data-step="5">
-            <div class="ns-circle">05</div>
-            <span class="ns-label" data-i18n="ns.l5">5. Punto de Venta</span>
-          </button>
+      </div>
+    </section>
+
+    <!-- ========== 2. MISIÓN Y VISIÓN ========== -->
+    <section class="nx-section">
+      <div class="nx-wrap nx-mv-grid">
+        <article class="nx-mv nx-mv-green">
+          <div class="nx-mv-top">
+            <span class="nx-ico"><i data-lucide="target" aria-hidden="true"></i></span>
+            <span class="nx-eyebrow" data-i18n="about.mission.eyebrow">Propósito</span>
+          </div>
+          <h3 data-i18n="about.mission">Misión</h3>
+          <p data-i18n="about.mission.text">
+            Impulsamos marcas de alimentos y bebidas para que alcancen su máximo potencial. Combinamos estrategia
+            comercial, ejecución en terreno y una relación cercana para conectar productos de calidad con los
+            consumidores que los buscan, generando valor para nuestros clientes, aliados y equipos.
+          </p>
+          <p class="nx-short" data-i18n="about.mission.short">Potenciamos marcas de calidad para que crezcan, se
+            posicionen y lleguen a más consumidores.</p>
+        </article>
+
+        <article class="nx-mv nx-mv-navy">
+          <div class="nx-mv-top">
+            <span class="nx-ico"><i data-lucide="eye" aria-hidden="true"></i></span>
+            <span class="nx-eyebrow" data-i18n="about.vision.eyebrow">Aspiración</span>
+          </div>
+          <h3 data-i18n="about.vision">Visión</h3>
+          <p data-i18n="about.vision.text">
+            Ser la potenciadora de marcas de referencia en Chile y la región, reconocida por convertir marcas con
+            potencial en negocios sólidos y por la calidad de las relaciones que construimos con fabricantes, clientes y
+            consumidores.
+          </p>
+          <p class="nx-short" data-i18n="about.vision.short">Ser la potenciadora de marcas de referencia en Chile y la
+            región.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== 3. NUESTROS VALORES ========== -->
+    <section class="nx-section">
+      <div class="nx-wrap">
+        <div class="nx-head"><h2 data-i18n="about.values.title">Nuestros valores</h2></div>
+        <div class="nx-values">
+          <div class="nx-value">
+            <span class="nx-ico"><i data-lucide="award" aria-hidden="true"></i></span>
+            <h3 data-i18n="about.v1.title">Excelencia</h3>
+            <p data-i18n="about.v1.text">Hacemos las cosas bien, con método, medición y estándares altos.</p>
+          </div>
+          <div class="nx-value">
+            <span class="nx-ico"><i data-lucide="handshake" aria-hidden="true"></i></span>
+            <h3 data-i18n="about.v2.title">Cercanía</h3>
+            <p data-i18n="about.v2.text">Conocemos a las personas detrás de cada marca y la tratamos como propia.</p>
+          </div>
+          <div class="nx-value">
+            <span class="nx-ico"><i data-lucide="zap" aria-hidden="true"></i></span>
+            <h3 data-i18n="about.v3.title">Agilidad</h3>
+            <p data-i18n="about.v3.text">Decidimos rápido y ejecutamos sin burocracia.</p>
+          </div>
+          <div class="nx-value">
+            <span class="nx-ico"><i data-lucide="shield-check" aria-hidden="true"></i></span>
+            <h3 data-i18n="about.v4.title">Transparencia</h3>
+            <p data-i18n="about.v4.text">Acuerdos claros, información abierta y reportes que se entienden.</p>
+          </div>
+          <div class="nx-value">
+            <span class="nx-ico"><i data-lucide="trending-up" aria-hidden="true"></i></span>
+            <h3 data-i18n="about.v5.title">Resultados</h3>
+            <p data-i18n="about.v5.text">Medimos nuestro éxito por el crecimiento real de las marcas que potenciamos.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Píldoras (móvil y tablet) -->
-      <div class="ns-pills">
-        <button type="button" class="ns-pill is-active" data-step="1" data-i18n="ns.l1">1. Importación</button>
-        <button type="button" class="ns-pill" data-step="2" data-i18n="ns.l2">2. Cumplimiento</button>
-        <button type="button" class="ns-pill" data-step="3" data-i18n="ns.l3">3. Estrategia</button>
-        <button type="button" class="ns-pill" data-step="4" data-i18n="ns.l4">4. Distribución</button>
-        <button type="button" class="ns-pill" data-step="5" data-i18n="ns.l5">5. Punto de Venta</button>
+    <!-- ========== 4. ALIADOS ========== -->
+    <section class="nx-section">
+      <div class="nx-wrap">
+        <div class="nx-head">
+          <h2 data-i18n="about.ally.title">Aliados</h2>
+          <p data-i18n="about.ally.intro">
+            Fabricantes de trayectoria que confían en nosotros para desarrollar y hacer crecer sus marcas en Chile.
+          </p>
+        </div>
+
+        <div class="nx-allies">
+          <article class="nx-ally">
+            <div class="nx-logo">
+              <img src="img/comary-logo.webp" alt="" onerror="this.parentNode.classList.add('is-noimg')">
+              <span class="nx-fb" data-i18n="about.ally.comary.name">Comary</span>
+            </div>
+            <span class="nx-ally-meta" data-i18n="about.ally.comary">Brasil · Desde 1952</span>
+            <h3 data-i18n="about.ally.comary.name">Comary</h3>
+          </article>
+
+          <article class="nx-ally">
+            <div class="nx-logo">
+              <img src="img/Vieira_Logo.svg.webp" alt="" onerror="this.parentNode.classList.add('is-noimg')">
+              <span class="nx-fb" data-i18n="about.ally.vieira.name">Vieira</span>
+            </div>
+            <span class="nx-ally-meta" data-i18n="about.ally.vieira">Portugal · Desde 1943</span>
+            <h3 data-i18n="about.ally.vieira.name">Vieira</h3>
+          </article>
+
+          <article class="nx-ally nx-ally-cta">
+            <span class="nx-plus"><i data-lucide="plus" aria-hidden="true"></i></span>
+            <a href="contacto.html" class="nx-btn nx-btn-dark"><span data-i18n="cta.brand">Potencia tu marca</span><i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <!-- Tarjeta de contenido -->
-      <div class="ns-card" id="nsCard">
-        <span class="ns-watermark" id="nsWatermark">01</span>
-
-        <div class="ns-card-grid">
-          <div>
-            <span class="ns-badge" id="nsBadge">ETAPA 01 DE 05</span>
-            <h3 id="nsTitle">Importación</h3>
-            <p id="nsDesc">
-              Trabajamos directo con fabricantes de trayectoria —como Comary (Brasil, 1952) y Vieira (Portugal, 1943)—
-              y gestionamos cada detalle de comercio exterior y aduanas.
+    <!-- ========== 5. EQUIPO DIRECTIVO ========== -->
+    <section class="nx-section nx-last">
+      <div class="nx-wrap">
+        <div class="nx-team">
+          <div class="nx-team-copy">
+            <h3 data-i18n="about.team.title">Equipo directivo</h3>
+            <p data-i18n="about.team.text">
+              Un equipo que ha gestionado marcas y canales en multinacionales de consumo masivo, ahora al servicio del
+              crecimiento de tu marca.
             </p>
           </div>
-
-          <div class="ns-tag">
-            <div class="ns-tag-head">
-              <div class="ns-icon" id="nsIcon">
-                <!-- ícono de la etapa 1 (el JS lo cambia) -->
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4" />
-                </svg>
-              </div>
-              <div>
-                <h4 class="ns-tag-title" id="nsTagTitle">Enfoque Operativo</h4>
-                <p class="ns-tag-desc" id="nsTagDesc">Trato directo con orígenes en Brasil y Portugal.</p>
-              </div>
-            </div>
-
-            <div class="nav-dots">
-              <button type="button" id="nsPrev" disabled data-i18n="ns.prev">Anterior</button>
-              <button type="button" id="nsNext" class="ns-btn-next" data-i18n="ns.next">Siguiente etapa →</button>
-            </div>
-          </div>
+          <a href="equipo.html" class="nx-btn nx-btn-primary"><span data-i18n="about.team.cta">Conocer al equipo</span><i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ========== MISIÓN Y VISIÓN ========== -->
-    <div class="mv-grid">
-      <div class="mv-box">
-        <span class="ns-eyebrow green" data-i18n="about.mission.eyebrow">Propósito</span>
-        <h3 data-i18n="about.mission">Misión</h3>
-        <p style="color: var(--color-text-muted);" data-i18n="about.mission.text">
-          Impulsamos marcas de alimentos y bebidas para que alcancen su máximo potencial. Combinamos estrategia
-          comercial, ejecución en terreno y una relación cercana para conectar productos de calidad con los
-          consumidores que los buscan, generando valor para nuestros clientes, aliados y equipos.
-        </p>
-        <p class="ns-short" data-i18n="about.mission.short">Potenciamos marcas de calidad para que crezcan, se
-          posicionen y lleguen a más consumidores.</p>
-      </div>
-      <div class="mv-box">
-        <span class="ns-eyebrow blue" data-i18n="about.vision.eyebrow">Aspiración</span>
-        <h3 data-i18n="about.vision">Visión</h3>
-        <p style="color: var(--color-text-muted);" data-i18n="about.vision.text">
-          Ser la potenciadora de marcas de referencia en Chile y la región, reconocida por convertir marcas con
-          potencial en negocios sólidos y por la calidad de las relaciones que construimos con fabricantes, clientes y
-          consumidores.
-        </p>
-        <p class="ns-short" data-i18n="about.vision.short">Ser la potenciadora de marcas de referencia en Chile y la
-          región.</p>
-      </div>
-    </div>
-
-    <!-- ========== NUESTROS VALORES (5, según el documento) ========== -->
-    <div class="ns-heading" style="margin-top: 2.5rem;">
-      <h2 data-i18n="about.values.title">Nuestros valores</h2>
-    </div>
-    <div class="ns-values">
-      <div class="ns-value">
-        <h3 data-i18n="about.v1.title">Excelencia</h3>
-        <p data-i18n="about.v1.text">Hacemos las cosas bien, con método, medición y estándares altos.</p>
-      </div>
-      <div class="ns-value">
-        <h3 data-i18n="about.v2.title">Cercanía</h3>
-        <p data-i18n="about.v2.text">Conocemos a las personas detrás de cada marca y la tratamos como propia.</p>
-      </div>
-      <div class="ns-value">
-        <h3 data-i18n="about.v3.title">Agilidad</h3>
-        <p data-i18n="about.v3.text">Decidimos rápido y ejecutamos sin burocracia.</p>
-      </div>
-      <div class="ns-value">
-        <h3 data-i18n="about.v4.title">Transparencia</h3>
-        <p data-i18n="about.v4.text">Acuerdos claros, información abierta y reportes que se entienden.</p>
-      </div>
-      <div class="ns-value">
-        <h3 data-i18n="about.v5.title">Resultados</h3>
-        <p data-i18n="about.v5.text">Medimos nuestro éxito por el crecimiento real de las marcas que potenciamos.</p>
-      </div>
-    </div>
-
-    <!-- ========== ALIADOS REPRESENTADOS (tarjeta blanca a todo el ancho) ========== -->
-    <div class="mv-box ns-wide">
-      <h3 style="color: var(--color-navy);" data-i18n="about.ally.title">Aliados</h3>
-      <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;" data-i18n="about.ally.intro">
-        Fabricantes de trayectoria que confían en nosotros para desarrollar y hacer crecer sus marcas en Chile.
-      </p>
-      <div class="ally-rows">
-        <div class="ally-row">
-          <strong data-i18n="about.ally.comary.name">Comary</strong>
-          <span data-i18n="about.ally.comary">Brasil, desde 1952</span>
-        </div>
-        <div class="ally-row">
-          <strong data-i18n="about.ally.vieira.name">Vieira</strong>
-          <span data-i18n="about.ally.vieira">Portugal, desde 1943</span>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ========== EQUIPO DIRECTIVO ========== -->
-    <div class="mv-box ns-wide ns-team">
-      <h3 style="color: var(--color-navy); margin-bottom: 0.5rem;" data-i18n="about.team.title">
-        Equipo directivo
-      </h3>
-
-      <p style="color: var(--color-text-muted); margin-bottom: 1.25rem; font-size: 0.9rem; max-width: 560px;"
-        data-i18n="about.team.text">
-        Un equipo que ha gestionado marcas y canales en multinacionales de consumo masivo, ahora al servicio del
-        crecimiento de tu marca.
-      </p>
-
-      <a href="equipo.html" class="btn btn-dark" data-i18n="about.team.cta">
-        Conocer al equipo
-      </a>
-    </div>
   </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
-
       <div class="footer-main">
 
         <!-- IDENTIDAD CORPORATIVA -->
         <div class="footer-brand-column">
-          <img src="img/logo.webp"
-            alt="Logo de Comercial Amerika SpA"
-            class="footer-logo"
+          <img src="img/logo.webp" alt="Logo de Comercial Amerika SpA" class="footer-logo"
             onerror="this.style.display='none'">
-
-          <p class="footer-description">
-            Potenciamos marcas y conectamos productos con nuevos mercados.
-            Desarrollamos oportunidades comerciales para impulsar su crecimiento.
+          <p class="footer-description" data-i18n="footer.description">
+            Potenciamos marcas y conectamos productos con nuevos mercados. Desarrollamos oportunidades comerciales
+            para impulsar su crecimiento.
           </p>
 
           <div class="footer-contact">
-
             <p>
               <i data-lucide="mail" aria-hidden="true"></i>
               <span>contacto@comercialamerika.cl</span>
@@ -312,60 +294,45 @@
 
             <p class="footer-contact-location">
               <i data-lucide="map-pin" aria-hidden="true"></i>
-              <span>Colina, Región Metropolitana · Chile</span>
+              <span data-i18n="footer.location">Colina, Región Metropolitana · Chile</span>
             </p>
-
           </div>
         </div>
 
         <!-- NAVEGACIÓN -->
         <div class="footer-column">
-          <h4>Navegación</h4>
-
-          <a href="index.html">Inicio</a>
-          <a href="nosotros.html">Quiénes somos</a>
-          <a href="equipo.html">Nuestro equipo</a>
-          <a href="contacto.html">Contáctanos</a>
+          <h4 data-i18n="footer.nav.title">Navegación</h4>
+          <a href="index.html" data-i18n="nav.home">Inicio</a>
+          <a href="nosotros.html" data-i18n="nav.about">Quiénes somos</a>
+          <a href="equipo.html" data-i18n="footer.team">Nuestro equipo</a>
+          <a href="contacto.html" data-i18n="nav.contact">Contáctanos</a>
         </div>
 
         <!-- MARCAS -->
         <div class="footer-column">
-          <h4>Nuestras marcas</h4>
-
-          <a href="marcas.html">Todas nuestras marcas</a>
+          <h4 data-i18n="footer.brands.title">Nuestras marcas</h4>
+          <a href="marcas.html" data-i18n="footer.allbrands">Todas nuestras marcas</a>
           <a href="drinkball.html">DrinkBall</a>
-          <a href="pink-moon.html">Pink Moon</a>
-          <a href="routemarket.html">Route to Market</a>
+          <a href="pinkmoon.html">Pink Moon</a>
+          <a href="routemarket.html" data-i18n="nav.route">Route to market</a>
         </div>
 
         <!-- INFORMACIÓN -->
         <div class="footer-column">
-          <h4>Información</h4>
-
-          <a href="privacidad.html">Política de privacidad</a>
-          <a href="cookies.html">Política de cookies</a>
-          <a href="contacto.html">Información de contacto</a>
+          <h4 data-i18n="footer.info.title">Información</h4>
+          <a href="privacidad.html" data-i18n="footer.privacy">Política de privacidad</a>
+          <a href="cookies.html" data-i18n="footer.cookies">Política de cookies</a>
+          <a href="contacto.html" data-i18n="footer.contactinfo">Información de contacto</a>
         </div>
 
       </div>
 
       <!-- INFORMACIÓN LEGAL -->
       <div class="footer-legal">
-
-        <p>
-          Comercial Amerika SpA · RUT 78.474.378-0
-        </p>
-
-        <p>
-          Venta de alcohol prohibida a menores de 18 años.
-        </p>
-
-        <p>
-          © 2026 Comercial Amerika SpA. Todos los derechos reservados.
-        </p>
-
+        <p data-i18n="footer.legal">Comercial Amerika SpA · RUT 78.474.378-0</p>
+        <p data-i18n="footer.age">Venta de alcohol prohibida a menores de 18 años.</p>
+        <p data-i18n="footer.rights">© 2026 Comercial Amerika SpA. Todos los derechos reservados.</p>
       </div>
-
     </div>
   </footer>
 

@@ -406,11 +406,149 @@
 /* ---------- Página centrada en un contenedor (como la referencia) ----------
    Modern layout: el main completa el rol de "container" que antes
    cumplían las secciones, para alinear todas las tarjetas al mismo ancho. */
-main {
-  max-width: 1140px;           /* mismo ancho que .container global */
-  margin: 0 auto;
-  padding: 3.5rem 1.5rem 4.5rem;
-  width: 100%;
+/* ============================================
+   NOSOTROS v2 - rediseño de las secciones internas
+   Se carga DESPUÉS de nosotros.css:
+   <link rel="stylesheet" href="css/nosotros-v2.css">
+   Clases con prefijo nx- (no chocan con las anteriores).
+   Usa tus variables: --color-navy, --color-green, etc.
+   ============================================ */
+
+/* El <main> deja de ser una columna angosta: cada sección controla su ancho */
+.nx-main { max-width: none; width: 100%; padding: 0; margin: 0; }
+.nx-wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+.nx-section { padding: 4rem 0 0; }
+.nx-last { padding-bottom: 4.5rem; }
+
+.nx-head { margin-bottom: 1.75rem; }
+.nx-head h2 { margin-bottom: .4rem; }
+.nx-head p { color: var(--color-text-muted); max-width: 640px; }
+
+/* ---------- Iconos (Lucide) ---------- */
+.nx-ico { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(22,163,74,.12); color: var(--color-green-dark, #15803d); }
+.nx-ico svg, .nx-ico i { width: 22px; height: 22px; }
+
+/* ---------- Botones ---------- */
+.nx-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .9rem 1.5rem; border-radius: 12px; border: 1px solid transparent; font-size: .95rem; font-weight: 600; line-height: 1.1; text-decoration: none; cursor: pointer; transition: background .2s ease, transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.nx-btn svg, .nx-btn i { width: 18px; height: 18px; transition: transform .2s ease; }
+.nx-btn:hover svg { transform: translateX(3px); }
+.nx-btn:focus-visible { outline: 3px solid var(--color-orange); outline-offset: 3px; }
+.nx-btn-primary { background: var(--color-green-dark, #15803d); color: #fff; box-shadow: 0 6px 16px rgba(21,128,61,.25); }
+.nx-btn-primary:hover { background: #166534; transform: translateY(-2px); }
+.nx-btn-light { background: #fff; color: var(--color-navy); border-color: rgba(15,23,42,.12); }
+.nx-btn-light:hover { border-color: var(--color-navy); transform: translateY(-2px); }
+.nx-btn-dark { background: var(--color-navy); color: #fff; }
+.nx-btn-dark:hover { background: var(--color-navy-light); transform: translateY(-2px); }
+
+/* ============ 1. PORTADA ============ */
+.nx-hero { position: relative; overflow: hidden; padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  background: radial-gradient(circle at 88% 0%, rgba(22,163,74,.12), transparent 45%), linear-gradient(180deg, #f2f7f3 0%, var(--color-cream) 100%); }
+.nx-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px); background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%); mask-image: linear-gradient(180deg, #000, transparent 85%); }
+.nx-hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+
+.nx-pill { display: inline-flex; align-items: center; gap: .55rem; padding: .4rem .9rem; margin-bottom: 1.25rem; border-radius: 999px; background: #fff; border: 1px solid rgba(15,23,42,.1); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--color-navy); }
+.nx-dot { width: .5rem; height: .5rem; border-radius: 50%; background: var(--color-green); animation: nx-pulse 2s ease-in-out infinite; }
+.nx-hero-copy h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.1; letter-spacing: -.02em; margin-bottom: 1.25rem; }
+.nx-lead { font-size: clamp(1rem, 1.5vw, 1.12rem); line-height: 1.7; color: var(--color-text-muted); max-width: 600px; margin-bottom: 1.75rem; }
+.nx-actions { display: flex; flex-wrap: wrap; gap: .85rem; }
+
+/* Tarjeta visual de la derecha */
+.nx-hero-visual { display: grid; gap: 1rem; padding: 1rem; background: #fff; border: 1px solid rgba(15,23,42,.08); border-radius: 24px; box-shadow: 0 18px 50px rgba(15,23,42,.1); }
+.nx-photo { position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--color-navy) 0%, #14532d 100%); }
+.nx-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.nx-photo-icon { width: 64px; height: 64px; color: rgba(255,255,255,.25); }
+.nx-photo-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 2.5rem 1.25rem 1.1rem; font-size: 1.05rem; font-weight: 700; color: #fff; background: linear-gradient(to top, rgba(15,23,42,.85), transparent); }
+
+.nx-mini { display: flex; align-items: center; gap: .9rem; padding: .9rem 1rem; background: var(--color-cream); border: 1px solid rgba(15,23,42,.07); border-radius: 14px; }
+.nx-mini-ico { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: var(--color-navy); color: #fff; }
+.nx-mini-ico svg, .nx-mini-ico i { width: 22px; height: 22px; }
+.nx-mini-title { display: block; margin-bottom: .45rem; font-size: .8rem; font-weight: 700; color: var(--color-navy); }
+.nx-mini-logos { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* Fichas de logo (los logos del sitio son claros: fondo azul marino) */
+.nx-logo-sm, .nx-logo { display: grid; place-items: center; background: var(--color-navy); }
+.nx-logo-sm { min-width: 92px; height: 40px; padding: 0 .8rem; border-radius: 10px; }
+.nx-logo-sm img { max-height: 24px; max-width: 80px; width: auto; object-fit: contain; }
+.nx-fb { display: none; color: #fff; font-weight: 700; }
+.nx-logo-sm .nx-fb { font-size: .75rem; }
+.is-noimg img { display: none; }
+.is-noimg .nx-fb { display: block; }
+
+/* ============ 2. MISIÓN Y VISIÓN ============ */
+.nx-mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.nx-mv { position: relative; padding: 2rem; background: #fff; border: 1px solid rgba(15,23,42,.08); border-radius: 20px; box-shadow: 0 5px 20px rgba(15,23,42,.07); overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }
+.nx-mv::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 4px; background: var(--color-green); }
+.nx-mv-navy::before { background: var(--color-navy); }
+.nx-mv-navy .nx-ico { background: rgba(15,23,42,.08); color: var(--color-navy); }
+.nx-mv-top { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+.nx-eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--color-green-dark, #15803d); }
+.nx-mv-navy .nx-eyebrow { color: var(--color-navy); }
+.nx-mv h3 { font-size: 1.5rem; margin-bottom: .6rem; color: var(--color-navy); }
+.nx-mv p { color: var(--color-text-muted); line-height: 1.65; }
+.nx-short { margin-top: 1rem; padding-top: 1rem; border-top: 2px solid var(--color-green); font-weight: 600; color: var(--color-navy) !important; }
+.nx-mv-navy .nx-short { border-top-color: var(--color-navy); }
+
+/* ============ 3. VALORES ============ */
+.nx-values { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.nx-value { padding: 1.25rem; background: #fff; border: 1px solid rgba(15,23,42,.08); border-radius: 16px; box-shadow: 0 4px 16px rgba(15,23,42,.06); transition: transform .25s ease, box-shadow .25s ease; }
+.nx-value .nx-ico { margin-bottom: .9rem; }
+.nx-value h3 { font-size: 1rem; margin-bottom: .4rem; color: var(--color-navy); }
+.nx-value p { font-size: .85rem; line-height: 1.5; color: var(--color-text-muted); }
+
+/* ============ 4. ALIADOS ============ */
+.nx-allies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.nx-ally { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem; background: #fff; border: 1px solid rgba(15,23,42,.08); border-radius: 20px; box-shadow: 0 5px 18px rgba(15,23,42,.07); transition: transform .25s ease, box-shadow .25s ease; }
+.nx-logo { height: 112px; margin-bottom: .75rem; border-radius: 14px; }
+.nx-logo img { max-height: 56px; max-width: 70%; width: auto; object-fit: contain; }
+.nx-logo .nx-fb { font-size: 1.4rem; letter-spacing: .04em; }
+.nx-ally-meta { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--color-green-dark, #15803d); }
+.nx-ally h3 { font-size: 1.35rem; color: var(--color-navy); }
+.nx-ally-cta { align-items: center; justify-content: center; gap: 1.25rem; text-align: center; background: rgba(22,163,74,.05); border: 2px dashed rgba(22,163,74,.45); box-shadow: none; }
+.nx-plus { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: rgba(22,163,74,.14); color: var(--color-green-dark, #15803d); }
+.nx-plus svg, .nx-plus i { width: 24px; height: 24px; }
+
+/* ============ 5. EQUIPO ============ */
+.nx-team { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: 24px; background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%); box-shadow: 0 14px 40px rgba(15,23,42,.18); }
+.nx-team h3 { font-size: 1.5rem; margin-bottom: .5rem; color: #fff; }
+.nx-team p { max-width: 560px; color: rgba(255,255,255,.82); line-height: 1.6; }
+
+/* ============ Movimiento mínimo ============ */
+@keyframes nx-pulse { 50% { opacity: .35; } }
+@keyframes nx-up { from { opacity: 0; transform: translateY(16px); } }
+.nx-hero-copy > * { animation: nx-up .6s ease backwards; }
+.nx-hero-copy > :nth-child(2) { animation-delay: .08s; }
+.nx-hero-copy > :nth-child(3) { animation-delay: .16s; }
+.nx-hero-copy > :nth-child(4) { animation-delay: .24s; }
+.nx-hero-visual { animation: nx-up .7s .15s ease backwards; }
+@media (hover: hover) {
+  .nx-mv:hover, .nx-value:hover, .nx-ally:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(15,23,42,.12); }
+  .nx-ally-cta:hover { box-shadow: none; }
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 1000px) { .nx-values { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) {
+  .nx-hero-grid, .nx-mv-grid { grid-template-columns: 1fr; }
+  .nx-allies { grid-template-columns: repeat(2, 1fr); }
+  .nx-ally-cta { grid-column: 1 / -1; flex-direction: row; justify-content: center; flex-wrap: wrap; }
+}
+@media (max-width: 640px) {
+  .nx-wrap { padding: 0 1rem; }
+  .nx-section { padding-top: 3rem; }
+  .nx-values { grid-template-columns: repeat(2, 1fr); }
+  .nx-allies { grid-template-columns: 1fr; }
+  .nx-actions .nx-btn { flex: 1 1 100%; }
+  .nx-team { flex-direction: column; align-items: flex-start; }
+  .nx-team .nx-btn { width: 100%; }
+}
+@media (max-width: 460px) { .nx-values { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .nx-hero-copy > *, .nx-hero-visual, .nx-dot { animation: none; }
+  .nx-mv, .nx-value, .nx-ally, .nx-btn, .nx-btn svg { transition: none; }
 }
 
 /* ---------- Intro de página ---------- */
