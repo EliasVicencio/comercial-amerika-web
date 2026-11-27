@@ -166,6 +166,11 @@
       'about.team.text': 'Un equipo que ha gestionado marcas y canales en multinacionales de consumo masivo, ahora al servicio del crecimiento de tu marca.',
       'about.team.cta': 'Conocer al equipo',
       'about.team.modal.title': 'Equipo directivo',
+      "about.ally.eyebrow": "Nuestra red de colaboración",
+      "about.ally.comary.description": "Compañía brasileña de bebidas con más de siete décadas de trayectoria. Cuenta con un portafolio multicategoría y marcas reconocidas, combinando experiencia industrial, innovación y conocimiento del mercado para llegar a distintos consumidores y ocasiones de consumo.",
+      "about.ally.vieira.description": "Empresa portuguesa con una larga tradición en la industria alimentaria. Especializada en la elaboración de galletas, almendras y caramelos, combina tradición, calidad e innovación para desarrollar productos que llegan a distintos mercados internacionales.",
+      "about.ally.visit": "Conocer empresa",
+      "about.ally.closing": "Creemos en las relaciones que generan valor a largo plazo: conectamos experiencia internacional con oportunidades reales de crecimiento en el mercado chileno.",
       'role.commercial': 'Gerente Comercial',
       'role.ceo': 'Gerente General',
       'role.community': 'Community Manager',
@@ -682,6 +687,11 @@
       'about.team.text': 'A team that has managed brands and channels at multinational consumer goods companies, now at the service of your brand\'s growth.',
       'about.team.cta': 'Meet the team',
       'about.team.modal.title': 'Management team',
+      "about.ally.eyebrow": "Our network of partners",
+      "about.ally.comary.description": "A Brazilian beverage company with more than seven decades of experience. Its multi-category portfolio includes recognized brands, combining industrial expertise, innovation and market knowledge to reach different consumers and consumption occasions.",
+      "about.ally.vieira.description": "A Portuguese company with a long-standing tradition in the food industry. Specializing in biscuits, almonds and confectionery, it combines tradition, quality and innovation to develop products for international markets.",
+      "about.ally.visit": "Discover the company",
+      "about.ally.closing": "We believe in relationships that create long-term value: connecting international experience with real growth opportunities in the Chilean market.",
       'role.commercial': 'Commercial Manager',
       'role.ceo': 'General Manager',
       'role.community': 'Community Manager',
@@ -1412,440 +1422,440 @@
     });
   }
 
-        /* ------------------------------------------
-           AVISO DE COOKIES (todas las páginas)
-           La primera vez, muestra la barra y guarda la decisión
-           en localStorage ("amerika-cookies-v1": aceptada / rechazada).
-           Con una decisión guardada, la barra ya no vuelve a aparecer,
-           pero puede reabrirse con el enlace "Política de cookies"
-           del pie de página (data-cookies-open).
-           La clave es versionada: al subir la versión (v2, v3...) todos
-           los visitantes vuelven a ver el aviso (p. ej. si cambia la
-           política), y nunca se arrastran decisiones de pruebas viejas.
-           ------------------------------------------ */
-        const COOKIES_KEY = 'amerika-cookies-v1';
+  /* ------------------------------------------
+     AVISO DE COOKIES (todas las páginas)
+     La primera vez, muestra la barra y guarda la decisión
+     en localStorage ("amerika-cookies-v1": aceptada / rechazada).
+     Con una decisión guardada, la barra ya no vuelve a aparecer,
+     pero puede reabrirse con el enlace "Política de cookies"
+     del pie de página (data-cookies-open).
+     La clave es versionada: al subir la versión (v2, v3...) todos
+     los visitantes vuelven a ver el aviso (p. ej. si cambia la
+     política), y nunca se arrastran decisiones de pruebas viejas.
+     ------------------------------------------ */
+  const COOKIES_KEY = 'amerika-cookies-v1';
 
-        /* ------------------------------------------
-           GOOGLE ANALYTICS 4 (con consentimiento previo)
-           El script de GA solo se instala si el usuario
-           aceptó las cookies de medición en el aviso.
-           REEMPLAZA 'G-XXXXXXXXXX' por tu ID de medición
-           real de Google Analytics (formato G-XXXXXXXXXX).
-           ------------------------------------------ */
-        // >>> REEMPLAZA por tu ID de medición real de Google Analytics 4 (formato G-XXXXXXXXXX) <<<
-        const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  /* ------------------------------------------
+     GOOGLE ANALYTICS 4 (con consentimiento previo)
+     El script de GA solo se instala si el usuario
+     aceptó las cookies de medición en el aviso.
+     REEMPLAZA 'G-XXXXXXXXXX' por tu ID de medición
+     real de Google Analytics (formato G-XXXXXXXXXX).
+     ------------------------------------------ */
+  // >>> REEMPLAZA por tu ID de medición real de Google Analytics 4 (formato G-XXXXXXXXXX) <<<
+  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
 
-        function loadGoogleAnalytics() {
-          // Sin ID configurado (o ya cargado) no instalamos nada
-          if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
-          if (document.getElementById('ga-script')) return;
+  function loadGoogleAnalytics() {
+    // Sin ID configurado (o ya cargado) no instalamos nada
+    if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+    if (document.getElementById('ga-script')) return;
 
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { window.dataLayer.push(arguments); }
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
 
-          const script = document.createElement('script');
-          script.id = 'ga-script';
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
-          document.head.appendChild(script);
+    const script = document.createElement('script');
+    script.id = 'ga-script';
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(script);
+  }
+
+  function initCookieBanner() {
+    const banner = document.getElementById('cbCard');
+    if (!banner) return; // la página no incluye el aviso
+
+    const btnAccept = document.getElementById('cbAccept');
+    const btnReject = document.getElementById('cbReject');
+
+    function leerDecision() {
+      try { return window.localStorage.getItem(COOKIES_KEY); } catch (e) { return null; }
+    }
+
+    function guardarDecision(valor) {
+      try { window.localStorage.setItem(COOKIES_KEY, valor); } catch (e) { /* file:// puede bloquear localStorage */ }
+      banner.hidden = true;
+    }
+
+    // Respeta la Ley 21.719: sin decisión guardada, no se instala NADA.
+    // Además, no se muestra mientras el modal de control de edad (+18)
+    // esté abierto: el aviso aparece recién cuando la puerta se resuelve,
+    // para no tapar sus botones (bug del banner compacto).
+    const ageModal = document.getElementById('ageModal');
+
+    function bannerDebeEsperar() {
+      return !!(ageModal && !ageModal.classList.contains('hidden'));
+    }
+
+    function mostrarBanner() {
+      if (!leerDecision()) banner.hidden = false;
+    }
+
+    if (!bannerDebeEsperar()) mostrarBanner();
+    document.addEventListener('amerika:age-confirmed', mostrarBanner);
+
+    if (btnAccept) btnAccept.addEventListener('click', function () {
+      guardarDecision('aceptada');
+      // Consentimiento otorgado: recién ahora se instala GA
+      loadGoogleAnalytics();
+    });
+    if (btnReject) btnReject.addEventListener('click', function () {
+      guardarDecision('rechazada');
+      // Rechazado: no se instala NINGÚN script de medición
+    });
+
+    // Si en una visita anterior ya aceptó, GA se carga de inmediato
+    if (leerDecision() === 'aceptada') loadGoogleAnalytics();
+  }
+
+  /* REVEAL AL HACER SCROLL (todas las páginas):
+     los bloques "suben" suavemente al entrar en pantalla.
+     Aplica las clases automáticamente, sin tocar el HTML. */
+  function initScrollReveal() {
+    // Accesibilidad: quien pide menos movimiento, ve todo estático
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    /* Corrección del cliente: en celular el contenido aparecía "casi
+       transparente" hasta hacer scroll. Solución de dos partes:
+       1) en pantallas chicas la animación no se aplica (todo visible);
+       2) en desktop, un temporizador de seguridad revela todo igual
+          aunque el observador nunca se dispare. */
+    const esMovil = window.matchMedia('(max-width: 767px)').matches;
+
+    const objetivos = document.querySelectorAll(
+      '.section > .container, .page-hero > .container, .cta-banner-inner, .impact-banner-inner'
+    );
+
+    if (esMovil) return; // sin animación en móvil: el contenido se ve siempre
+
+    objetivos.forEach(function (bloque) {
+      bloque.classList.add('reveal');
+    });
+
+    // Red de seguridad: a los 1.5 s todo el contenido queda visible
+    setTimeout(function () {
+      objetivos.forEach(function (bloque) {
+        bloque.classList.add('reveal-in');
+      });
+    }, 1500);
+
+    const observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('reveal-in');
+          observador.unobserve(entrada.target); // solo una vez por bloque
         }
+      });
+    }, { threshold: 0.12 });   /* se activa cuando ~12% del bloque se ve */
 
-        function initCookieBanner() {
-          const banner = document.getElementById('cbCard');
-          if (!banner) return; // la página no incluye el aviso
+    objetivos.forEach(function (bloque) {
+      observador.observe(bloque);
+    });
+  }
 
-          const btnAccept = document.getElementById('cbAccept');
-          const btnReject = document.getElementById('cbReject');
+  /* ------------------------------------------
+     NAVBAR ESTILO ICB (solo index):
+     verde arriba; cuando el usuario baja, blanco.
+     La clase .scrolled cambia los colores vía CSS.
+     ------------------------------------------ */
+  function initNavbarScroll() {
+    const header = document.querySelector('.header');
+    if (!header || !document.querySelector('.hero-showcase')) return;
 
-          function leerDecision() {
-            try { return window.localStorage.getItem(COOKIES_KEY); } catch (e) { return null; }
-          }
+    function actualizar() {
+      // Un poco más de la mitad del primer bloque: ahí el navbar pasa a blanco
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    }
 
-          function guardarDecision(valor) {
-            try { window.localStorage.setItem(COOKIES_KEY, valor); } catch (e) { /* file:// puede bloquear localStorage */ }
-            banner.hidden = true;
-          }
+    actualizar();
+    window.addEventListener('scroll', actualizar, { passive: true });
+  }
 
-          // Respeta la Ley 21.719: sin decisión guardada, no se instala NADA.
-          // Además, no se muestra mientras el modal de control de edad (+18)
-          // esté abierto: el aviso aparece recién cuando la puerta se resuelve,
-          // para no tapar sus botones (bug del banner compacto).
-          const ageModal = document.getElementById('ageModal');
+  /* ------------------------------------------
+     MENSAJES ROTATIVOS DEL HERO (index.html)     Cambia una frase cada 4 segundos con un fundido.
+     Usa el diccionario actual, así que respeta ES/EN.
+     ------------------------------------------ */
+  function initHeroRotator() {
+    const el = document.getElementById('heroRotator');
+    if (!el) return;
 
-          function bannerDebeEsperar() {
-            return !!(ageModal && !ageModal.classList.contains('hidden'));
-          }
+    const mensajes = ['hero.rot1', 'hero.rot2', 'hero.rot3'];
+    let indice = 0;
 
-          function mostrarBanner() {
-            if (!leerDecision()) banner.hidden = false;
-          }
+    function mostrarSiguiente() {
+      // fundido de salida -> cambio de texto -> fundido de entrada
+      el.style.opacity = '0';
+      setTimeout(function () {
+        el.textContent = window.AmerikaI18n.getTranslation(mensajes[indice]);
+        el.style.opacity = '1';
+        indice = (indice + 1) % mensajes.length;
+      }, 400);
+    }
 
-          if (!bannerDebeEsperar()) mostrarBanner();
-          document.addEventListener('amerika:age-confirmed', mostrarBanner);
+    mostrarSiguiente();
+    setInterval(mostrarSiguiente, 4000);
+  }
 
-          if (btnAccept) btnAccept.addEventListener('click', function () {
-            guardarDecision('aceptada');
-            // Consentimiento otorgado: recién ahora se instala GA
-            loadGoogleAnalytics();
-          });
-          if (btnReject) btnReject.addEventListener('click', function () {
-            guardarDecision('rechazada');
-            // Rechazado: no se instala NINGÚN script de medición
-          });
+  /* NOSOTROS: stepper "A qué nos dedicamos" (distribución tipo referencia,
+     con los textos reales del documento comercial). 5 etapas navegables. */
+  const NS_ICONS = {
+    1: '<svg viewBox="0 0 24 24"><path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4"/></svg>',
+    2: '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4"/></svg>',
+    3: '<svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>',
+    4: '<svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>',
+    5: '<svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>'
+  };
 
-          // Si en una visita anterior ya aceptó, GA se carga de inmediato
-          if (leerDecision() === 'aceptada') loadGoogleAnalytics();
-        }
+  function initNsStepper() {
+    const card = document.getElementById('nsCard');
+    if (!card) return; // solo existe en nosotros.html
 
-        /* REVEAL AL HACER SCROLL (todas las páginas):
-           los bloques "suben" suavemente al entrar en pantalla.
-           Aplica las clases automáticamente, sin tocar el HTML. */
-        function initScrollReveal() {
-          // Accesibilidad: quien pide menos movimiento, ve todo estático
-          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const botones = document.querySelectorAll('.ns-step, .ns-pill');
+    const prev = document.getElementById('nsPrev');
+    const next = document.getElementById('nsNext');
+    const progreso = document.getElementById('nsProgress');
+    let etapa = parseInt(document.querySelector('.ns-step.is-active').getAttribute('data-step'), 10) || 1;
 
-          /* Corrección del cliente: en celular el contenido aparecía "casi
-             transparente" hasta hacer scroll. Solución de dos partes:
-             1) en pantallas chicas la animación no se aplica (todo visible);
-             2) en desktop, un temporizador de seguridad revela todo igual
-                aunque el observador nunca se dispare. */
-          const esMovil = window.matchMedia('(max-width: 767px)').matches;
+    function textos(num) {
+      return {
+        badge: window.AmerikaI18n.getTranslation('ns.b' + num),
+        title: window.AmerikaI18n.getTranslation('ns.t' + num),
+        desc: window.AmerikaI18n.getTranslation('ns.d' + num),
+        tagTitle: window.AmerikaI18n.getTranslation('ns.tt' + num),
+        tagDesc: window.AmerikaI18n.getTranslation('ns.td' + num)
+      };
+    }
 
-          const objetivos = document.querySelectorAll(
-            '.section > .container, .page-hero > .container, .cta-banner-inner, .impact-banner-inner'
-          );
-
-          if (esMovil) return; // sin animación en móvil: el contenido se ve siempre
-
-          objetivos.forEach(function (bloque) {
-            bloque.classList.add('reveal');
-          });
-
-          // Red de seguridad: a los 1.5 s todo el contenido queda visible
-          setTimeout(function () {
-            objetivos.forEach(function (bloque) {
-              bloque.classList.add('reveal-in');
-            });
-          }, 1500);
-
-          const observador = new IntersectionObserver(function (entradas) {
-            entradas.forEach(function (entrada) {
-              if (entrada.isIntersecting) {
-                entrada.target.classList.add('reveal-in');
-                observador.unobserve(entrada.target); // solo una vez por bloque
-              }
-            });
-          }, { threshold: 0.12 });   /* se activa cuando ~12% del bloque se ve */
-
-          objetivos.forEach(function (bloque) {
-            observador.observe(bloque);
-          });
-        }
-
-        /* ------------------------------------------
-           NAVBAR ESTILO ICB (solo index):
-           verde arriba; cuando el usuario baja, blanco.
-           La clase .scrolled cambia los colores vía CSS.
-           ------------------------------------------ */
-        function initNavbarScroll() {
-          const header = document.querySelector('.header');
-          if (!header || !document.querySelector('.hero-showcase')) return;
-
-          function actualizar() {
-            // Un poco más de la mitad del primer bloque: ahí el navbar pasa a blanco
-            header.classList.toggle('scrolled', window.scrollY > 30);
-          }
-
-          actualizar();
-          window.addEventListener('scroll', actualizar, { passive: true });
-        }
-
-        /* ------------------------------------------
-           MENSAJES ROTATIVOS DEL HERO (index.html)     Cambia una frase cada 4 segundos con un fundido.
-           Usa el diccionario actual, así que respeta ES/EN.
-           ------------------------------------------ */
-        function initHeroRotator() {
-          const el = document.getElementById('heroRotator');
-          if (!el) return;
-
-          const mensajes = ['hero.rot1', 'hero.rot2', 'hero.rot3'];
-          let indice = 0;
-
-          function mostrarSiguiente() {
-            // fundido de salida -> cambio de texto -> fundido de entrada
-            el.style.opacity = '0';
-            setTimeout(function () {
-              el.textContent = window.AmerikaI18n.getTranslation(mensajes[indice]);
-              el.style.opacity = '1';
-              indice = (indice + 1) % mensajes.length;
-            }, 400);
-          }
-
-          mostrarSiguiente();
-          setInterval(mostrarSiguiente, 4000);
-        }
-
-        /* NOSOTROS: stepper "A qué nos dedicamos" (distribución tipo referencia,
-           con los textos reales del documento comercial). 5 etapas navegables. */
-        const NS_ICONS = {
-          1: '<svg viewBox="0 0 24 24"><path d="M21 8V21H3V8M1 3h22v5H1zM10 12h4"/></svg>',
-          2: '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4"/></svg>',
-          3: '<svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>',
-          4: '<svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>',
-          5: '<svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>'
-        };
-
-        function initNsStepper() {
-          const card = document.getElementById('nsCard');
-          if (!card) return; // solo existe en nosotros.html
-
-          const botones = document.querySelectorAll('.ns-step, .ns-pill');
-          const prev = document.getElementById('nsPrev');
-          const next = document.getElementById('nsNext');
-          const progreso = document.getElementById('nsProgress');
-          let etapa = parseInt(document.querySelector('.ns-step.is-active').getAttribute('data-step'), 10) || 1;
-
-          function textos(num) {
-            return {
-              badge: window.AmerikaI18n.getTranslation('ns.b' + num),
-              title: window.AmerikaI18n.getTranslation('ns.t' + num),
-              desc: window.AmerikaI18n.getTranslation('ns.d' + num),
-              tagTitle: window.AmerikaI18n.getTranslation('ns.tt' + num),
-              tagDesc: window.AmerikaI18n.getTranslation('ns.td' + num)
-            };
-          }
-
-          function pintarEstado() {
-            // etiquetas: activa / ya recorrida / pendiente
-            document.querySelectorAll('.ns-step').forEach(function (btn) {
-              const num = parseInt(btn.getAttribute('data-step'), 10);
-              btn.classList.toggle('is-active', num === etapa);
-              btn.classList.toggle('is-done', num < etapa);
-            });
-            document.querySelectorAll('.ns-pill').forEach(function (pill) {
-              pill.classList.toggle('is-active', parseInt(pill.getAttribute('data-step'), 10) === etapa);
-            });
+    function pintarEstado() {
+      // etiquetas: activa / ya recorrida / pendiente
+      document.querySelectorAll('.ns-step').forEach(function (btn) {
+        const num = parseInt(btn.getAttribute('data-step'), 10);
+        btn.classList.toggle('is-active', num === etapa);
+        btn.classList.toggle('is-done', num < etapa);
+      });
+      document.querySelectorAll('.ns-pill').forEach(function (pill) {
+        pill.classList.toggle('is-active', parseInt(pill.getAttribute('data-step'), 10) === etapa);
+      });
 
 
-            // Desplazamiento automático de las etapas en móviles
-            if (window.innerWidth <= 1024) {
-              const contenedor = document.querySelector('.ns-pills');
+      // Desplazamiento automático de las etapas en móviles
+      if (window.innerWidth <= 1024) {
+        const contenedor = document.querySelector('.ns-pills');
 
-              if (contenedor) {
-                const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
+        if (contenedor) {
+          const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
 
-                if (etapaActiva) {
-                  const posicion =
-                    etapaActiva.offsetLeft -
-                    contenedor.offsetLeft -
-                    (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
+          if (etapaActiva) {
+            const posicion =
+              etapaActiva.offsetLeft -
+              contenedor.offsetLeft -
+              (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
 
-                  const reducirMovimiento = window.matchMedia(
-                    '(prefers-reduced-motion: reduce)'
-                  ).matches;
+            const reducirMovimiento = window.matchMedia(
+              '(prefers-reduced-motion: reduce)'
+            ).matches;
 
-                  contenedor.scrollTo({
-                    left: Math.max(0, posicion),
-                    behavior: reducirMovimiento ? 'auto' : 'smooth'
-                  });
-                }
-              }
-            }
-
-            // Desplazamiento automático de las etapas en móviles
-            if (window.innerWidth <= 1024) {
-              const contenedor = document.querySelector('.ns-pills');
-
-              if (contenedor) {
-                const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
-
-                if (etapaActiva) {
-                  const posicion =
-                    etapaActiva.offsetLeft -
-                    contenedor.offsetLeft -
-                    (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
-
-                  const reducirMovimiento = window.matchMedia(
-                    '(prefers-reduced-motion: reduce)'
-                  ).matches;
-
-                  contenedor.scrollTo({
-                    left: Math.max(0, posicion),
-                    behavior: reducirMovimiento ? 'auto' : 'smooth'
-                  });
-                }
-              }
-            }
-
-
-            // línea de progreso: 20% por etapa
-            progreso.style.width = (etapa * 20) + '%';
-
-            // tarjeta con textos del idioma actual
-            const t = textos(etapa);
-            card.querySelector('.ns-watermark').textContent = etapa < 10 ? '0' + etapa : etapa;
-            document.getElementById('nsBadge').textContent = t.badge;
-            document.getElementById('nsTitle').textContent = t.title;
-            document.getElementById('nsDesc').textContent = t.desc;
-            document.getElementById('nsTagTitle').textContent = t.tagTitle;
-            document.getElementById('nsTagDesc').textContent = t.tagDesc;
-            document.getElementById('nsIcon').innerHTML = NS_ICONS[etapa] || NS_ICONS[1];
-
-            prev.disabled = etapa === 1;
-            next.textContent = etapa === 5
-              ? window.AmerikaI18n.getTranslation('ns.first')
-              : window.AmerikaI18n.getTranslation('ns.next');
-          }
-
-          botones.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-              etapa = parseInt(btn.getAttribute('data-step'), 10);
-              pintarEstado();
-            });
-          });
-          prev.addEventListener('click', function () {
-            if (etapa > 1) { etapa--; pintarEstado(); }
-          });
-          next.addEventListener('click', function () {
-            etapa = etapa < 5 ? etapa + 1 : 1;
-            pintarEstado();
-          });
-
-          // al cambiar el idioma, la tarjeta se redibuja con el texto nuevo
-          document.addEventListener('amerika:languagechange', pintarEstado);
-          pintarEstado();
-        }
-
-        /* CONTROL DE EDAD 18+ */
-        /* ------------------------------------------ */
-        const AGE_KEY = 'amerika-mayor-de-18:' + window.location.pathname;
-
-        function initAgeGate() {
-          const modal = document.getElementById('ageModal');
-          if (!modal) return;
-
-          let yaConfirmo = false;
-          try {
-            yaConfirmo = sessionStorage.getItem(AGE_KEY) === 'si';
-          } catch (error) { /* sin almacenamiento: siempre preguntamos */ }
-
-          if (yaConfirmo) {
-            modal.classList.add('hidden');
-            return;
-          }
-
-          const btnYes = document.getElementById('btnAgeYes');
-          if (btnYes) {
-            btnYes.addEventListener('click', function () {
-              try { sessionStorage.setItem(AGE_KEY, 'si'); } catch (error) { }
-              modal.classList.add('hidden');
-              // Avisar al resto del sitio (ej: el aviso de cookies espera esta puerta)
-              document.dispatchEvent(new CustomEvent('amerika:age-confirmed'));
-            });
-          }
-
-          const btnNo = document.getElementById('btnAgeNo');
-          if (btnNo) {
-            btnNo.addEventListener('click', function () {
-              // Página con vista "restringida" (drinkball): mostrarla en vez de navegar
-              const restricted = document.getElementById('ageRestrictedView');
-              const confirmView = document.getElementById('ageConfirmView');
-              if (restricted && confirmView) {
-                confirmView.style.display = 'none';
-                restricted.style.display = 'block';
-                return;
-              }
-              window.location.href = 'index.html';
-            });
-          }
-
-          // Botón "Volver a verificar" de la vista restringida (drinkball)
-          const btnRetry = document.getElementById('btnAgeRetry');
-          if (btnRetry) {
-            btnRetry.addEventListener('click', function () {
-              const restricted = document.getElementById('ageRestrictedView');
-              const confirmView = document.getElementById('ageConfirmView');
-              if (restricted && confirmView) {
-                restricted.style.display = 'none';
-                confirmView.style.display = 'block';
-              }
+            contenedor.scrollTo({
+              left: Math.max(0, posicion),
+              behavior: reducirMovimiento ? 'auto' : 'smooth'
             });
           }
         }
+      }
 
-        /* ------------------------------------------
-           AVISO DEL FORMULARIO DE CONTACTO
-           ------------------------------------------ */
-        function initFormAlert() {
-          const alerta = document.getElementById('formAlert');
-          if (!alerta) return;
+      // Desplazamiento automático de las etapas en móviles
+      if (window.innerWidth <= 1024) {
+        const contenedor = document.querySelector('.ns-pills');
 
-          if (window.location.search.indexOf('enviado=1') !== -1) {
-            alerta.innerHTML = getTranslation(currentLang, 'contact.alert.success');
-            alerta.className = 'form-alert success';
-            window.history.replaceState({}, '', 'contacto');
-          } else if (window.location.search.indexOf('error=1') !== -1) {
-            alerta.innerHTML = getTranslation(currentLang, 'contact.alert.error');
-            alerta.className = 'form-alert error';
-            window.history.replaceState({}, '', 'contacto');
+        if (contenedor) {
+          const etapaActiva = contenedor.querySelector('.ns-pill.is-active');
+
+          if (etapaActiva) {
+            const posicion =
+              etapaActiva.offsetLeft -
+              contenedor.offsetLeft -
+              (contenedor.clientWidth - etapaActiva.offsetWidth) / 2;
+
+            const reducirMovimiento = window.matchMedia(
+              '(prefers-reduced-motion: reduce)'
+            ).matches;
+
+            contenedor.scrollTo({
+              left: Math.max(0, posicion),
+              behavior: reducirMovimiento ? 'auto' : 'smooth'
+            });
           }
         }
+      }
 
-        /* ------------------------------------------
-           TOAST de enlaces demo (páginas de marca)
-           Muestra un aviso al hacer clic en un enlace demo.
-           ------------------------------------------ */
-        function initDemoToast() {
-          const toast = document.getElementById('toastMsg');
-          if (!toast) return;
-          let toastTimer;
-          document.querySelectorAll('.demo-cta').forEach(function (el) {
-            el.addEventListener('click', function (event) {
-              event.preventDefault();
-              toast.classList.add('show');
-              clearTimeout(toastTimer);
-              toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 3200);
-            });
-          });
+
+      // línea de progreso: 20% por etapa
+      progreso.style.width = (etapa * 20) + '%';
+
+      // tarjeta con textos del idioma actual
+      const t = textos(etapa);
+      card.querySelector('.ns-watermark').textContent = etapa < 10 ? '0' + etapa : etapa;
+      document.getElementById('nsBadge').textContent = t.badge;
+      document.getElementById('nsTitle').textContent = t.title;
+      document.getElementById('nsDesc').textContent = t.desc;
+      document.getElementById('nsTagTitle').textContent = t.tagTitle;
+      document.getElementById('nsTagDesc').textContent = t.tagDesc;
+      document.getElementById('nsIcon').innerHTML = NS_ICONS[etapa] || NS_ICONS[1];
+
+      prev.disabled = etapa === 1;
+      next.textContent = etapa === 5
+        ? window.AmerikaI18n.getTranslation('ns.first')
+        : window.AmerikaI18n.getTranslation('ns.next');
+    }
+
+    botones.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        etapa = parseInt(btn.getAttribute('data-step'), 10);
+        pintarEstado();
+      });
+    });
+    prev.addEventListener('click', function () {
+      if (etapa > 1) { etapa--; pintarEstado(); }
+    });
+    next.addEventListener('click', function () {
+      etapa = etapa < 5 ? etapa + 1 : 1;
+      pintarEstado();
+    });
+
+    // al cambiar el idioma, la tarjeta se redibuja con el texto nuevo
+    document.addEventListener('amerika:languagechange', pintarEstado);
+    pintarEstado();
+  }
+
+  /* CONTROL DE EDAD 18+ */
+  /* ------------------------------------------ */
+  const AGE_KEY = 'amerika-mayor-de-18:' + window.location.pathname;
+
+  function initAgeGate() {
+    const modal = document.getElementById('ageModal');
+    if (!modal) return;
+
+    let yaConfirmo = false;
+    try {
+      yaConfirmo = sessionStorage.getItem(AGE_KEY) === 'si';
+    } catch (error) { /* sin almacenamiento: siempre preguntamos */ }
+
+    if (yaConfirmo) {
+      modal.classList.add('hidden');
+      return;
+    }
+
+    const btnYes = document.getElementById('btnAgeYes');
+    if (btnYes) {
+      btnYes.addEventListener('click', function () {
+        try { sessionStorage.setItem(AGE_KEY, 'si'); } catch (error) { }
+        modal.classList.add('hidden');
+        // Avisar al resto del sitio (ej: el aviso de cookies espera esta puerta)
+        document.dispatchEvent(new CustomEvent('amerika:age-confirmed'));
+      });
+    }
+
+    const btnNo = document.getElementById('btnAgeNo');
+    if (btnNo) {
+      btnNo.addEventListener('click', function () {
+        // Página con vista "restringida" (drinkball): mostrarla en vez de navegar
+        const restricted = document.getElementById('ageRestrictedView');
+        const confirmView = document.getElementById('ageConfirmView');
+        if (restricted && confirmView) {
+          confirmView.style.display = 'none';
+          restricted.style.display = 'block';
+          return;
         }
+        window.location.href = 'index.html';
+      });
+    }
 
-        /* ------------------------------------------
-           ARRANQUE
-           ------------------------------------------ */
-        function init() {
-          if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
-          initLanguageButtons();
-          initMobileMenu();
-          initTeamModal();
-          initConsentModal();
-          initAlliesBand();
-          initHeroRotator();
-          initAgeGate();
-          initCookieBanner();
-          initScrollReveal();
-          initNavbarScroll();
-          initNsStepper();
-          initDemoToast();
-          setLanguage(readStoredLanguage());
-          initFormAlert();
-          reportMissingKeys();
+    // Botón "Volver a verificar" de la vista restringida (drinkball)
+    const btnRetry = document.getElementById('btnAgeRetry');
+    if (btnRetry) {
+      btnRetry.addEventListener('click', function () {
+        const restricted = document.getElementById('ageRestrictedView');
+        const confirmView = document.getElementById('ageConfirmView');
+        if (restricted && confirmView) {
+          restricted.style.display = 'none';
+          confirmView.style.display = 'block';
         }
+      });
+    }
+  }
 
-        // API pública para depurar
-        window.AmerikaI18n = {
-          get language() { return currentLang; },
-          setLanguage: setLanguage,
-          applyTranslations: applyTranslations,
-          getTranslation: function (key) { return getTranslation(currentLang, key); },
-          translations: translations
-        };
+  /* ------------------------------------------
+     AVISO DEL FORMULARIO DE CONTACTO
+     ------------------------------------------ */
+  function initFormAlert() {
+    const alerta = document.getElementById('formAlert');
+    if (!alerta) return;
 
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', init);
-        } else {
-          init();
-        }
-      })();
+    if (window.location.search.indexOf('enviado=1') !== -1) {
+      alerta.innerHTML = getTranslation(currentLang, 'contact.alert.success');
+      alerta.className = 'form-alert success';
+      window.history.replaceState({}, '', 'contacto');
+    } else if (window.location.search.indexOf('error=1') !== -1) {
+      alerta.innerHTML = getTranslation(currentLang, 'contact.alert.error');
+      alerta.className = 'form-alert error';
+      window.history.replaceState({}, '', 'contacto');
+    }
+  }
+
+  /* ------------------------------------------
+     TOAST de enlaces demo (páginas de marca)
+     Muestra un aviso al hacer clic en un enlace demo.
+     ------------------------------------------ */
+  function initDemoToast() {
+    const toast = document.getElementById('toastMsg');
+    if (!toast) return;
+    let toastTimer;
+    document.querySelectorAll('.demo-cta').forEach(function (el) {
+      el.addEventListener('click', function (event) {
+        event.preventDefault();
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 3200);
+      });
+    });
+  }
+
+  /* ------------------------------------------
+     ARRANQUE
+     ------------------------------------------ */
+  function init() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+    initLanguageButtons();
+    initMobileMenu();
+    initTeamModal();
+    initConsentModal();
+    initAlliesBand();
+    initHeroRotator();
+    initAgeGate();
+    initCookieBanner();
+    initScrollReveal();
+    initNavbarScroll();
+    initNsStepper();
+    initDemoToast();
+    setLanguage(readStoredLanguage());
+    initFormAlert();
+    reportMissingKeys();
+  }
+
+  // API pública para depurar
+  window.AmerikaI18n = {
+    get language() { return currentLang; },
+    setLanguage: setLanguage,
+    applyTranslations: applyTranslations,
+    getTranslation: function (key) { return getTranslation(currentLang, key); },
+    translations: translations
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
