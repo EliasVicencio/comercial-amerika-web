@@ -2726,3 +2726,97 @@ html[data-lang="en"] .lang-switch .lang-en {
     justify-content: center;
   }
 }
+
+/* ============================================
+   BOTONES DE PORTADA - AJUSTE PARA MÓVILES
+   ============================================ */
+
+@media (max-width: 480px) {
+
+  .nx-hero-copy .nx-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+
+  .nx-hero-copy .nx-actions .nx-btn {
+    display: inline-flex;
+    width: auto;
+    min-width: 210px;
+    max-width: 260px;
+    min-height: 46px;
+    padding: 0.75rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+
+  .nx-hero-copy .nx-actions .nx-btn i {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+/* ============================================
+   ALIADOS - LOGOS CON MAYOR PRESENCIA
+   ============================================ */
+
+.nx-ally {
+  overflow: hidden;
+}
+
+/* Área visual del logo */
+.nx-ally .nx-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 220px;
+  min-height: 220px;
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 0;
+  border-bottom: 1px solid #edf0f3;
+  border-radius: 0;
+}
+
+/* Logos con ampliación más sutil */
+.nx-ally .nx-logo img {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.nx-ally:hover .nx-logo img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 760px) {
+  .nx-ally .nx-logo img {
+    transform: scale(1.02);
+  }
+
+  .nx-ally:hover .nx-logo img {
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 480px) {
+  .nx-ally .nx-logo {
+    height: 175px;
+    min-height: 175px;
+  }
+}
