@@ -1450,6 +1450,23 @@ main, section, header, footer {
   }
 }
 
+/* Iconos de contacto del footer */
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact p svg {
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  color: #ffffff;
+  stroke-width: 1.8;
+}
+
 @media (max-width: 360px) {
   .footer-main {
     grid-template-columns: 1fr;

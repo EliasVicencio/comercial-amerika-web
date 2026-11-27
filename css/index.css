@@ -1348,3 +1348,68 @@ html[data-lang="en"] .lang-switch .lang-en {
     padding: 5rem 0 !important;
   }
 }
+
+
+/* ============================================
+   INDEX - HERO CON IMAGEN CORPORATIVA
+   ============================================ */
+
+.index .hero-showcase {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  /* Imagen de fondo */
+  background-image: url("../img/hero-comercial.webp") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  /* Conservamos las dimensiones actuales */
+  min-height: clamp(620px, 78vh, 820px) !important;
+}
+
+/* Capa de contraste sobre la fotografía */
+.index .hero-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.82) 0%,
+    rgba(15, 23, 42, 0.58) 50%,
+    rgba(15, 23, 42, 0.30) 100%
+  );
+}
+
+/* El contenido permanece sobre la imagen */
+.index .hero-showcase > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajustes para tablets */
+@media (max-width: 900px) {
+  .index .hero-showcase {
+    background-position: center center !important;
+  }
+}
+
+/* Ajustes para teléfonos */
+@media (max-width: 600px) {
+  .index .hero-showcase {
+    min-height: max(700px, 82svh) !important;
+    background-position: center center !important;
+  }
+
+  .index .hero-showcase::before {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.72) 0%,
+      rgba(15, 23, 42, 0.62) 55%,
+      rgba(15, 23, 42, 0.48) 100%
+    );
+  }
+}
